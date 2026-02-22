@@ -1,0 +1,20 @@
+baseURL = "https://ryanpdlittle.com/"
+languageCode = "en-us"
+title = "Ryan Little"
+theme = "rpdl"
+
+[params]
+  subtitle = "Geospatial Analyst — Learning Log & Portfolio"
+  description = "Blog by Ryan Little — geospatial analysis, Python, remote sensing, and wildfire research."
+  author = "Ryan Little"
+
+[taxonomies]
+  tag = "tags"
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
