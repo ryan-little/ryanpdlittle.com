@@ -1,5 +1,11 @@
 <header>
   <nav>
-    <a href="{{ "/" | relURL }}" class="site-title">{{ .Site.Title }}</a>
+    <div class="site-brand">
+      <img src="{{ "images/bigbendnp_headshot.webp" | relURL }}" alt="Ryan Little" class="site-avatar">
+      <div>
+        <a href="{{ "/" | relURL }}" class="site-title">{{ .Site.Title }}</a>
+        <p class="site-subtitle">{{ .Site.Params.subtitle }}</p>
+      </div>
+    </div>
   </nav>
 </header>

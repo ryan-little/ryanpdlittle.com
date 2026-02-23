@@ -2,6 +2,8 @@
 title: "Hello World"
 date: 2026-02-22
 tags: ["meta"]
+group: "personal"
+project: "Life"
 summary: "First post — testing the blog setup."
 draft: false
 ---

@@ -1,23 +1,143 @@
 {{ define "main" }}
-<div class="hero">
-  <h1>{{ .Site.Title }}</h1>
-  <p class="subtitle">{{ .Site.Params.subtitle }}</p>
-</div>
+<div class="home-layout">
+  <div class="post-list" id="post-list">
+    {{ range where .Site.RegularPages "Section" "posts" }}
+    <article class="post-card" data-title="{{ .Title | lower }}" data-summary="{{ with .Params.summary }}{{ . | lower }}{{ end }}" data-tags="{{ with .Params.tags }}{{ delimit . " " }}{{ end }}" data-project="{{ with .Params.project }}{{ . | lower }}{{ end }}">
+      <a href="{{ .Permalink }}">
+        <h2>{{ .Title }}</h2>
+      </a>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{ with .Params.tags }}
+      <div class="tags">
+        {{ range . }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
+      </div>
+      {{ end }}
+      {{ with .Params.summary }}<p class="summary">{{ . }}</p>{{ end }}
+    </article>
+    {{ end }}
+  </div>
 
-<div class="post-list">
-  {{ range where .Site.RegularPages "Section" "posts" }}
-  <article class="post-card">
-    <a href="{{ .Permalink }}">
-      <h2>{{ .Title }}</h2>
-    </a>
-    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-    {{ with .Params.tags }}
-    <div class="tags">
-      {{ range . }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <input type="text" id="search" class="search-input" placeholder="Search posts...">
+    </div>
+
+    {{/* Collect projects and personal items from all posts */}}
+    {{ $projects := dict }}
+    {{ $personal := dict }}
+    {{ range where .Site.RegularPages "Section" "posts" }}
+      {{ with .Params.project }}
+        {{ $group := $.Params.group | default "projects" }}
+        {{ $group = (index $.Page.Params "group") | default "projects" }}
+        {{/* Re-read from actual page */}}
+        {{ $name := . }}
+        {{ $count := 1 }}
+        {{ if eq (index ($.Page.Params) "group") "personal" }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Build project tree by iterating all posts */}}
+    {{ $projectMap := slice }}
+    {{ $personalMap := slice }}
+    {{ range where .Site.RegularPages "Section" "posts" }}
+      {{ if .Params.project }}
+        {{ if eq .Params.group "personal" }}
+          {{ $personalMap = $personalMap | append .Params.project }}
+        {{ else }}
+          {{ $projectMap = $projectMap | append .Params.project }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ $projectCounts := dict }}
+    {{ range $projectMap }}
+      {{ if isset $projectCounts . }}
+        {{ $projectCounts = merge $projectCounts (dict . (add (index $projectCounts .) 1)) }}
+      {{ else }}
+        {{ $projectCounts = merge $projectCounts (dict . 1) }}
+      {{ end }}
+    {{ end }}
+
+    {{ $personalCounts := dict }}
+    {{ range $personalMap }}
+      {{ if isset $personalCounts . }}
+        {{ $personalCounts = merge $personalCounts (dict . (add (index $personalCounts .) 1)) }}
+      {{ else }}
+        {{ $personalCounts = merge $personalCounts (dict . 1) }}
+      {{ end }}
+    {{ end }}
+
+    {{ if or (gt (len $projectCounts) 0) (gt (len $personalCounts) 0) }}
+    <div class="sidebar-section">
+      {{ with $projectCounts }}
+      <h3 class="sidebar-heading">Projects</h3>
+      <ul class="project-tree">
+        {{ range $name, $count := . }}
+        <li><a href="#" class="project-link" data-project="{{ $name | lower }}">{{ $name }} <span class="tag-count">{{ $count }}</span></a></li>
+        {{ end }}
+      </ul>
+      {{ end }}
+
+      {{ with $personalCounts }}
+      <h3 class="sidebar-heading sidebar-heading--spaced">Personal</h3>
+      <ul class="project-tree">
+        {{ range $name, $count := . }}
+        <li><a href="#" class="project-link" data-project="{{ $name | lower }}">{{ $name }} <span class="tag-count">{{ $count }}</span></a></li>
+        {{ end }}
+      </ul>
+      {{ end }}
     </div>
     {{ end }}
-    {{ with .Params.summary }}<p class="summary">{{ . }}</p>{{ end }}
-  </article>
-  {{ end }}
+
+    <div class="sidebar-section">
+      <h3 class="sidebar-heading">Tags</h3>
+      <div class="tag-list">
+        {{ range .Site.Taxonomies.tags.Alphabetical }}
+        <a href="{{ "tags/" | relURL }}{{ .Name | urlize }}/" class="sidebar-tag" data-tag="{{ .Name }}">{{ .Name }} <span class="tag-count">{{ .Count }}</span></a>
+        {{ end }}
+      </div>
+    </div>
+  </aside>
 </div>
+
+<script>
+// Search filter
+document.getElementById('search').addEventListener('input', function() {
+  const q = this.value.toLowerCase();
+  document.querySelectorAll('.post-card').forEach(function(card) {
+    const title = card.dataset.title || '';
+    const summary = card.dataset.summary || '';
+    const tags = card.dataset.tags || '';
+    card.style.display = (title.includes(q) || summary.includes(q) || tags.includes(q)) ? '' : 'none';
+  });
+  // Clear active project filter when searching
+  document.querySelectorAll('.project-link').forEach(function(l) { l.classList.remove('active'); });
+});
+
+// Project filter
+document.querySelectorAll('.project-link').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const project = this.dataset.project;
+    const isActive = this.classList.contains('active');
+
+    // Toggle off
+    document.querySelectorAll('.project-link').forEach(function(l) { l.classList.remove('active'); });
+
+    if (isActive) {
+      // Show all
+      document.querySelectorAll('.post-card').forEach(function(card) { card.style.display = ''; });
+    } else {
+      this.classList.add('active');
+      document.querySelectorAll('.post-card').forEach(function(card) {
+        card.style.display = (card.dataset.project === project) ? '' : 'none';
+      });
+    }
+
+    // Clear search
+    document.getElementById('search').value = '';
+  });
+});
+</script>
 {{ end }}
