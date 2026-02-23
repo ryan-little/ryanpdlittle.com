@@ -1,12 +1,14 @@
 ---
-title: “Welcome to the Blog”
+title: Welcome to the Blog
 date: 2026-02-22
-tags: [“meta”]
+tags: [meta]
 group: “”
 project: “”
-summary: “Who I am, what I'm building, and why I'm writing about it.”
+summary: Who I am, what I'm building, and why I'm writing about it.
 draft: false
 ---
+
+## Who Am I?
 
 I'm Ryan — a geospatial analyst based in San Diego. I studied geography at UC Santa Barbara with a focus on GIS and remote sensing, and since graduating I've been working in the mapping and spatial data world. Lately I've been pushing more into spatial data science, Python tooling, and building things for the web.
 
