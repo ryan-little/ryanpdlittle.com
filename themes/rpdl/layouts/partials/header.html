@@ -22,5 +22,13 @@ document.getElementById('theme-toggle').addEventListener('click', function() {
   var next = current === 'dark' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
+  // Sync Giscus theme
+  var giscus = document.querySelector('iframe.giscus-frame');
+  if (giscus) {
+    giscus.contentWindow.postMessage(
+      { giscus: { setConfig: { theme: next === 'dark' ? 'dark' : 'light' } } },
+      'https://giscus.app'
+    );
+  }
 });
 </script>

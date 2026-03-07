@@ -1,0 +1,125 @@
+name: Scheduled Post Publishing
+
+on:
+  schedule:
+    # Run daily at 9am PT (5pm UTC)
+    - cron: '0 17 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish scheduled posts
+        id: publish
+        run: |
+          today=$(date -u +%Y-%m-%d)
+
+          # Parse schedule and publish posts whose date has arrived
+          python3 << 'PYTHON'
+          import os, re
+
+          today = os.popen("date -u +%Y-%m-%d").read().strip()
+
+          with open("publish-schedule.yml") as f:
+              content = f.read()
+
+          lines = content.strip().split("\n")
+          published = []
+          remaining = []
+          i = 0
+          while i < len(lines):
+              line = lines[i].strip()
+              if line.startswith("- path:"):
+                  path = line.split("path:")[1].strip()
+                  date = ""
+                  if i + 1 < len(lines):
+                      date_line = lines[i + 1].strip()
+                      if date_line.startswith("date:"):
+                          date = date_line.split("date:")[1].strip()
+                  if date <= today and os.path.isfile(path):
+                      # Read title from frontmatter
+                      with open(path) as f:
+                          post = f.read()
+                      title_match = re.search(r'^title:\s*["\']?(.+?)["\']?\s*$', post, re.MULTILINE)
+                      title = title_match.group(1) if title_match else path
+
+                      # Derive URL from path
+                      url_path = path.replace("content/", "/").replace("/index.md", "/").replace(".md", "/")
+
+                      # Publish: flip draft flag and update date
+                      post = re.sub(r"^draft: true$", "draft: false", post, flags=re.MULTILINE)
+                      post = re.sub(r"^date: .*$", f"date: {date}", post, flags=re.MULTILINE)
+                      with open(path, "w") as f:
+                          f.write(post)
+                      published.append({"title": title, "url": url_path})
+                      print(f"Published: {title}")
+                  else:
+                      remaining.append({"path": path, "date": date})
+                      if date > today:
+                          print(f"Not yet: {path} (scheduled for {date})")
+                      elif not os.path.isfile(path):
+                          print(f"Warning: {path} not found, skipping")
+                  i += 2
+              else:
+                  i += 1
+
+          # Rewrite schedule with only remaining posts
+          header = """# Scheduled blog post publishing
+          # Add posts with their target publish date. The publish workflow
+          # runs daily and will publish any post whose date has arrived.
+          # Once published, the entry is automatically removed from this file.
+          """.replace("          ", "")
+          with open("publish-schedule.yml", "w") as f:
+              f.write(header)
+              if remaining:
+                  f.write("\nposts:\n")
+                  for p in remaining:
+                      f.write(f"  - path: {p['path']}\n")
+                      f.write(f"    date: {p['date']}\n")
+              else:
+                  f.write("\nposts: []\n")
+
+          # Write outputs for downstream steps
+          gh_output = os.environ.get("GITHUB_OUTPUT", "/dev/null")
+          with open(gh_output, "a") as out:
+              out.write(f"count={len(published)}\n")
+              if published:
+                  summary = "\\n".join(f"- {p['title']}: https://ryanpdlittle.com{p['url']}" for p in published)
+                  titles = ", ".join(p["title"] for p in published)
+                  out.write(f"summary={summary}\n")
+                  out.write(f"titles={titles}\n")
+          PYTHON
+
+          # Commit and push if anything changed
+          if ! git diff --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Publish scheduled posts for $today"
+            git push
+          fi
+
+      - name: Send publish confirmation email
+        if: steps.publish.outputs.count != '0'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.GMAIL_USER }}
+          password: ${{ secrets.GMAIL_APP_PASSWORD }}
+          subject: "Post published: ${{ steps.publish.outputs.titles }}"
+          to: ${{ secrets.GMAIL_USER }}
+          from: "ryanpdlittle.com <${{ secrets.GMAIL_USER }}>"
+          body: |
+            Your scheduled post(s) have been published:
+
+            ${{ steps.publish.outputs.summary }}
+
+            Published at: ${{ github.event.repository.updated_at }}

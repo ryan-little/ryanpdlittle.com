@@ -4,13 +4,13 @@ date: 2026-03-03
 tags: ["finance", "google-apps-script", "automation"]
 group: "projects"
 project: "Financial Dashboard"
-summary: "My entire financial dashboard runs on a Google Sheet — no server, no database, no cron. SimpleFIN feeds the data, Apps Script does the work, and it's better than Mint ever was."
+summary: "My entire financial dashboard runs on a Google Sheet with no server, no database, and no cron. SimpleFIN feeds the data, Apps Script does the work, and it's better than Mint ever was."
 draft: true
 ---
 
 My entire financial dashboard runs on a Google Sheet and it's better than Mint ever was.
 
-No server. No database. No cron job. SimpleFIN Bridge feeds bank data into a Google Apps Script that runs on a daily trigger. The Sheet is the database, the dashboard, and the UI — all in one.
+No server. No database. No cron job. SimpleFIN Bridge feeds bank data into a Google Apps Script that runs on a daily trigger. The Sheet is the database, the dashboard, and the UI, all in one.
 
 ## Why a Google Sheet?
 

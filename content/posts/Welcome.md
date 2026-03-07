@@ -10,22 +10,20 @@ draft: false
 
 ## Who Am I?
 
-I'm Ryan — a geospatial analyst based in San Diego. I studied geography at UC Santa Barbara with a focus on GIS and remote sensing, and since graduating I've been working in the mapping and spatial data world. Lately I've been pushing more into spatial data science, Python tooling, and building things for the web.
+I'm Ryan, a geospatial analyst in San Diego. I studied geography at UC Santa Barbara with a focus on GIS and remote sensing, and since graduating I've been working in the mapping and spatial data world, building geodatabases, running QC on conflated datasets, and doing spatial analysis in ArcGIS Pro. More recently I've been pushing into spatial data science and Python tooling, and that's where most of my energy goes outside of work.
 
-Outside of my day job, I co-founded **Little Hammer Labs** — a small shop building custom AI solutions, local LLM deployments, and Python tooling for clients. It's been a great way to work on practical problems that don't fit neatly into enterprise software.
-
-This blog is where I'll be writing about all of that.
+I also co-founded **[Little Hammer Labs](https://littlehammerlabs.com)**, a small shop where we build custom AI solutions, local LLM deployments, and Python tooling for clients. It's a good way to work on practical problems that don't fit neatly into enterprise software, and it keeps me learning things I wouldn't run into at my day job.
 
 ## Why Write About It
 
-Partly to keep a record for myself. When you're learning new libraries and techniques across multiple projects, it's easy to solve the same problem twice. Writing things down forces me to actually understand what I did and why.
+Partly to keep a record for myself. When you're learning new libraries and bouncing between projects, it's easy to solve the same problem twice and forget how you did it the first time, and writing things down forces me to actually understand what I did and why it worked.
 
-Partly because the best technical blogs I've read weren't polished tutorials — they were honest accounts of someone working through a problem. That's what I'm going for here: practical write-ups of real work, including the parts that didn't go smoothly.
+Partly because the best technical blogs I've read weren't polished tutorials, they were honest accounts of someone working through a problem and sharing what they figured out along the way. That's what I'm going for here, practical write-ups of real work, including the parts that didn't go smoothly.
 
 ## What to Expect
 
-Posts here will mostly cover geospatial analysis, Python, and web development — the stuff I'm actively working with and learning. I've got a few projects in the pipeline that I'll share as they come together.
+Posts here will mostly cover geospatial analysis, Python, and web development, the things I'm actively working with and learning. I've got projects in the pipeline that I'll write about as they come together.
 
-Beyond the tech stuff, I've been getting more into hiking and trail running this year. I set a goal to hit 1,000 miles between walking, running, and hiking in 2026, and Mt. Whitney is on the list at some point. I'm also hoping to pursue a master's degree in the near future — more on that when the time comes.
+I've also been getting into hiking and trail running this year, with a goal to hit 1,000 miles between walking, running, and hiking in 2026, and Mt. Whitney is on the list. I'm hoping to start a master's degree soon too, more on that when the time comes.
 
-So expect a mix: technical write-ups, outdoor stuff, and whatever else feels worth putting down. If any of that sounds interesting, stick around.
+Expect a mix of technical write-ups, outdoor stuff, and whatever else feels worth putting down. If any of that sounds interesting, stick around.

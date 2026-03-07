@@ -538,6 +538,20 @@ footer {
   color: var(--accent);
 }
 
+/* === Comments === */
+.post-comments {
+  max-width: var(--max-width);
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.post-comments h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
 /* === Responsive === */
 @media (max-width: 768px) {
   .home-layout {

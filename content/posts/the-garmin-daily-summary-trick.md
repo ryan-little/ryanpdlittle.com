@@ -10,7 +10,7 @@ draft: true
 
 My watch said I was detraining. I was actually hauling furniture up three flights of stairs.
 
-I'd been consistently active through all of February — running, hiking, walking almost every day. Then I got sick, moved apartments, and went a week without recording a single activity. My Garmin Instinct 2X showed DETRAINING with an acute-to-chronic workload ratio of 0.1. But those move days weren't rest days. My body knew it. My watch just didn't.
+I'd been consistently active through all of February, running and hiking and walking almost every day, and then I got sick, moved apartments, and went a week without recording a single activity. My Garmin Instinct 2X showed DETRAINING with an acute-to-chronic workload ratio of 0.1, but those move days weren't rest days, my body knew it even if my watch didn't.
 
 ## The Gap
 

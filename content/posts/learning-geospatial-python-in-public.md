@@ -4,13 +4,13 @@ date: 2026-03-03
 tags: ["python", "gis", "wildfire", "geopandas"]
 group: "projects"
 project: "San Diego Wildfire Gap"
-summary: "I have a geography degree and I've never written a line of GeoPandas. That changes now. This is the start of a series documenting the build of a wildfire risk dashboard for San Diego."
+summary: "I have a geography degree and I've never written a line of GeoPandas. This is the start of a series documenting the build of a wildfire risk dashboard for San Diego, and I'm learning all of it from scratch."
 draft: true
 ---
 
 I have a geography degree and I've never written a line of GeoPandas.
 
-I've spent my career in GIS — ArcGIS Pro, ArcMap, ArcGIS Online, QGIS — clicking through GUI tools to do spatial analysis. I can run geoprocessing tools, build geodatabases, do QC on conflated data. But when it comes to writing spatial Python from scratch? I'm starting from zero.
+I've spent my career in GIS, clicking through ArcGIS Pro and ArcMap and ArcGIS Online and QGIS to do spatial analysis. I can run geoprocessing tools, build geodatabases, do QC on conflated data, but when it comes to writing spatial Python from scratch I'm starting from zero.
 
 This series is going to document that process honestly.
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-4-part retrospective blog series documenting the development of Primal Chase from design doc to shipped game. Released weekly, each post covers a narrative arc of versions with a focus on *why* decisions were made, not just what changed.
+5-part retrospective blog series documenting the development of Primal Chase from design doc to shipped game. Released weekly, each post covers a narrative arc of versions with a focus on *why* decisions were made, not just what changed.
 
 ## Audience & Tone
 
@@ -12,7 +12,19 @@
 
 ## Series Structure
 
-All posts current-dated, framed as a retrospective series (Part 1 of 4). Released ~1 per week.
+All posts current-dated, framed as a retrospective series (Part 0-4). Released ~1 per week.
+
+### Part 0: The Idea (Pre-code)
+~800-1200 words
+
+- Where the persistence hunting idea came from (two-sentence game-idea.md)
+- Why an unwinnable game creates better tension than a winnable one
+- Hand-calculated status bar math that validated the core design
+- The design doc: encounter system architecture, hunter model, example screens as spec
+- The CONFIG-driven non-negotiable decision
+- Tech stack: vanilla JS, zero dependencies, GitHub Pages
+- **Code snippets:** CONFIG structure, example play screen from design doc
+- **Screenshots:** N/A (pre-code)
 
 ### Part 1: The Prototype (V1.1-V1.3)
 ~800-1200 words
@@ -81,7 +93,8 @@ Source material: knowledge hub docs (version-history.md, game-balance-system.md,
 
 ## Deliverables
 
-4 draft markdown files in `content/posts/`:
+5 draft markdown files in `content/posts/`:
+- `building-primal-chase-part-0.md`
 - `building-primal-chase-part-1.md`
 - `building-primal-chase-part-2.md`
 - `building-primal-chase-part-3.md`

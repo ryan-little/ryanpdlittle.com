@@ -4,11 +4,11 @@ date: 2026-03-03
 tags: ["python", "ai", "fitness", "fastapi"]
 group: "projects"
 project: "ClaudeFit"
-summary: "A personal fitness app where Claude Code CLI is the intelligence layer — not a chatbot, but the actual backend. Here's the architecture and what survived the v0.2 refactor."
+summary: "A personal fitness app where Claude Code CLI is the intelligence layer, not a chatbot, but the actual backend. Here's the architecture and what survived the v0.2 refactor."
 draft: true
 ---
 
-Most AI fitness apps bolt a chatbot onto a workout tracker. I wanted the opposite: a real dashboard where AI handles the thinking — training load analysis, workout recommendations, nutrition planning — without a chat interface at all.
+Most AI fitness apps bolt a chatbot onto a workout tracker. I wanted the opposite, a real dashboard where AI handles the thinking, training load analysis and workout recommendations and nutrition planning, without a chat interface at all.
 
 ## The Idea
 

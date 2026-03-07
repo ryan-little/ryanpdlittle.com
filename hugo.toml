@@ -7,6 +7,9 @@ theme = "rpdl"
   subtitle = "Maps by day, code by night, San Diego always"
   description = "Blog by Ryan Little — exploring geospatial analysis, Python development, remote sensing, wildfire research, and building tools from San Diego."
   author = "Ryan Little"
+  giscusRepo = "ryan-little/ryanpdlittle.com"
+  giscusRepoId = "R_kgDORWhYEQ"
+  giscusCategoryId = "DIC_kwDORWhYEc4C36Hu"
 
 [taxonomies]
   tag = "tags"
