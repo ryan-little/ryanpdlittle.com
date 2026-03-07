@@ -1,6 +1,6 @@
 ---
 title: "Learning Geospatial Python in Public — Part 1"
-date: 2026-03-03
+date: 2026-05-01
 tags: ["python", "gis", "wildfire", "geopandas"]
 group: "projects"
 project: "San Diego Wildfire Gap"

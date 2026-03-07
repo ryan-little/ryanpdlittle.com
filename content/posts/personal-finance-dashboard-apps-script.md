@@ -1,6 +1,6 @@
 ---
 title: "A Personal Finance Dashboard on Pure Google Apps Script"
-date: 2026-03-03
+date: 2026-04-07
 tags: ["finance", "google-apps-script", "automation"]
 group: "projects"
 project: "Financial Dashboard"
