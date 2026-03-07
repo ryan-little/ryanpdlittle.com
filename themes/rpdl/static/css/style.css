@@ -201,6 +201,7 @@ main {
 /* === Single Post === */
 .post {
   max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .post-header {
@@ -246,7 +247,13 @@ main {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-  margin: 1.5rem 0;
+  margin: 1.5rem auto;
+  display: block;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.post-content img[alt*="folder"] {
+  max-width: 320px;
 }
 
 .post-content pre {
