@@ -5,7 +5,7 @@
 
 <div class="post-list">
   {{ range .Pages }}
-  <article class="post-card">
+  <article class="post-card" data-href="{{ .Permalink }}">
     <a href="{{ .Permalink }}">
       <h2>{{ .Title }}</h2>
     </a>
@@ -19,4 +19,13 @@
   </article>
   {{ end }}
 </div>
+
+<script>
+document.querySelectorAll('.post-card[data-href]').forEach(function(card) {
+  card.addEventListener('click', function(e) {
+    if (e.target.closest('a')) return;
+    window.location.href = this.dataset.href;
+  });
+});
+</script>
 {{ end }}

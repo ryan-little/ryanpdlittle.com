@@ -2,7 +2,7 @@
 <div class="home-layout">
   <div class="post-list" id="post-list">
     {{ range where .Site.RegularPages "Section" "posts" }}
-    <article class="post-card" data-title="{{ .Title | lower }}" data-summary="{{ with .Params.summary }}{{ . | lower }}{{ end }}" data-tags="{{ with .Params.tags }}{{ delimit . " " }}{{ end }}" data-project="{{ with .Params.project }}{{ . | lower }}{{ end }}">
+    <article class="post-card" data-href="{{ .Permalink }}" data-title="{{ .Title | lower }}" data-summary="{{ with .Params.summary }}{{ . | lower }}{{ end }}" data-tags="{{ with .Params.tags }}{{ delimit . " " }}{{ end }}" data-project="{{ with .Params.project }}{{ . | lower }}{{ end }}">
       <a href="{{ .Permalink }}">
         <h2>{{ .Title }}</h2>
       </a>
@@ -137,6 +137,14 @@ document.querySelectorAll('.project-link').forEach(function(link) {
 
     // Clear search
     document.getElementById('search').value = '';
+  });
+});
+
+// Clickable post cards
+document.querySelectorAll('.post-card[data-href]').forEach(function(card) {
+  card.addEventListener('click', function(e) {
+    if (e.target.closest('a')) return;
+    window.location.href = this.dataset.href;
   });
 });
 </script>
