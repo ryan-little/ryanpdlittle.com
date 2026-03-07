@@ -5,7 +5,7 @@ theme = "rpdl"
 
 [params]
   subtitle = "Maps by day, code by night, San Diego always"
-  description = "Blog by Ryan Little — geospatial analysis, Python, remote sensing, and wildfire research."
+  description = "Blog by Ryan Little — exploring geospatial analysis, Python development, remote sensing, wildfire research, and building tools from San Diego."
   author = "Ryan Little"
 
 [taxonomies]
