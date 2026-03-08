@@ -1,6 +1,6 @@
 ---
 title: "Fantasy F1 — Early Season Lessons"
-date: 2026-04-22
+date: 2026-04-24
 tags: ["f1", "fantasy", "sports"]
 group: "personal"
 project: "Personal"

@@ -1,6 +1,6 @@
 ---
 title: "What's Coming — Spring 2026"
-date: 2026-03-11
+date: 2026-03-10
 tags: ["meta"]
 group:
 project: "Personal"

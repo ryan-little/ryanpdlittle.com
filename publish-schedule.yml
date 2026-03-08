@@ -5,7 +5,7 @@
 
 posts:
   - path: content/posts/whats-coming-spring-2026/index.md
-    date: 2026-03-11
+    date: 2026-03-10
   - path: content/posts/building-primal-chase-part-0/index.md
     date: 2026-03-13
   - path: content/posts/hiking-san-diego-with-gps-data/index.md
@@ -29,6 +29,6 @@ posts:
   - path: content/posts/rf-viewshed-tool.md
     date: 2026-04-21
   - path: content/posts/fantasy-f1-early-season.md
-    date: 2026-04-22
+    date: 2026-04-24
   - path: content/posts/learning-geospatial-python-in-public.md
     date: 2026-05-01
