@@ -106,27 +106,32 @@ jobs:
             git push
           fi
 
-      - name: Trigger deploy
-        id: trigger
-        if: steps.publish.outputs.count != '0'
-        uses: benc-uk/workflow-dispatch@v1
-        with:
-          workflow: deploy.yml
-
-      - name: Wait for deploy
+      - name: Trigger deploy and wait
         id: verify
         if: steps.publish.outputs.count != '0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # Give GitHub a moment to queue the run
-          sleep 5
+          # Record the latest deploy run ID before triggering
+          before_id=$(gh run list --workflow=deploy.yml --limit 1 --json databaseId --jq '.[0].databaseId')
+          echo "Latest deploy run before trigger: $before_id"
 
-          # Find the deploy run we just triggered
-          run_id=$(gh run list --workflow=deploy.yml --event=workflow_dispatch --limit 1 --json databaseId --jq '.[0].databaseId')
+          # Trigger the deploy
+          gh workflow run deploy.yml
+
+          # Poll until a new run appears (up to 30 seconds)
+          run_id=""
+          for i in $(seq 1 15); do
+            sleep 2
+            run_id=$(gh run list --workflow=deploy.yml --limit 1 --json databaseId --jq '.[0].databaseId')
+            if [ "$run_id" != "$before_id" ]; then
+              break
+            fi
+            run_id=""
+          done
 
           if [ -z "$run_id" ]; then
-            echo "::error::Could not find triggered deploy run"
+            echo "::error::Deploy run did not appear within 30 seconds"
             exit 1
           fi
 
