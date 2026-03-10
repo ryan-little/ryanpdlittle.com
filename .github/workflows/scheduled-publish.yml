@@ -19,72 +19,55 @@ jobs:
       - name: Publish scheduled posts
         id: publish
         run: |
-          today=$(date -u +%Y-%m-%d)
-
-          # Parse schedule and publish posts whose date has arrived
           python3 << 'PYTHON'
-          import os, re
+          import os, re, yaml
+          from datetime import date
 
-          today = os.popen("date -u +%Y-%m-%d").read().strip()
+          today = date.today().isoformat()
 
           with open("publish-schedule.yml") as f:
-              content = f.read()
+              schedule = yaml.safe_load(f)
 
-          lines = content.strip().split("\n")
+          posts = schedule.get("posts") or []
           published = []
           remaining = []
-          i = 0
-          while i < len(lines):
-              line = lines[i].strip()
-              if line.startswith("- path:"):
-                  path = line.split("path:")[1].strip()
-                  date = ""
-                  if i + 1 < len(lines):
-                      date_line = lines[i + 1].strip()
-                      if date_line.startswith("date:"):
-                          date = date_line.split("date:")[1].strip()
-                  if date <= today and os.path.isfile(path):
-                      # Read title from frontmatter
-                      with open(path) as f:
-                          post = f.read()
-                      title_match = re.search(r'^title:\s*["\']?(.+?)["\']?\s*$', post, re.MULTILINE)
-                      title = title_match.group(1) if title_match else path
 
-                      # Derive URL from path
-                      url_path = path.replace("content/", "/").replace("/index.md", "/").replace(".md", "/")
+          for entry in posts:
+              path, pub_date = entry["path"], str(entry["date"])
 
-                      # Publish: flip draft flag and update date
-                      post = re.sub(r"^draft: true$", "draft: false", post, flags=re.MULTILINE)
-                      post = re.sub(r"^date: .*$", f"date: {date}", post, flags=re.MULTILINE)
-                      with open(path, "w") as f:
-                          f.write(post)
-                      published.append({"title": title, "url": url_path})
-                      print(f"Published: {title}")
-                  else:
-                      remaining.append({"path": path, "date": date})
-                      if date > today:
-                          print(f"Not yet: {path} (scheduled for {date})")
-                      elif not os.path.isfile(path):
-                          print(f"Warning: {path} not found, skipping")
-                  i += 2
-              else:
-                  i += 1
+              if pub_date > today:
+                  remaining.append(entry)
+                  print(f"Not yet: {path} (scheduled for {pub_date})")
+                  continue
+
+              if not os.path.isfile(path):
+                  print(f"Warning: {path} not found, skipping")
+                  continue
+
+              with open(path) as f:
+                  post = f.read()
+
+              # Flip draft flag and set publish date
+              post = re.sub(r"^draft: true$", "draft: false", post, flags=re.MULTILINE)
+              post = re.sub(r"^date: .*$", f"date: {pub_date}", post, flags=re.MULTILINE)
+              with open(path, "w") as f:
+                  f.write(post)
+
+              # Extract title and derive URL
+              title_match = re.search(r'^title:\s*["\']?(.+?)["\']?\s*$', post, re.MULTILINE)
+              title = title_match.group(1) if title_match else path
+              url = path.replace("content/", "/").replace("/index.md", "/").replace(".md", "/")
+
+              published.append({"title": title, "url": url})
+              print(f"Published: {title}")
 
           # Rewrite schedule with only remaining posts
-          header = """# Scheduled blog post publishing
-          # Add posts with their target publish date. The publish workflow
-          # runs daily and will publish any post whose date has arrived.
-          # Once published, the entry is automatically removed from this file.
-          """.replace("          ", "")
           with open("publish-schedule.yml", "w") as f:
-              f.write(header)
-              if remaining:
-                  f.write("\nposts:\n")
-                  for p in remaining:
-                      f.write(f"  - path: {p['path']}\n")
-                      f.write(f"    date: {p['date']}\n")
-              else:
-                  f.write("\nposts: []\n")
+              f.write("# Scheduled blog post publishing\n")
+              f.write("# Add posts with their target publish date. The publish workflow\n")
+              f.write("# runs Tue & Fri at 6am PDT and will publish any post whose date has arrived.\n")
+              f.write("# Once published, the entry is automatically removed from this file.\n\n")
+              yaml.dump({"posts": remaining or []}, f, default_flow_style=False, sort_keys=False)
 
           # Write outputs for downstream steps
           gh_output = os.environ.get("GITHUB_OUTPUT", "/dev/null")
@@ -102,7 +85,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "Publish scheduled posts for $today"
+            git commit -m "Publish scheduled posts for $(date -u +%Y-%m-%d)"
             git push
           fi
 
@@ -138,6 +121,7 @@ jobs:
           echo "Waiting for deploy run $run_id..."
           gh run watch "$run_id" --exit-status
           echo "deploy_ok=true" >> "$GITHUB_OUTPUT"
+          echo "deploy_time=$(date -u '+%Y-%m-%d %H:%M UTC')" >> "$GITHUB_OUTPUT"
 
       - name: Send publish confirmation email
         if: steps.verify.outputs.deploy_ok == 'true'
@@ -156,4 +140,4 @@ jobs:
 
             ${{ steps.publish.outputs.summary }}
 
-            Published at: ${{ github.event.repository.updated_at }}
+            Deployed at: ${{ steps.verify.outputs.deploy_time }}

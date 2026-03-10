@@ -1,6 +1,6 @@
 # Scheduled blog post publishing
 # Add posts with their target publish date. The publish workflow
-# runs daily and will publish any post whose date has arrived.
+# runs Tue & Fri at 6am PDT and will publish any post whose date has arrived.
 # Once published, the entry is automatically removed from this file.
 
 posts:
