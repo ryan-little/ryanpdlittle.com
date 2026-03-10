@@ -2,8 +2,8 @@ name: Scheduled Post Publishing
 
 on:
   schedule:
-    # Run daily at 9am PT (5pm UTC)
-    - cron: '0 17 * * *'
+    # Run Tue & Fri at 6am PDT (1pm UTC) — 5am PST in winter
+    - cron: '0 13 * * 2,5'
   workflow_dispatch: # Allow manual trigger
 
 permissions:
