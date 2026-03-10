@@ -4,31 +4,29 @@
 # Once published, the entry is automatically removed from this file.
 
 posts:
-  - path: content/posts/whats-coming-spring-2026/index.md
-    date: 2026-03-10
-  - path: content/posts/building-primal-chase-part-0/index.md
-    date: 2026-03-13
-  - path: content/posts/hiking-san-diego-with-gps-data/index.md
-    date: 2026-03-17
-  - path: content/posts/building-primal-chase-part-1/index.md
-    date: 2026-03-20
-  - path: content/posts/why-i-follow-san-diego-fc/index.md
-    date: 2026-03-24
-  - path: content/posts/building-primal-chase-part-2/index.md
-    date: 2026-03-27
-  - path: content/posts/claudefit-garmin-fitness-dashboard/index.md
-    date: 2026-03-31
-  - path: content/posts/building-primal-chase-part-3/index.md
-    date: 2026-04-03
-  - path: content/posts/personal-finance-dashboard-apps-script/index.md
-    date: 2026-04-07
-  - path: content/posts/building-primal-chase-part-4/index.md
-    date: 2026-04-10
-  - path: content/posts/claude-code-as-a-dev-environment/index.md
-    date: 2026-04-14
-  - path: content/posts/rf-viewshed-tool/index.md
-    date: 2026-04-21
-  - path: content/posts/fantasy-f1-early-season/index.md
-    date: 2026-04-24
-  - path: content/posts/learning-geospatial-python-in-public/index.md
-    date: 2026-05-01
+- path: content/posts/building-primal-chase-part-0/index.md
+  date: 2026-03-13
+- path: content/posts/hiking-san-diego-with-gps-data/index.md
+  date: 2026-03-17
+- path: content/posts/building-primal-chase-part-1/index.md
+  date: 2026-03-20
+- path: content/posts/why-i-follow-san-diego-fc/index.md
+  date: 2026-03-24
+- path: content/posts/building-primal-chase-part-2/index.md
+  date: 2026-03-27
+- path: content/posts/claudefit-garmin-fitness-dashboard/index.md
+  date: 2026-03-31
+- path: content/posts/building-primal-chase-part-3/index.md
+  date: 2026-04-03
+- path: content/posts/personal-finance-dashboard-apps-script/index.md
+  date: 2026-04-07
+- path: content/posts/building-primal-chase-part-4/index.md
+  date: 2026-04-10
+- path: content/posts/claude-code-as-a-dev-environment/index.md
+  date: 2026-04-14
+- path: content/posts/rf-viewshed-tool/index.md
+  date: 2026-04-21
+- path: content/posts/fantasy-f1-early-season/index.md
+  date: 2026-04-24
+- path: content/posts/learning-geospatial-python-in-public/index.md
+  date: 2026-05-01

@@ -5,7 +5,7 @@ tags: ["meta"]
 group:
 project: "Personal"
 summary: "A roadmap for the blog this spring — a 5-part game dev series, fitness and finance dashboards, GIS tooling, and some personal posts along the way."
-draft: true
+draft: false
 ---
 
 Two weeks ago this blog had one post and no plan. Now I've got 14 posts outlined through May, a publishing schedule taped to the wall (figuratively, it's a YAML file), and a daily GitHub Action that auto-publishes drafts on their scheduled dates. I went from "I should write more" to a full content pipeline in about a week, which is either impressive planning or a sign that I'm procrastinating on the actual projects I should be building. Probably both.
