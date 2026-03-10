@@ -107,13 +107,35 @@ jobs:
           fi
 
       - name: Trigger deploy
+        id: trigger
         if: steps.publish.outputs.count != '0'
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: deploy.yml
 
-      - name: Send publish confirmation email
+      - name: Wait for deploy
+        id: verify
         if: steps.publish.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Give GitHub a moment to queue the run
+          sleep 5
+
+          # Find the deploy run we just triggered
+          run_id=$(gh run list --workflow=deploy.yml --event=workflow_dispatch --limit 1 --json databaseId --jq '.[0].databaseId')
+
+          if [ -z "$run_id" ]; then
+            echo "::error::Could not find triggered deploy run"
+            exit 1
+          fi
+
+          echo "Waiting for deploy run $run_id..."
+          gh run watch "$run_id" --exit-status
+          echo "deploy_ok=true" >> "$GITHUB_OUTPUT"
+
+      - name: Send publish confirmation email
+        if: steps.verify.outputs.deploy_ok == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
