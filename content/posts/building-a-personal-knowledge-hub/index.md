@@ -53,7 +53,7 @@ Every note has three sections: **Original Thought**, **Connections**, and **Expa
 
 Original Thought is whatever I captured in the moment, and it never gets edited by automation. Connections are auto-generated links to related notes, projects, and patterns across the hub. Expansion adds broader context and reusable takeaways. So a quick thought I jot down during a debugging session gets enriched automatically, but the original stays intact.
 
-![A real note in the hub showing the three-section format: Original Thought, Connections, and Expansion.](kh-note-format.png)
+![A real note in the hub showing the three-section format: Original Thought, Connections, and Expansion.](kh-note-format.webp)
 
 ### Search
 
@@ -63,7 +63,7 @@ This matters because my machine has 8GB of RAM. I tried vector search first, the
 
 Since qmd runs as an MCP server, Claude Code can search my whole knowledge base at the start of any conversation. No copy-pasting, no re-explaining project architecture. The AI starts with context.
 
-![Raw qmd search results in the terminal for "project architecture design decisions."](kh-qmd-search.png)
+![Raw qmd search results in the terminal for "project architecture design decisions."](kh-qmd-search.webp)
 
 Each result in that JSON looks like this:
 

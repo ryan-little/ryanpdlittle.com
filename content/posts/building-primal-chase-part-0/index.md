@@ -38,7 +38,7 @@ The taglines came through iteration: *"Outrun Their Speed, Outlast Their Stride"
 
 On January 12th I started writing a planning document, not a design doc for a specific implementation but a full exploration of what the game could be, and it went through 15 revisions across January 12-17 before I was happy with it.
 
-![The planning doc in its full ASCII art glory, with the game vision and mechanics laid out in markdown](planning-doc-header.png)
+![The planning doc in its full ASCII art glory, with the game vision and mechanics laid out in markdown](planning-doc-header.webp)
 
 The original vision was ambitious: a 2D top-down, sprite-based game with tile-based movement like Civilization, procedurally generated worlds with biomes like mountains, plains, jungle, and desert, each with different movement penalties and animal spawn rates. The player would navigate a map and make spatial decisions about which direction to flee.
 
@@ -52,7 +52,7 @@ I wanted to know if the fundamental tension of "every action that helps you surv
 
 The planning doc defined four stats and five actions, and then I worked through the math by hand to validate the balance.
 
-![Hand-calculated balance math from the planning doc, working through push and trot scenarios day by day](planning-doc-balance-math.png)
+![Hand-calculated balance math from the planning doc, working through push and trot scenarios day by day](planning-doc-balance-math.webp)
 
 Four stats: **heat** (builds with exertion, kills at 100%), **stamina** (drains with movement, kills at 0%), **thirst** (builds over time, kills at 100%), and **hunger** (constant drain, kills at 100%). Five actions: **push** (double distance, heavy cost), **trot** (normal distance, moderate cost), **rest** (no distance, recover), **drink** (reset thirst, lose distance), and **eat** (reset hunger, lose distance).
 
