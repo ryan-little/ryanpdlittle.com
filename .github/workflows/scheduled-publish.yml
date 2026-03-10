@@ -105,6 +105,12 @@ jobs:
             git push
           fi
 
+      - name: Trigger deploy
+        if: steps.publish.outputs.count != '0'
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: deploy.yml
+
       - name: Send publish confirmation email
         if: steps.publish.outputs.count != '0'
         uses: dawidd6/action-send-mail@v3
