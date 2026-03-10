@@ -4,6 +4,8 @@
 # Once published, the entry is automatically removed from this file.
 
 posts:
+  - path: content/posts/whats-coming-spring-2026/index.md
+    date: 2026-03-10
   - path: content/posts/building-primal-chase-part-0/index.md
     date: 2026-03-13
   - path: content/posts/hiking-san-diego-with-gps-data/index.md
