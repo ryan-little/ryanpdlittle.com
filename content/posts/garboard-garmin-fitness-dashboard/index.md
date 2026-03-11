@@ -1,9 +1,9 @@
 ---
-title: "ClaudeFit — A Fitness Dashboard That Outgrew Its AI"
+title: "Garboard — A Fitness Dashboard That Outgrew Its AI"
 date: 2026-03-31
 tags: ["python", "ai", "fitness", "garmin", "fastapi"]
 group: "projects"
-project: "ClaudeFit"
+project: "Garboard"
 summary: "I built a fitness dashboard with AI agents as the backend, then stripped them out. What survived: Garmin integration, training load math, and a daily summary trick that reconstructs untracked activity from passive watch data."
 draft: true
 ---
