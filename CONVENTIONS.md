@@ -74,7 +74,9 @@ Avoid one-off tags per post. Tags should work as meaningful categories across mu
 ## Images
 
 - Store in the post's bundle directory (not `static/images/`) for new posts
-- Under 200KB per image — compress PNGs, use WebP where possible
+- **Always convert to WebP** — use `cwebp -q 80` for photos, `-q 90` for screenshots/text
+- **Resize to max 1600px wide** before converting — full-resolution phone photos are way too large
+- Target under 300KB per image after conversion. If still over, lower quality or resize further.
 - Never screenshot code
 - Alt text under 125 characters, describes purpose not appearance
 - See knowledge hub `writing/media-and-code.md` for full media guidelines

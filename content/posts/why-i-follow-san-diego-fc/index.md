@@ -12,7 +12,7 @@ I always told myself that if San Diego ever got a professional soccer team, I'd 
 
 I've been playing soccer since I was three years old, my dad played growing up and passed it down to me, and I spent over ten years in club before winning two CIF championships with my high school team. Soccer has been the constant in my life for as long as I can remember. I've followed Liverpool since I was a kid, watched every World Cup since South Africa in 2010, and always felt like something was missing without a local team to actually show up for.
 
-![My two CIF-SDS Championship patches from 2016 and 2018, framed on my wall](cif-championships-cropped.jpg)
+![My two CIF-SDS Championship patches from 2016 and 2018, framed on my wall](cif-championships-cropped.webp)
 
 So when San Diego FC became real, I didn't hesitate.
 
@@ -20,7 +20,7 @@ So when San Diego FC became real, I didn't hesitate.
 
 I was at the Rady Shell with a couple hundred other people for the Chucky Lozano announcement, and it was a full spectacle, fanfare and banners and the kind of moment that made it real, that San Diego was actually getting a legitimate MLS club. Lozano's situation didn't end up working out after the locker room issues last season, which was disappointing, but at the time it felt like proof that the club was serious about competing. I had three season tickets locked in before the team had even played a game, which meant my name went up on the founding members wall at Snapdragon Stadium, something that still feels surreal when I walk past it on the way in.
 
-![Ryan Little & Family on the founding members wall at Snapdragon Stadium](founding-members-wall.jpg)
+![Ryan Little & Family on the founding members wall at Snapdragon Stadium](founding-members-wall.webp)
 
 We were locked in for the full season and hoping the team would be good, but it was impossible to know what we actually had until the games started.
 
@@ -28,7 +28,7 @@ We were locked in for the full season and hoping the team would be good, but it 
 
 Every home game looks roughly the same. I park in Mission Valley and take the trolley into Snapdragon wearing a custom home jersey with my last name on the back and the number 10. They gave away a hat at the first game and I pinned my founding member pin to it, and now it's what I wear to every match and every bar outing where I'm watching a game. I grab pizza before the match, get to the seats about twenty minutes before kickoff, and settle into row 9, which we moved up to this year from row 12 at the same cost. I'm part of the supporter's union but not in a specific group, just a fan with good seats and opinions about our backline.
 
-![Snapdragon Stadium on a match night, view from the lower bowl](snapdragon-night.jpg)
+![Snapdragon Stadium on a match night, view from the lower bowl](snapdragon-night.webp)
 
 I usually go with my grandfather and my mom, making it a family thing, and sometimes my friends come along too. Having something that consistently brings us together on weekends, that we all actually look forward to, is probably the part of this I value the most. I've missed fewer than five home matches total since the club started, and even when I can't be there I watch every game, including during my trip to Japan last year where I was streaming at odd hours to keep up with results. I love our style of play even if I wish they wouldn't pass around the back so much under pressure.
 
@@ -44,7 +44,7 @@ The Padres have been a lot more fun recently, and I still make it to a couple ga
 
 That's what makes SDFC feel different. Making the playoffs in our first season was a statement, going to the Western Conference Final in year one was something I genuinely didn't think was possible, and watching Anders Dreyer put on MVP-caliber performances week after week gave the whole city someone to rally around. The same LA rivalry that drives Padres-Dodgers exists in the MLS too, and having a team that can go toe to toe with the Galaxy and LAFC gives San Diego another reason to care.
 
-![Frontera SD tifo display at Snapdragon, with banners reading "We Stay, We Stand, We All Belong" and "No Borders Within Our Hearts"](frontera-tifo.jpg)
+![Frontera SD tifo display at Snapdragon, with banners reading "We Stay, We Stand, We All Belong" and "No Borders Within Our Hearts"](frontera-tifo.webp)
 
 The club still has things to figure out. Most games are well attended but there are sections that sit empty, and a lot of that comes down to ticket pricing that doesn't make sense when better seats are available for less elsewhere in the stadium. Snapdragon's design doesn't help either, with so many seats designated as club sections that sit largely empty on regular match nights, cutting down the available inventory for everyone else. I think it'll even out as the team becomes a mainstay and the initial pricing settles, but right now the club is trying to capitalize on the excitement and it shows.
 
