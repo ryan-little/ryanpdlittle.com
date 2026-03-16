@@ -1,5 +1,5 @@
 ---
-title: "Building Primal Chase, Part 1: The Prototype (V1.1–V1.3)"
+title: "Building Primal Chase — Part 1: The Prototype (V1.1–V1.3)"
 date: 2026-03-07
 tags: ["primal-chase", "game-dev", "javascript", "dev-log"]
 group: "projects"
@@ -38,7 +38,7 @@ That `compatible` array is what keeps the generator from feeling random, because
 
 Pressures were the most satisfying piece to wire up because they're purely condition-based. `overheating` only fires when heat is above 60%, `hunters_gaining` triggers within 10 miles. As your situation gets worse the encounters start reflecting it, and as the hunters close in the text shifts from exploration to desperation, all without a single line of narrative scripting.
 
-<!-- TODO: Screenshot of V1.1 gameplay -->
+![V1.1 gameplay on Day 1, showing the four stat bars, hunter distance, a generated encounter in tall grass, and the Push and Trot action buttons](v11-gameplay.webp)
 
 ## V1.2: The Visual Refresh (and the 17-Minute Background)
 
@@ -46,7 +46,7 @@ With the game playable I went straight to the visual side. V1.2 was a full-width
 
 Then I tried a layered CSS parallax landscape with sky gradients, mountain silhouettes, acacia trees, and swaying foreground grass with day/night transitions. 235 lines of CSS and 101 lines of HTML for the parallax layers, and it looked like a CSS demo, not a game. The savannah felt flat and artificial without proper generated or hand-drawn assets, so about 17 minutes after I finished writing it I reverted the whole thing, kept the layout improvements and typewriter, and moved on. The real visual overhaul would come in V1.9 with pixel art and atmospheric effects, but a simple texture was more honest than an impressive animation that undermined the tone.
 
-<!-- TODO: Screenshot of V1.2 title screen -->
+![V1.2 title screen with the redesigned horizontal button layout, pixel art cheetah, and the original texture background after the landscape revert](v12-title-screen.webp)
 
 ## V1.3: Giving It Personality
 
@@ -58,6 +58,6 @@ I also wrote fixed tutorial encounters for Day 1, "The Ridge" for the first day 
 
 The typewriter expanded too, now typing situation text phase by phase with action buttons locked until it finished. I wanted the player to *read* the encounter before reacting, not just scan for the best button, and locking the buttons until the text completes was a deliberate friction choice because it's a text game and if you skip the text you're skipping the game.
 
-<!-- TODO: Screenshot of V1.3 options screen and phase transition -->
+![V1.3 options screen with difficulty selection, Show Opening toggle, and Typewriter Effect toggle](v13-options-screen.webp)
 
 By the end of February 13th the game was playable and had a voice, but it wasn't *shippable*. The typewriter had reflow bugs that would haunt me into V1.4, the share image didn't work on HTTP, and the how-to-play was a wall of text, so there was plenty to fix before I could put it in front of anyone, which is what [Part 2](/posts/building-primal-chase-part-2) is about.

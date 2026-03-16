@@ -1,5 +1,5 @@
 ---
-title: "Building Primal Chase, Part 3: Systems Thinking (V1.7–V1.8)"
+title: "Building Primal Chase — Part 3: Systems Thinking (V1.7–V1.8)"
 date: 2026-03-07
 tags: ["primal-chase", "game-dev", "javascript", "dev-log", "simulation"]
 group: "projects"
