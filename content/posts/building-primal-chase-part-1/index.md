@@ -4,7 +4,7 @@ date: 2026-03-07
 tags: ["primal-chase", "game-dev", "javascript", "dev-log"]
 group: "projects"
 project: "Primal Chase"
-summary: "How a browser survival game went from design doc to playable prototype in a single afternoon. The persistence hunting concept, a 9,000-combination encounter system, and a landscape background that lasted 17 minutes."
+summary: "How a browser survival game went from design doc to playable prototype in a single afternoon. The encounter system that generates 9,000 combinations, a landscape background that lasted 17 minutes, and the small choices that gave the game its voice."
 draft: true
 ---
 
