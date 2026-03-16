@@ -10,8 +10,8 @@ Last updated: 2026-03-16
 |------|------|--------|
 | Mar 17 | Hiking SD with GPS Data | Ready (scheduled) |
 | Mar 20 | Primal Chase Part 1 | Ready (reviewed, screenshots added) |
-| Mar 24 | Why I Follow San Diego FC | Needs writing |
-| Mar 27 | Primal Chase Part 2 | Needs review + screenshots |
+| Mar 24 | All In on San Diego FC | Ready (written, 4 webp photos) |
+| Mar 27 | Primal Chase Part 2 | Needs 2 screenshots (share card + analytics dashboard), convert to page bundle |
 | Mar 31 | Garboard: Garmin Fitness Dashboard | Needs writing (stub exists) |
 | Apr 3 | Primal Chase Part 3 | Needs review + screenshots |
 | Apr 7 | Personal Finance Dashboard | Needs writing (stub exists) |
@@ -30,4 +30,4 @@ Last updated: 2026-03-16
 
 ## Next Action
 
-Write "Why I Follow San Diego FC" before Mar 24. Review Primal Chase Part 2 + add screenshots before Mar 27.
+Primal Chase Part 2: grab 2 screenshots (share card from playing a game, analytics dashboard at primalchase.com/stats), convert to page bundle, compress to webp. Due Mar 27. Then write Garboard/Garmin post (Mar 31).
