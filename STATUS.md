@@ -1,16 +1,15 @@
 # Status
 
-**Active** — Tue/Fri publishing cadence, 12 posts scheduled through May 2026.
+**Active** — Tue/Fri publishing cadence, 11 posts scheduled through May 2026.
 
-Last updated: 2026-03-12
+Last updated: 2026-03-16
 
 ## Current Schedule
 
 | Date | Post | Status |
 |------|------|--------|
-| Mar 13 | Primal Chase Part 0 | Ready (scheduled) |
 | Mar 17 | Hiking SD with GPS Data | Ready (scheduled) |
-| Mar 20 | Primal Chase Part 1 | Needs review + screenshots |
+| Mar 20 | Primal Chase Part 1 | Ready (reviewed, screenshots added) |
 | Mar 24 | Why I Follow San Diego FC | Needs writing |
 | Mar 27 | Primal Chase Part 2 | Needs review + screenshots |
 | Mar 31 | Garboard: Garmin Fitness Dashboard | Needs writing (stub exists) |
@@ -27,7 +26,8 @@ Last updated: 2026-03-12
 - **Welcome** — 2026-02-22
 - **Building a Personal Knowledge Hub** — 2026-03-06
 - **What's Coming — Spring 2026** — 2026-03-10
+- **Building Primal Chase — Part 0: The Idea** — 2026-03-13
 
 ## Next Action
 
-Primal Chase Part 1 — review draft and add screenshots before Mar 20.
+Write "Why I Follow San Diego FC" before Mar 24. Review Primal Chase Part 2 + add screenshots before Mar 27.
