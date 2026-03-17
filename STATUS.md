@@ -11,7 +11,7 @@ Last updated: 2026-03-16
 | Mar 17 | Hiking SD with GPS Data | Ready (scheduled) |
 | Mar 20 | Primal Chase Part 1 | Ready (reviewed, screenshots added) |
 | Mar 24 | All In on San Diego FC | Ready (written, 4 webp photos) |
-| Mar 27 | Primal Chase Part 2 | Reviewed — needs 2 screenshots (share card + analytics dashboard) |
+| Mar 27 | Primal Chase Part 2 | Ready (reviewed, screenshots added) |
 | Mar 31 | Garboard: Garmin Fitness Dashboard | Needs writing (stub exists) |
 | Apr 3 | Primal Chase Part 3 | Needs review + screenshots |
 | Apr 7 | Personal Finance Dashboard | Needs writing (stub exists) |
@@ -30,4 +30,4 @@ Last updated: 2026-03-16
 
 ## Next Action
 
-Primal Chase Part 2: text finalized, grab 2 screenshots (V1.4 share card at befd441, analytics dashboard at afbcca9), compress to webp. Due Mar 27. Then write Garboard/Garmin post (Mar 31).
+Write Garboard/Garmin post (Mar 31). Then review Primal Chase Part 3 + add screenshots (Apr 3).

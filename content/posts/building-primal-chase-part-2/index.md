@@ -43,7 +43,7 @@ V1.3 showed hunter distance as raw numbers in a sidebar, which felt like an alph
 
 I'd seen games like Wordle use share cards as a fun way to show results, and thought it could work as a decent marketing tool too. The Canvas API can generate images for exactly this, but loading an external image onto a canvas taints it, and a tainted canvas can't be exported or copied to the clipboard. During local development on `file://` every image taints the canvas, and even in production cross-origin issues can cause the same thing, so the first version skipped images entirely and built the share card from pure canvas drawing, gradients and text only. For clipboard copying I used the Clipboard API on HTTPS with a download fallback for HTTP. It was functional but didn't look great, and I'd come back to redesign it in V1.6.
 
-<!-- TODO: Screenshot of V1.4 share card -->
+![V1.4 share card showing game results, achievements, and tagline](share-card.webp)
 
 ## V1.5: Putting My Name On It
 
@@ -51,7 +51,7 @@ The game had reached a point where I was proud enough to put my name on it, so I
 
 I also built an analytics dashboard. I'd been running simulations to tune balance, thousands of games across different strategies, and the results were JSON files and ASCII tables. I built a visual dashboard at [primalchase.com/stats](https://primalchase.com/stats/) mostly as an easier way to digest the simulation data, and polished it up to see if I could pull trend data from it visually, survival distributions, death cause breakdowns, encounter frequency charts. The frequency analysis ended up revealing 8 opportunity IDs that were referenced in terrain compatibility lists but never defined, invisible holes in the content that the game was silently skipping over, so I filled them in.
 
-<!-- TODO: Screenshot of analytics dashboard -->
+![Primal Chase analytics dashboard showing strategy comparison, survival curves, and encounter frequency](analytics-dashboard.webp)
 
 ## V1.6: Cleanup and Polish
 
