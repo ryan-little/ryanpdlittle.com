@@ -2,7 +2,7 @@
 
 **Active** — Tue/Fri publishing cadence, 11 posts scheduled through May 2026.
 
-Last updated: 2026-03-16
+Last updated: 2026-03-17
 
 ## Current Schedule
 
@@ -27,6 +27,13 @@ Last updated: 2026-03-16
 - **Building a Personal Knowledge Hub** — 2026-03-06
 - **What's Coming — Spring 2026** — 2026-03-10
 - **Building Primal Chase — Part 0: The Idea** — 2026-03-13
+
+## Recent Changes
+
+- Mobile layout: posts appear first, sidebar (categories/tags) below — was reversed
+- Search bar separated from sidebar, always visible at top on mobile
+- Post categories reorganized: "Personal" broken into San Diego, F1, Meta; Claude Code as own project; removed Three Claudes test post
+- Fixed duplicate "Personal" showing in both Projects and Personal sidebar sections
 
 ## Next Action
 
