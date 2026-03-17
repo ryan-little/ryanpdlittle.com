@@ -3,7 +3,7 @@ title: "Claude Code as a Development Environment"
 date: 2026-04-14
 tags: ["ai", "tooling", "productivity", "claude"]
 group: "projects"
-project: "Personal"
+project: "Claude Code"
 summary: "How I use Claude Code with custom skills, MCP servers, a knowledge hub, and subagents to build software. Not a review — a workflow walkthrough."
 draft: true
 ---

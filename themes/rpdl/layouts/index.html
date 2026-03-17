@@ -1,5 +1,9 @@
 {{ define "main" }}
 <div class="home-layout">
+  <div class="home-search">
+    <input type="text" id="search" class="search-input" placeholder="Search posts...">
+  </div>
+
   <div class="post-list" id="post-list">
     {{ range where .Site.RegularPages "Section" "posts" }}
     <article class="post-card" data-href="{{ .Permalink }}" data-title="{{ .Title | lower }}" data-summary="{{ with .Params.summary }}{{ . | lower }}{{ end }}" data-tags="{{ with .Params.tags }}{{ delimit . " " }}{{ end }}" data-project="{{ with .Params.project }}{{ . | lower }}{{ end }}">
@@ -18,25 +22,6 @@
   </div>
 
   <aside class="sidebar">
-    <div class="sidebar-section">
-      <input type="text" id="search" class="search-input" placeholder="Search posts...">
-    </div>
-
-    {{/* Collect projects and personal items from all posts */}}
-    {{ $projects := dict }}
-    {{ $personal := dict }}
-    {{ range where .Site.RegularPages "Section" "posts" }}
-      {{ with .Params.project }}
-        {{ $group := $.Params.group | default "projects" }}
-        {{ $group = (index $.Page.Params "group") | default "projects" }}
-        {{/* Re-read from actual page */}}
-        {{ $name := . }}
-        {{ $count := 1 }}
-        {{ if eq (index ($.Page.Params) "group") "personal" }}
-        {{ end }}
-      {{ end }}
-    {{ end }}
-
     {{/* Build project tree by iterating all posts */}}
     {{ $projectMap := slice }}
     {{ $personalMap := slice }}
@@ -137,6 +122,9 @@ document.querySelectorAll('.project-link').forEach(function(link) {
 
     // Clear search
     document.getElementById('search').value = '';
+
+    // Scroll to posts so filtered results are visible (especially on mobile)
+    document.getElementById('post-list').scrollIntoView({ behavior: 'smooth' });
   });
 });
 

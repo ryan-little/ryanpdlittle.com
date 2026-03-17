@@ -201,8 +201,24 @@ main {
 .home-layout {
   display: grid;
   grid-template-columns: 1fr 240px;
-  gap: 4rem;
+  grid-template-rows: auto 1fr;
+  gap: 1.25rem 4rem;
   align-items: start;
+}
+
+.home-search {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.post-list {
+  grid-column: 1;
+  grid-row: 1 / -1;
+}
+
+.sidebar {
+  grid-column: 2;
+  grid-row: 2;
 }
 
 /* === Post List === */
@@ -566,11 +582,23 @@ footer {
 @media (max-width: 768px) {
   .home-layout {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-rows: auto;
+    gap: 1.25rem;
+  }
+
+  .home-search {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .post-list {
+    grid-column: 1;
+    grid-row: 2;
   }
 
   .sidebar {
-    order: -1;
+    grid-column: 1;
+    grid-row: 3;
     position: static;
   }
 }

@@ -3,7 +3,7 @@ title: "All In on San Diego FC"
 date: 2026-03-24
 tags: ["soccer", "san-diego", "sdfc"]
 group: "personal"
-project: "Personal"
+project: "San Diego"
 summary: "I've been playing soccer since I was three and following it my whole life. San Diego finally has a top-flight team and I've been there for nearly every minute of it."
 draft: true
 ---

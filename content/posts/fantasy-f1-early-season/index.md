@@ -3,7 +3,7 @@ title: "Fantasy F1 — Early Season Lessons"
 date: 2026-04-24
 tags: ["f1", "fantasy", "sports"]
 group: "personal"
-project: "Personal"
+project: "F1"
 summary: "A few races into the 2026 F1 season, here's what's working in my fantasy strategy and what I got completely wrong."
 draft: true
 ---
