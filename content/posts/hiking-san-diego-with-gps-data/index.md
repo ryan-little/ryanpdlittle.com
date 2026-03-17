@@ -5,7 +5,7 @@ tags: ["hiking", "san-diego", "garmin", "fitness"]
 group: "personal"
 project: "Personal"
 summary: "Interactive GPS maps from my Garmin — 19 Cowles overlays, El Cajon's 3,800-foot grind, a Camp Pendleton memorial hike, and the oldest tree on Earth."
-draft: true
+draft: false
 ---
 
 {{< rawhtml >}}
