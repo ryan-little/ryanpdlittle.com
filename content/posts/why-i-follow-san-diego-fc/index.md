@@ -5,7 +5,7 @@ tags: ["soccer", "san-diego", "sdfc"]
 group: "personal"
 project: "San Diego"
 summary: "I've been playing soccer since I was three and following it my whole life. San Diego finally has a top-flight team and I've been there for nearly every minute of it."
-draft: true
+draft: false
 ---
 
 I always told myself that if San Diego ever got a professional soccer team, I'd get season tickets. Not think about it, not check prices, just get them.
