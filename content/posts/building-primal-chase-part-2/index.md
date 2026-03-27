@@ -1,11 +1,11 @@
 ---
 title: "Building Primal Chase — Part 2: Making It Real (V1.4–V1.6)"
-date: 2026-03-07
+date: 2026-03-27
 tags: ["primal-chase", "game-dev", "javascript", "dev-log"]
 group: "projects"
 project: "Primal Chase"
 summary: "The typewriter reflow bug that haunted three versions, a share card that couldn't use images, and the unsexy cleanup work that made Primal Chase shippable."
-draft: true
+draft: false
 ---
 
 *This is Part 2 of a 5-part series on building [Primal Chase](https://primalchase.com), a browser-based survival game about being hunted by persistence hunters. [Part 0](/posts/building-primal-chase-part-0) covers the idea. [Part 1](/posts/building-primal-chase-part-1) covers the prototype. [Part 3](/posts/building-primal-chase-part-3) covers systems and balance. [Part 4](/posts/building-primal-chase-part-4) covers visual identity.*
