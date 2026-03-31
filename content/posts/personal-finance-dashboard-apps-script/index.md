@@ -1,11 +1,11 @@
 ---
 title: "A Personal Finance Dashboard on Pure Google Apps Script"
-date: 2026-04-07
+date: 2026-03-31
 tags: ["finance", "google-apps-script", "automation"]
 group: "projects"
 project: "Financial Dashboard"
 summary: "My entire financial dashboard runs on a Google Sheet with no server, no database, and no cron. SimpleFIN feeds the data, Apps Script does the work, and it's better than Mint ever was."
-draft: true
+draft: false
 ---
 
 I check my bank apps too much. SoFi in the morning, Amex after lunch, Fidelity before bed, and sometimes all three again because I forgot what I saw an hour ago. None of them talk to each other, none of them show me the full picture, and the combined time I spend context-switching between them is genuinely embarrassing. I wanted one place to look, once, and then close.
