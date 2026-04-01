@@ -1,8 +1,8 @@
 # Status
 
-**Active** — Tue/Fri publishing cadence, 10 posts scheduled through May 2026.
+**Active** — Tue/Fri publishing cadence, 11 posts scheduled through May 2026.
 
-Last updated: 2026-03-31
+Last updated: 2026-04-01
 
 ## Current Schedule
 
@@ -11,7 +11,7 @@ Fridays: series/technical. Tuesdays: one-offs/personal/non-technical.
 | Date | Day | Post | Status |
 |------|-----|------|--------|
 | Apr 3 | Fri | Primal Chase Part 3 | Needs review + screenshots |
-| Apr 7 | Tue | Open — Zion post? | Unwritten |
+| Apr 7 | Tue | Zion in Three Trails | Written, reviewed, photos added |
 | Apr 10 | Fri | Primal Chase Part 4 | Needs review + screenshots |
 | Apr 14 | Tue | Claude Code as a Dev Environment | Needs writing (stub exists) |
 | Apr 17 | Fri | Claude-Fit (fitness series Pt 1) | Written, needs review + screenshots |
@@ -35,12 +35,13 @@ Fridays: series/technical. Tuesdays: one-offs/personal/non-technical.
 
 ## Recent Changes
 
+- Built Zion trip post: 3 GPS trail maps (Leaflet/Chart.js), continuous 6-day step timeline from Garmin epoch API data, sleep bands, activity labels, 3 photos. Content reviewed.
+- Added 12 trip report ideas to blog ideas list (Japan, Spain/Portugal, Southwest mega-trip, three trees, etc.)
 - Added 3-part fitness series (Claude-Fit → Garboard → Basecamp), all written and scheduled on Fridays
 - Deleted old garboard stub (content incorporated into new Part 2)
 - Added Tue/Fri day-type rule to CONVENTIONS.md
 - Reorganized blog ideas list: 30 new ideas across 4 categories
-- Reordered schedule: Primal Chase finishes first, then fitness series
 
 ## Next Action
 
-Review Primal Chase Part 3 + add screenshots (Apr 3). Decide on Zion post for Apr 7 Tuesday slot. Write Claude Code as Dev Environment (Apr 14).
+Review Primal Chase Part 3 + add screenshots (Apr 3). Write Claude Code as Dev Environment (Apr 14).
