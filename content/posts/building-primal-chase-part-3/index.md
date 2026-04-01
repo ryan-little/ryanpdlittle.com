@@ -12,19 +12,11 @@ draft: true
 
 ---
 
-## When the Game Needed Depth
-
-V1.4 through V1.6 was about polish, about making the game work well and feel finished. V1.7 and V1.8 were about making it work *deeply*, and three systems defined this stretch: difficulty modes, the monologue engine, and simulation-driven balance tuning. Each one started simple and got complicated for good reasons.
-
 ## V1.7: Difficulty Without Duplication
 
-### Why Three Configs Is a Trap
+By this point I'd built a simulation engine that could play thousands of games automatically to test balance across different strategies. CONFIG was the single source of truth, and the game had only ever had one difficulty. Adding Easy and Hard felt like the natural next step, not because anyone was asking for them but because the infrastructure from [Part 0](/posts/building-primal-chase-part-0) was already there and I wanted reference points to help range Normal to the right level. In a game with no win condition every difficulty is some degree of hard, so the real question was how long a smart player should survive before the hunters close the gap.
 
-Adding Easy/Normal/Hard modes to most games means maintaining three parallel sets of balance values, where you change a number for Normal and then have to decide if Easy and Hard need updating too. Multiply that by every tunable in the game and you get a maintenance nightmare.
-
-### Snapshot and Override
-
-The config-driven philosophy from [Part 0](/posts/building-primal-chase-part-0) paid off here. Instead of three complete configs, difficulty modes are *overrides*, sparse objects that only specify what's different from Normal.
+The obvious approach is three complete configs, one per difficulty, but that means every time you change a number for Normal you have to decide whether Easy and Hard need updating too. Multiply that by every tunable in the game and it's a maintenance nightmare. Instead, difficulty modes are *overrides*, sparse objects that only specify what's different from Normal.
 
 ```javascript
 difficulty: {
@@ -67,13 +59,15 @@ applyDifficulty(level) {
 
 The deep-merge walks the override object and only replaces values that are explicitly specified, so if I add a new CONFIG property like a weather intensity tunable, it automatically works for all difficulties without touching the difficulty configs.
 
-This pattern is common in commercial game development but I've rarely seen it in solo projects. It's one of those decisions that costs an hour upfront and saves dozens of hours later.
+It's one of those decisions that costs an hour upfront and saves dozens of hours later.
 
 ## The Monologue Engine
 
 ### From Generic to Reactive
 
-The internal monologue system started in V1.1 as mood-based flavor text, the animal's thoughts between decisions that escalate from confident to desperate as the game progresses. It worked, but the fragments felt disconnected from what was actually happening. You'd read about a dry riverbed and the monologue might say something about running, which is fine but not *interesting*.
+The internal monologue system started in V1.1 as mood-based flavor text, the animal's thoughts between decisions that escalate from confident to desperate as the game progresses. I didn't cover it in [Part 1](/posts/building-primal-chase-part-1) because at that point it was just a handful of mood-matched lines that played between encounters. The problem was that the fragments kept getting things wrong. You'd be standing at a riverbed and the monologue would say something about running, or find water while dying of thirst and get a generic reflection on the hunters. Friends playtesting the game told me it was too word-heavy, and if people are skipping your text in a text game you have a problem.
+
+I also had a longer-term reason to get this right. If the monologue could accurately describe the current situation, those descriptions could eventually drive image generation, where a model takes the text output and produces a visual that matches what's happening. That meant the fragments couldn't just be mood-appropriate, they needed to understand what the player was actually experiencing.
 
 V1.7 added terrain and pressure awareness, where the game now tags each fragment with triggers that match against the current game state:
 
@@ -122,7 +116,7 @@ if (gameState.currentEncounter?.pressure?.id) {
 
 Fragment selection prioritizes triggered fragments over generic ones, and a recent buffer prevents repeats, so the monologue actually reacts to what's happening. When you're in rocky terrain with an injury, the animal thinks about the rocks and the pain. When you're near water with high thirst, it thinks about the water and the cost of stopping.
 
-By V1.8 the system had **387 tagged fragments**, up from around 100 in V1.1. The game went from "here's a mood-appropriate thought" to "here's a thought that reflects exactly what you're experiencing right now," and even though it's still just text selection, the whole thing feels alive in a way it didn't before.
+By V1.8 the system had 387 tagged fragments, up from around 100 in V1.1. It's still just text selection from a tagged pool, but the fragments land because they match what's actually on screen, and that accuracy is what makes the eventual jump to generated images possible.
 
 ## V1.8: Balance Through Simulation
 
@@ -130,7 +124,7 @@ By V1.8 the system had **387 tagged fragments**, up from around 100 in V1.1. The
 
 Primal Chase is intentionally unwinnable because the hunters escalate every day and death is inevitable, but "unwinnable" still needs to feel fair. If the GTO strategy dies on day 5 the game is too hard, and if a random button-masher survives 15 days the balance is too loose.
 
-The simulation engine in `test/simulate.js` plays thousands of games automatically using different strategies, where each strategy models a type of player:
+The simulation engine in `test/simulate.js` plays thousands of games automatically using different strategies. The earlier versions were too programmatic though, optimizing in ways a human never would, so V1.8 replaced them with models that approximate how real players actually behave:
 
 **Random** picks actions uniformly at random as the baseline.
 
@@ -172,17 +166,19 @@ const survivalScore = Math.pow(
 
 ### Five Rounds of Tuning
 
-V1.8 ran five simulation rounds, 15,000 games total, to get the balance right. After each round I'd adjust CONFIG values and re-simulate. The targets:
+V1.8 ran five simulation rounds on Normal difficulty, 15,000 games total, to get the balance right. After each round I'd adjust CONFIG values and re-simulate:
 
-| Strategy | Target | Actual (V1.8) |
-|----------|--------|---------------|
-| GTO | ~10 days | ~10 days |
-| Smart | ~9 days | ~9 days |
-| Intermediate | ~8 days | ~8 days |
-| Newbie | ~5 days | ~5 days |
-| Random | ~6 days | ~6 days |
+| Strategy | Target Avg | Actual Avg | Best Run |
+|----------|-----------|------------|----------|
+| GTO | ~10 days | ~10 days | 26 days |
+| Smart | ~9 days | ~9 days | 16 days |
+| Intermediate | ~8 days | ~8 days | 18 days |
+| Newbie | ~5 days | ~5 days | 13 days |
+| Random | ~6 days | ~6 days | 13 days |
 
-The key insight from simulation was that **dehydration and being caught were the dominant death causes**, which is exactly right thematically. The hunters are the primary threat and water scarcity is the secondary constraint that forces risky decisions, and if starvation or exhaustion were dominant the balance would feel wrong because those aren't what persistence hunting is about.
+The averages look close but the best-run column is where GTO separates. Random and Newbie both cap around day 13 and GTO pushed to day 26 because the expected-value optimizer avoids the compounding stat mistakes that kill other strategies before they ever get a chance at a long run. Intermediate outlasting Smart in the best-run column is real too, not just sample noise. Intermediate pushes more aggressively and doesn't pull back to a trot when the hunters are far, so it either dies early from stat neglect or threads the needle on a long run when encounters cooperate with food and water at the right moments. Smart's conservatism keeps it alive more consistently but caps the ceiling, it never builds the distance buffer that a high-variance strategy occasionally stumbles into.
+
+The key insight from simulation was that dehydration and being caught were the dominant death causes, which is exactly right thematically. The hunters are the primary threat and water scarcity is the secondary constraint that forces risky decisions, and if starvation or exhaustion were dominant the balance would feel wrong because those aren't what persistence hunting is about.
 
 Specific balance changes from the simulation data:
 - Night heat drain reduced from -10 to -8 (nights were too forgiving)
@@ -197,10 +193,8 @@ Each of these changes came from the data, not intuition. Without the simulation 
 
 V1.8 also added 102 new monologue fragments, 11 late-game signature encounters gated behind day 8+, and 11 night-specific opportunity variants. The late-game signatures matter because long runs were starting to feel repetitive, where the generator kept producing novel combinations but without scripted peaks in the late game day 12 didn't feel different from day 6. The signatures give exceptional runs their own narrative payoff.
 
-### Accessibility as Baseline
-
-V1.8 added focus-visible outlines, `prefers-reduced-motion` support, ARIA labels, and a skip link, all invisible to sighted mouse-and-keyboard users. These aren't features to promote, they're baseline expectations for a web game. I mention them because they're easy to forget in solo projects and worth doing early rather than retrofitting.
+Mobile was the other priority since I see it as the main way most people would play a browser game like this, and the experience was rough, broken hover states, small tap targets, layout problems at narrow widths. Accessibility basics went in too, focus-visible outlines and ARIA labels, though the `prefers-reduced-motion` support ended up hiding some of the phase transition animations from earlier versions, which is what happens when you bolt on accessibility after the visual work is done.
 
 ## Where V1.8 Left Things
 
-By the end of V1.8 the game had three difficulty modes built on config overrides, 387 context-aware monologue fragments, simulation-validated balance across five player archetypes, late-game content that rewards long runs, and baseline accessibility. Mechanically, Primal Chase was complete, but it still *looked* like a text game with colored bars, and the screen didn't communicate the desperation that the monologue was working so hard to create. That visual gap between what the game *said* and what it *showed* is what [Part 4](/posts/building-primal-chase-part-4) is about.
+The simulation turned balance tuning from guesswork into something I could measure, and the monologue overhaul gave the game situation descriptions accurate enough to build on later. But the game still *looked* like a text game with colored bars, and the screen wasn't communicating any of the tension that the monologue was working so hard to create. That gap between what the game *said* and what it *showed* is what [Part 4](/posts/building-primal-chase-part-4) is about.
