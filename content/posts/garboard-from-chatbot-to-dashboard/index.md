@@ -1,6 +1,6 @@
 ---
 title: "From Chatbot to Dashboard: The Garboard Era"
-date: 2026-04-07
+date: 2026-04-24
 tags: ["python", "ai", "fitness", "garmin", "fastapi"]
 group: "projects"
 project: "Garboard"
@@ -8,7 +8,7 @@ summary: "Part 2 of the fitness project series. How Claude-Fit's AI agents becam
 draft: true
 ---
 
-*This is Part 2 of a 3-part series on my fitness project. Part 1 covers Claude-Fit, the AI agent prototype. Part 3 covers Basecamp, where Claude became the coach instead of the backend.*
+*This is Part 2 of a 3-part series on my fitness project. [Part 1](/posts/claude-fit-the-ai-fitness-app-that-didnt-need-ai) covers Claude-Fit, the AI agent prototype. [Part 3](/posts/basecamp-training-coach) covers Basecamp, where Claude became the coach instead of the backend.*
 
 ---
 

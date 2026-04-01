@@ -6,15 +6,20 @@
 posts:
 - path: content/posts/building-primal-chase-part-3/index.md
   date: 2026-04-03
-- path: content/posts/garboard-garmin-fitness-dashboard/index.md
-  date: 2026-04-07
+# date: 2026-04-07 — Tuesday slot open (Zion post?)
 - path: content/posts/building-primal-chase-part-4/index.md
   date: 2026-04-10
 - path: content/posts/claude-code-as-a-dev-environment/index.md
   date: 2026-04-14
-- path: content/posts/rf-viewshed-tool/index.md
-  date: 2026-04-21
+- path: content/posts/claude-fit-the-ai-fitness-app-that-didnt-need-ai/index.md
+  date: 2026-04-17
 - path: content/posts/fantasy-f1-early-season/index.md
+  date: 2026-04-21
+- path: content/posts/garboard-from-chatbot-to-dashboard/index.md
   date: 2026-04-24
-- path: content/posts/learning-geospatial-python-in-public/index.md
+- path: content/posts/rf-viewshed-tool/index.md
+  date: 2026-04-28
+- path: content/posts/basecamp-training-coach/index.md
   date: 2026-05-01
+- path: content/posts/learning-geospatial-python-in-public/index.md
+  date: 2026-05-05

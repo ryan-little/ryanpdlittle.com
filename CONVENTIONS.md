@@ -52,6 +52,8 @@ This creates the bundle directory and populates `index.md` from the archetype. S
 
 To publish immediately, set `draft: false` manually and push.
 
+**Day-of-week rules:** Fridays are for series and technical posts. Tuesdays are for one-offs, personal, and non-technical posts. Always slot posts on the right day type.
+
 ## Writing Rules
 
 Writing style lives in the knowledge hub, not here. Read it before writing or editing:
