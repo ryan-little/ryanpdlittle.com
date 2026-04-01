@@ -6,7 +6,8 @@
 posts:
 - path: content/posts/building-primal-chase-part-3/index.md
   date: 2026-04-03
-# date: 2026-04-07 — Tuesday slot open (Zion post?)
+- path: content/posts/zion-in-three-trails/index.md
+  date: 2026-04-07
 - path: content/posts/building-primal-chase-part-4/index.md
   date: 2026-04-10
 - path: content/posts/claude-code-as-a-dev-environment/index.md
