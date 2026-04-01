@@ -459,6 +459,7 @@
         plugins: {
           legend: { display: false },
           tooltip: {
+            displayColors: false,
             callbacks: {
               title: function (items) {
                 var hour = parseFloat(items[0].label);
