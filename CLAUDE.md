@@ -56,11 +56,6 @@ See [CONVENTIONS.md](CONVENTIONS.md) for post front matter, page bundle structur
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for deploy pipeline details.
 
-## Hub Reference
-
-Knowledge hub: `~/Desktop/Projects/knowledge-hub/projects/ryanpdlittle-com/`
-- `overview.md` — status, origin, stack summary
-- `architecture.md` — full architecture doc
 - `decisions.md` — design decisions and rationale
 - `ideas.md` — post ideas and schedule backlog
 - `writing-style.md` — style guide hub
