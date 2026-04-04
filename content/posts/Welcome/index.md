@@ -1,10 +1,10 @@
 ---
-title: Welcome to the Blog
+title: "Welcome to the Blog"
 date: 2026-02-22
-tags: [meta]
+tags: ["meta"]
 group: "personal"
 project: "Meta"
-summary: Who I am, what I'm building, and why I'm writing about it.
+summary: "Who I am, what I'm building, and why I'm writing about it."
 draft: false
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Building Primal Chase — Part 4: Visual Identity (V1.9)"
-date: 2026-03-07
+date: 2026-04-10
 tags: ["primal-chase", "game-dev", "javascript", "dev-log", "css"]
 group: "projects"
 project: "Primal Chase"

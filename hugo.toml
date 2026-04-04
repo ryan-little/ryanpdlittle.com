@@ -2,6 +2,7 @@ baseURL = "https://ryanpdlittle.com/"
 languageCode = "en-us"
 title = "Ryan Little"
 theme = "rpdl"
+enableRobotsTXT = true
 
 [params]
   subtitle = "Maps by day, code by night, San Diego always"
@@ -20,8 +21,10 @@ theme = "rpdl"
 
 [markup]
   [markup.highlight]
+    # monokai is dark-only; light mode code blocks styled via CSS overrides in style.css
     style = "monokai"
     lineNos = false
   [markup.goldmark]
     [markup.goldmark.renderer]
+      # Required for hiking posts that embed raw HTML (Leaflet maps, Chart.js canvases)
       unsafe = true

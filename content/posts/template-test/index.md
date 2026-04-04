@@ -6,6 +6,9 @@ group: "projects"
 project: "San Diego Wildfire Gap"
 summary: "A test post demonstrating all content formatting options."
 draft: true
+build:
+  list: never
+  render: never
 ---
 
 ## Headings

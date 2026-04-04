@@ -1,6 +1,8 @@
 /**
  * Hiking Maps — Leaflet + Chart.js interactive maps
  * For: hiking-san-diego-with-gps-data blog post
+ *
+ * TODO: Refactor shared map/chart logic into a common module (shared with zion-in-three-trails/maps.js)
  */
 
 (function () {

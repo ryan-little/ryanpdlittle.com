@@ -1,6 +1,8 @@
 /**
  * Zion Maps — Leaflet + Chart.js interactive maps
  * For: zion-in-three-trails blog post
+ *
+ * TODO: Refactor shared map/chart logic into a common module (shared with hiking-san-diego-with-gps-data/maps.js)
  */
 
 (function () {

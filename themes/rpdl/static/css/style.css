@@ -45,12 +45,27 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 [data-theme="dark"] { color-scheme: dark; }
 [data-theme="light"] { color-scheme: light; }
 
-html *,
-html *::before,
-html *::after {
+/* Theme-switch transitions scoped to elements that need them (not global *) */
+body,
+main,
+header,
+footer,
+nav,
+.post-card,
+.sidebar,
+.tag,
+.sidebar-tag,
+code,
+pre {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -115,10 +130,8 @@ nav {
   border-radius: 50%;
   object-fit: cover;
   object-position: center 15%;
-  transform: scale(1.3);
   border: 2px solid var(--border);
   transition: border-color 0.3s;
-  overflow: hidden;
 }
 
 .site-avatar:hover {
@@ -264,7 +277,7 @@ main {
 }
 
 .post-card .tag:hover {
-  color: #0a0a0a;
+  color: var(--bg);
 }
 
 .post-card time {
@@ -300,7 +313,7 @@ main {
 
 .tag:hover {
   background-color: var(--accent);
-  color: #0a0a0a;
+  color: var(--bg);
 }
 
 /* === Single Post === */

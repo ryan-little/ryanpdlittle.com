@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+<!-- Cloudflare Web Analytics injected at edge by Cloudflare proxy -->
 <html lang="en">
 <head>
   {{- partial "head.html" . -}}
 </head>
 <body>
   {{- partial "header.html" . -}}
-  <main>
+  <main aria-label="Content">
     {{- block "main" . }}{{- end }}
   </main>
   {{- partial "footer.html" . -}}

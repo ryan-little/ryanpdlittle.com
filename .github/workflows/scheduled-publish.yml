@@ -2,7 +2,8 @@ name: Scheduled Post Publishing
 
 on:
   schedule:
-    # Run Tue & Fri at 6am PDT (1pm UTC) — 5am PST in winter
+    # Run Tue & Fri at 6am PDT (1pm UTC) — shifts to 5am PST (still 1pm UTC)
+    # during standard time (Nov–Mar). UTC is constant; local clock shifts.
     - cron: '0 13 * * 2,5'
   workflow_dispatch: # Allow manual trigger
 
