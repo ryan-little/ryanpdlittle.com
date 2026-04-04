@@ -1,12 +1,12 @@
 {{ define "main" }}
 <div class="home-layout">
   <div class="home-search">
-    <input type="text" id="search" class="search-input" placeholder="Search posts...">
+    <input type="text" id="search" class="search-input" placeholder="Search posts..." aria-label="Search posts">
   </div>
 
   <div class="post-list" id="post-list">
     {{ range where .Site.RegularPages "Section" "posts" }}
-    <article class="post-card" data-href="{{ .Permalink }}" data-title="{{ .Title | lower }}" data-summary="{{ with .Params.summary }}{{ . | lower }}{{ end }}" data-tags="{{ with .Params.tags }}{{ delimit . " " }}{{ end }}" data-project="{{ with .Params.project }}{{ . | lower }}{{ end }}" tabindex="0" role="article">
+    <article class="post-card" data-href="{{ .Permalink }}" data-title="{{ .Title | lower }}" data-summary="{{ with .Params.summary }}{{ . | lower }}{{ end }}" data-tags="{{ with .Params.tags }}{{ delimit . " " }}{{ end }}" data-project="{{ with .Params.project }}{{ . | lower }}{{ end }}" tabindex="0">
       <a href="{{ .Permalink }}">
         <h2>{{ .Title }}</h2>
       </a>

@@ -3,10 +3,12 @@
 <html lang="en">
 <head>
   {{- partial "head.html" . -}}
+  {{- block "head-extra" . }}{{- end }}
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   {{- partial "header.html" . -}}
-  <main aria-label="Content">
+  <main id="main-content" aria-label="Content">
     {{- block "main" . }}{{- end }}
   </main>
   {{- partial "footer.html" . -}}

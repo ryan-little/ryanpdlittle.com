@@ -111,7 +111,8 @@
 </script>
 {{ end }}
 
-<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+{{ $style := resources.Get "css/style.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 <script>
 (function() {
   var saved = localStorage.getItem('theme');
