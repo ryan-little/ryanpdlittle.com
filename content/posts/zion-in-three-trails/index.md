@@ -5,7 +5,7 @@ tags: ["hiking", "garmin", "fitness"]
 group: "personal"
 project: "Hiking"
 summary: "Three days of hiking Zion National Park with GPS data from my Garmin, from the Watchman Trail warmup to Angels Landing and The Narrows."
-draft: true
+draft: false
 ---
 
 {{< rawhtml >}}
