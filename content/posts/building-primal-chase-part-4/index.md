@@ -20,6 +20,8 @@ V1.9 was about closing the gap between what the game *says* and what the game *s
 
 Remember the CSS landscape background I tried and reverted in [V1.2](/posts/building-primal-chase-part-1)? That failed because I was trying to add visual complexity without proper assets or systems, and V1.9 approached the same problem differently, building atmospheric systems that respond to game state instead of painting a static background.
 
+![Primal Chase on Day 1, baseline atmosphere before any pressure builds](day-baseline.webp)
+
 ## The Screen Degrades With You
 
 The centerpiece of V1.9 is visual escalation, where as the cat's condition worsens the screen itself communicates desperation through a darkening vignette that closes in from the edges and colors that desaturate toward grayscale.
@@ -59,6 +61,8 @@ visualEscalation: {
 
 Two design decisions that matter here: the desperation score considers hunter distance alongside stats, where being within 15 miles starts contributing and at 0 miles it's 100% danger, and the vignette uses `box-shadow` with cached shadow strings to avoid redundant repaints. The escalation is subtle enough that you don't notice it ramping up, but by the time you're near death the screen looks and feels different from when you started.
 
+![Day 9 with critical stats, the vignette and desaturation closing in](visual-escalation.webp)
+
 ## Weather That Comes From the Game
 
 The weather system doesn't run on a timer or a random chance per turn, it's encounter-driven, meaning rain falls when the encounter says it's raining.
@@ -97,6 +101,8 @@ const speedMult = cfg.speedMultiplier[0] +
 
 Heavy rain spawns 100-200 drops with longer streaks and faster fall, and light rain spawns 40-100 shorter drops. On mobile with `prefers-reduced-motion` the count drops to a quarter. When rain starts, fireflies and other ambient particles clear to stay within a mobile performance budget, not because the device is slow but because stacking particle systems is asking for trouble.
 
+![Rain falling at an angle across the game screen](rain.webp)
+
 ### Three Tiers of Lightning
 
 Lightning comes in three tiers, weighted by probability:
@@ -128,7 +134,7 @@ V1.2 through V1.8, night was a CSS color change and nothing else, so V1.9 gives 
 
 These effects don't affect gameplay and exist entirely to make night feel different from day in a way that stat bars and text color can't.
 
-<!-- TODO: Screenshot of night scene with fireflies and stars -->
+![Night phase with stars and fireflies drifting across the screen](night-fireflies.webp)
 
 ## The Performance Question
 
@@ -146,8 +152,8 @@ The total particle count never exceeds ~300 DOM elements, all animated via CSS, 
 
 ## What the Screen Became
 
-The game went from a design doc to a thing with atmosphere, all in vanilla HTML, CSS, and JavaScript with zero dependencies, hosted on GitHub Pages. Every balance number lives in one config file, a simulation engine plays thousands of games to validate changes, a 32x52x22 encounter generator produces novel situations without repeating, and now there's a visual layer that makes it *feel* like being hunted.
+This started as two sentences in a notes file, a half-formed idea about persistence hunting that I kept coming back to. Nine versions later it's a shipped game with atmosphere, all built on what the browser gives you for free, box-shadow for vignettes, CSS keyframes for lightning, DOM divs for every raindrop and star, sprite sheets for fireflies. The constraint I set in Part 0, vanilla JS and zero dependencies, held through encounter balance, simulation-driven tuning, and now visual polish, and it never once felt like the thing holding the game back.
 
-I started this series talking about the gap between what a text game tells you and what it makes you feel, and V1.9 was my attempt to close that gap without reaching for canvas or WebGL or any tool heavier than what the browser already gives you. The screen darkens as you weaken, rain falls at an angle when the story calls for it, fireflies drift through warm nights, and lightning shakes the ground in a 10% chance that always feels earned.
+The gap between what the game tells you and what it makes you feel is narrower than it was. Rain falls at an angle when the story calls for it, fireflies drift through warm nights, the screen darkens as you weaken, and lightning shakes the ground in a 10% chance that always feels earned. It's not fully closed, and I have ideas for what comes next, but that's a different series.
 
-You can play it at [primalchase.com](https://primalchase.com), and the hunters are already walking.
+You can play it at [primalchase.com](https://primalchase.com). The hunters are already walking.
