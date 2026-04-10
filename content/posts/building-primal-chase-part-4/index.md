@@ -5,7 +5,7 @@ tags: ["primal-chase", "game-dev", "javascript", "dev-log", "css"]
 group: "projects"
 project: "Primal Chase"
 summary: "Fireflies, rain at 15 degrees, three tiers of lightning, and a screen that darkens as you die. How V1.9 turned a text game into something you can feel."
-draft: true
+draft: false
 ---
 
 *This is Part 4 of a 5-part series on building [Primal Chase](https://primalchase.com), a browser-based survival game about being hunted by persistence hunters. [Part 0](/posts/building-primal-chase-part-0) covers the idea. [Part 1](/posts/building-primal-chase-part-1) covers the prototype. [Part 2](/posts/building-primal-chase-part-2) covers making it shippable. [Part 3](/posts/building-primal-chase-part-3) covers systems and balance.*

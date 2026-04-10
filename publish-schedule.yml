@@ -4,8 +4,6 @@
 # Once published, the entry is automatically removed from this file.
 
 posts:
-- path: content/posts/building-primal-chase-part-4/index.md
-  date: 2026-04-10
 - path: content/posts/claude-code-as-a-dev-environment/index.md
   date: 2026-04-14
 - path: content/posts/claude-fit-the-ai-fitness-app-that-didnt-need-ai/index.md
