@@ -5,7 +5,7 @@ tags: ["ai", "tools"]
 group: ""
 project: ""
 summary: "How I use Claude Code with custom skills, CLI tools, a knowledge hub, and subagents to build software. Not a review, a workflow walkthrough."
-draft: true
+draft: false
 ---
 
 The first thing Claude Code does when I start a session is run a shell script. Not a prompt, not a greeting, a script that checks whether my knowledge hub has any stale docs. By the time I type my first message, Claude already knows which project I'm in, what CLI tools I have installed, how I like my commits formatted, and where to find context about whatever I'm working on.
