@@ -42,9 +42,11 @@ I even built a schedule config that knew my work hours (6am to 4pm Monday throug
 
 The implementation plan was 21 tasks, TDD-style, and Claude built the whole thing in a single afternoon session. Database schema and connection helpers, CRUD operations for all the tables, Garmin service with Renpho sync and activity fetching, USDA nutrition service, Google Places service, the async CLI runner, all four agent prompt templates, the dispatcher with intent detection and routing, the FastAPI app, API routes for dashboard and chat and food logging and metrics, and a frontend with dashboard, chat, food log, and activities tabs.
 
-By commit `f693715`, tagged as ClaudeFit v0.1, the whole system was running. Garmin sync pulled activities, the setup wizard walked you through connecting your accounts, and the frontend had a working chat interface that could route questions to the right agent. I added a macOS Dock launcher so I could start and stop the whole stack with one click.
+By commit `f693715`, tagged as Claude-Fit v0.1, the whole system was running. Garmin sync pulled activities, the setup wizard walked you through connecting your accounts, and the frontend had a working chat interface that could route questions to the right agent. I added a macOS Dock launcher so I could start and stop the whole stack with one click.
 
-## The Problem
+![Claude-Fit v0.1 dashboard with a Today's Plan card that reads "Chat with Claude-Fit to generate a plan," plus an API Cost Tracker and Goals. Empty because I pulled this screenshot from a fresh checkout of the v0.1 commit — the project's long since been shelved.](v01-dashboard.webp)
+
+## Where It Broke
 
 I used it for about a day, and the gap between what the agents produced and what I actually needed became obvious fast.
 
@@ -56,15 +58,17 @@ The food recognition was genuinely useful. Photo-to-macros with USDA-verified nu
 
 The chat orchestrator was the most telling. I had built a system where Claude managed conversations, tracked context, routed to specialized agents, and maintained state across stateless CLI invocations, and the whole time I had Claude Code itself open in a terminal tab where I could just ask it questions directly. I'd built a worse version of a tool I already had.
 
-## The Teardown
+## Ripping It Out
 
 The commit history tells the story pretty cleanly. Within hours of v0.1, I started pulling things apart.
 
 First the chat and the fitness/nutrition agent prompts got deleted. Then the dispatcher got simplified to food logging only. Then the food photo upload endpoint went away. Then the dashboard routes got rebuilt around Garmin data and goal tracking instead of AI recommendations. Then the chat tab disappeared from the frontend entirely, replaced with a wellness row showing training readiness, sleep, and body battery.
 
-By commit `57dc44f`, tagged as ClaudeFit v0.2, the app had been rebuilt as a focused Garmin dashboard. No AI agents, no chat, no nutrition coaching, no restaurant recommendations. What survived was the Garmin sync, the SQLite database, the FastAPI backend, and the vanilla frontend, now showing training load, heart rate zones, mileage goal progress, and body metrics. The rule engine, which was just Python logic checking readiness and ACWR and recent activity patterns, replaced Claude entirely for daily training guidance. It was fast, free, and deterministic.
+By commit `57dc44f`, tagged as Claude-Fit v0.2, the app had been rebuilt as a focused Garmin dashboard. No AI agents, no chat, no nutrition coaching, no restaurant recommendations. What survived was the Garmin sync, the SQLite database, the FastAPI backend, and the vanilla frontend, now showing training load, heart rate zones, mileage goal progress, and body metrics. The rule engine, which was just Python logic checking readiness and ACWR and recent activity patterns, replaced Claude entirely for daily training guidance. It was fast, free, and deterministic.
 
 The whole arc from ambitious AI fitness coach to straightforward Garmin dashboard happened in a single day. Design document at 9:54am, v0.1 at 10:42am, the first agent deletion by early afternoon, v0.2 by 5:11pm. Eight hours from vision to reality check.
+
+![Claude-Fit v0.2 dashboard after the teardown. The chat tab is gone, the API cost card is gone, and in their place is a row of Garmin metrics — readiness, sleep, body battery, training status — with weight and distance trends below. Same empty-state disclaimer: the project's shelved, there's no live data to show.](v02-dashboard.webp)
 
 ## What I Learned
 
@@ -72,12 +76,10 @@ The instinct to reach for AI when you have a hammer is strong, especially when y
 
 That's not a knock on AI for fitness, it's a knock on where I put it. The agents were doing inference on data that was already structured and legible. Garmin gives you training load, readiness, sleep scores, heart rate zones, and acute-to-chronic workload ratios. Those numbers don't need interpretation by a language model, they need a clean display and some threshold logic. The AI was adding a translation layer between data I could read and recommendations I could have derived myself, and that translation layer was the slowest and most expensive part of the stack.
 
-Food recognition from photos, on the other hand, is genuinely hard to do without AI. Identifying "6oz grilled chicken breast, half cup brown rice, steamed broccoli" from a photo and then looking up verified nutrition data is real value. That's the kind of thing I'd bring back, and eventually did in a different form.
-
-## What Came Next
+Food recognition from photos is genuinely hard to do without AI. Identifying "6oz grilled chicken breast, half cup brown rice, steamed broccoli" from a photo and then looking up verified nutrition data is real value. That's the kind of thing I'd bring back, and eventually did in a different form.
 
 The dashboard that survived the teardown turned out to be more interesting than the AI system I'd planned. Once the agents were gone, I could focus on making the Garmin data useful instead of making Claude interpret it for me. Training load tracking, GPS heatmaps, personal records, heart rate trend analysis, an achievement system, all layered on top of a clean data pipeline from the watch to a local SQLite database.
 
-The project got renamed to Garboard about three weeks later, which was both a rebrand and an acknowledgment that the thing I'd actually built wasn't what I'd set out to build. The ClaudeFit name didn't fit anymore because Claude wasn't running the fitness coaching, it was just the tool I used to build the dashboard.
+The project got renamed to Garboard about three weeks later, which was both a rebrand and an acknowledgment that the thing I'd actually built wasn't what I'd set out to build. The Claude-Fit name didn't fit anymore because Claude wasn't running the fitness coaching, it was just the tool I used to build the dashboard.
 
-In Part 2, I'll get into the Garboard era, the cyberpunk redesign, the training engine that replaced the AI agents, the Garmin authentication saga that almost killed the project, and the FIT file import system I built when the API went down.
+A couple of weeks after the rename, I couldn't log into Garmin anymore, and the dashboard I'd just finished polishing had nothing to show. That's where [Part 2](/posts/garboard-from-chatbot-to-dashboard) picks up.
