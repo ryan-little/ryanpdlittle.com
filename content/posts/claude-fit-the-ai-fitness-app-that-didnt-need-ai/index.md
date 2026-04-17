@@ -5,7 +5,7 @@ tags: ["python", "ai", "fitness", "garmin", "fastapi", "claude"]
 group: "projects"
 project: "Garboard"
 summary: "I designed a fitness app with four AI agents, a nutrition coach, and a restaurant finder. It lasted about eight hours before I started ripping it apart. Part 1 of 3 on the evolution from Claude-Fit to Garboard to Basecamp."
-draft: true
+draft: false
 ---
 
 *This is Part 1 of a 3-part series on my fitness project's evolution. Part 1 covers Claude-Fit, the original vision. [Part 2](/posts/garboard-from-chatbot-to-dashboard) covers Garboard, the dashboard that survived. [Part 3](/posts/basecamp-training-coach) covers Basecamp, where Claude became the interface instead of the backend.*
