@@ -8,7 +8,7 @@ summary: "Part 2 of the fitness project series. How Claude-Fit's AI agents becam
 draft: true
 ---
 
-*This is Part 2 of a 4-part series on my fitness project. [Part 1](/posts/claude-fit-the-ai-fitness-app-that-didnt-need-ai) covers Claude-Fit, the AI agent prototype. [Part 3](/posts/basecamp-training-coach) covers Basecamp, where Claude became the coach instead of the backend. Part 4 covers the coach in practice and what it's caught.*
+*This is Part 2 of a 4-part series on my fitness project. [Part 1](/posts/claude-fit-the-ai-fitness-app-that-didnt-need-ai) covers Claude-Fit, the AI agent prototype. [Part 3](/posts/basecamp) covers Basecamp, where Claude became the coach instead of the backend. Part 4 covers the coach in practice and what it's caught.*
 
 ---
 
@@ -110,4 +110,4 @@ On March 29th I was debugging the USB FIT import when I noticed the engine was r
 
 The bad ACWR was the surfaced problem. The real one was underneath. The rules engine is fast, free, and testable, but it trusts its data blindly, and it can't factor in that you switched back to intermittent fasting this week, or that work has been stressful, or that the trail you're considering is steeper than your heart rate history suggests you're ready for. Those are the variables that actually matter for training decisions, and they resist being encoded into if-statements.
 
-Garboard isn't dead. The dashboard still works, the data is still there, and the pirate-garmin tokens are still refreshing. But the coaching moved somewhere else, and that's [Part 3](/posts/basecamp-training-coach).
+Garboard isn't dead. The dashboard still works, the data is still there, and the pirate-garmin tokens are still refreshing. But the coaching moved somewhere else, and that's [Part 3](/posts/basecamp).
