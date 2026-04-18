@@ -9,7 +9,10 @@
     <a href="{{ .Permalink }}">
       <h2>{{ .Title }}</h2>
     </a>
-    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+    <div class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <span class="read-time">{{ .ReadingTime }} min read</span>
+    </div>
     {{ with .Params.tags }}
     <div class="tags">
       {{ range . }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}

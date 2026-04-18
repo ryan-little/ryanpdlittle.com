@@ -2,7 +2,10 @@
 <article class="post">
   <header class="post-header">
     <h1>{{ .Title }}</h1>
-    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+    <div class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <span class="read-time">{{ .ReadingTime }} min read</span>
+    </div>
     {{ with .Params.tags }}
     <div class="tags">
       {{ range . }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
@@ -13,6 +16,25 @@
   <div class="post-content">
     {{ .Content }}
   </div>
+
+  {{ $newer := .PrevInSection }}
+  {{ $older := .NextInSection }}
+  {{ if or $newer $older }}
+  <nav class="post-nav" aria-label="Post navigation">
+    {{ with $older }}
+    <a class="post-nav-link post-nav-older" href="{{ .Permalink }}">
+      <span class="post-nav-label">← Older post</span>
+      <span class="post-nav-title">{{ .Title }}</span>
+    </a>
+    {{ else }}<span></span>{{ end }}
+    {{ with $newer }}
+    <a class="post-nav-link post-nav-newer" href="{{ .Permalink }}">
+      <span class="post-nav-label">Newer post →</span>
+      <span class="post-nav-title">{{ .Title }}</span>
+    </a>
+    {{ else }}<span></span>{{ end }}
+  </nav>
+  {{ end }}
 
   {{ if and .Site.Params.giscusRepo .Site.Params.giscusRepoId .Site.Params.giscusCategoryId }}
   <section class="post-comments">
