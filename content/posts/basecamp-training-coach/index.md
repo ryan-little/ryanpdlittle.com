@@ -6,7 +6,7 @@ Title options:
 -->
 ---
 title: "Basecamp — What the Coach Caught"
-date: 2026-06-16
+date: 2026-05-08
 tags: ["python", "ai", "fitness", "garmin", "claude"]
 group: "projects"
 project: "Basecamp"
