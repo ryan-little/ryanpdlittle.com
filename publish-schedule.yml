@@ -12,7 +12,11 @@ posts:
   date: 2026-04-28
 - path: content/posts/basecamp/index.md
   date: 2026-05-01
+- path: content/posts/high-sierra-loop/index.md
+  date: 2026-05-05
 - path: content/posts/basecamp-training-coach/index.md
   date: 2026-05-08
+- path: content/posts/whitney-goal/index.md
+  date: 2026-05-12
 - path: content/posts/learning-geospatial-python-in-public/index.md
   date: 2026-05-15
