@@ -1,5 +1,5 @@
 ---
-title: "From Chatbot to Dashboard: The Garboard Era"
+title: "Garboard — From Chatbot to Dashboard"
 date: 2026-04-24
 tags: ["python", "ai", "fitness", "garmin", "fastapi"]
 group: "projects"
@@ -44,11 +44,17 @@ The whole engine is deterministic. Same inputs, same outputs, every time. I can 
 
 With the engine handling recommendations, the frontend became the project's identity. Garboard v0.3 went through a cyberpunk phase, Press Start 2P font and neon glow effects and all, which was fun to build and terrible to actually use. The final design settled on a warm minimal aesthetic with six tabs: Today, Trends, Log, Map, Achievements, and Training Load.
 
+![The v0.3 cyberpunk dashboard: Press Start 2P pixel font, neon tile borders, "LVL 0" XP header, and Today's Orders styled like an arcade game. Fresh checkout, no live data, project's shelved.](v03-cyberpunk.webp)
+
 The Today tab was the one I looked at every morning. A "Today's Orders" card showed the day's recommended workout with distance range, heart rate ceiling, and intensity, plus a growth indicator showing which tier the engine was targeting and how many of the three performance milestones I'd hit. Below that, a week plan strip laid out the full seven days with roles and distances, and a check-in button let me log how I was feeling so the engine could factor it in tomorrow.
+
+![The warm-minimal Today tab that replaced the cyberpunk version. Today's Orders at the top with distance range, HR ceiling, and feeling buttons; mileage and load ratio below; week plan strip; activity calendar. Empty because I pulled this from a fresh checkout.](today-tab.webp)
 
 The Map tab used Leaflet.js with CARTO dark tiles, showing every GPS track I'd recorded, color-coded by activity type with a heatmap mode that plotted all GPS points at once. Clicking a route overlaid stats. The Trends tab had 12-week distance charts, running heart rate with zone overlays, HRV and resting heart rate trends, and a pace vs heart rate scatter plot, all rendered on Canvas 2D because I didn't want a charting library for a personal dashboard.
 
 Achievements tracked 25 definitions, some repeatable weekly or monthly, some one-time unlocks. There was an XP and leveling system tied to mileage, and the pixel art sprites from the cyberpunk era survived the redesign because they'd grown on me.
+
+![The Achievements tab: weekly rings for sessions, mileage, and streak; closest achievements with progress bars; weekly and monthly progress cards; yearly milestone cards for Century, Double Century, and Five Hundred. Empty because the project's shelved — no data flowing.](achievements-tab.webp)
 
 The whole frontend was vanilla HTML, CSS, and ES modules. No build step, no framework. Four-kilobyte JavaScript files loading directly in the browser. FastAPI served the backend, SQLite held the data, and the server ran at localhost:8100 on my laptop.
 
@@ -92,20 +98,16 @@ So I wrote a system that pulls the daily summary data and synthesizes activity e
 
 After backfilling the move week with synthesized entries, the ACWR jumped from 0.1 to something that actually reflected how hard my body had been working. The engine stopped recommending "hard effort hiking, 5 to 9 miles" to someone who'd been moving furniture for a week and needed a recovery day.
 
-## 401 Tests and a 9 Out of 10
+## Where the Code Landed
 
 By late March, Garboard had 401 passing tests covering the modifiers, achievements, analytics, heart rate zones, template logic, overload calculations, and integration scenarios. The codebase had gone through a three-pass dead code audit, every line of SQL lived in dedicated CRUD and analytics modules, and the service layer handled all Garmin data normalization in one place so the routes stayed clean.
 
-I'd rate the code quality at 9 out of 10. The missing point is frontend JavaScript testing, which I never set up because the frontend is a personal dashboard and visual bugs are obvious the second you look at it. Everything else, the engine, the data layer, the sync pipeline, all tested.
+I'd put the code quality at 9 out of 10, by my own honest assessment. The missing point is frontend JavaScript testing, which I never set up because the frontend is a personal dashboard and visual bugs are obvious the second you look at it. Everything else, the engine, the data layer, the sync pipeline, all tested.
 
 ## Why Garboard Wasn't Enough
 
-On March 29th I was debugging the USB FIT import when I noticed something. The engine was recommending a hard hike based on an ACWR of 0.087, a number so low it was obviously wrong. The CSV-imported activities were missing their `training_load_peak` values, which meant the EWMA calculation was working with near-zero inputs and producing garbage output. A classic bad-data-in, bad-recommendation-out problem that a rules engine can't catch because it trusts its inputs.
+On March 29th I was debugging the USB FIT import when I noticed the engine was recommending a hard hike based on an ACWR of 0.087. The number was obviously wrong. CSV-imported activities were missing their `training_load_peak` values, which meant the EWMA calculation was working with near-zero inputs and producing garbage output. Classic bad-data-in, bad-recommendation-out, and a rules engine can't catch it because it trusts its inputs.
 
-I opened a Claude Code conversation to debug it and described the situation. Claude cross-referenced my recent activity pattern, four runs in five days, elevated stress readings, a recovery bounce after the Zion trip, and came back with a recommendation that made immediate sense: easy 2.5 to 3 mile flat run at heart rate under 140. It caught the bad ACWR, identified the data gap, factored in signals the engine wasn't weighting correctly, and synthesized a recommendation that accounted for context no sensor captures.
+The bad ACWR was the surfaced problem. The real one was underneath. The rules engine is fast, free, and testable, but it trusts its data blindly, and it can't factor in that you switched back to intermittent fasting this week, or that work has been stressful, or that the trail you're considering is steeper than your heart rate history suggests you're ready for. Those are the variables that actually matter for training decisions, and they resist being encoded into if-statements.
 
-The rules engine is fast, free, and testable. But it trusts its data blindly, it can't catch its own errors, and it can't factor in that you switched back to intermittent fasting this week, or that work has been stressful, or that the trail you're considering is steeper than your heart rate history suggests you're ready for. Those are the variables that actually matter for training decisions, and they resist being encoded into if-statements.
-
-Garboard isn't dead. The dashboard still works, the data is still there, and the pirate-garmin tokens are still refreshing. But the coaching moved somewhere else.
-
-*Part 3 covers Basecamp, where the dashboard disappeared entirely and Claude became the only interface. No web server, no frontend, no rules engine. Just structured metrics feeding a conversation that actually understands context.*
+Garboard isn't dead. The dashboard still works, the data is still there, and the pirate-garmin tokens are still refreshing. But the coaching moved somewhere else, and that's [Part 3](/posts/basecamp-training-coach).
