@@ -8,7 +8,7 @@ summary: "Part 2 of the fitness project series. How Claude-Fit's AI agents becam
 draft: true
 ---
 
-*This is Part 2 of a 3-part series on my fitness project. [Part 1](/posts/claude-fit-the-ai-fitness-app-that-didnt-need-ai) covers Claude-Fit, the AI agent prototype. [Part 3](/posts/basecamp-training-coach) covers Basecamp, where Claude became the coach instead of the backend.*
+*This is Part 2 of a 4-part series on my fitness project. [Part 1](/posts/claude-fit-the-ai-fitness-app-that-didnt-need-ai) covers Claude-Fit, the AI agent prototype. [Part 3](/posts/basecamp-training-coach) covers Basecamp, where Claude became the coach instead of the backend. Part 4 covers the coach in practice and what it's caught.*
 
 ---
 

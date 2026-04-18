@@ -8,15 +8,13 @@ summary: "I built a rules engine to tell me how to train. Then Claude analyzed t
 draft: true
 ---
 
-*This is Part 3 of a series on my fitness project's evolution from Claude-Fit to Garboard to Basecamp. [Part 1](/posts/claude-fit-the-ai-fitness-app-that-didnt-need-ai) covers Claude-Fit, the AI agent prototype. [Part 2](/posts/garboard-from-chatbot-to-dashboard) covers Garboard, the dashboard that outgrew its AI.*
+*This is Part 3 of a 4-part series on my fitness project's evolution from Claude-Fit to Garboard to Basecamp. [Part 1](/posts/claude-fit-the-ai-fitness-app-that-didnt-need-ai) covers Claude-Fit, the AI agent prototype. [Part 2](/posts/garboard-from-chatbot-to-dashboard) covers Garboard, the dashboard that outgrew its AI. Part 4 covers the coach in practice and what it's caught.*
 
 ---
 
-## The Moment
-
 On March 29th I was debugging Garboard's USB FIT import when I decided to run both the training engine and Claude on the same day's data, just to compare. The engine said HARD EFFORT HIKING, 5-9.1 MILES based on an ACWR of 0.087. Claude caught that the ACWR was wrong because CSV-imported activities were missing load values, noticed I'd run four of the last five days, saw elevated stress trends averaging 45-57 with spikes into the 90s, recognized my body was still recovering from a Zion trip the week before, and recommended an easy 2.5-3 mile flat run with heart rate under 140.
 
-The engine couldn't know I was tired. Claude asked. The engine couldn't see that its own data was garbage. Claude cross-referenced and caught it. The engine produced a confident prescription from broken inputs. Claude produced a reasoned recommendation from messy reality.
+The engine couldn't know I was tired. Claude asked. The engine couldn't see that its own data was garbage. Claude cross-referenced and caught it. The engine prescribed 5 to 9 miles of hard hiking. Claude prescribed 2.5 miles of easy flat running.
 
 That was the end of Garboard as my training tool.
 
@@ -39,6 +37,8 @@ Cherry-picking good pieces into clean architecture beats pruning dead code from 
 Basecamp is a Claude-native training coach powered by Garmin data. No dashboard, no web server, no rules engine. Claude Code is the interface. The system generates structured fitness metrics and passes them to Claude, which combines them with how I'm actually feeling that day to produce evidence-based training recommendations.
 
 The daily workflow looks like this. A Python script pulls today's data from the Garmin Connect API, which takes about 18 seconds and 6 API calls via pirate-garmin's OAuth2 flow. That data goes into a SQLite database with 24 tables covering activities, wellness, sleep, HRV, training load, readiness, VO2max, and more. Then a snapshot generator reads the database and assembles a 14-section daily context document covering everything from load ratios to mileage pacing to anomaly detection. Claude reads the snapshot and starts the conversation.
+
+![A middle slice of a daily training snapshot: training load with ATL/CTL/ACWR, mileage pacing, the weekly plan with planned versus actual miles per day, goal progress, and the start of a 14-day recovery trend table. This is what Claude reads before asking me how I'm feeling.](snapshot.webp)
 
 The conversation part is what matters. Claude doesn't just dump recommendations. It asks how I'm feeling, what my energy level is, whether anything hurts, what my schedule looks like. Then it combines my answers with the metrics, the periodization context, the research documentation, and the training history to reason through what today should look like. Some days that means running. Some days it means resting even when the numbers say I could push. Some days it means adjusting the weekly plan because something changed that no sensor picked up.
 
@@ -78,6 +78,8 @@ The success condition for each step is running emphasis with heart rate under 17
 
 The system tracks this with a mountain visualization, an ASCII trail progression that shows where I am on the path and what's next. Monthly and yearly goals feed into it. As of March 29th, I'm at 224.7 miles year-to-date against a 241-mile on-pace target, about 16 miles behind from January ramp-up. March pace is 26.3 miles per week, well above the 19.6 needed, so the gap is closing.
 
+![The mountain: Base Camp at the bottom, Whitney at the top, and every trail in between with distance, gain, and summit elevation. Open diamonds are not-yet, filled diamonds are hiked, check marks are sent. Progress bars at the bottom show this week's mileage against the target.](mountain.webp)
+
 ## Two Days, From Scratch
 
 Basecamp went from founding session to comprehensive system in two days. 50 commits, 6,600 lines of Python, 1,300 lines of research documentation, 147 tests, 24 database tables, 5 Claude subagents, and a full daily coaching workflow. The speed came from three things: clear architecture decisions made up front, Garboard code to cherry-pick from where it applied, and Claude Code as the development environment.
@@ -92,10 +94,8 @@ What's still coming is mostly on the training side, not the engineering side. I 
 
 ## The Arc
 
-Claude-Fit started with AI agents as the backend for a fitness app. Garboard stripped them out and replaced them with a rules engine and a dashboard. Basecamp brought Claude back, but as the interface itself rather than a hidden backend process, and with structured metrics as the foundation rather than raw API calls.
-
 The through-line is that each version got closer to the right abstraction. Claude-Fit tried to do too much with too little data. Garboard had the data but trapped it behind deterministic rules. Basecamp has the data, the research, and the reasoning, and it puts them together in a conversation where I can say "I'm tired, I switched back to OMAD, and I have a work dinner tonight" and get a recommendation that actually accounts for all of that.
 
 I'm not sure I would have built Basecamp without building Garboard first. The training engine taught me what metrics matter and how they interact. The dashboard taught me that looking at data is less useful than talking about it. The USB FIT import crisis taught me that pirate-garmin exists. And the founding session on March 29th, where the engine said one thing and Claude said something meaningfully better, taught me where the value actually lives.
 
-Whitney is in four months. The system is ready. Now I just have to do the work.
+Whitney is four months out. The system is built, and I'm running Cowles in the morning. What the coach has caught since March 29th is [Part 4](/posts/basecamp-the-coach).
