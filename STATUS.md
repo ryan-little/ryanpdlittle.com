@@ -38,6 +38,8 @@ Fridays: series/technical. Tuesdays: one-offs/personal/non-technical.
 
 ## Recent Changes
 
+- Theme: added reading time (homepage + list + single), newer/older post nav on single pages, About link in header → ryan-little.com
+- Fixed ghost drafts rendering as blank "January 1, 0001" cards on homepage: four drafts (basecamp-training-coach, high-sierra-loop, three-trees, whitney-goal) had `<!-- Title options -->` comment blocks above the frontmatter; Hugo only parses frontmatter at line 1, so title/date/draft were all unset and they published. Removed the comments.
 - Retroactively revised Claude-Fit (Part 1) after auto-publish: added v0.1 + v0.2 UI screenshots, reworked ending to single forward-motion sentence with Part 2 link, normalized Claude-Fit branding, varied H2 headings, dropped "on the other hand"
 - Extended fitness series from 3 to 4 parts: split Basecamp Part 3 from Part 4 (renamed `basecamp-training-coach/` → `basecamp/`; new Part 4 at `basecamp-training-coach/`). Retitled Part 3 to `From Dashboard to System` for series chain (Chatbot → Dashboard → System)
 - Pre-publish polish on Garboard (Part 2): normalized title to em-dash pattern, added 3 screenshots (v0.3 cyberpunk, Today tab, Achievements tab), tightened ending, compressed March 29 section
