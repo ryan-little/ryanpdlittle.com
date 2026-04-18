@@ -1,5 +1,5 @@
 ---
-title: "Fantasy F1 — Early Season Lessons"
+title: "Fantasy F1 — Retiring the Model"
 date: 2026-04-21
 tags: ["f1", "sports"]
 group: "personal"
@@ -14,7 +14,7 @@ This is a post about what three races of fantasy F1 taught me about the gap betw
 
 ## The Setup
 
-This is my first F1 Fantasy season. I'm in a 7-person work league, team name Gasly Station, and I built the model because I wanted a quantitative edge in a game where most people just pick their favorite drivers. The model ingests historical race data going back to 2016, fits Bayesian pace parameters per driver using exponential decay weighting, and runs 10,000 Monte Carlo simulations to produce scoring distributions. Then an optimizer selects the best lineup under the $100M budget constraint.
+This is my first F1 Fantasy season. I'm in a 7-person work league, team name Gasly Station, and I built the model because I wanted a quantitative edge in a game where most people just pick their favorite drivers. The repo was a proper little data product. Pydantic schemas for every entity, a DuckDB warehouse with views over race results and qualifying and pit stops and overtakes, 214 historical races pulled from Jolpica-F1 and OpenF1 covering 2016 through 2025. The pace model fit Bayesian ratings per driver using exponential decay weighting so recent races counted more than old ones, with talent priors as early-season shrinkage targets and data-derived overtake and defense rates via empirical Bayes. The simulator ran 10,000 Monte Carlo race replays per prediction. An optimizer then selected the best lineup under the $100M budget cap, with a position-weighted opponent differential adjustment so it would prefer picks that gained ground on the specific people I was trying to beat.
 
 The preseason team I landed on was Leclerc as my 2x DRS boost, Hadjar, Gasly, Bearman, and Lawson for drivers, with Ferrari and Alpine as constructors. The logic was sound on paper: Ferrari to capture both Leclerc and Hamilton points, Alpine as the biggest potential regulation-era upgrade on the grid with the Mercedes power unit switch, Hadjar as a Red Bull growth stock, and Bearman and Lawson as cheap appreciation plays at the budget floor.
 
@@ -64,14 +64,24 @@ Three races in, the league looks like this:
 
 I'm 226 points behind Marc and most of that gap is the China round where his 3x Boost on Leclerc outscored my Limitless by 243 points. The math is simple: I made the wrong chip call on the wrong weekend, and Marc made the right one.
 
-The model is on hold. I'm still running the data pipeline after each race and tracking prices and league standings, but the predictions are paused until there's enough 2026 data (maybe R6-R8) for the pace ratings to mean something. Three races under new regulations with a completely reshuffled competitive order isn't enough for a model trained on 214 historical races from a different era to make useful predictions.
+Chip state after R03: Limitless burned, five remaining. Wildcard, Extra DRS, No Negative, Final Fix, Autopilot. 21 races left to deploy them.
+
+## Retiring the Model
+
+After R02 I retired the model. Not paused, retired. The commit message is blunt: "refactor: retire prediction model, pivot to Claude-assisted reasoning." Around 36,000 lines of model code, tests, specs, and plans came out in a single PR. The git history preserves it if I ever want it back, but the working tree doesn't have a predictor in it anymore.
+
+The decision was partly about regulations. The 2026 cars are fundamentally different machines with active aerodynamics and a new power unit formula, and fitting pace parameters on 2016-2025 data produces ratings that reflect a competitive order that no longer exists. Antonelli wasn't even racing last year. Waiting until R6-R8 for enough 2026 data to recalibrate on was an option, but the other part of the decision was harder to dodge: for a 7-person work league, the model couldn't beat informed human judgment on the weekends it mattered. R02 was the proof. Why maintain 36k lines of code to get outscored by "pick the fast ones."
+
+What replaced it is Claude-assisted reasoning on top of the same data pipeline. I kept the data product and threw out the predictor. Each race week Claude does the research, web searches for current form and weather and team news, runs DuckDB queries over the race results and prices and league standings for PPM and trends and differentials, weighs form and price and ownership and circuit characteristics against my read from watching sessions, and reasons about chip timing against the remaining schedule. I send screenshots of the fantasy platform for the opponent rosters and prices because there's no API for those. Then Claude presents the case and I make the call.
+
+The shape of this decision has shown up in other projects of mine lately. Build the deterministic layer so the numbers are trustworthy, then let Claude do the reasoning on top of them, instead of trying to bake the reasoning into code that can never ask a followup question. Fantasy F1 is just the cleanest version of it, because the data is tidy and the consequences of being wrong are points in a work league, not miles on a trail.
 
 ## What I Actually Learned
 
 The first lesson is that chip timing matters more than lineup optimization. The difference between my Limitless and Marc's 3x Boost wasn't driver selection, it was which weekend they chose to deploy. Sprint weekends have more variance, more opportunities for points, and more opportunities for disaster. A chip on a calm race like Suzuka would have been safer but lower-ceiling.
 
-The second lesson is that in a new regulation era, the model's historical data is mostly noise. The 2026 cars are fundamentally different machines with active aerodynamics and a new power unit formula, and fitting pace parameters on 2016-2025 data produces ratings that reflect a competitive order that no longer exists. Antonelli wasn't even racing last year. The model has no basis for knowing he's the fastest driver on the grid right now.
+The second lesson is that informed human judgment, the kind where you watch qualifying and say "that car is clearly fastest, pick that one," would have beaten the model at every round so far. I built a simulation engine with Bayesian pace ratings and empirical-Bayes overtake rates and a position-weighted opponent differential, and the optimal strategy was to watch the sessions and trust what I saw.
 
-The third lesson is the one that stings: informed human judgment, the kind where you watch qualifying and say "that car is clearly fastest, pick that one," would have beaten the model at every round so far. I built a sophisticated simulation engine and the optimal strategy was to watch the sessions and trust what I saw.
+The third lesson is the one that took me the longest to accept. The model was an impressive piece of engineering that was solving the wrong problem. A 7-person work league isn't a Kaggle competition, it's a game where the variance in outcomes is dominated by freak DNFs and regulation-era shifts that no amount of historical Bayesian fitting can anticipate. The useful layer wasn't prediction, it was having the data available for reasoning. Keeping the pipeline and dropping the predictor is what actually fit the problem.
 
-I'm keeping the model. The data pipeline is valuable, the architecture is solid, and once there's enough 2026 data to calibrate on the current regulation era it should start adding real signal. But for now the strategy is simple: watch the cars, pick the fast ones, and don't deploy chips on sprint weekends where four cars might not start the race.
+So the strategy now is to watch the sessions, use the data to check my gut against price and ownership and circuit history, and save the remaining chips for weekends where one driver or one constructor is obviously ahead. Miami is next. McLaren looked quick at Suzuka with Piastri P2 and Norris P5, and I want to see if that holds at a power circuit before deciding whether it's real or a one-track fluke.
