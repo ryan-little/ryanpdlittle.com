@@ -1,9 +1,3 @@
-<!--
-Title options:
-1. "Three Trees — Tallest, Largest, Oldest"
-2. "Three Trees — Chasing California's Superlatives"
-3. "Three Trees — The Ones I Drove All Day To See"
--->
 ---
 title: "Three Trees — Tallest, Largest, Oldest"
 date: 2026-04-28

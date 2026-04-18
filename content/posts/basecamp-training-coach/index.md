@@ -1,9 +1,3 @@
-<!--
-Title options:
-1. "Basecamp — The Coach in Practice"
-2. "Basecamp — What the Coach Caught"
-3. "Basecamp — Three Weeks of Coaching"
--->
 ---
 title: "Basecamp — What the Coach Caught"
 date: 2026-05-08

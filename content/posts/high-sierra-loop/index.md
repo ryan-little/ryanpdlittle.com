@@ -1,9 +1,3 @@
-<!--
-Title options:
-1. "High Sierra Loop — Half Dome, Sequoia, and a Grove of Old Trees"
-2. "High Sierra Loop — One Week, Three Ranges"
-3. "High Sierra Loop — Cables, Giants, and Bristlecones"
--->
 ---
 title: "High Sierra Loop — Half Dome, Sequoia, and a Grove of Old Trees"
 date: 2026-05-05

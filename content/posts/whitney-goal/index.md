@@ -1,9 +1,3 @@
-<!--
-Title options:
-1. "The Whitney Goal — Training for a Mountain I've Never Seen"
-2. "The Whitney Goal — Cowles in the Morning, Whitney in August"
-3. "Whitney Goal — What Ready Looks Like When You're Not an Athlete"
--->
 ---
 title: "The Whitney Goal — Training for a Mountain I've Never Seen"
 date: 2026-05-12
