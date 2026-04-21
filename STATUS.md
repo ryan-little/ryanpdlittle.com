@@ -2,7 +2,7 @@
 
 **Active** — Tue/Fri publishing cadence, 8 posts scheduled through mid-May 2026.
 
-Last updated: 2026-04-17
+Last updated: 2026-04-20
 
 ## Current Schedule
 
@@ -10,7 +10,7 @@ Fridays: series/technical. Tuesdays: one-offs/personal/non-technical.
 
 | Date | Day | Post | Status |
 |------|-----|------|--------|
-| Apr 21 | Tue | Fantasy F1 — Retiring the Model | **Needs review + screenshots** |
+| Apr 21 | Tue | Fantasy F1 — Retiring the Model | Review + visuals complete, ready |
 | Apr 24 | Fri | Garboard — From Chatbot to Dashboard (fitness Pt 2) | Revised, ready |
 | Apr 28 | Tue | Three Trees — Tallest, Largest, Oldest | Draft, 3 RYAN placeholders to fill |
 | May 1 | Fri | Basecamp — From Dashboard to System (fitness Pt 3) | Revised, ready |
@@ -46,11 +46,13 @@ Fridays: series/technical. Tuesdays: one-offs/personal/non-technical.
 - Pre-publish polish on Basecamp (Part 3): added prose hook opening, mountain ASCII + snapshot screenshots, concrete prescription triad, rewrote ending to Cowles callback + Part 4 forward link
 - Drafted Basecamp Part 4 (`basecamp-training-coach`): 2,911-word coach-in-practice post via subagent, 1 RYAN placeholder for Zion specifics. Moved from placeholder 6/16 date to confirmed 5/08
 - Drafted Three Trees, High Sierra Loop, and Whitney Goal via subagents (Tuesday trip-report mini-arc)
-- Revised Fantasy F1: retired-the-model framing, new `Retiring the Model` section, dropped listy numbered triad, three H2 em dashes → colons
+- Full voice/style pass on Fantasy F1: fixed "four of my five" → "three of my five" (real race data shows 3 DNFs/DNS of Ryan's 5 drivers), reframed model recommendation vs. Verstappen override (model actually picked LEC, Ryan overrode), anonymized coworker names to initials (M/A/S/L/D/C) and dropped Team column from standings table, added paragraph on Bahrain/Saudi Arabia cancellations creating the retirement window
+- Added 4 visuals to Fantasy F1 post: MIQP optimizer code block in Setup (pulled from retired model code at commit 2adb70b), cumulative league-points chart with light/dark variants (`gen_chart.py` + `league-cumulative-{light,dark}.png`), Limitless model output terminal block (revived `f1-fantasy` at 2adb70b via worktree, ran `scripts/limitless_sim.py` for real numbers)
+- Theme: added `.theme-light` / `.theme-dark` class-based image swap in style.css for chart rendering in both modes
 - Schedule: pulled felt-gg (not publishing publicly yet), moved geospatial from 5/05 to 5/15
 
 ## Next Action
 
-**Before 2026-04-21:** Review Fantasy F1 post + add screenshots (candidates: F1 Fantasy platform showing Gasly Station, Claude-assisted race-week reasoning session, or `git show` of the retirement commit).
+**Before 2026-04-21:** Fantasy F1 post is ready — flip `draft: false` (or rely on scheduled-publish workflow).
 
 **Before each subsequent Tuesday/Friday:** Fill the `<!-- RYAN: -->` placeholders in each draft, supply personal photos for High Sierra Loop and Whitney Goal, and update the "three weeks" references in Basecamp Part 4 to reflect the actual elapsed time by 5/08.

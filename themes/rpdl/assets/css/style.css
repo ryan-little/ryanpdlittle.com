@@ -408,6 +408,9 @@ main {
   max-width: 320px;
 }
 
+[data-theme="dark"] .post-content .theme-light { display: none; }
+[data-theme="light"] .post-content .theme-dark { display: none; }
+
 .post-content pre {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
