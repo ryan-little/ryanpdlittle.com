@@ -5,7 +5,7 @@ tags: ["f1", "sports"]
 group: "personal"
 project: ""
 summary: "Three races into my first F1 Fantasy season, I built a simulation model, trusted it on a chip week, and watched three of my five drivers not finish the race."
-draft: true
+draft: false
 ---
 
 I built a Monte Carlo simulation model to optimize my F1 Fantasy team. Bayesian pace ratings, 10,000 race simulations per prediction, a proper mathematical optimizer for lineup construction. Then the Chinese GP happened, and I watched three of my five Limitless chip drivers either crash out or not start the race while my coworker scored 506 points by simply picking the two fastest cars and boosting Charles Leclerc.
