@@ -39,6 +39,7 @@ Fridays: series/technical. Tuesdays: one-offs/personal/non-technical.
 ## Recent Changes
 
 - Scheduled-publish cron shifted from 13:00 UTC → 12:57 UTC (`57 12 * * 2,5`, 5:57am PDT). GitHub Actions cron had been firing 60-110 min late at the top of the hour; off-hour minute dodges the backlog. F1 post (4/21) published via manual `workflow_dispatch` since Tuesday's scheduled run hadn't fired yet when Ryan checked at 6:13 AM.
+- Bumped `actions/checkout@v4 → v6` (both workflows) and `dawidd6/action-send-mail@v3 → v16` to get off Node 20 before GitHub's Sept 2026 forced migration. send-mail API unchanged between v3 and v16 per its README.
 - Theme: added reading time (homepage + list + single), newer/older post nav on single pages, About link in header → ryan-little.com
 - Fixed ghost drafts rendering as blank "January 1, 0001" cards on homepage: four drafts (basecamp-training-coach, high-sierra-loop, three-trees, whitney-goal) had `<!-- Title options -->` comment blocks above the frontmatter; Hugo only parses frontmatter at line 1, so title/date/draft were all unset and they published. Removed the comments.
 - Retroactively revised Claude-Fit (Part 1) after auto-publish: added v0.1 + v0.2 UI screenshots, reworked ending to single forward-motion sentence with Part 2 link, normalized Claude-Fit branding, varied H2 headings, dropped "on the other hand"
@@ -55,5 +56,3 @@ Fridays: series/technical. Tuesdays: one-offs/personal/non-technical.
 ## Next Action
 
 **Before each Tuesday/Friday:** Fill the `<!-- RYAN: -->` placeholders in each draft, supply personal photos for High Sierra Loop and Whitney Goal, and update the "three weeks" references in Basecamp Part 4 to reflect the actual elapsed time by 5/08.
-
-**Not urgent:** Bump `actions/checkout@v4` and `dawidd6/action-send-mail@v3` (both on Node 20, deprecated by GitHub Sept 2026).
