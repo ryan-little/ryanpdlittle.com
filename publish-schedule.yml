@@ -4,8 +4,6 @@
 # Once published, the entry is automatically removed from this file.
 
 posts:
-- path: content/posts/garboard-from-chatbot-to-dashboard/index.md
-  date: 2026-04-24
 - path: content/posts/three-trees/index.md
   date: 2026-04-28
 - path: content/posts/basecamp/index.md
