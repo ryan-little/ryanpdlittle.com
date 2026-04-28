@@ -5,7 +5,7 @@ tags: ["travel", "trees", "california"]
 group: "personal"
 project: ""
 summary: "Three separate trips across four years to see the three most remarkable trees in California: the world's tallest coastal redwood, the largest tree by volume, and one of the oldest living organisms on Earth."
-draft: true
+draft: false
 ---
 
 The tallest tree on Earth is somewhere in a stretch of fog-wet forest in Northern California, and the Park Service will not tell you which one it is. You can hike near it, you can stand a few hundred feet from it, you can probably photograph it without realizing, but they stopped giving out the coordinates years ago because hikers were trampling the root system trying to find it. The same thing is true for the oldest tree, a bristlecone pine up in the White Mountains, where Methuselah stands unmarked in a grove of other ancient trees that all look about the same level of battered. The largest tree is the exception. General Sherman sits behind a fence in Sequoia National Park with a boardwalk around it and a sign telling you exactly what you're looking at, because when a tree is that big, hiding it is not really an option.
