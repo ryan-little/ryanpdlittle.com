@@ -36,7 +36,7 @@ hugo.toml                ← site config
 publish-schedule.yml     ← upcoming post dates
 .github/workflows/
   deploy.yml             ← push to main → build + deploy
-  scheduled-publish.yml  ← Tue/Fri 5:57am PDT auto-publish
+  scheduled-publish.yml  ← Friday 12:07pm PST auto-publish
 ```
 
 ## Content Workflow

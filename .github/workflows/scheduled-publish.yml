@@ -2,10 +2,10 @@ name: Scheduled Post Publishing
 
 on:
   schedule:
-    # Run Tue & Fri at 5:57am PDT (12:57 UTC) — shifts to 4:57am PST (still
-    # 12:57 UTC) during standard time (Nov–Mar). UTC is constant; local clock
+    # Run Friday at 12:07pm PST (20:07 UTC) — shifts to 1:07pm PDT (still
+    # 20:07 UTC) during daylight time (Mar–Nov). UTC is constant; local clock
     # shifts. Off-the-hour minute avoids GitHub Actions cron backlog at :00.
-    - cron: '57 12 * * 2,5'
+    - cron: '7 20 * * 5'
   workflow_dispatch: # Allow manual trigger
 
 permissions:
@@ -67,7 +67,7 @@ jobs:
           with open("publish-schedule.yml", "w") as f:
               f.write("# Scheduled blog post publishing\n")
               f.write("# Add posts with their target publish date. The publish workflow\n")
-              f.write("# runs Tue & Fri at 5:57am PDT and will publish any post whose date has arrived.\n")
+              f.write("# runs Friday at 12:07pm PST and will publish any post whose date has arrived.\n")
               f.write("# Once published, the entry is automatically removed from this file.\n\n")
               yaml.dump({"posts": remaining or []}, f, default_flow_style=False, sort_keys=False)
 

@@ -1,22 +1,19 @@
 # Status
 
-**Active** — Tue/Fri publishing cadence, 7 posts scheduled through mid-May 2026.
+**Active** — Friday weekly publishing cadence, 4 posts scheduled through end of May 2026.
 
-Last updated: 2026-04-21
+Last updated: 2026-05-01
 
 ## Current Schedule
 
-Fridays: series/technical. Tuesdays: one-offs/personal/non-technical.
+Friday at 12:07pm PST. Trip reports through summer.
 
 | Date | Day | Post | Status |
 |------|-----|------|--------|
-| Apr 24 | Fri | Garboard — From Chatbot to Dashboard (fitness Pt 2) | Revised, ready |
-| Apr 28 | Tue | Three Trees — Tallest, Largest, Oldest | Draft, 3 RYAN placeholders to fill |
-| May 1 | Fri | Basecamp — From Dashboard to System (fitness Pt 3) | Revised, ready |
-| May 5 | Tue | High Sierra Loop | Draft, 5 RYAN placeholders + needs personal photos |
-| May 8 | Fri | Basecamp — The Training Coach (fitness Pt 4) | Draft, 1 RYAN placeholder + "three weeks" refs need updating to ~6 weeks |
-| May 12 | Tue | Whitney Goal | Draft, 4 RYAN placeholders + 2 photo slots |
-| May 15 | Fri | Learning Geospatial Python Pt 1 | Existing draft |
+| May 8 | Fri | High Sierra Loop | Draft, 5 RYAN placeholders + needs personal photos |
+| May 15 | Fri | Basecamp — The Training Coach (fitness Pt 4) | Draft, 1 RYAN placeholder + timing refs need updating |
+| May 22 | Fri | Whitney Goal | Draft, 4 RYAN placeholders + 2 photo slots |
+| May 29 | Fri | Learning Geospatial Python Pt 1 | Existing draft |
 
 ## Published
 
@@ -35,9 +32,15 @@ Fridays: series/technical. Tuesdays: one-offs/personal/non-technical.
 - **Claude Code as a Development Environment** — 2026-04-14
 - **Claude-Fit — The AI Fitness App That Didn't Need AI** (fitness Pt 1) — 2026-04-17
 - **Fantasy F1 — Retiring the Model** — 2026-04-21
+- **Garboard — From Chatbot to Dashboard** (fitness Pt 2) — 2026-04-24
+- **Three Trees: Tallest, Largest, Oldest** — 2026-04-28
+- **Basecamp: From Dashboard to System** (fitness Pt 3) — 2026-05-01
 
 ## Recent Changes
 
+- Cadence shift: Tue/Fri 5:57am PDT → Friday 12:07pm PST (`7 20 * * 5`). Whitney training and grad school competing for time; trip reports through summer fill the slot. Friday at noon also gives time to edit the morning of publish. Updated cron, publish-schedule.yml, CLAUDE.md, ARCHITECTURE.md.
+- Post-publish revision pass on Three Trees: filled the three Hyperion/Sherman/Methuselah personal-moment placeholders (off-trail Hyperion find with college roommates, General Grant before Sherman + the grove-over-headliner reframe, three-trip Methuselah arc with Ted Nivison snow rescue). Title em dash to colon. Corrected the older-bristlecone story (Tom Harlan researcher reported in 2009, age 5,062, sample/location lost after Harlan's 2013 death). Methuselah age 4,854 → 4,857. Closing line "three trips" → "several trips" since Methuselah was three on its own.
+- Post-publish revision pass on Basecamp Part 3: cut "## The Arc" summary section per style guide (Whitney/Cowles/Part-4 paragraph is now the close). Folded the OMAD example forward into the conversation paragraph. Voice drift pass on Data Pipeline, Metrics Layer, Research-Backed Coaching for more peer stance. Restructured five colon-introduced lists. Tightened the seven-number stat flex to three (50 commits, 6,600 lines, 147 tests). Inline gloss for ACWR. "6 API calls" → 9 to match code and the line below.
 - Scheduled-publish cron shifted from 13:00 UTC → 12:57 UTC (`57 12 * * 2,5`, 5:57am PDT). GitHub Actions cron had been firing 60-110 min late at the top of the hour; off-hour minute dodges the backlog. F1 post (4/21) published via manual `workflow_dispatch` since Tuesday's scheduled run hadn't fired yet when Ryan checked at 6:13 AM.
 - Bumped `actions/checkout@v4 → v6` (both workflows), `dawidd6/action-send-mail@v3 → v16`, `actions/upload-pages-artifact@v3 → v5`, `actions/deploy-pages@v4 → v5` to get off Node 20 before GitHub's Sept 2026 forced migration. send-mail API unchanged between v3 and v16 per its README. `peaceiris/actions-hugo@v3` is still Node 20 but it's the maintainer's latest release — revisit periodically.
 - Theme: added reading time (homepage + list + single), newer/older post nav on single pages, About link in header → ryan-little.com
@@ -55,4 +58,4 @@ Fridays: series/technical. Tuesdays: one-offs/personal/non-technical.
 
 ## Next Action
 
-**Before each Tuesday/Friday:** Fill the `<!-- RYAN: -->` placeholders in each draft, supply personal photos for High Sierra Loop and Whitney Goal, and update the "three weeks" references in Basecamp Part 4 to reflect the actual elapsed time by 5/08.
+**Before each Friday:** Fill the `<!-- RYAN: -->` placeholders in each draft, supply personal photos for High Sierra Loop and Whitney Goal, and update the timing references in Basecamp Part 4 to reflect the actual elapsed time by 5/15.

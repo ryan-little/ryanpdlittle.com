@@ -34,7 +34,7 @@ Live at ryanpdlittle.com (Cloudflare DNS)
 ## Scheduled Publishing
 
 ```
-Cron: Tue & Fri 5:57am PDT (12:57 UTC) — off-hour to dodge GH Actions backlog
+Cron: Friday 12:07pm PST (20:07 UTC) — off-hour to dodge GH Actions backlog
     ↓
 .github/workflows/scheduled-publish.yml
     ↓
