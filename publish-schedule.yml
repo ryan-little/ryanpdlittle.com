@@ -4,8 +4,6 @@
 # Once published, the entry is automatically removed from this file.
 
 posts:
-- path: content/posts/basecamp/index.md
-  date: 2026-05-01
 - path: content/posts/high-sierra-loop/index.md
   date: 2026-05-05
 - path: content/posts/basecamp-training-coach/index.md
