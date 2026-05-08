@@ -1,11 +1,11 @@
 ---
 title: "High Sierra Loop — Half Dome, Sequoia, and a Grove of Old Trees"
-date: 2026-05-05
+date: 2026-05-08
 tags: ["travel", "hiking", "california"]
 group: "personal"
 project: ""
 summary: "A June 2022 loop through Yosemite, Sequoia and Kings Canyon, and the White Mountains — Half Dome cables, a return to the giant sequoias, and a first walk among the bristlecone pines."
-draft: true
+draft: false
 ---
 
 The Half Dome cables are two parallel steel cables bolted into a 45-degree slab of granite for the last 400 vertical feet of the summit push, and the Park Service puts them up around Memorial Day weekend and takes them down in October. You pull yourself up between them, hand over hand, with your feet on wooden slats that are spaced roughly where your legs want to be and sometimes not. There's no way to do Half Dome without going through the cables, and there's no way to go through the cables without, at some point, looking down. I was in a group of friends in June of 2022, permits in hand, and when my turn came I clipped my gloves around a cable and started up.
