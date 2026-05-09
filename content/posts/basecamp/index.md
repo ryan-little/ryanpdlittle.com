@@ -1,5 +1,5 @@
 ---
-title: "Basecamp: From Dashboard to System"
+title: "Basecamp — From Dashboard to System"
 date: 2026-05-01
 tags: ["python", "ai", "fitness", "garmin", "claude"]
 group: "projects"

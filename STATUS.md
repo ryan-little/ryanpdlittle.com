@@ -33,7 +33,7 @@ Friday at 12:07pm PST. Trip reports through summer.
 - **Fantasy F1 — Retiring the Model** — 2026-04-21
 - **Garboard — From Chatbot to Dashboard** (fitness Pt 2) — 2026-04-24
 - **Three Trees: Tallest, Largest, Oldest** — 2026-04-28
-- **Basecamp: From Dashboard to System** (fitness Pt 3) — 2026-05-01
+- **Basecamp — From Dashboard to System** (fitness Pt 3) — 2026-05-01
 - **Highway 395, March 2022** — 2026-05-08
 
 ## Recent Changes
