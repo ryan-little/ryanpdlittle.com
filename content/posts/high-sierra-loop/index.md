@@ -10,7 +10,7 @@ draft: false
 
 California is several different countries stacked on top of each other along the 395 and the 5, and the cleanest way to see most of them in a week is to drive up one and down the other. My friend Max and I did exactly that in March of 2022, in my mom's Toyota Highlander, on my spring break, with a vague list of stops and no real plan beyond it. By the end of the loop we had been beached on a sheet of ice high in the White Mountains and dug out by strangers, slept on a bluff over Mono Lake, eaten breakfast in Susanville, hiked up a closed forest road east of Lassen, and stood inside a lava tube called Pluto's Cave somewhere north of a town called Weed. None of that had been more than a name on a map at the start of the week.
 
-It was the first long road trip I had ever taken without a parent in the car. Max was free, I was free, and we left San Diego on a morning in mid-March in the Highlander, with the back set up to sleep in and not much else.
+It was my first real boondocking trip, sleeping in the back of the car on whatever piece of public land looked good at the end of the day. Max was free, I was free, and we left San Diego on a morning in mid-March in the Highlander, with the back set up to sleep in and not much else.
 
 ## Death Valley
 
@@ -80,6 +80,6 @@ Weed is a small town in the shadow of Shasta, a short drive past Pluto's Cave, a
 
 We got a Motel 6 south of Mount Shasta that night because we had been sleeping in the Highlander for four nights and a real shower felt earned. The next morning we drove the 5 from there to San Diego in one push. The 5 down the central valley is one of the longest stretches of straight, flat highway in California, eight hours of farms and gas stations and not much else, and I do not remember much from that stretch. The trip had already happened by the time we got on the 5.
 
-What I came home with was a different sense of the size of the state. I had grown up in California and driven a lot of it before, in pieces, with my parents in the front seat and a destination at the end. This was the first time I had driven a real loop through it on my own decisions, with a friend in the passenger seat and no end-state besides home. The part of California I saw that week was bigger than the part I had seen in the previous twenty-two years combined.
+What I came home with was a different sense of the size of the state. I had grown up in California and driven a lot of it before, in pieces, with a destination at one end and a familiar room at the other. This was the first time I had ever really boondocked, sleeping in the back of the Highlander on public land four nights running, and the part of California I saw that week was bigger than the part I had seen in the previous twenty-two years combined.
 
 The Highlander pulled into the driveway in San Diego on the night of the fifth day with bug splatter from two states on the windshield and a small dent in the front bumper that has, at this point, mostly worked itself out. The list of names on the map I had started the week with were now places I had been with a friend in a car my mom owned, and Whitney was the only one of them still on a list of things to come back to.
