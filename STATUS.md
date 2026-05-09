@@ -1,8 +1,8 @@
 # Status
 
-**Active** — Friday weekly publishing cadence, 4 posts scheduled through end of May 2026.
+**Active** — Friday weekly publishing cadence, 3 posts scheduled through end of May 2026.
 
-Last updated: 2026-05-01
+Last updated: 2026-05-08
 
 ## Current Schedule
 
@@ -10,7 +10,6 @@ Friday at 12:07pm PST. Trip reports through summer.
 
 | Date | Day | Post | Status |
 |------|-----|------|--------|
-| May 8 | Fri | High Sierra Loop | Draft, 5 RYAN placeholders + needs personal photos |
 | May 15 | Fri | Basecamp — The Training Coach (fitness Pt 4) | Draft, 1 RYAN placeholder + timing refs need updating |
 | May 22 | Fri | Whitney Goal | Draft, 4 RYAN placeholders + 2 photo slots |
 | May 29 | Fri | Learning Geospatial Python Pt 1 | Existing draft |
@@ -35,9 +34,11 @@ Friday at 12:07pm PST. Trip reports through summer.
 - **Garboard — From Chatbot to Dashboard** (fitness Pt 2) — 2026-04-24
 - **Three Trees: Tallest, Largest, Oldest** — 2026-04-28
 - **Basecamp: From Dashboard to System** (fitness Pt 3) — 2026-05-01
+- **Highway 395, March 2022** — 2026-05-08
 
 ## Recent Changes
 
+- Wholesale rewrite of high-sierra-loop post (post-publish, same-day): subagent-drafted version described a fabricated June 2022 Half Dome / Sequoia / White Mountains loop that never happened. Replaced with the actual March 2022 spring break road trip with Max — SD → Death Valley (Star Wars Canyon jet flyover, Badwater, Artist's Palette) → Alabama Hills (the Whitney sighting that planted the climb idea, Denali-at-11 callback) → White Mountain Road snow rescue (followed plow truck, beached on ice, dug for an hour with bare hands, sedan rescue with Ted Nivison from three-trees) → Mono Lake tufa boondock → Carson City state capitol → Tahoe loop with Emerald Bay → Reno oil change → Susanville breakfast → Lassen NF detour with closed-road canyon viewpoint → Burney Falls → Mt Shasta + Pluto's Cave + Weed → Motel 6 + 5 home. Retitled to "Highway 395, March 2022". Added 8 photos (badwater-basin, plow-vehicle, mono-lake-boondock, nevada-capitol, emerald-bay, burney-falls, mount-shasta, plutos-cave) converted JPG→webp via sips+cwebp at q80, max 2000px. Reconciles the snow-rescue with three-trees (same incident, names now consistent). Caught and fixed two fabrications: shovels (they used bare hands) and Half Dome (different trip entirely). Followed up with Badwater photo rotation fix (source JPG had no EXIF orientation, scene was sideways in landscape pixels — applied 90° CW rotation, re-shipped).
 - Cadence shift: Tue/Fri 5:57am PDT → Friday 12:07pm PST (`7 20 * * 5`). Whitney training and grad school competing for time; trip reports through summer fill the slot. Friday at noon also gives time to edit the morning of publish. Updated cron, publish-schedule.yml, CLAUDE.md, ARCHITECTURE.md.
 - Post-publish revision pass on Three Trees: filled the three Hyperion/Sherman/Methuselah personal-moment placeholders (off-trail Hyperion find with college roommates, General Grant before Sherman + the grove-over-headliner reframe, three-trip Methuselah arc with Ted Nivison snow rescue). Title em dash to colon. Corrected the older-bristlecone story (Tom Harlan researcher reported in 2009, age 5,062, sample/location lost after Harlan's 2013 death). Methuselah age 4,854 → 4,857. Closing line "three trips" → "several trips" since Methuselah was three on its own.
 - Post-publish revision pass on Basecamp Part 3: cut "## The Arc" summary section per style guide (Whitney/Cowles/Part-4 paragraph is now the close). Folded the OMAD example forward into the conversation paragraph. Voice drift pass on Data Pipeline, Metrics Layer, Research-Backed Coaching for more peer stance. Restructured five colon-introduced lists. Tightened the seven-number stat flex to three (50 commits, 6,600 lines, 147 tests). Inline gloss for ACWR. "6 API calls" → 9 to match code and the line below.
@@ -58,4 +59,4 @@ Friday at 12:07pm PST. Trip reports through summer.
 
 ## Next Action
 
-**Before each Friday:** Fill the `<!-- RYAN: -->` placeholders in each draft, supply personal photos for High Sierra Loop and Whitney Goal, and update the timing references in Basecamp Part 4 to reflect the actual elapsed time by 5/15.
+**Before each Friday:** Fill the `<!-- RYAN: -->` placeholders in each draft, supply personal photos for Whitney Goal, and update the timing references in Basecamp Part 4 to reflect the actual elapsed time by 5/15. Going forward, do a pre-publish review pass on subagent-drafted personal-narrative posts before they auto-publish — the High Sierra Loop incident showed those drafts can fabricate trip details whole-cloth.
