@@ -1,5 +1,5 @@
 ---
-title: "Five Days, Mom's Highlander, March 2022"
+title: "Highway 395, March 2022"
 date: 2026-05-08
 tags: ["travel", "road-trip", "california"]
 group: "personal"
