@@ -26,9 +26,11 @@ The structure matters more than the length. The prompt is organized as a decisio
 
 **The research integration** is the other half. Every non-obvious decision requires a citation: recommending rest against my preference means citing the specific threshold being triggered, capping distance due to a spike rule means citing PMC12421110, ACWR-based load restrictions mean citing PMC12487117. The research docs live in `docs/research/` as markdown, the coach reads them as part of its context, and if a situation arises that no doc covers, the coach flags a research gap for the research agent to fill later.
 
-<!-- SCREENSHOT: example of a daily coach session showing the feeling prompt, metric review, and the recommendation block at the end. -->
+![The /fitness skill mid-session: tool calls pulling today's Garmin data and weekly plan, then the feeling prompt asking about soreness, fatigue, schedule constraints, and stress before any recommendation is made.](coach-session-input.webp)
 
 **The decision order**, which I had to rewrite the prompt to enforce, is that the recommendation is the last thing printed in the response. All the data gathering, the status file updates, the coaching log saves happen above, and what I see at the bottom of my terminal is the prescription block and the reasoning. The original version buried the recommendation under a wall of tool output, and I'd miss it half the time. A one-line rule in the prompt fixed it.
+
+![The recommendation block from the same session: 10 miles easy aerobic at 145-160 bpm, with a full reasoning section citing readiness 88, HRV 75ms, and ACWR 0.80, followed by week context showing where the run lands in the 7-day horizon.](coach-recommendation.webp)
 
 ## The Status File
 
@@ -44,23 +46,11 @@ The workflow is nine phases: load the status file, pull the past week's coaching
 
 > Adherence: 6/7 coached days (86%), 1 major deviation. Fri 04-10: rec run 2mi (flat, easy, ankle gate test) → actual running 5.2mi with 515ft gain. DEVIATED, 160% overshoot. Caused ankle regression by evening. This is the critical deviation of the week.
 
-<!-- SCREENSHOT: a slice of the Monday QA report in the terminal, showing the adherence table and the signal validation section. -->
+![The May 11th coach QA report: adherence table showing planned vs. actual for each day with two intentional deviations flagged, signal accuracy validation noting the HRV/sleep recovery that preceded the Wilson hike, and insight status tracking the overshoot pattern.](coach-qa-report.webp)
 
 That's the coach-qa catching the April 10th mistake, correlating it with the next-day data, and writing an insight that gets added to the status file: "Apr 10 overshoot directly caused ankle regression, injury-gated recommendations are ceilings, not targets." That insight then shaped later recommendations, which started explicitly framing prescribed distance as a ceiling and not a target, because the prompt tells the coach to apply learned insights from the status file.
 
 The feedback loop is the point. A rules engine never grades itself, and a coach with explicit signal validation can notice that one of its inputs is systematically wrong for this athlete and demote it, which is what happened with Body Battery and Training Readiness early on. Both are Garmin's proprietary composite scores, both are the kind of single-number wellness readout that feels like it should matter, and both turned out to be poor predictors of my actual performance. Low BB days showed faster paces and higher HR, and low readiness days did the same. The coach-qa flagged the pattern, and the signal priority in the main coach prompt now explicitly says "these use proprietary, unvalidated algorithms. Never let them be the primary driver."
-
-## Catching Zion Before the Metrics Did
-
-Part 3's opening scene was March 29th, the day the coach beat the rules engine by noticing my ACWR was garbage because CSV-imported activities were missing load values. That catch was real but it was surface-level, a data-quality flag any system with a sanity check could have made. The more interesting catch came a week later.
-
-<!-- RYAN: fill in the specific Zion trip details here, e.g. the dates you were there and which hikes you did. I put in Angels Landing / Observation Point / Narrows as placeholders but swap in whatever's actually accurate. -->
-
-I'd been to Zion for three days of hiking the weekend before. My watch didn't record most of it because I wasn't wearing it for the full trips and because the canyon walls destroyed GPS signal. By the time I got back and started training again, the formal activity log looked clean, three days of light stuff with readiness scores climbing back up and HRV stable, and the rules engine would have green-lit a hard session because by its math I was rested.
-
-The coach asked how I was feeling. I said I was tired. It asked why, because the metrics didn't suggest it, and I said I'd just gotten back from three days of hiking at Zion. The conversation then did something a rules engine structurally can't: it took my self-report, cross-referenced it against the elevated stress trend from the trip week which was showing averages in the 45-57 range with spikes into the 90s, recognized that multi-day travel with heavy hiking produces physiological load that doesn't fully reflect in recovery metrics for several days after return, and prescribed an easy 2.5 mile flat run with heart rate under 140 instead of the hill repeats the weekly template wanted.
-
-Three days later my HRV was still slightly suppressed, my RHR was still two bpm above baseline, and I felt fine doing a second easy run before the signals fully cleared. The coach had seen through the lagging indicator problem before the indicators caught up.
 
 ## What the Coach Changed About My Training
 
