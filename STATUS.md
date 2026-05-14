@@ -2,7 +2,7 @@
 
 **Active** — Friday weekly publishing cadence, 3 posts scheduled through end of May 2026.
 
-Last updated: 2026-05-14
+Last updated: 2026-05-14 (evening)
 
 ## Current Schedule
 
@@ -10,7 +10,7 @@ Friday at 12:07pm PST. Trip reports through summer.
 
 | Date | Day | Post | Status |
 |------|-----|------|--------|
-| May 15 | Fri | Basecamp — The Training Coach (fitness Pt 4) | Draft, 1 RYAN placeholder + timing refs need updating |
+| May 15 | Fri | Basecamp — The Training Coach (fitness Pt 4) | Ready — Zion section cut, 3 screenshots added, committed 5/14 |
 | May 22 | Fri | Whitney Goal | Draft, 4 RYAN placeholders + 2 photo slots |
 | May 29 | Fri | Learning Geospatial Python Pt 1 | Existing draft |
 
@@ -38,6 +38,10 @@ Friday at 12:07pm PST. Trip reports through summer.
 
 ## Recent Changes
 
+- Whitney Goal: fixed AI-fabricated "Half Dome in 2022" → "Half Dome, whenever that was" — AI conflated Ryan's actual ~2016 Half Dome trip with the 2022 Highway 395 road trip. Year unknown so kept vague.
+- Pre-publish pass on Basecamp Pt 4 (basecamp-training-coach, publishes 5/15): cut the Zion section (vague, redundant with ankle story, unfilled placeholder), added three terminal screenshots converted to WebP (coach session input showing the feeling prompt, recommendation block, Monday QA report), fixed image order so the recommendation screenshot follows the decision-order paragraph it illustrates rather than preceding it. Anti-AI scan clean. Committed and pushed 5/14.
+
+
 - Fixed Cloudflare Web Analytics beacon SRI hash mismatch: Cloudflare's auto-injected beacon had a stale `integrity` hash causing CORS failures and SRI blocks in the browser. Added the manual JS snippet directly to `head.html` (no `integrity` attribute); Cloudflare detects the beacon is present and stops auto-injecting.
 - Title-structure audit across all 25 posts. Fitness series was the one inconsistency: Part 3 used a colon ("Basecamp: From Dashboard to System") while Parts 1, 2, and 4 used em dash. Retitled Part 3 to "Basecamp — From Dashboard to System". Series now reads consistently as `<Project Name> — <Descriptor>`. Primal Chase 5-part series was already consistent (`Building Primal Chase — Part N: <Subtitle> (V<range>)`). RF Viewshed and Geospatial Python single-part drafts use `— Part N` without subtitle; if either becomes multi-part, Primal Chase pattern is the template. Trip reports (Zion in Three Trails, Three Trees, Highway 395) intentionally use distinct structures — they're standalone, not a series.
 - Wholesale rewrite of high-sierra-loop post (post-publish, same-day): subagent-drafted version described a fabricated June 2022 Half Dome / Sequoia / White Mountains loop that never happened. Replaced with the actual March 2022 spring break road trip with Max — SD → Death Valley (Star Wars Canyon jet flyover, Badwater, Artist's Palette) → Alabama Hills (the Whitney sighting that planted the climb idea, Denali-at-11 callback) → White Mountain Road snow rescue (followed plow truck, beached on ice, dug for an hour with bare hands, sedan rescue with Ted Nivison from three-trees) → Mono Lake tufa boondock → Carson City state capitol → Tahoe loop with Emerald Bay → Reno oil change → Susanville breakfast → Lassen NF detour with closed-road canyon viewpoint → Burney Falls → Mt Shasta + Pluto's Cave + Weed → Motel 6 + 5 home. Retitled to "Highway 395, March 2022". Added 8 photos (badwater-basin, plow-vehicle, mono-lake-boondock, nevada-capitol, emerald-bay, burney-falls, mount-shasta, plutos-cave) converted JPG→webp via sips+cwebp at q80, max 2000px. Reconciles the snow-rescue with three-trees (same incident, names now consistent). Iterative fabrication catches across the rewrite: (1) shovels — they used bare hands, (2) Half Dome — different trip entirely, (3) "first long road trip without a parent" framing — wrong, was actually first real boondocking trip (corrected opening + closing to lead with public-land car-camping, since "boondocking" now bookends the post). Also fixed Badwater photo rotation (source JPG had no EXIF orientation, scene was sideways in landscape pixels — applied 90° CW rotation, re-shipped). Cache lesson: after re-deploy, Cloudflare proxy cached the old image at the bare URL with `cache-control: max-age=600`; cache-bust query string returned correct file from origin. Pushed five project-repo commits same day: `23b08be` rewrite + photos, `a51abd3` retitle, `d8bfe48` photo rotation, `a79eb5c` STATUS update, `c6bf020` boondocking framing.
@@ -61,4 +65,4 @@ Friday at 12:07pm PST. Trip reports through summer.
 
 ## Next Action
 
-**Before each Friday:** Fill the `<!-- RYAN: -->` placeholders in each draft, supply personal photos for Whitney Goal, and update the timing references in Basecamp Part 4 to reflect the actual elapsed time by 5/15. Going forward, do a pre-publish review pass on subagent-drafted personal-narrative posts before they auto-publish — the High Sierra Loop incident showed those drafts can fabricate trip details whole-cloth.
+**Before May 22:** Fill the 4 `<!-- RYAN: -->` placeholders in Whitney Goal and supply personal photos (2 slots). Going forward, do a pre-publish review pass on subagent-drafted personal-narrative posts before they auto-publish — the High Sierra Loop incident showed those drafts can fabricate trip details whole-cloth.

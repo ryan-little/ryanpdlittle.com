@@ -54,7 +54,7 @@ I'd rather have the stack than the VO2max number, because the stack is made of s
 
 ## Forward-Looking
 
-I've written a couple of trip reports in the last few weeks, the [three trees posts](/posts/three-trees) and the [High Sierra loop from 2022](/posts/high-sierra-loop), and what I noticed while writing them is that the trips I used to think of as the peak of my outdoor life are actually the base I'm building from. Half Dome in 2022 was the biggest hike I'd ever done. It is also less than half of Whitney. That reframing is uncomfortable but honest. The mountain I climbed four years ago is on the "warmup" side of what I'm trying to do now.
+I've written a couple of trip reports in the last few weeks, the [three trees posts](/posts/three-trees) and the [High Sierra loop from 2022](/posts/high-sierra-loop), and what I noticed while writing them is that the trips I used to think of as the peak of my outdoor life are actually the base I'm building from. Half Dome, whenever that was, was the biggest hike I'd ever done. It is also less than half of Whitney. That reframing is uncomfortable but honest. The mountain I climbed four years ago is on the "warmup" side of what I'm trying to do now.
 
 The next step on the list is Cuyamaca, 7.4 miles and 1,900 feet. Not dramatic. Not a day people road-trip for. Just the next trail, the one that teaches me sustained climbing at moderate elevation, so that San Jacinto doesn't break me when I get to it.
 
