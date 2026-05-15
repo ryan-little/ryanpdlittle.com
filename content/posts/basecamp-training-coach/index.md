@@ -1,11 +1,11 @@
 ---
 title: "Basecamp — What the Coach Caught"
-date: 2026-05-08
+date: 2026-05-15
 tags: ["python", "ai", "fitness", "garmin", "claude"]
 group: "projects"
 project: "Basecamp"
 summary: "Three weeks of using Claude as a daily training coach. The catches a rules engine couldn't make, the Monday QA loop that grades its own work, and where the AI is actually worse than if-statements. Part 4 of the fitness project series."
-draft: true
+draft: false
 ---
 
 *This is Part 4 of a 4-part series on my fitness project's evolution. [Part 1](/posts/claude-fit-the-ai-fitness-app-that-didnt-need-ai) covers Claude-Fit, the AI agent prototype. [Part 2](/posts/garboard-from-chatbot-to-dashboard) covers Garboard, the dashboard that outgrew its AI. [Part 3](/posts/basecamp) covers Basecamp's architecture, the metrics layer, and why Claude became the coach instead of the backend. This one is about what actually happened once I started using it.*

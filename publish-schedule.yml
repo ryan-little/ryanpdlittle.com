@@ -4,8 +4,6 @@
 # Once published, the entry is automatically removed from this file.
 
 posts:
-- path: content/posts/basecamp-training-coach/index.md
-  date: 2026-05-15
 - path: content/posts/whitney-goal/index.md
   date: 2026-05-22
 - path: content/posts/learning-geospatial-python-in-public/index.md
