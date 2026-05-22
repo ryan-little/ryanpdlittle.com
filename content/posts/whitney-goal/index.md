@@ -1,11 +1,11 @@
 ---
 title: "The Whitney Goal — Training for a Mountain I've Never Seen"
-date: 2026-05-12
+date: 2026-05-22
 tags: ["hiking", "fitness", "san-diego"]
 group: "personal"
 project: ""
 summary: "Cowles to Whitney is a 13-step trail progression on paper. In practice it's a person who's not an athlete trying to figure out what ready looks like from the bottom of the list."
-draft: true
+draft: false
 ---
 
 The first time I hiked Pyles Peak this year I was maybe a mile past the Cowles summit, on the saddle where the trail dips before the second climb, and it hit me that Whitney is basically this trail four times over and then add altitude. Pyles is 5.9 miles and 1,864 feet of gain. Whitney is 22 miles and 6,100 feet and topping out at 14,505. I was standing there winded from a hike I know well, doing the math in my head, and the math was not friendly.
