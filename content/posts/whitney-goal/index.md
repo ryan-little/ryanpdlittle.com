@@ -16,11 +16,25 @@ The first time I hiked Pyles Peak this year I was maybe a mile past the Cowles s
 
 ## A List I Can't Skip Ahead On
 
-The list starts at Cowles and ends at Whitney and there are eleven trails in between. Cowles is 3 miles and 950 feet of gain, the one I've hiked nineteen times since April 2024. Whitney is the 22-mile day. In between the list goes Iron Mountain, Pyles Peak, Cuyamaca, Fortuna, Otay, El Cajon, San Jacinto from the tram, Baldy, San Jacinto from Idyllwild, Cactus to Clouds, San Gorgonio, and then Whitney. Each one builds a thing the next one needs. Distance first, then steepness, then sustained climbing, then altitude, then all of it at once.
+The list starts at Cowles and ends at Whitney and the steps in between got reorganized in late April when a Six-Pack of Peaks challenge gave the progression a cleaner spine. Cowles is 3 miles and 950 feet of gain, the one I've hiked nineteen times since April 2024. Whitney is the 22-mile day. In between: Iron Mountain, Pyles Peak, El Cajon Mountain, and then the Six-Pack sequence, Wilson to Cucamonga to San Jacinto to San Bernardino Peak to Baldy to Gorgonio, with local peaks filling the off-weeks. Each one builds a thing the next one needs. Distance first, then steepness, then sustained climbing, then altitude, then all of it at once.
 
-I wrote the list out because I needed to see it. Having it as a sequence made the goal feel less like "someday I'd like to hike Whitney" and more like "here is the actual path from my living room to the summit, and here's where I am on it." Which is near the bottom. Pyles was the third step. I've hiked Cuyamaca before but not this year, so the coach system considers it still open. On most days I can see exactly where I am on the list, and the top of the list is very far away.
+I wrote the list out because I needed to see it. Having it as a sequence made the goal feel less like "someday I'd like to hike Whitney" and more like "here is the actual path from my living room to the summit, and here's where I am on it." Pyles was the third step. Since then El Cajon happened in late April and Wilson on May 9th, so I'm further along the list than I was when I first felt the Pyles math. Cuyamaca is still technically open, the ankle kept me off it when it was scheduled in early May. On most days I can see exactly where I am on the list, and the top is still very far away.
 
 The temptation with a list like this is to skip ahead. You want to drive out to Baldy because it sounds more interesting than another Cowles lap. You want to do Cactus to Clouds because the name is great. But the whole point of ordering the list by what each hike teaches you is that skipping steps means showing up to a harder trail without the thing it assumed you'd built. So I'm taking it in order, mostly, and the ones I'm tempted to skip are the ones I probably need the most.
+
+## The Plan From Here
+
+The Six-Pack gives the hike side a schedule, which is different from a list. A list is a concept. A schedule has dates and permits already paid for.
+
+El Cajon happened on April 26th, 11.3 miles and 4,144 feet, first trail that left my legs genuinely worked the next morning. Wilson on May 9th via the Sierra Madre trail was planned as 14 miles and came out at 16.4 with 5,203 feet of gain, six hours of moving time, a blister lesson about carrying a dry pair of socks for the summit.
+
+<!-- RYAN: your Wilson experience specifically — what the six hours felt like, what surprised you on the mountain, what you took away from it. It was probably the hardest thing you'd done on foot to that point. -->
+
+From here: Cucamonga this Sunday at 8,859 feet, first sustained day above 8,000. Then the tram to San Jacinto at the end of May, which is a passive altitude probe, the aerial tram does 8,000 feet of the climbing and drops you at 8,516, so you find out what 10K feels like before you have to earn it the hard way. June 7th is San Jacinto again but from Marion Mountain, this time climbing all 4,500 feet myself from a 6,500-foot trailhead. San Bernardino Peak on June 21st is 15.6 miles and 10,649 feet summit, the most Whitney-like day before Gorgonio. Baldy in July. Gorgonio on August 2nd, 17.3 miles and 11,503 feet, which is the dress rehearsal in full, and then Whitney three weeks later.
+
+The off-weeks aren't empty either: an Angeles Crest loop on June 14th, El Cajon again in late June for the descent practice, and a Crystal Lake PCT loop on July 5th that is 20 miles and 5,700 feet and was specifically tagged as a Whitney long-day simulator when it landed on the calendar.
+
+<!-- photo: view from Wilson summit, or a map showing the Six-Pack peaks spread across SoCal -->
 
 ## What Scares Me About Altitude
 
@@ -42,6 +56,14 @@ The ankle turned out to be useful the way unwanted things sometimes are. It forc
 
 As I write this I'm on day fourteen. The ankle is mostly back. I ran five miles with the chest strap on the road a few days ago, downhill sections included, and it held. Trail is the next test, and trail with a twist risk is the real test, and I'm not there yet.
 
+## Between Hikes
+
+The running doesn't pause for the hiking schedule, it runs on a parallel track all the way to August. The current target is 30 to 35 miles a week, built around one harder session on Tuesdays and easy aerobic miles the rest of the time. The weekend trail day is whatever the hike is, and hiking counts as the trail day but not as the long run, which has its own separate ladder.
+
+Longest single run to date is 6.3 miles. The targets are 10 miles before the end of May, 13.1 by mid-June, 15 before July. Fifteen was originally on the calendar for late July and got moved three weeks earlier when the weekly trend data suggested the fitness was ahead of the original estimate.
+
+The formula in any given week is roughly 80 percent easy and 20 percent harder work. Tuesdays get the intervals, everything else runs at a pace slow enough to keep heart rate below 160, which for me right now is slow enough to feel embarrassing on a road route but exactly what keeps the aerobic adaptation happening without digging a hole. The logic is that the hard problems at Whitney are musculoskeletal and altitude, not purely cardiovascular, and the running builds the cardiovascular base while the hikes build the legs-and-feet experience you can't get from road miles. The two things are complementary in a way where stopping either one would show up as a gap on the other.
+
 ## What "Ready" Looks Like for a Non-Athlete
 
 I have never been an athlete. I played rec soccer as a kid. I was not on a varsity team. I did not run cross country. I am a person who started hiking regularly in my mid-twenties and started running this year, at twenty-six, with no competitive background and no coach and a resting heart rate that tells me I have some genetic luck but no trained baseline to draw on.
@@ -56,8 +78,8 @@ I'd rather have the stack than the VO2max number, because the stack is made of s
 
 I've written a couple of trip reports in the last few weeks, the [three trees posts](/posts/three-trees) and the [High Sierra loop from 2022](/posts/high-sierra-loop), and what I noticed while writing them is that the trips I used to think of as the peak of my outdoor life are actually the base I'm building from. Half Dome, whenever that was, was the biggest hike I'd ever done. It is also less than half of Whitney. That reframing is uncomfortable but honest. The mountain I climbed four years ago is on the "warmup" side of what I'm trying to do now.
 
-The next step on the list is Cuyamaca, 7.4 miles and 1,900 feet. Not dramatic. Not a day people road-trip for. Just the next trail, the one that teaches me sustained climbing at moderate elevation, so that San Jacinto doesn't break me when I get to it.
+The next one is Cucamonga, this Sunday, 8,859 feet. The name is inherently funny. The hike is not, 4,183 feet of gain and the first sustained day above 8,000, high enough that altitude stops being something I've only read about.
 
-<!-- photo: Cuyamaca ridge or summit shot if Ryan has one, or the Cowles trail at sunrise -->
+<!-- photo: Cucamonga summit or Icehouse Canyon approach if available, or the Cowles trail at sunrise -->
 
-Tomorrow morning is Cowles, early, before work. Same trail I've hiked nineteen times. Nothing fancy, nothing noteworthy, just the home trail and the watch and the number at the end that tells me where the body is today. The mountain ASCII in my terminal has a small diamond next to Cuyamaca and an open one next to everything above it. The diamond next to Whitney is still very far up the page.
+Tomorrow morning is Cowles, early, before work. Same trail I've hiked nineteen times. Nothing fancy, nothing noteworthy, just the home trail and the watch and the number at the end that tells me where the body is today. The mountain ASCII in my terminal has diamonds next to El Cajon and Wilson now and an open one next to Cucamonga and everything above it. The diamond next to Whitney is still very far up the page.
