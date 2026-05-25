@@ -1,8 +1,8 @@
 # Status
 
-**Active** — Friday weekly publishing cadence, 3 posts scheduled through end of May 2026.
+**Active** — Friday weekly publishing cadence, posts scheduled through end of May 2026.
 
-Last updated: 2026-05-14 (evening)
+Last updated: 2026-05-24
 
 ## Current Schedule
 
@@ -10,9 +10,9 @@ Friday at 12:07pm PST. Trip reports through summer.
 
 | Date | Day | Post | Status |
 |------|-----|------|--------|
-| May 15 | Fri | Basecamp — The Training Coach (fitness Pt 4) | Ready — Zion section cut, 3 screenshots added, committed 5/14 |
-| May 22 | Fri | Whitney Goal | Draft, 4 RYAN placeholders + 2 photo slots |
-| May 29 | Fri | Learning Geospatial Python Pt 1 | Existing draft |
+| May 15 | Fri | Basecamp — The Training Coach (fitness Pt 4) | Published |
+| May 24 | Sat | Whitney Goal | Published — full Q&A rewrite; 2 RYAN placeholders remain (Wilson moment, Cucamonga/Ontario day) + 2 photo slots (Ryan to fill) |
+| May 29 | Fri | Learning Geospatial Python Pt 1 | Existing draft — needs pre-publish review |
 
 ## Published
 
@@ -38,6 +38,7 @@ Friday at 12:07pm PST. Trip reports through summer.
 
 ## Recent Changes
 
+- Whitney Goal (5/24): full Q&A-driven rewrite. Original subagent draft fabricated the opening (Pyles Peak moment), the altitude section premise ("what scares me"), and early long-run stats. Replaced via Q&A: El Cajon opening → two-tier structure → what's done (Wilson SAR incident, Cucamonga+Ontario new longest day) → altitude non-fear framing based on Fort Collins + RMNP + Eastern Sierra history → ankle story (three incidents, 90% resolved) → running cadence (10.2mi longest run, 30-35mi/wk 80/20) → "ready" defined as 2x El Cajon in one day. Date pushed from 5/22 to 5/24. 2 RYAN placeholders + 2 photo slots remain.
 - Whitney Goal: fixed AI-fabricated "Half Dome in 2022" → "Half Dome, whenever that was" — AI conflated Ryan's actual ~2016 Half Dome trip with the 2022 Highway 395 road trip. Year unknown so kept vague.
 - Pre-publish pass on Basecamp Pt 4 (basecamp-training-coach, publishes 5/15): cut the Zion section (vague, redundant with ankle story, unfilled placeholder), added three terminal screenshots converted to WebP (coach session input showing the feeling prompt, recommendation block, Monday QA report), fixed image order so the recommendation screenshot follows the decision-order paragraph it illustrates rather than preceding it. Anti-AI scan clean. Committed and pushed 5/14.
 
@@ -65,4 +66,4 @@ Friday at 12:07pm PST. Trip reports through summer.
 
 ## Next Action
 
-**Before May 22:** Fill the 4 `<!-- RYAN: -->` placeholders in Whitney Goal and supply personal photos (2 slots). Going forward, do a pre-publish review pass on subagent-drafted personal-narrative posts before they auto-publish — the High Sierra Loop incident showed those drafts can fabricate trip details whole-cloth.
+**Before May 29:** Pre-publish review of Learning Geospatial Python Pt 1 (existing draft). Whitney Goal published 5/24 — 2 `<!-- RYAN: -->` placeholders (Wilson day moment, Cucamonga/Ontario day) and 2 photo slots remain for Ryan to fill manually when ready. Going forward, do a pre-publish review pass on subagent-drafted personal-narrative posts before they auto-publish — the High Sierra Loop incident showed those drafts can fabricate trip details whole-cloth.
