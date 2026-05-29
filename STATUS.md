@@ -1,18 +1,20 @@
 # Status
 
-**Active** — Friday weekly publishing cadence, posts scheduled through end of May 2026.
+**Active** — Friday weekly publishing cadence, trip reports through summer.
 
-Last updated: 2026-05-24
+Last updated: 2026-05-28
 
 ## Current Schedule
 
-Friday at 12:07pm PST. Trip reports through summer.
+Friday at 12:07pm PST.
 
 | Date | Day | Post | Status |
 |------|-----|------|--------|
 | May 15 | Fri | Basecamp — The Training Coach (fitness Pt 4) | Published |
-| May 24 | Sat | Whitney Goal | Published — full Q&A rewrite; 2 RYAN placeholders remain (Wilson moment, Cucamonga/Ontario day) + 2 photo slots (Ryan to fill) |
-| May 29 | Fri | Learning Geospatial Python Pt 1 | Existing draft — needs pre-publish review |
+| May 24 | Sat | Whitney Goal | Published — placeholders removed 5/28 |
+| May 29 | Fri | Mount Wilson | Written via Q&A 5/28, draft ready |
+| Jun 5 | Fri | Cucamonga and Ontario | Planned — write before Jun 5 |
+| TBD | Fri | Learning Geospatial Python Pt 1 | Pushed — needs pre-publish review before rescheduling |
 
 ## Published
 

@@ -10,8 +10,6 @@ draft: false
 
 El Cajon Mountain is the hardest of the San Diego County peaks, and the first trail this year that left my legs genuinely worked the next morning. 11.3 miles, 4,144 feet of gain, nothing above 3,648 feet summit elevation. Whitney is 22 miles and 6,100 feet and tops out at 14,505. Those two numbers next to each other — El Cajon is less than half the elevation gain and less than half the distance — give you a feel for where the progression starts and how far it goes. The goal came from the Eastern Sierra trip I wrote about [here](/posts/high-sierra-loop), standing in the range and knowing Whitney was the highest point in the lower 48. El Cajon made it feel like a real problem to plan around.
 
-<!-- photo: El Cajon summit or descent, or the Cowles trail at sunrise -->
-
 ## A List I Can't Skip Ahead On
 
 The list I built to cover that distance splits into two tiers. The first is San Diego County: peaks I can drive to in under an hour, trails I can repeat whenever training calls for it. Cowles Mountain anchors this tier, the home trail, the one I've hiked nineteen times since April of last year and know well enough to track fitness by how my legs feel on the climb without checking the watch. Iron Mountain, Pyles Peak, Cuyamaca, Stonewall Peak, and El Cajon round out the county side. These are where distance and terrain confidence get built, where the repetition is the point.
@@ -28,11 +26,7 @@ The county tier is mostly behind me. Cowles, Iron Mountain, and Pyles are all ch
 
 The Six-Pack started with Wilson in early May via the Sierra Madre trail, which came out to 16.4 miles and 5,203 feet of gain. Until today that was my longest day on foot or close to it. Beautiful day, entirely uphill on the way out, telescopes at the summit worth looking around. On the way back down I walked past a search and rescue operation without knowing what it was, and found out later that afternoon that someone had a heart attack near the summit and didn't survive. That information lands differently after you've just finished the same climb.
 
-<!-- RYAN: anything specific from the Wilson day you want to add — a moment from the summit or descent, something that surprised you about the mountain. -->
-
 Cucamonga and Ontario today turned out to be the longest day I've done, Garmin confirmed it by step count and probably by elevation gain too. First sustained time above 8,000 feet.
-
-<!-- RYAN: what today was actually like — the altitude, the tag-on to Ontario, anything that stood out. -->
 
 ## What's Coming
 
@@ -43,8 +37,6 @@ Then San Jacinto by trail from Marion Mountain, the full aerobic ascent, 4,500 f
 Gap-fillers in the off-weeks include a loop in the Angeles Crest, El Cajon again for descent repetition, and a Crystal Lake PCT route that is 20 miles and 5,700 feet, specifically planned as a Whitney long-day simulator.
 
 Whitney is August 23rd on a day-use permit from the April lottery, group of three.
-
-<!-- photo: view from Cucamonga or Ontario summit, or a map of the Six-Pack peaks across SoCal -->
 
 ## Altitude Is Not the Problem I Expected
 
