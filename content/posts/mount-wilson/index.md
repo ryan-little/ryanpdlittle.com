@@ -5,7 +5,7 @@ tags: ["hiking", "fitness", "garmin"]
 group: "personal"
 project: ""
 summary: "First of the Six-Pack: 16.4 miles from Sierra Madre to the observatory I didn't know was up there, and a search and rescue operation on the way back down."
-draft: true
+draft: false
 ---
 
 {{< rawhtml >}}
