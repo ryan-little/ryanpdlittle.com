@@ -8,7 +8,7 @@ summary: "Before any code: the persistence hunting concept, hand-calculated bala
 draft: false
 ---
 
-*This is Part 0 of a 5-part series on building [Primal Chase](https://primalchase.com), a browser-based survival game about being hunted by persistence hunters. This series covers V1, from design doc to shipped game, and a second series will follow when V2 development begins. [Part 1](/posts/building-primal-chase-part-1) covers the prototype. [Part 2](/posts/building-primal-chase-part-2) covers making it shippable. [Part 3](/posts/building-primal-chase-part-3) covers systems and balance. [Part 4](/posts/building-primal-chase-part-4) covers visual identity.*
+*This is Part 0 of a 5-part series on building [Primal Chase](https://primalchase.com), a browser-based survival game about being hunted by persistence hunters. This series covers V1, from design doc to shipped game, and a second series will follow when V2 development begins. I tagged the build V1.1 through V1.9 as I went, and the parts group those versions by what each stretch focused on. [Part 1](/posts/building-primal-chase-part-1) covers the prototype (V1.1–V1.3). [Part 2](/posts/building-primal-chase-part-2) covers making it shippable (V1.4–V1.6). [Part 3](/posts/building-primal-chase-part-3) covers systems and balance (V1.7–V1.8). [Part 4](/posts/building-primal-chase-part-4) covers visual identity (V1.9).*
 
 ---
 

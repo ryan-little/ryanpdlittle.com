@@ -8,13 +8,13 @@ summary: "Fireflies, rain at 15 degrees, three tiers of lightning, and a screen 
 draft: false
 ---
 
-*This is Part 4 of a 5-part series on building [Primal Chase](https://primalchase.com), a browser-based survival game about being hunted by persistence hunters. [Part 0](/posts/building-primal-chase-part-0) covers the idea. [Part 1](/posts/building-primal-chase-part-1) covers the prototype. [Part 2](/posts/building-primal-chase-part-2) covers making it shippable. [Part 3](/posts/building-primal-chase-part-3) covers systems and balance.*
+*This is Part 4 of a 5-part series on building [Primal Chase](https://primalchase.com), my zero-dependency browser survival game. [Part 0](/posts/building-primal-chase-part-0) covers the idea. [Part 1](/posts/building-primal-chase-part-1) covers the prototype. [Part 2](/posts/building-primal-chase-part-2) covers making it shippable. [Part 3](/posts/building-primal-chase-part-3) covers systems and balance.*
 
 ---
 
 ## The Missing Layer
 
-By V1.8, Primal Chase played well. The balance was simulation-validated, the monologue system reacted to terrain and pressure, the difficulty modes worked, and the encounter system generated 9,000+ unique situations. But playing it felt like reading a well-written spreadsheet, where the text said *"your heat is rising, the hunters are close, a storm is building"* and you looked at colored bars and plain text on a white page.
+By V1.8, Primal Chase played well. The balance was simulation-validated, the monologue system reacted to terrain and pressure, the difficulty modes worked, and the encounter system was pulling in everything from earlier parts. But playing it felt like reading a well-written spreadsheet, where the text said *"your heat is rising, the hunters are close, a storm is building"* and you looked at colored bars and plain text on a white page.
 
 V1.9 was about closing the gap between what the game *says* and what the game *shows*. No new mechanics, no new encounters, just visual systems that make the existing game feel visceral.
 
@@ -138,17 +138,9 @@ These effects don't affect gameplay and exist entirely to make night feel differ
 
 ## The Performance Question
 
-All of this runs in a zero-dependency vanilla JS browser game with no canvas rendering loop, no WebGL, and no animation library. Every particle is a DOM element with CSS animations, which sounds expensive but the numbers tell a different story:
+All of this runs in a zero-dependency vanilla JS browser game with no canvas rendering loop, no WebGL, and no animation library. Every particle is a DOM element with CSS animations, which sounds expensive but the numbers tell a different story. Rain caps at 200 drops and drops to 50 on reduced-motion mobile, stars cap at 250, fireflies cap at 24, and lightning is a single overlay div, so even with the particle systems clearing each other the total never exceeds about 300 DOM elements. They all animate via `transform` and `opacity`, which the GPU composites without layout thrashing, and the shadow strings stay cached to prevent redundant repaints, so modern browsers handle the whole thing without breaking a sweat.
 
-- Rain caps at 200 drops (50 on reduced-motion mobile)
-- Stars cap at 250
-- Fireflies cap at 24
-- Lightning is a single overlay div
-- Particle systems clear each other (rain clears fireflies/insects)
-- Shadow strings are cached to prevent redundant repaints
-- Animations use `transform` and `opacity` (GPU-composited, no layout thrashing)
-
-The total particle count never exceeds ~300 DOM elements, all animated via CSS, and modern browsers handle this without breaking a sweat. The favicon optimization (571KB to 5KB) and logo compression (1.6MB to 75KB) did more for load performance than any animation optimization.
+The surprise was that none of the animation work was the bottleneck. The favicon optimization (571KB to 5KB) and logo compression (1.6MB to 75KB) did more for load performance than any animation optimization.
 
 ## What the Screen Became
 

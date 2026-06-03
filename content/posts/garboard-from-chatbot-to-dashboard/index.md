@@ -12,19 +12,13 @@ draft: false
 
 ---
 
-The first version of this project had four AI agents, a chat orchestrator, and a nutrition tracker that could identify food from photos. By the end of February I'd ripped all of it out and replaced it with if-statements.
-
-That's not a failure story. The if-statements were better.
+The first version of this project had four AI agents, a chat orchestrator, and a nutrition tracker that could identify food from photos. By the end of February I'd ripped all of it out and replaced it with if-statements, and the if-statements were better.
 
 ## What Claude-Fit Left Behind
 
-Claude-Fit v0.1 was ambitious in the way first projects always are. Four async agents running through `claude -p` as subprocesses, prompt templates doing the "thinking," SQLite for persistence, and integrations with Garmin Connect, the USDA nutrition API, and Google Places for restaurant lookups. The fitness agent analyzed workouts and recommended training adjustments. The nutrition agent tracked macros. The food recognition agent parsed text descriptions of meals using Claude Haiku. And a chat agent tied it all together as a conversational interface.
+The four agents ran through `claude -p` as subprocesses, with prompt templates doing the "thinking" against Garmin, USDA, and Google Places data, and I covered the full design in [Part 1](/posts/claude-fit-the-ai-fitness-app-that-didnt-need-ai). The short version is that it worked technically and still wasn't worth keeping. Every recommendation cost tokens, added latency, and wasn't meaningfully better than what a simple rule engine could produce. "You ran hard yesterday and your readiness is low, so take it easy today" doesn't need a language model. It needs a comparison operator.
 
-It worked, technically. You could ask it what to do today and it would call the Garmin API, pull your recent activities, feed them into a prompt template, and return a recommendation. The problem was that every recommendation cost tokens, added latency, and wasn't meaningfully better than what a simple rule engine could produce. "You ran hard yesterday and your readiness is low, so take it easy today" doesn't need a language model. It needs a comparison operator.
-
-The nutrition tracking had the same issue. Parsing "I had a chicken burrito and a side of rice" through Haiku to extract macros was clever, but I wasn't actually using the macro data for anything useful, and the accuracy of LLM-based food recognition wasn't good enough to base real decisions on. The food photo recognition was genuinely interesting as a concept, and it's something I'd still like to revisit, but it was solving a problem I didn't have yet because I hadn't built the system that would use the data.
-
-So in late February I deleted all four agents, the chat orchestrator, the nutrition tracker, and the food recognition pipeline. What survived was the Garmin sync, the activity database, and a question: if AI isn't doing the thinking, what is?
+So in late February I deleted all four agents, the chat orchestrator, the nutrition tracker, and the food recognition pipeline. The food photo recognition was the one piece I was sorry to lose, genuinely interesting as a concept and something I'd still revisit, but it was solving a problem I didn't have yet because I hadn't built the system that would use the data. What survived was the Garmin sync, the activity database, and a question: if AI isn't doing the thinking, what is?
 
 ## The Rule Engine
 

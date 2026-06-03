@@ -26,15 +26,11 @@ The problem was that fitness training has variables that resist programmatic mod
 
 Claude can process all of those things in natural language alongside the structured data. Not as a replacement for the metrics, but as the reasoning layer on top of them. The insight that came out of March 29th was simple: metrics as context, not decisions. Calculate the numbers deterministically, store them in SQLite, and then let Claude read the snapshot and talk through what it means with me.
 
-## Why Not Just Fix Garboard
-
-The interaction model was fundamentally different. Garboard was a web dashboard you look at. Basecamp is a conversation you have. Only about 20-30% of Garboard's code was relevant to the new model, mostly the FIT parsing, the ACWR math, and the SQLite patterns. Everything else was dead weight. FastAPI, the frontend, API routes, the achievement system, the six-tab dashboard with Canvas 2D charts and Leaflet maps. All of that was built to show you data, and showing you data turned out to be the wrong goal.
-
-Cherry-picking good pieces into clean architecture beats pruning dead code from a project that's aimed at the wrong target. So I started a new repo.
+That insight also meant Garboard itself had to go, because the interaction model was now fundamentally different. Garboard was a web dashboard you look at, Basecamp is a conversation you have. Only about 20-30% of Garboard's code was relevant to the new model, mostly the FIT parsing, the ACWR math, and the SQLite patterns, and everything else was dead weight, the FastAPI server, the frontend, the API routes, the achievement system, the six-tab dashboard with Canvas 2D charts and Leaflet maps, all of it built to show you data when showing you data turned out to be the wrong goal. Cherry-picking the good pieces into clean architecture beats pruning dead code from a project aimed at the wrong target, so I started a new repo.
 
 ## What Basecamp Actually Is
 
-Basecamp is a Claude-native training coach powered by Garmin data. No dashboard, no web server, no rules engine. Claude Code is the interface. The system generates structured fitness metrics and passes them to Claude, which combines them with how I'm actually feeling that day to produce evidence-based training recommendations.
+Basecamp is a training coach that runs inside Claude Code and reads my Garmin data. No dashboard, no web server, no rules engine. Claude Code is the interface. The system generates structured fitness metrics and passes them to Claude, which combines them with how I'm actually feeling that day to produce evidence-based training recommendations.
 
 The daily workflow looks like this. A Python script pulls today's data from the Garmin Connect API, which takes about 18 seconds and 9 core API calls via pirate-garmin's OAuth2 flow, plus a handful of enrichment calls per new activity. That data goes into a SQLite database with 24 tables covering activities, wellness, sleep, HRV, training load, readiness, VO2max, and more. Then a snapshot generator reads the database and assembles a 14-section daily context document covering everything from load ratios to mileage pacing to anomaly detection. Claude reads the snapshot and starts the conversation.
 
@@ -44,7 +40,7 @@ The conversation part is what matters. Claude doesn't just dump recommendations.
 
 ## The Data Pipeline
 
-The Garmin Connect API is the primary data source now, which is its own story. During Garboard's final weeks I went through a Garmin authentication crisis that burned through garminconnect, garth, cookie-based workarounds, and a full USB FIT import system before finding pirate-garmin, which uses native Android OAuth2 and just works. Tokens cache locally and auto-refresh silently. One library solved a problem that three others couldn't.
+The Garmin Connect API is the primary data source now, by way of the authentication crisis I walked through in [Part 2](/posts/garboard-from-chatbot-to-dashboard), which ended with pirate-garmin's native Android OAuth2 flow. Tokens cache locally and auto-refresh silently.
 
 Daily ingest hits nine API endpoints and pulls down everything Garmin has on me, daily wellness with steps and stress and heart rate and body battery, sleep with all 11 score types and stage breakdowns, HRV with rolling averages and baseline status, training load and readiness with their component scores, VO2max, heat acclimation, and activities with GPS tracks and HR zones and weather data. There's also a file-based fallback for when the API is unavailable, using bulk export ZIPs and daily FIT files I reverse-engineered the undocumented message types out of. The METRICS FIT files contain training readiness, load ratios, race predictions, and body battery data in message types Garmin doesn't document anywhere, and I decoded them by cross-referencing against the bulk export JSON.
 
@@ -60,17 +56,15 @@ The GPS track analysis module does terrain splitting to show what percentage of 
 
 ## Research-Backed Coaching
 
-Every major training decision in the system is grounded in documented research. I went through the 2024-2026 literature on periodization models, HRV interpretation, ACWR evidence, ramp rate myths, sleep effects, and altitude physiology, and compiled it into markdown files that Claude reads as part of its coaching context.
+Every major training decision in the system is grounded in documented research. I went through the 2024-2026 literature on periodization, HRV, ACWR, ramp rates, sleep, and altitude physiology, compiled it into markdown files Claude reads as coaching context, and two findings ended up mattering most.
 
-Some of the findings shaped the project directly. The 10% weekly mileage increase rule has no scientific basis. The real injury predictor is single-session spikes exceeding 10% of your longest run in the past 30 days. Subjective self-report outperforms objective measures for detecting well-being changes in 85% of instances where sensitivity differed, which means my answer to "how do you feel today" is more predictive than any metric my watch records. HRV should be read as a 7-day rolling average, not single daily values, because the noise in individual readings makes them almost useless for decision-making.
+The zone 2 research mattered because Garmin's zone naming is genuinely confusing. Garmin's Zone 2 labeled "Easy" is actually research Zone 2, the aerobic development zone at 60-69% of heart rate reserve, but Garmin's Zone 3 labeled "Aerobic" is above LT1 for most people and is not the aerobic base-building zone despite the name. My working target is 145-160 bpm until I get a lactate threshold test to confirm the exact boundary, and the mapping is documented project-wide so Claude never confuses the terminology.
 
-The zone 2 aerobic development research mattered most because Garmin's zone naming is genuinely confusing. Garmin's Zone 2 labeled "Easy" is actually research Zone 2, the aerobic development zone at 60-69% of heart rate reserve, but Garmin's Zone 3 labeled "Aerobic" is above LT1 for most people and is not the aerobic base-building zone despite the name. My working target is 145-160 bpm until I get a lactate threshold test to confirm the exact boundary. The mapping is documented and aligned project-wide so Claude never confuses the terminology.
-
-Altitude research is the other big chunk because of Whitney specifically. VO2max drops roughly 1.9% per 1,000 feet of elevation, which at Whitney's 14,505 feet is a 27-28% reduction. Sea-level heart rate bands don't apply at altitude because submaximal heart rate rises 10-20+ bpm while max heart rate drops. What's harder to design around is that physical fitness does not reduce acute mountain sickness, only acclimatization does, which means staging at 8,000-10,000 feet for 2-3 nights before the summit bid.
+Altitude is the other big chunk because of Whitney specifically. VO2max drops roughly 1.9% per 1,000 feet of elevation, which at Whitney's 14,505 feet is a 27-28% reduction, and sea-level heart rate bands don't apply because submaximal heart rate rises 10-20+ bpm while max heart rate drops. The part that's harder to design around is that physical fitness does not reduce acute mountain sickness, only acclimatization does, which means staging at 8,000-10,000 feet for 2-3 nights before the summit bid.
 
 ## The Trail Progression
 
-The goal is to summit Mt. Whitney by late July or August 2026. Getting there from San Diego means building distance, vertical gain, altitude tolerance, and running fitness systematically. I laid out a 13-step trail progression that starts at Cowles Mountain, my 3-mile home trail with 950 feet of gain, and ends at Whitney's 22-mile, 6,100-foot, 14,505-foot summit.
+The goal is to [summit Mt. Whitney](/posts/whitney-goal/) by late July or August 2026. Getting there from San Diego means building distance, vertical gain, altitude tolerance, and running fitness systematically. I laid out a 13-step trail progression that starts at Cowles Mountain, my 3-mile home trail with 950 feet of gain, and ends at Whitney's 22-mile, 6,100-foot, 14,505-foot summit.
 
 Each step builds a specific capability, Cowles establishing base trail fitness, Iron Mountain adding distance, Pyles Peak adding steepness, and Cuyamaca adding sustained climbing at moderate elevation. The middle steps push into bigger days with more vertical. San Jacinto via the tram is the first real altitude test at 10,834 feet. Cactus to Clouds is 21 miles with 10,400 feet of gain, which is the dress rehearsal. San Gorgonio at 11,503 feet is the altitude dress rehearsal. Whitney is the goal.
 
@@ -82,7 +76,7 @@ The system tracks this with a mountain visualization, an ASCII trail progression
 
 ## Two Days, From Scratch
 
-Basecamp went from founding session to working daily coaching in two days, about 50 commits and 6,600 lines of Python and 147 passing tests. The speed came from clear architecture decisions made up front, Garboard code to cherry-pick from where it applied, and Claude Code as the development environment.
+Basecamp went from founding session to working daily coaching in two days, about 50 commits and 6,600 lines of Python and 147 passing tests. The speed came from clear architecture decisions made up front, Garboard code to cherry-pick from where it applied, and [Claude Code as the development environment](/posts/claude-code-as-a-dev-environment/).
 
 The subagents handle different concerns. The coach agent runs daily training intelligence and can analyze data autonomously. A separate coach QA agent does weekly reviews on Mondays to check whether last week's recommendations actually matched what happened, which is the kind of feedback loop a rules engine never had. There are also agents for data imports, research lookups, and a full QA suite that validates everything from test coverage to documentation consistency.
 

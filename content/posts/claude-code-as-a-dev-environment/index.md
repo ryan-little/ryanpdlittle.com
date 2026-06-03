@@ -2,7 +2,7 @@
 title: "Claude Code as a Development Environment"
 date: 2026-04-14
 tags: ["ai", "tools"]
-group: ""
+group: "projects"
 project: ""
 summary: "How I use Claude Code with custom skills, CLI tools, a knowledge hub, and subagents to build software. Not a review, a workflow walkthrough."
 draft: false
@@ -54,7 +54,7 @@ I wrote a [whole post about the knowledge hub](/posts/building-a-personal-knowle
 
 Every project has a counterpart directory in the knowledge hub with decisions, research notes, and reference material that doesn't belong in the codebase. When Claude starts a session in my blog repo, it can search `qmd` for the writing style guide, past editorial decisions, and the blog ideas backlog. When it's in my fitness project, it can pull up training philosophy docs and Garmin API notes. The context lives in one place and is accessible from any project, which means I don't have to stuff project history into CLAUDE.md where it would burn tokens on every prompt.
 
-Claude also has a MEMORY.md file per project for lighter-weight persistence, things like "the blog publishes Tuesdays and Fridays at 6am PDT" or "this user prefers integration tests over mocks." These load automatically every session and carry forward small preferences. The hub handles deep context, MEMORY.md handles quick recall, and between the two I rarely repeat myself.
+Claude also has a MEMORY.md file per project for lighter-weight persistence, things like "the blog publishes Tuesdays and Fridays at 6am PDT" or "write integration tests, not mocks." These load automatically every session and carry forward small preferences. The hub handles deep context, MEMORY.md handles quick recall, and between the two I rarely repeat myself.
 
 ## Subagents
 

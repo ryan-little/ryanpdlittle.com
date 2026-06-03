@@ -8,7 +8,7 @@ summary: "Cowles to Whitney is two tiers of peaks and most of 2026. Mapping the 
 draft: false
 ---
 
-El Cajon Mountain is the hardest of the San Diego County peaks, and the first trail this year that left my legs genuinely worked the next morning. 11.3 miles, 4,144 feet of gain, nothing above 3,648 feet summit elevation. Whitney is 22 miles and 6,100 feet and tops out at 14,505. Those two numbers next to each other give you a feel for where the progression starts and how far it goes. The goal came from the Eastern Sierra trip I wrote about [here](/posts/high-sierra-loop), standing in the range and knowing Whitney was the highest point in the lower 48. El Cajon made it feel like a real problem to plan around.
+El Cajon Mountain is the hardest of the San Diego County peaks, and the first trail this year that left my legs genuinely worked the next morning. 11.3 miles, 4,144 feet of gain, nothing above 3,677 feet summit elevation. Whitney is 22 miles and 6,100 feet and tops out at 14,505. Those two numbers next to each other give you a feel for where the progression starts and how far it goes. The goal came from the Eastern Sierra trip I wrote about [here](/posts/high-sierra-loop), standing in the range and knowing Whitney was the highest point in the lower 48. El Cajon made it feel like a real problem to plan around.
 
 ## A List I Can't Skip Ahead On
 
@@ -16,7 +16,7 @@ The list I built to cover that distance splits into two tiers. The first is San 
 
 The second tier is the Six-Pack of Peaks: six named SoCal summits that build altitude from Wilson to Gorgonio. Each one gets its own post.
 
-- [Mount Wilson](/posts/mount-wilson/): 5,724 ft, 16.4 mi, 4,500 ft gain
+- [Mount Wilson](/posts/mount-wilson/): 5,710 ft, 16.4 mi, 4,500 ft gain
 - Cucamonga Peak: 8,859 ft
 - San Jacinto Peak: 10,834 ft
 - San Bernardino Peak: 10,649 ft, 15.6 mi
@@ -41,26 +41,26 @@ Whitney is August 23rd on a day-use permit from the April lottery, group of thre
 
 I've been at altitude enough times to know my pattern. Living in Fort Collins put me at 5,000 feet as a daily baseline. Hiking in Rocky Mountain National Park, including time near Trail Ridge Road around 12,000 feet, gave me real elevation. The Eastern Sierra trip has altitude baked in, and so does Sequoia. The Methuselah Grove hike in the White Mountains, which I wrote about in [the Three Trees post](/posts/three-trees), sits around 10,000 feet. Across all of it my response has been faster dehydration and the occasional mild headache, nothing that stopped me or materially slowed me down.
 
-The altitude question for Whitney is not whether I handle elevation in general. It's whether I handle 14,505 feet specifically, which is 2,000 to 3,000 feet above anything I've been on foot. The research on this is clear: VO2max drops roughly 1.9 percent per 1,000 feet, submaximal heart rate climbs 10 to 20 beats while max heart rate drops, and fitness does not prevent acute mountain sickness. The only thing that does is time at altitude. The plan for the day or two before the summit bid is to camp at elevation, which takes the AMS variable off the table as much as it can be.
+The altitude question for Whitney is not whether I handle elevation in general. It's whether I handle 14,505 feet specifically, which is 2,000 to 3,000 feet above anything I've been on foot. The research is not encouraging if you're hoping to fitness your way out of it. VO2max drops roughly 1.9 percent for every 1,000 feet you climb. Submaximal heart rate climbs 10 to 20 beats while max heart rate falls, so you're working harder against a lower ceiling. And being fit does nothing to prevent acute mountain sickness. The only thing that does is time at altitude. The plan for the day or two before the summit bid is to camp at elevation, which takes the AMS variable off the table as much as it can be.
 
 The Six-Pack peaks handle the altitude build up to around 11,500 feet. The last 3,000 feet to the Whitney summit is the gap that only the summit day itself can close.
 
 ## Between Hikes
 
-The running runs on a parallel track through August, separate from the hiking schedule and for a different purpose. The target is 30 to 35 miles a week: one harder session on Tuesdays, easy aerobic miles the rest of the time, with the weekend trail day being wherever the hike schedule puts me. Hiking counts as the trail day but not as the long run, which has its own separate ladder.
+The running runs on a parallel track through August, separate from the hiking schedule and for a different purpose. The target is 30 to 35 miles a week. One harder session lands on Tuesdays and the rest is easy aerobic miles, with the weekend trail day falling wherever the hike schedule puts me. Hiking counts as the trail day but not as the long run, which has its own separate ladder.
 
 Longest single run so far is 10.2 miles, landing ahead of the target date. The ladder from there goes to 13.1 miles, then 15 before the end of June. The weekly formula is roughly 80 percent easy and 20 percent harder work, with everything outside of Tuesdays slow enough to keep heart rate below 160. That pace feels embarrassingly slow on flat roads right now, but it's the pace that builds the aerobic base without accumulating debt. Whitney's hard problems are musculoskeletal and altitude-related, not purely cardiovascular, and the running builds the cardiovascular floor while the hiking builds the legs-and-feet experience you can't get from road miles.
 
 ## What "Ready" Looks Like
 
-The benchmark I've settled on maps almost exactly to what Whitney actually asks for: two El Cajon Mountain climbs in a single day. El Cajon is 11.2 miles and 3,589 feet of gain, so doubling it lands at roughly Whitney's mileage and somewhat more than its elevation gain. If I can do that in training, the remaining variable is altitude acclimation, which has a clean solution in spending time at elevation before the summit, as opposed to fitness, which takes months and can't be rushed.
+The benchmark I've settled on maps almost exactly to what Whitney actually asks for: two El Cajon Mountain climbs in a single day. El Cajon is 11.3 miles and 4,144 feet of gain, so doubling it clears Whitney's mileage and tops its elevation gain. If I can do that in training, the remaining variable is altitude acclimation, which has a clean solution in spending time at elevation before the summit, as opposed to fitness, which takes months and can't be rushed.
 
 The background here: I played varsity soccer and varsity track through high school, and spent three years on a top club soccer team, enough travel tournaments that it was as much a travel sport as a local one. Hiking has been part of my life for a long time, just not this consistently until now, and twenty-six isn't some unfamiliar territory for fitness. The actual new variable is the running program, the first time I've kept up running regularly since high school. The early paces show it. The aerobic ceiling is higher than those numbers suggest, but it takes time to prove.
 
 So ready for me is a specific benchmark rather than a VO2max number. Solve the fitness problem and the altitude problem becomes tractable. That's the logic I'm working inside.
 
-## Forward-Looking
+## Half Dome Was the Old Ceiling
 
 Writing up the High Sierra loop and the Three Trees posts recently, I noticed that the trips I used to think of as the peak of my outdoor experience are on the warmup side of where this goes. Half Dome, whenever I did it, was the hardest thing I'd been on. It's less than half of Whitney by distance. That adjustment in scale is uncomfortable but accurate.
 
-The list in my terminal has a longer checked column than it did in January and a shorter open one above it. The diamond next to Whitney is still a long way up the page.
+Which puts the morning after El Cajon in a strange light. My legs were genuinely worked, and that day was half of one Whitney, on a trail I can drive to in under an hour. The list in my terminal has a longer checked column than it did in January and a shorter open one above it, and the diamond next to Whitney is still a long way up the page.

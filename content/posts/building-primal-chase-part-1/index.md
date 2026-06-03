@@ -8,7 +8,7 @@ summary: "How a browser survival game went from design doc to playable prototype
 draft: false
 ---
 
-*This is Part 1 of a 5-part series on building [Primal Chase](https://primalchase.com), a browser-based survival game about being hunted by persistence hunters. [Part 0](/posts/building-primal-chase-part-0) covers the idea. [Part 2](/posts/building-primal-chase-part-2) covers making it shippable. [Part 3](/posts/building-primal-chase-part-3) covers systems and balance. [Part 4](/posts/building-primal-chase-part-4) covers visual identity.*
+*This is Part 1 of a 5-part series on building [Primal Chase](https://primalchase.com), my browser survival game where you're the animal a band of persistence hunters won't stop chasing. [Part 0](/posts/building-primal-chase-part-0) covers the idea. [Part 2](/posts/building-primal-chase-part-2) covers making it shippable. [Part 3](/posts/building-primal-chase-part-3) covers systems and balance. [Part 4](/posts/building-primal-chase-part-4) covers visual identity.*
 
 ---
 

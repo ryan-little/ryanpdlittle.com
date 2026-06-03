@@ -24,6 +24,6 @@ Partly because the best technical blogs I've read weren't polished tutorials, th
 
 Posts here will mostly cover geospatial analysis, Python, and web development, the things I'm actively working with and learning. I've got projects in the pipeline that I'll write about as they come together.
 
-I've also been getting into hiking and trail running this year, with a goal to hit 1,000 miles between walking, running, and hiking in 2026, and Mt. Whitney is on the list. I'm hoping to start a master's degree soon too, more on that when the time comes.
+I've also been getting into hiking and trail running this year, with a goal to hit 1,000 miles between walking, running, and hiking in 2026, and [Mt. Whitney is on the list](/posts/whitney-goal/). I'm hoping to start a master's degree soon too, more on that when the time comes.
 
 Expect a mix of technical write-ups, outdoor stuff, and whatever else feels worth putting down. If any of that sounds interesting, stick around.

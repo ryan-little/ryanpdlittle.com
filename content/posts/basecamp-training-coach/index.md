@@ -74,10 +74,10 @@ If I were starting over tomorrow I'd keep the coach and I'd build a small determ
 
 ## Through-Line
 
-I started this series in Part 1 with a 419-line design document, four AI agents, a nutrition coach, a restaurant finder, a food recognition system, a chat orchestrator. Within eight hours I was deleting agents, within a day I had a Garmin dashboard, and three months later, after the dashboard, after the rules engine, after the pirate-garmin authentication crisis, after Zion, after the ankle, I'm back to having an AI as the coaching layer.
+I started this series in Part 1 with a 419-line design document and four AI agents. Within eight hours I was deleting agents, within a day I had a Garmin dashboard, and three months later, after the dashboard, after the rules engine, after the pirate-garmin authentication crisis, after Zion, after the ankle, I'm back to having an AI as the coaching layer.
 
 The difference is where the AI lives. Claude-Fit put Claude in front of data that was already structured and legible, asking a language model to interpret numbers I could have read myself. Basecamp puts Claude behind deterministic metrics and research and my own daily self-report, in the slot where reasoning about messy cross-domain context is what's actually needed. The metrics are calculated by code I wrote tests for, the research is written down in markdown docs that don't change unless I change them, the status file is a typed memory, and the coach operates on top of all of that and asks how I'm feeling before it prescribes, because the study says that's the highest-weight signal.
 
 The agents I deleted on February 15th weren't wrong because AI was wrong for fitness. They were wrong because AI was trying to do the thing that code does better. What the 473-line coach prompt is doing, that the 400 rules engine tests couldn't, is reading the gap between what the numbers say and what's actually going on, and asking me about it. The hammer I reached for twice now, first on Claude-Fit and again on Basecamp, is the same hammer. The second time I pointed it at a different nail.
 
-Whitney is three months out. I'm running Cowles in the morning, and the coach already knows it.
+[Whitney](/posts/whitney-goal/) is three months out. I'm running Cowles in the morning, and the coach already knows it.

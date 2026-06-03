@@ -8,7 +8,7 @@ summary: "A difficulty system built on config snapshots, a monologue engine with
 draft: false
 ---
 
-*This is Part 3 of a 5-part series on building [Primal Chase](https://primalchase.com), a browser-based survival game about being hunted by persistence hunters. [Part 0](/posts/building-primal-chase-part-0) covers the idea. [Part 1](/posts/building-primal-chase-part-1) covers the prototype. [Part 2](/posts/building-primal-chase-part-2) covers making it shippable. [Part 4](/posts/building-primal-chase-part-4) covers visual identity.*
+*This is Part 3 of a 5-part series on building [Primal Chase](https://primalchase.com), my browser survival game about outlasting the hunters one more day. [Part 0](/posts/building-primal-chase-part-0) covers the idea. [Part 1](/posts/building-primal-chase-part-1) covers the prototype. [Part 2](/posts/building-primal-chase-part-2) covers making it shippable. [Part 4](/posts/building-primal-chase-part-4) covers visual identity.*
 
 ---
 
@@ -59,7 +59,7 @@ applyDifficulty(level) {
 
 The deep-merge walks the override object and only replaces values that are explicitly specified, so if I add a new CONFIG property like a weather intensity tunable, it automatically works for all difficulties without touching the difficulty configs.
 
-It's one of those decisions that costs an hour upfront and saves dozens of hours later.
+Writing the deep-merge took an afternoon I could have skipped by hardcoding three configs, but it meant every balance change I made for the next two versions only had to be made once instead of three times.
 
 ## The Monologue Engine
 
@@ -88,33 +88,7 @@ V1.7 added terrain and pressure awareness, where the game now tags each fragment
   text: 'The water is right there. I can see it shimmer. But stopping means they gain ground.' }
 ```
 
-The `getTriggers()` function builds a list of everything that's true right now, including what action was just taken, which stats are critical, how close the hunters are, what terrain you're on, and what pressure is active:
-
-```javascript
-// Vital stat triggers
-if (gameState.heat >= 70) triggers.push('high_heat');
-if (gameState.stamina <= 30) triggers.push('low_stamina');
-if (gameState.thirst >= 60) triggers.push('high_thirst');
-if (gameState.hunterDistance < 8) triggers.push('hunters_close');
-
-// Terrain categories
-if (gameState.currentEncounter?.terrain?.id) {
-  const terrainId = gameState.currentEncounter.terrain.id;
-  for (const [category, ids] of Object.entries(CONFIG.terrainCategories)) {
-    if (ids.includes(terrainId)) triggers.push('terrain_' + category);
-  }
-}
-
-// Pressure categories
-if (gameState.currentEncounter?.pressure?.id) {
-  const pressureId = gameState.currentEncounter.pressure.id;
-  for (const [category, ids] of Object.entries(CONFIG.pressureCategories)) {
-    if (ids.includes(pressureId)) triggers.push('pressure_' + category);
-  }
-}
-```
-
-Fragment selection prioritizes triggered fragments over generic ones, and a recent buffer prevents repeats, so the monologue actually reacts to what's happening. When you're in rocky terrain with an injury, the animal thinks about the rocks and the pain. When you're near water with high thirst, it thinks about the water and the cost of stopping.
+Each phase, the `getTriggers()` function builds a list of everything that's true right now, including what action was just taken, which stats are critical, how close the hunters are, what terrain you're on, and what pressure is active. Fragment selection prioritizes triggered fragments over generic ones, and a recent buffer prevents repeats, so the monologue actually reacts to what's happening. When you're in rocky terrain with an injury, the animal thinks about the rocks and the pain. When you're near water with high thirst, it thinks about the water and the cost of stopping.
 
 By V1.8 the system had 387 tagged fragments, up from around 100 in V1.1. It's still just text selection from a tagged pool, but the fragments land because they match what's actually on screen, and that accuracy is what makes the eventual jump to generated images possible.
 
@@ -193,7 +167,7 @@ Each of these changes came from the data, not intuition. Without the simulation 
 
 V1.8 also added 102 new monologue fragments, 11 late-game signature encounters gated behind day 8+, and 11 night-specific opportunity variants. The late-game signatures matter because long runs were starting to feel repetitive, where the generator kept producing novel combinations but without scripted peaks in the late game day 12 didn't feel different from day 6. The signatures give exceptional runs their own narrative payoff.
 
-Mobile was the other priority since I see it as the main way most people would play a browser game like this, and the experience was rough, broken hover states, small tap targets, layout problems at narrow widths. Accessibility basics went in too, focus-visible outlines and ARIA labels, though the `prefers-reduced-motion` support ended up hiding some of the phase transition animations from earlier versions, which is what happens when you bolt on accessibility after the visual work is done.
+Mobile was the other priority since I see it as the main way most people would play a browser game like this, and the experience was rough until I fixed the broken hover states, tap targets, and narrow-width layout. Accessibility basics went in too, but the `prefers-reduced-motion` support ended up hiding some of the phase transition animations from earlier versions, which is what happens when you bolt on accessibility after the visual work is done.
 
 ## Where V1.8 Left Things
 

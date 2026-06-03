@@ -4,7 +4,7 @@ date: 2026-04-17
 tags: ["python", "ai", "fitness", "garmin", "fastapi", "claude"]
 group: "projects"
 project: "Garboard"
-summary: "I designed a fitness app with four AI agents, a nutrition coach, and a restaurant finder. It lasted about eight hours before I started ripping it apart. Part 1 of 3 on the evolution from Claude-Fit to Garboard to Basecamp."
+summary: "I designed a fitness app with four AI agents, a nutrition coach, and a restaurant finder. It lasted about eight hours before I started ripping it apart. Part 1 of 4 on the evolution from Claude-Fit to Garboard to Basecamp."
 draft: false
 ---
 
@@ -24,13 +24,13 @@ The architecture was a FastAPI backend with SQLite for storage and the Claude Co
 
 ## The Four Agents
 
-**The Fitness Agent** was the one I was most excited about. It pulled your full workout history from Garmin with emphasis on the last 14 days for load management, looked at body metrics and trends, checked your active goals, factored in yesterday's workout for recovery awareness, and generated two or three workout options for the day. Each option came with exercises, duration, intensity, location with estimated drive time, and a rationale for why it made sense given where you were in your training. The system prompt told it to act as a trail running and functional fitness coach.
+The fitness agent was the one I was most excited about, and it pulled your full workout history from Garmin with emphasis on the last 14 days for load management, looked at body metrics and trends, checked your active goals, factored in yesterday's workout so it wouldn't pile a hard day on top of a hard day, and generated two or three workout options for the day. Each option came with exercises, duration, intensity, location with estimated drive time, and a rationale for why it made sense given where you were in your training. The system prompt told it to act as a trail running and functional fitness coach.
 
 **The Nutrition Agent** was more ambitious. It would look at your last seven days of food logs, today's workout, your calorie and macro targets, nearby restaurants from Google Places, and your current eating pattern, which at the time was OMAD around 1pm on workdays. For each meal it would generate three options: a home-cooked meal that taught you a cooking skill, an eat-out option at a specific nearby restaurant with a specific menu item and estimated macros, and a fast food option that stayed on track. The system prompt said to acknowledge my current eating pattern and make a case before recommending changes.
 
 **The Food Recognition Agent** handled photo uploads and text entries. You'd snap a picture of your meal or type what you ate, and it would identify the foods, estimate portions with specificity ("6oz grilled chicken breast" not "chicken"), and return structured data. The key detail was that Claude's estimates were just the identification step. Python would take those identified foods and look them up in the USDA FoodData Central database for verified nutrition numbers. The USDA data got stored, not Claude's guesses.
 
-**The Chat Orchestrator** tied everything together. It had the last 10 messages of conversation, today's recommendations, your recent progress summary, and your active goals. Python handled the routing, detecting when a chat message needed a specialized agent ("what should I eat" went to nutrition, "what should I do today" went to fitness) and dispatching accordingly.
+Tying all of it together was the chat orchestrator, which held the last 10 messages of conversation, today's recommendations, your recent progress summary, and your active goals. Python handled the routing, detecting when a chat message needed a specialized agent ("what should I eat" went to nutrition, "what should I do today" went to fitness) and dispatching accordingly.
 
 ## The Stack
 

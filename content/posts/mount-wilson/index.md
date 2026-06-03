@@ -20,7 +20,7 @@ The alarm went off around 4 in the morning and I was on the 5 heading north out 
 
 ![The Mount Wilson Trail gate at the Sierra Madre trailhead.](IMG_9338.webp)
 
-The hike is 16.4 miles out and back with around 4,500 feet of gain from the Sierra Madre trailhead to the 5,724-foot summit. My Garmin logged closer to 5,200, but the watch started in the marine layer with changing pressure and I walked around the summit complex for a while, so the trail gain figure is the more accurate number. Start time was 6:30 AM and I finished just under six hours later, average heart rate 153 and max of 189, which is about as high as I've seen the watch go. Weather at the bottom was 63 degrees and mist, though by the time I reached the summit the sky was completely clear.
+The hike is 16.4 miles out and back with around 4,500 feet of gain from the Sierra Madre trailhead to the 5,710-foot summit. My Garmin logged closer to 5,200, but the watch started in the marine layer with changing pressure and I walked around the summit complex for a while, so the trail gain figure is the more accurate number. Start time was 6:30 AM and I finished just under six hours later, average heart rate 153 and max of 189, which is about as high as I've seen the watch go. Weather at the bottom was 63 degrees and mist, though by the time I reached the summit the sky was completely clear.
 
 {{< rawhtml >}}
 <div id="wilson-map" class="hiking-map"></div>
@@ -71,4 +71,6 @@ The news that afternoon had more detail. A hiker had been found unresponsive a f
 
 ## The Six-Pack
 
-Wilson sits at 5,710 feet, first of the six, and at 16.4 miles and around 4,500 feet of gain it was the longest hiking day I'd had until Cucamonga two weeks later. San Jacinto is next, then San Bernardino Peak, Baldy, and Gorgonio at 11,503 feet. Each one is further from San Diego, higher, and longer than the last, and by the time Gorgonio comes around the Wilson day is going to look like the easy one.
+Wilson sits at 5,710 feet, first of the six, and at 16.4 miles and around 4,500 feet of gain it was the longest hiking day I'd had until Cucamonga two weeks later. San Jacinto is next, then San Bernardino Peak, Baldy, and Gorgonio at 11,503 feet, each one further from San Diego, higher, and longer than the last.
+
+What I didn't expect from a training hike was to come down with a new mountain on the list. The same person built the telescopes I'd walked around at the summit and the Palomar Observatory two hours from my apartment, and I'd driven past that turnoff for years without ever going up. Whitney is the mountain at the end of all this, but the one I'm thinking about now is the closer one I somehow kept missing.

@@ -50,18 +50,18 @@ Pyles Peak is my current Sunday go-to, also in Mission Trails. The route starts 
 
 You can see on the elevation profile how the route has two distinct pushes, the Cowles climb and then the Pyles climb after a dip in between, and the HR coloring shows where the effort actually is. The green sections in the valleys and the red on the climbs tell the story better than pace data ever could.
 
-It's become a good routine hike, the kind of trail where I can zone out, get some elevation in my legs, and not think too hard about route choices. Not every hike needs to be an event. Sometimes you just want to move for two hours and come home.
+It's become a good routine hike, the kind of trail where I can zone out, get some elevation in my legs, and not think too hard about route choices, the kind where you just want to move for two hours and come home rather than make it an event.
 
 ## El Cajon Mountain
 
-El Cajon Mountain is the hardest hike I've done in San Diego. 11.6 miles, 3,862 feet of elevation gain, 5 hours 21 minutes moving time. The trailhead is out past Lakeside, and the route climbs relentlessly for the first several miles before hitting a series of exposed granite slabs near the summit that require some light scrambling.
+El Cajon Mountain is the hardest hike I've done in San Diego. 11.6 miles, 3,862 feet of elevation gain, 5 hours 21 minutes car to car. The trailhead is out past Lakeside, and the route climbs relentlessly for the first several miles before hitting a series of exposed granite slabs near the summit that require some light scrambling.
 
 {{< rawhtml >}}
 <div id="elcajon-map" class="hiking-map"></div>
 <div class="hiking-elevation-chart"><canvas id="elcajon-map-elevation"></canvas></div>
 {{< /rawhtml >}}
 
-![El Cajon Mountain summit, 3,675 feet.](elcajon-summit.webp)
+![El Cajon Mountain summit, 3,677 feet.](elcajon-summit.webp)
 
 Look at that elevation profile. The first half is a grind, and then the route flattens out along the ridgeline before the final push to the summit. My average heart rate for the whole hike was 137, which seems low compared to Cowles, but that's because the pace is so much slower on a 5 hour hike. You're not pushing hard, you're managing energy. The HR coloring on the map makes this visible, you can see the green sections where I was on flatter terrain and the red where the grade gets serious.
 
@@ -93,8 +93,8 @@ This one's not San Diego, but I want to include it because it was one of the mor
 
 ![Ancient bristlecone pines in the White Mountains, with Methuselah possibly in the background.](methuselah-pines.webp)
 
-The Eastern Sierra is a different world from San Diego. The trailhead sits above 10,000 feet, the air is thin, and the bristlecone pines are these twisted, gnarled things that look half dead but have been alive since before the pyramids were built. I've been chasing notable trees for a while now, the oldest, the largest, the tallest, and I have a whole page about all of them over at [ryan-little.com/trees](https://ryan-little.com/trees) if you're curious.
+The Eastern Sierra is a different world from San Diego. The trailhead sits above 10,000 feet, the air is thin, and the bristlecone pines are these twisted, gnarled things that look half dead but have been alive since before the pyramids were built. I've been chasing notable trees for a while now, [the oldest, the largest, the tallest](/posts/three-trees/), and I have a whole page about all of them over at [ryan-little.com/trees](https://ryan-little.com/trees) if you're curious.
 
 The hike itself is moderate, mostly rolling terrain through the grove at elevation, but the altitude makes everything feel harder than it should. My average heart rate was 138, which is easy by San Diego standards, but at 10,000 feet my lungs did not agree with that assessment. Worth the drive from San Diego, though. Easily.
 
-I've been trying to get out on trails more consistently this year, partly for the 1,000 mile goal and partly because sitting at a desk doing geospatial work all day means I need to actually move in the real world sometimes. The Garmin data is fun to look back on, and the maps make it easy to see where I've been and what it cost me to get there. I'm heading to Zion National Park the week this post goes live, so there should be some good new tracks to add to the collection soon.
+I've been trying to get out on trails more consistently this year, partly for the 1,000 mile goal and partly because sitting at a desk doing geospatial work all day means I need to actually move in the real world sometimes. The Garmin data is fun to look back on, and the maps make it easy to see where I've been and what it cost me to get there. I'm heading to [Zion National Park](/posts/zion-in-three-trails/) the week this post goes live, so there should be some good new tracks to add to the collection soon.

@@ -4,7 +4,7 @@ date: 2026-04-21
 tags: ["f1", "sports"]
 group: "personal"
 project: ""
-summary: "Three races into my first F1 Fantasy season, I built a simulation model, trusted it on a chip week, and watched three of my five drivers not finish the race."
+summary: "I built a Monte Carlo model to win my F1 Fantasy league, got outscored by a coworker who just picked the fast cars, and retired the whole thing for Claude-assisted reasoning on top of the data."
 draft: false
 ---
 
@@ -122,8 +122,6 @@ The decision was partly about regulations. The 2026 cars are fundamentally diffe
 
 What replaced it is Claude-assisted reasoning on top of the same data pipeline. I kept the data product and threw out the predictor. Each race week Claude pulls current form and weather and team news from the web, runs DuckDB queries for PPM and trends and differentials, and weighs all of it against my read from watching sessions. I send screenshots of the fantasy platform for the opponent rosters and prices because there's no API for those. Then Claude presents the case and I make the call.
 
-The shape of this decision has shown up in other projects of mine lately. Build the deterministic layer so the numbers are trustworthy, then let Claude do the reasoning on top of them, instead of trying to bake the reasoning into code that can never ask a followup question. Fantasy F1 is just the cleanest version of it, because the data is tidy and the consequences of being wrong are points in a work league, not miles on a trail.
-
-The model was an impressive piece of engineering solving the wrong problem. A 7-person work league isn't a Kaggle competition, it's a game where the variance in outcomes is dominated by freak DNFs and regulation-era shifts that no amount of historical Bayesian fitting can anticipate. The useful layer wasn't prediction, it was having the data available for reasoning. Keeping the pipeline and dropping the predictor is what actually fit the problem.
+The model was an impressive piece of engineering solving the wrong problem. A 7-person work league isn't a Kaggle competition, it's a game where the variance in outcomes is dominated by freak DNFs and regulation-era shifts that no amount of historical Bayesian fitting can anticipate. The useful layer was never prediction, it was having the data available for reasoning, so the right move was to build the deterministic layer so the numbers are trustworthy and let Claude do the reasoning on top, instead of baking that reasoning into code that can never ask a followup question. This shape has shown up in other projects of mine lately, and Fantasy F1 is just the cleanest version of it, because the data is tidy and the consequences of being wrong are points in a work league, not miles on a trail.
 
 So the strategy now is to watch the sessions, use the data to check my gut against price and ownership and circuit history, and save the remaining chips for weekends where one driver or one constructor is obviously ahead. Miami is next. McLaren looked quick at Suzuka with Piastri P2 and Norris P5, and I want to see if that holds at a power circuit before deciding whether it's real or a one-track fluke.

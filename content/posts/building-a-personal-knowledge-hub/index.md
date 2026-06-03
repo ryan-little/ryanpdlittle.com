@@ -45,7 +45,9 @@ There's a `notes/` inbox directory too, but it stays empty in practice. Notes ge
 
 ![The knowledge hub folder structure in Finder, showing topics organized by domain.](kh-folder-structure.webp)
 
-I actually started building this for Little Hammer Labs first. Halfway through planning that one I realized I should experiment on my personal setup before implementing it for the business, so I spun up the personal hub in a day and started using it. The LHL version ended up being way more involved, with full vector search using local models because their machine can handle it, overnight maintenance agents, a confidential document system to keep client info out of the private GitHub repo, and a full archival system. It's got a lot more docs and I overengineered that one too, but it hits 90%+ accuracy on finding documents from simple queries. I've also started working on plugging the LHL knowledge hub into our business Discord bot so the team can search it from anywhere.
+I actually started building this for Little Hammer Labs first. Halfway through planning that one I realized I should experiment on my personal setup before implementing it for the business, so I spun up the personal hub in a day and started using it.
+
+The LHL version ended up being way more involved. It runs full vector search using local models because their machine can handle it, plus overnight maintenance agents, a confidential document system to keep client info out of the private GitHub repo, and a full archival system. It's got a lot more docs and I overengineered that one too, but it hits 90%+ accuracy on finding documents from simple queries. I've also started plugging the LHL knowledge hub into our business Discord bot so the team can search it from anywhere.
 
 ### The Note Format
 
