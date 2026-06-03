@@ -2,7 +2,7 @@
 
 **Active** — Friday weekly publishing cadence, trip reports through summer.
 
-Last updated: 2026-05-28
+Last updated: 2026-06-03
 
 ## Current Schedule
 
@@ -12,8 +12,9 @@ Friday at 12:07pm PST.
 |------|-----|------|--------|
 | May 15 | Fri | Basecamp — The Training Coach (fitness Pt 4) | Published |
 | May 24 | Sat | Whitney Goal | Published — placeholders removed 5/28 |
-| May 29 | Fri | Mount Wilson | Written via Q&A 5/28, draft ready |
+| May 29 | Fri | Mount Wilson | Published (auto 5/29; synced local 6/3) |
 | Jun 5 | Fri | Cucamonga and Ontario | Planned — write before Jun 5 |
+| TBD | Fri | What's Coming — Summer 2026 | Draft (6/3) — reconciles spring; review before scheduling |
 | TBD | Fri | Learning Geospatial Python Pt 1 | Pushed — needs pre-publish review before rescheduling |
 
 ## Published
@@ -37,10 +38,15 @@ Friday at 12:07pm PST.
 - **Three Trees: Tallest, Largest, Oldest** — 2026-04-28
 - **Basecamp — From Dashboard to System** (fitness Pt 3) — 2026-05-01
 - **Highway 395, March 2022** — 2026-05-08
+- **Basecamp — What the Coach Caught** (fitness Pt 4) — 2026-05-15
+- **The Whitney Goal** — 2026-05-24
+- **Mount Wilson** — 2026-05-29
 
 ## Recent Changes
 
-- Whitney Goal (5/24): full Q&A-driven rewrite. Original subagent draft fabricated the opening (Pyles Peak moment), the altitude section premise ("what scares me"), and early long-run stats. Replaced via Q&A: El Cajon opening → two-tier structure → what's done (Wilson SAR incident, Cucamonga+Ontario new longest day) → altitude non-fear framing based on Fort Collins + RMNP + Eastern Sierra history → ankle story (three incidents, 90% resolved) → running cadence (10.2mi longest run, 30-35mi/wk 80/20) → "ready" defined as 2x El Cajon in one day. Date pushed from 5/22 to 5/24. 2 RYAN placeholders + 2 photo slots remain.
+- Full-site editorial review + rewrite pass (6/3): ran a 5-cluster subagent review of all 25 posts against the style guide, then a rewrite pass, all committed + pushed to main (`1240678`). First synced local with the 5/29 auto-publish commit (Mount Wilson had gone live but never synced down — no actual 404, my stale local just looked like one). **Stats (verified against the Basecamp DB):** Mt Wilson summit 5,724→5,710 ft (Garmin GPS drift; real summit confirmed via web + `data/basecamp.db`) in mount-wilson + whitney-goal; the El Cajon "three conflicting figures" turned out to be two real hikes (July 2024 = 11.6mi/3,862ft in hiking-sd, April 2026 = 11.3mi/4,144ft in whitney-goal, both DB-exact) — only real error was whitney-goal's benchmark line pulling the AllTrails catalog number (11.2/3,589), fixed to the April hike; El Cajon summit → 3,677 ft; fixed mislabeled "moving time" (was total) in hiking-sd. Confirmed the VO2max 1.9%/1,000ft figure is correct (=6.3%/1,000m) and Fort Collins residency is true (Q&A) — left both untouched. **Rewrites (no fabricated facts):** fitness series de-dup (~400+ words of repeated backstory cut from Parts 2-3, four bold-led agent paragraphs → prose, "Part 1 of 3"→"of 4"); whitney-goal de-listed running plan + altitude triad to prose, renamed "Forward-Looking" header → "Half Dome Was the Old Ceiling," new ending off the opening callback; hiking posts' shared "small next to Whitney" ending tic varied across Zion/Wilson/Three Trees; Primal Chase V1.1–V1.9 scheme introduced in Part 0, 5× copy-pasted nav blurb varied, Part 4 spec bullets → prose, Part 3 density trimmed; tech/meta run-on splits, F1 conclusion tightened + summary fixed, Claude Code memory example fixed, Welcome → whitney-goal link. **Cross-links:** added 9 internal links across the hiking/Whitney thread and fitness-coach ↔ whitney-goal/Claude Code. **Hygiene:** moved template-test out of content/ to dev/ (.DS_Store already gitignored). **New:** whats-coming-summer-2026 draft, reconciling the spring roadmap (owns the RF/geospatial slip + the MCP tease that contradicted the shipped Claude Code post). Workflow note: ran a Q&A-before-rewrite + verify-against-Basecamp-DB loop; flagged formalizing it as a future "/blog Q&A writing" skill.
+- Whitney Goal (5/28): revised post — fixed incorrect subtitle ("A Mountain I've Never Seen"), corrected fabricated athlete background ("never been an athlete / no varsity anything" → varsity soccer + track, top club soccer team, travel tournaments), removed "What's Been Done" section (Wilson SAR story, Cucamonga details reserved for individual posts), removed "The Ankle" section, replaced Six-Pack description with a peak list (stats + Wilson link), fixed "each further from home" characterization. Wilson post linked (/posts/mount-wilson/). Trimmed ~400 words overall.
+- Whitney Goal (5/24): full Q&A-driven rewrite. Original subagent draft fabricated the opening (Pyles Peak moment), the altitude section premise ("what scares me"), and early long-run stats. Replaced via Q&A: El Cajon opening → two-tier structure → what's done (Wilson SAR incident, Cucamonga+Ontario new longest day) → altitude non-fear framing based on Fort Collins + RMNP + Eastern Sierra history → ankle story (three incidents, 90% resolved) → running cadence (10.2mi longest run, 30-35mi/wk 80/20) → "ready" defined as 2x El Cajon in one day. Date pushed from 5/22 to 5/24.
 - Whitney Goal: fixed AI-fabricated "Half Dome in 2022" → "Half Dome, whenever that was" — AI conflated Ryan's actual ~2016 Half Dome trip with the 2022 Highway 395 road trip. Year unknown so kept vague.
 - Pre-publish pass on Basecamp Pt 4 (basecamp-training-coach, publishes 5/15): cut the Zion section (vague, redundant with ankle story, unfilled placeholder), added three terminal screenshots converted to WebP (coach session input showing the feeling prompt, recommendation block, Monday QA report), fixed image order so the recommendation screenshot follows the decision-order paragraph it illustrates rather than preceding it. Anti-AI scan clean. Committed and pushed 5/14.
 
@@ -68,4 +74,4 @@ Friday at 12:07pm PST.
 
 ## Next Action
 
-**Before May 29:** Pre-publish review of Learning Geospatial Python Pt 1 (existing draft). Whitney Goal published 5/24 — 2 `<!-- RYAN: -->` placeholders (Wilson day moment, Cucamonga/Ontario day) and 2 photo slots remain for Ryan to fill manually when ready. Going forward, do a pre-publish review pass on subagent-drafted personal-narrative posts before they auto-publish — the High Sierra Loop incident showed those drafts can fabricate trip details whole-cloth.
+**Before May 29:** Pre-publish review of Learning Geospatial Python Pt 1 (existing draft). Going forward, do a pre-publish review pass on subagent-drafted personal-narrative posts before they auto-publish — the High Sierra Loop incident showed those drafts can fabricate trip details whole-cloth.
