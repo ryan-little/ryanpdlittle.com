@@ -3,4 +3,22 @@
 # runs Friday at 12:07pm PST and will publish any post whose date has arrived.
 # Once published, the entry is automatically removed from this file.
 
-posts: []
+posts:
+  - path: content/posts/cucamonga-ontario-peak/index.md
+    date: 2026-06-12
+  - path: content/posts/switzerland-vs-qatar/index.md
+    date: 2026-06-19
+  - path: content/posts/san-jacinto/index.md
+    date: 2026-06-26
+  - path: content/posts/san-bernardino-peak/index.md
+    date: 2026-07-03
+  - path: content/posts/mt-baldy/index.md
+    date: 2026-07-10
+  - path: content/posts/san-gorgonio/index.md
+    date: 2026-07-17
+  - path: content/posts/white-mountain/index.md
+    date: 2026-07-24
+  - path: content/posts/san-gorgonio-rehearsal/index.md
+    date: 2026-08-14
+  - path: content/posts/whitney-summit/index.md
+    date: 2026-08-28
