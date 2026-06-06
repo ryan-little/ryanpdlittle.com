@@ -549,7 +549,8 @@ main {
   transition: border-color 0.2s, color 0.2s;
 }
 
-.sidebar-tag:hover {
+.sidebar-tag:hover,
+.sidebar-tag.active {
   border-color: var(--accent);
   color: var(--accent);
 }
