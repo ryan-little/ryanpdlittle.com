@@ -8,9 +8,22 @@ summary: "Two unplanned peaks on Memorial Day weekend: 17.45 miles, 5,700 feet o
 draft: false
 ---
 
+{{< rawhtml >}}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="maps.css" />
+<script src="maps.js" defer></script>
+{{< /rawhtml >}}
+
 I left San Diego at 4:30 in the morning to beat the LA traffic, which worked, and then I undid the whole advantage by stopping at a Vons in Upland at 5:50 because I needed food for the trail and a bathroom and had not thought carefully enough about when grocery stores open on a holiday weekend. So I sat in the car in the parking lot waiting for the doors to unlock, not even sure they were going to, until I saw someone else walk in a couple minutes after opening and figured it was safe to follow them. Those ten-odd minutes cost me a spot in the Icehouse Canyon lot. By the time I got to the trailhead the lot was full, so I parked on the road and walked in, and when I reached the permit box every day-use permit was already claimed, the box picked clean. I started hiking without one, felt vaguely bad about it for about a minute, and then kept moving because there was nothing else to do and the mountain wasn't going to issue me a permit out of sympathy.
 
 The day came out to 17.45 miles and 5,695 feet of gain, just over seven hours on trail, topping out at 8,884 feet according to the Garmin, which also told me my heart rate averaged 141 and spiked to 182 and that I burned 3,171 calories getting it all done. Two summits out of it: Cucamonga Peak at 8,859 feet and Ontario Peak at 8,693. Cucamonga is the second of the Six-Pack I'm working through toward Whitney. Ontario was never on the firm plan, just a maybe I'd reconsider depending on how I felt up high, and a conversation at the Cucamonga summit ended up making the call for me.
+
+{{< rawhtml >}}
+<div id="cucamonga-map" class="hiking-map"></div>
+<div class="hiking-elevation-chart"><canvas id="cucamonga-elevation"></canvas></div>
+{{< /rawhtml >}}
 
 The Icehouse Canyon approach is a different animal from Mt. Wilson's Sierra Madre start. Where Wilson opens through a residential neighborhood before it figures out it's a mountain, Icehouse stays shaded and canyon-walled for the first few miles, hemmed in by oak and pine with the creek running below the trail, and at 7 in the morning it was cold enough that I was genuinely glad to have the sun hoodie on, which is not a sentence I get to write often in Southern California.
 
