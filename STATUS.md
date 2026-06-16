@@ -2,7 +2,7 @@
 
 **Active** — Friday weekly publishing cadence, trip reports through summer.
 
-Last updated: 2026-06-06
+Last updated: 2026-06-16
 
 ## Current Schedule
 
@@ -11,8 +11,8 @@ Friday at 12:07pm PST.
 | Date | Post | Status |
 |------|------|--------|
 | Jun 5 | What's Coming — Summer 2026 | Published 6/6 (backdated Jun 5) |
-| Jun 12 | Cucamonga + Ontario Peak | Draft stub — Q&A sheet ready (qa.md) |
-| Jun 19 | Qatar vs Switzerland (World Cup) | Draft stub — Q&A sheet ready (pre/post-match) |
+| Jun 12 | Cucamonga + Ontario Peak | Published 2026-06-16 (full post + 9 photos) |
+| Jun 19 | Qatar vs Switzerland (World Cup) | Written 2026-06-16 — auto-publishes Jun 19 |
 | Jun 26 | Mt San Jacinto via Deer Springs | Draft stub — Q&A sheet ready (qa.md) |
 | Jul 3 | San Bernardino Peak | Draft stub (hike Jun 7) |
 | Jul 10 | Mt Baldy | Draft stub (hike Jun 21) |
@@ -79,6 +79,6 @@ Friday at 12:07pm PST.
 
 ## Next Action
 
-Write Cucamonga+Ontario and San Jacinto posts by answering qa.md files in each post directory. Switzerland post: answer pre-match qa.md questions now, post-match after Jun 13. All three publish on auto-schedule (Jun 12, 19, 26).
+San Jacinto post (publishes Jun 26): go through qa.md Q&A — photos placed (18 shots, one person on trail with Ryan not yet addressed in Q&A).
 
 **Learning Geospatial Python Pt 1** still pushed to TBD — needs pre-publish review before rescheduling. Do not surface GIS project details in posts unless they've shipped.
