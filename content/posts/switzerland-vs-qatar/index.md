@@ -5,7 +5,7 @@ tags: ["soccer", "travel", "world-cup"]
 group: "personal"
 project: ""
 summary: "First World Cup match, a Switzerland scarf for the collection, sunburn at Levi's, and Qatar stealing a point in stoppage time after 14 hours of driving."
-draft: true
+draft: false
 ---
 
 I bought the tickets about two weeks before the game, two of them for $460 total through the official FIFA reseller marketplace. Prices were high and slowly falling as gameday got closer, and I'd been watching them long enough to feel ok about pulling the trigger when I did. I didn't want to wait too long and end up with nothing, and I've seen enough horror stories from third-party sellers to know I wanted the official channel. So I locked it in and that was that.
