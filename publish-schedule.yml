@@ -4,8 +4,6 @@
 # Once published, the entry is automatically removed from this file.
 
 posts:
-- path: content/posts/san-jacinto/index.md
-  date: 2026-06-26
 - path: content/posts/san-bernardino-peak/index.md
   date: 2026-07-03
 - path: content/posts/mt-baldy/index.md

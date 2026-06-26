@@ -5,7 +5,7 @@ tags: ["hiking", "fitness", "garmin"]
 group: "personal"
 project: "Whitney 2026"
 summary: "The third Six-Pack peak, solo up Deer Springs and down through Idyllwild: 19.77 miles, 6,056 feet of gain, two coyotes at dawn, a summit you have to climb to reach, and two hours completely alone on an overgrown trail. My favorite hike in Southern California so far."
-draft: true
+draft: false
 ---
 
 {{< rawhtml >}}
