@@ -2,7 +2,7 @@
 
 **Active** — Friday weekly publishing cadence, trip reports through summer.
 
-Last updated: 2026-06-16
+Last updated: 2026-07-03
 
 ## Current Schedule
 
@@ -13,10 +13,10 @@ Friday at 12:07pm PST.
 | Jun 5 | What's Coming — Summer 2026 | Published 6/6 (backdated Jun 5) |
 | Jun 12 | Cucamonga + Ontario Peak | Published 2026-06-16 (full post + 9 photos) |
 | Jun 19 | Qatar vs Switzerland (World Cup) | Written 2026-06-16 — auto-publishes Jun 19 |
-| Jun 26 | Mt San Jacinto via Deer Springs | Draft stub — Q&A sheet ready (qa.md) |
-| Jul 3 | San Bernardino Peak | Draft stub (hike Jun 7) |
-| Jul 10 | Mt Baldy | Draft stub (hike Jun 21) |
-| Jul 17 | San Gorgonio | Draft stub (hike Jun 28 — new permit) |
+| Jun 26 | Mt San Jacinto via Deer Springs | Full post written 2026-06-16, auto-publishes Jun 26 |
+| Jul 3 | San Bernardino Peak | Auto-published blank (empty stub, hike still hasn't happened) — caught 2026-07-03, reverted to draft |
+| Jul 10 | Mt Baldy | Draft stub — same blank-publish risk on 2026-07-10 unless written or pulled from schedule first |
+| Jul 17 | San Gorgonio | Draft stub — same blank-publish risk on 2026-07-17 unless written or pulled from schedule first |
 | Jul 24 | White Mountain Peak | Draft stub (hike Jul 4) |
 | Aug 14 | San Gorgonio: The Rehearsal | Draft stub (hike Aug 2) |
 | Aug 28 | Mount Whitney | Draft stub (summit Aug 23) |
@@ -47,6 +47,10 @@ Friday at 12:07pm PST.
 - **Mount Wilson** — 2026-05-29
 
 ## Recent Changes
+
+- **2026-07-03:** Pulled repo, found the scheduled-publish workflow had gone ahead and flipped San Bernardino Peak's stub to `draft: false` for its Jul 3 slot (empty title content, no body, no photos, hike still hasn't happened) — it published a blank live post. Reverted to `draft: true` same day. Root cause: `publish-schedule.yml` entries fire on date regardless of whether the post has real content. Mt Baldy (Jul 10) and San Gorgonio (Jul 17) are still stubs in the schedule and will hit the same failure mode unless written or pulled before their dates. Reviewed the two real posts published since last check (Qatar vs Switzerland 6/19, San Jacinto 6/26) — both clean: no em dashes, all images correctly wired, matches style guide.
+
+- **2026-06-16 (evening):** Wrote Mt San Jacinto via Deer Springs post via Q&A + Opus agent. 19.77 mi, 6,056 ft gain, May 31. Solo via Deer Springs → Saddle Junction loop. Added `.photo-grid` and `.photo-grid-4` CSS classes to theme for 2-col and 2x2 photo groupings (15 photos, mix of full-width and grids). Also diagnosed + fixed future-dated draft rendering: `hugo server -D --buildFuture` required for posts with dates > today. Committed + pushed (`00d8313`). Schedule confirmed: Jacinto auto-publishes Jun 26; San Bernardino Jul 3 slot is a placeholder since hike was missed.
 
 - **2026-06-06:** Published What's Coming — Summer 2026 (backdated Jun 5). Revised post: stripped GIS project reveals (RF viewshed, geospatial series) from both What Didn't Ship and The Rest sections; softened Gorgonio framing (no longer "last test before permit date"); fixed em dash → parentheses. New rule: no em dashes in post copy (confirmed in anti-ai-rules.md). Created 9 draft stub posts (Cucamonga/Ontario, Switzerland/Qatar, San Jacinto, San Bernardino, Baldy, Gorgonio x2, White Mountain, Whitney) and wired full publish-schedule.yml through Aug 28. Ran 7-agent workflow: Basecamp data lookup (Cucamonga + Jacinto hike stats) + style guide read + World Cup context search → Q&A interview sheets for all three near-term posts saved as qa.md in each post directory. Fixed sidebar: tag clicks now filter in-place (JS handler added, matching project filter UX); active state synced across search/project/tag filters. Added `project: "Whitney 2026"` to mount-wilson, whitney-goal, and all Six-Pack stubs so they appear in the Personal sidebar section.
 - Full-site editorial review + rewrite pass (6/3): ran a 5-cluster subagent review of all 25 posts against the style guide, then a rewrite pass, all committed + pushed to main (`1240678`). First synced local with the 5/29 auto-publish commit (Mount Wilson had gone live but never synced down — no actual 404, my stale local just looked like one). **Stats (verified against the Basecamp DB):** Mt Wilson summit 5,724→5,710 ft (Garmin GPS drift; real summit confirmed via web + `data/basecamp.db`) in mount-wilson + whitney-goal; the El Cajon "three conflicting figures" turned out to be two real hikes (July 2024 = 11.6mi/3,862ft in hiking-sd, April 2026 = 11.3mi/4,144ft in whitney-goal, both DB-exact) — only real error was whitney-goal's benchmark line pulling the AllTrails catalog number (11.2/3,589), fixed to the April hike; El Cajon summit → 3,677 ft; fixed mislabeled "moving time" (was total) in hiking-sd. Confirmed the VO2max 1.9%/1,000ft figure is correct (=6.3%/1,000m) and Fort Collins residency is true (Q&A) — left both untouched. **Rewrites (no fabricated facts):** fitness series de-dup (~400+ words of repeated backstory cut from Parts 2-3, four bold-led agent paragraphs → prose, "Part 1 of 3"→"of 4"); whitney-goal de-listed running plan + altitude triad to prose, renamed "Forward-Looking" header → "Half Dome Was the Old Ceiling," new ending off the opening callback; hiking posts' shared "small next to Whitney" ending tic varied across Zion/Wilson/Three Trees; Primal Chase V1.1–V1.9 scheme introduced in Part 0, 5× copy-pasted nav blurb varied, Part 4 spec bullets → prose, Part 3 density trimmed; tech/meta run-on splits, F1 conclusion tightened + summary fixed, Claude Code memory example fixed, Welcome → whitney-goal link. **Cross-links:** added 9 internal links across the hiking/Whitney thread and fitness-coach ↔ whitney-goal/Claude Code. **Hygiene:** moved template-test out of content/ to dev/ (.DS_Store already gitignored). **New:** whats-coming-summer-2026 draft, reconciling the spring roadmap (owns the RF/geospatial slip + the MCP tease that contradicted the shipped Claude Code post). Workflow note: ran a Q&A-before-rewrite + verify-against-Basecamp-DB loop; flagged formalizing it as a future "/blog Q&A writing" skill.
@@ -79,6 +83,6 @@ Friday at 12:07pm PST.
 
 ## Next Action
 
-San Jacinto post (publishes Jun 26): go through qa.md Q&A — photos placed (18 shots, one person on trail with Ryan not yet addressed in Q&A).
+Pull Mt Baldy (Jul 10) and San Gorgonio (Jul 17) from `publish-schedule.yml` or get them written before those dates hit — both are still empty stubs and will auto-publish blank like San Bernardino just did otherwise. San Bernardino needs a new hike attempt scheduled and a new publish date once it happens.
 
 **Learning Geospatial Python Pt 1** still pushed to TBD — needs pre-publish review before rescheduling. Do not surface GIS project details in posts unless they've shipped.
