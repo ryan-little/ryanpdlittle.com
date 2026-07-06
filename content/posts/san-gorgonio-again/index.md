@@ -1,5 +1,5 @@
 ---
-title: "San Gorgonio: The Rehearsal"
+title: "San Gorgonio, Again"
 date: 2026-08-14
 tags: ["hiking", "fitness", "garmin"]
 group: "personal"
