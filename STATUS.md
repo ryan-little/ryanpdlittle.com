@@ -2,7 +2,7 @@
 
 **Active** — Friday weekly publishing cadence, trip reports through summer.
 
-Last updated: 2026-07-03
+Last updated: 2026-07-07
 
 ## Current Schedule
 
@@ -14,11 +14,11 @@ Friday at 12:07pm PST.
 | Jun 12 | Cucamonga + Ontario Peak | Published 2026-06-16 (full post + 9 photos) |
 | Jun 19 | Qatar vs Switzerland (World Cup) | Written 2026-06-16 — auto-publishes Jun 19 |
 | Jun 26 | Mt San Jacinto via Deer Springs | Full post written 2026-06-16, auto-publishes Jun 26 |
-| Jul 3 | San Bernardino Peak | Auto-published blank (empty stub, hike still hasn't happened) — caught 2026-07-03, reverted to draft |
-| Jul 10 | Mt Baldy | Hiked 2026-06-21. Q&A sheet ready (qa.md), GPS track + map wired, waiting on Ryan's answers + photos |
-| Jul 17 | San Gorgonio | Hiked 2026-06-28. Q&A sheet ready (qa.md), GPS track + map wired, waiting on Ryan's answers + photos |
-| Jul 24 | White Mountain Peak | Draft stub (hike Jul 4) |
-| Aug 14 | San Gorgonio: The Rehearsal | Draft stub (hike Aug 2) |
+| Jul 3 | Mt Baldy | **Published 2026-07-06** (backdated to 7/3, its slot after San Bernardino's revert). Full post + 10 photos, Q&A-driven, corrected after Ryan's review. |
+| Jul 10 | San Gorgonio | Written 2026-07-06, full post + 10 photos. Draft, auto-publishes 7/10 (moved up from original 7/17 slot). |
+| Jul 17 | San Bernardino Peak | Hiked 2026-07-05 (closes out the Six-Pack). Written 2026-07-06, full post + 10 photos. Draft, auto-publishes 7/17 (moved up from 7/24). |
+| Jul 24 | White Mountain Peak | Draft stub, title/identity unresolved — see Next Action, real-world hike order now has Mt Langley first |
+| Aug 14 | San Gorgonio, Again | Draft stub, renamed from "San Gorgonio: The Rehearsal" (dropped invented framing) |
 | Aug 28 | Mount Whitney | Draft stub (summit Aug 23) |
 
 ## Published
@@ -45,9 +45,11 @@ Friday at 12:07pm PST.
 - **Basecamp — What the Coach Caught** (fitness Pt 4) — 2026-05-15
 - **The Whitney Goal** — 2026-05-24
 - **Mount Wilson** — 2026-05-29
+- **Mt Baldy** — 2026-07-06 (backdated 7/3)
 
 ## Recent Changes
 
+- **2026-07-06/07:** Wrote and finalized all three remaining Six-Pack posts via Q&A + photos (Ryan answered interview sheets across two sessions, subagents drafted against the reference posts). **Mt Baldy:** published live, backdated to 7/3. Corrected several details after Ryan's review: the hand specialist (not urgent care) diagnosed mallet finger, splint stays on through early August, no trekking poles, he was passing hikers rather than following them, the summit break happened at West Baldy not the main summit, the Notch trail-map photo was winter-season curiosity not a "changed" detail. Two photos rotated. **San Gorgonio:** drafted, then caught a real photo/caption mismatch, 5 of the 10 images (IMG_0044/0055/0068/0073/0077) had been paired with the wrong content since an earlier review pass; re-verified all 10 photos directly against their pixels and fixed the mapping, plus 3 more rotation fixes and a corrected ranger-encounter detail. San Jacinto confirmed (not Baldy) as the peak in the cloud-inversion shot. **San Bernardino Peak:** fresh Q&A + GPS scaffolding from scratch (this slot had been auto-published blank back on 7/3 and reverted). El Dorado Fire (Sept 2020) confirmed via web search as the burn scar's cause. Two previously-unidentified background peaks resolved after Ryan reviewed the draft: Baldy in one shot, Gorgonio (left) and Jacinto (right) in another. Rescheduled the publish dates per Ryan's request (Gorgonio 7/17→7/10, San Bernardino 7/24→7/17, White Mountain slot 7/31→7/24) and renamed `san-gorgonio-rehearsal` → `san-gorgonio-again` (Ryan's call — the "rehearsal" framing for a repeat Gorgonio hike was invented by an earlier session and didn't match how he actually thinks about it). Separately investigated a "lots of 6-minute reads" observation: not a bug, reading times track word count correctly and several posts just cluster near that length; did find a real minor bug, 5 empty draft stubs show "0 min read" since Hugo's `.ReadingTime` has no floor, not yet fixed. Two commits pushed (`402a229`, `513a74d`).
 - **2026-07-03 (cont.):** Confirmed via Basecamp DB that Baldy (6/21) and Gorgonio (6/28) were both hiked before San Bernardino was ever attempted, so the schedule already has them in the right order (Jul 10, Jul 17) ahead of San Bernardino's now-vacant slot; no date swap needed beyond the San Bernardino revert above. Pulled full Garmin stats for both: Baldy 13.92mi/4,367ft gain/5h24m (4h49m moving)/avg HR 146/max 178/2,339cal, summit 10,066.9ft (official 10,064ft, negligible drift); Gorgonio 18.37mi/5,617ft gain/7h57m (7h9m moving)/avg HR 130/max 177/2,839cal, summit 11,557.7ft (official is 11,499-11,503ft, ~55ft GPS drift to correct in prose like the Wilson post). Exported GPS tracks from `gps_track` column via duckdb into `baldy-track.json` and `gorgonio-track.json`, copied `maps.js`/`maps.css` from the Jacinto post into both bundles and repointed the `loadJSON` calls. Wrote Q&A interview sheets (`qa.md`) for both, modeled on the Cucamonga template, covering pacing/altitude/crowd questions plus placeholder photo-idea sections. Waiting on Ryan's answers and his photos before drafting either post.
 
 - **2026-07-03:** Pulled repo, found the scheduled-publish workflow had gone ahead and flipped San Bernardino Peak's stub to `draft: false` for its Jul 3 slot (empty title content, no body, no photos, hike still hasn't happened) — it published a blank live post. Reverted to `draft: true` same day. Root cause: `publish-schedule.yml` entries fire on date regardless of whether the post has real content. Mt Baldy (Jul 10) and San Gorgonio (Jul 17) are still stubs in the schedule and will hit the same failure mode unless written or pulled before their dates. Reviewed the two real posts published since last check (Qatar vs Switzerland 6/19, San Jacinto 6/26) — both clean: no em dashes, all images correctly wired, matches style guide.
@@ -85,6 +87,9 @@ Friday at 12:07pm PST.
 
 ## Next Action
 
-Waiting on Ryan to answer `qa.md` in mt-baldy/ and san-gorgonio/ and send photos, then write both posts (in that order, matching hike order) before their Jul 10 / Jul 17 slots hit. San Bernardino needs a new hike attempt scheduled and a new publish date once it happens.
+All three remaining Six-Pack posts (Baldy, Gorgonio, San Bernardino Peak) are written and scheduled. Two open items:
+
+1. **Reconcile the White Mountain slot (7/24).** Per basecamp/whitney tracking in the knowledge-hub todo, the real-world plan has shifted: Mt Langley is now the 7/10-11 hike (reinstated 7/6), and White Mountain has been deferred to August as a mutually-exclusive alternative. The blog's `white-mountain` stub doesn't reflect this yet, decide whether that slot becomes a Langley post instead once the hike happens.
+2. **Minor theme bug (not fixed):** 5 empty draft stubs (rf-viewshed-tool, san-bernardino-peak, san-gorgonio-again, white-mountain, whitney-summit) show "0 min read" since Hugo's `.ReadingTime` rounds down with no floor. Simple one-line template fix (`{{ if lt .ReadingTime 1 }}1{{ else }}...{{ end }}`) whenever the theme is touched next. Not user-visible since these are unpublished drafts.
 
 **Learning Geospatial Python Pt 1** still pushed to TBD — needs pre-publish review before rescheduling. Do not surface GIS project details in posts unless they've shipped.
