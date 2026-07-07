@@ -8,13 +8,7 @@ summary: "Interactive GPS maps from my Garmin — 19 Cowles overlays, El Cajon's
 draft: false
 ---
 
-{{< rawhtml >}}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="maps.css" />
-<script src="maps.js" defer></script>
-{{< /rawhtml >}}
+{{< hikemap script="hikemap.custom.js" >}}
 
 The first time I hiked Cowles Mountain this year, my Garmin recorded an average heart rate of 176. That's higher than anything I recorded in the summer of 2024, when I was hiking every few days and feeling good on the trail. My last Cowles hike before that was July 2024, over a year and a half earlier, and my body let me know exactly what that gap cost. The watch doesn't lie about these things, and when you lay 19 GPS tracks on top of each other with heart rate coloring them green to red, patterns like that jump right out.
 

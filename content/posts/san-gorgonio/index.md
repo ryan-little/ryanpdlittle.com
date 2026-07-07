@@ -8,14 +8,6 @@ summary: "The fifth Six-Pack peak and the biggest one yet: 18.37 miles and 5,617
 draft: true
 ---
 
-{{< rawhtml >}}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="maps.css" />
-<script src="maps.js" defer></script>
-{{< /rawhtml >}}
-
 6:50am, standing at a wooden sign that just says VIVIAN CREEK TRAILHEAD, and I'm in a part of the LA area I'd never actually been to before. Forest Falls sits up in a canyon past Yucaipa and Mentone, and the predawn drive in was easy, no traffic at all that early, the kind of drive I've done enough times now hiking around here that it doesn't really register anymore even though I don't love the wakeup itself.
 
 ![Selfie at the wooden Vivian Creek trailhead sign, early light, still in the trees.](IMG_0010.webp)
@@ -24,10 +16,7 @@ This is the fifth of the Six-Pack, and it's the biggest one by both measures, th
 
 The day came out to 18.37 miles and 5,617 feet of gain, seven hours and 57 minutes total with 7 hours 9 minutes of that actually moving, average heart rate 130, max 177, and 2,839 calories by the time I got back to the car. The Garmin read the summit at 11,557.7 feet, running about 55 to 60 feet hot, the same kind of GPS drift I saw on Wilson, so I'll use the official number, 11,499 feet, which is the highest point in Southern California. After Wilson, Cucamonga and Ontario, San Jacinto, and Baldy, this one closes out five of the six.
 
-{{< rawhtml >}}
-<div id="gorgonio-map" class="hiking-map"></div>
-<div class="hiking-elevation-chart"><canvas id="gorgonio-elevation"></canvas></div>
-{{< /rawhtml >}}
+{{< hikemap id="gorgonio-map" track="gorgonio-track.json" peak="San Gorgonio" >}}
 
 ## Vivian Creek
 

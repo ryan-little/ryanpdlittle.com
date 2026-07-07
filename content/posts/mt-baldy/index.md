@@ -8,24 +8,13 @@ summary: "The fourth Six-Pack peak, delayed three weeks by a broken finger: 13.9
 draft: false
 ---
 
-{{< rawhtml >}}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="maps.css" />
-<script src="maps.js" defer></script>
-{{< /rawhtml >}}
-
 Three weeks passed between San Jacinto and this one, longer than the gap between any of the other Six-Pack hikes so far, and the reason has nothing to do with mountains. The plan had been San Bernardino Peak the first weekend of June, and then the day before, at a friend's birthday party, I caught a kickball wrong and jammed my right ring finger into a shape it isn't supposed to hold. Urgent care splinted it and sent me to a hand specialist, who gave it the actual name, mallet finger, and told me the splint's staying on until early August. The upside was that as long as it's on 24/7, I'm cleared to do whatever I want otherwise. So San Bernardino got scratched off the calendar anyway, grad school work filled some of the gap, and I let myself take real time off training instead of forcing it around a busted finger.
 
 Three weeks later, splint still on and staying on for another month, I drove up to Manker Flats on a Sunday morning in June, which is one of the more popular trailheads in Southern California and looked it. The lot was most of the way full already, but I found a solid spot close to the trailhead and started walking not long after the sun was up.
 
 The day came out to 13.92 miles and 4,367 feet of gain, five hours and 24 minutes total with 4 hours 49 minutes of that actually moving, average heart rate 146, max 178, and 2,339 calories by the time I got back to the car. The summit read 10,066.9 feet on the Garmin, close enough to the 10,064 feet stamped on the actual summit plaque to call it confirmed. This was the fourth of the Six-Pack, after Wilson, Cucamonga and Ontario, and San Jacinto.
 
-{{< rawhtml >}}
-<div id="baldy-map" class="hiking-map"></div>
-<div class="hiking-elevation-chart"><canvas id="baldy-elevation"></canvas></div>
-{{< /rawhtml >}}
+{{< hikemap id="baldy-map" track="baldy-track.json" peak="Mt Baldy" >}}
 
 ## Up to the Notch
 

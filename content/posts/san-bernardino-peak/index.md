@@ -8,24 +8,13 @@ summary: "The sixth and final Six-Pack peak, delayed by the same broken finger t
 draft: true
 ---
 
-{{< rawhtml >}}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="maps.css" />
-<script src="maps.js" defer></script>
-{{< /rawhtml >}}
-
 Three big mosquitoes flew into the car the second I opened the door at the Angelus Oaks trailhead, and I got all three before any of them landed a bite, which is not exactly the calm start to a hike I would have picked for myself. It did mean I finally broke out the bug spray I'd bought before the Wilson hike, all the way back at the start of this project, and never once used until now.
 
 This is San Bernardino Peak, the standard 1W07 trail out of Angelus Oaks, and it's the sixth and last of the Six-Pack I've actually hiked, even though it sits fourth on the original list from the Whitney post. The reason it landed out of order is already covered at the start of the Baldy post, the mallet finger from the kickball incident pushed this one back past its planned slot, and by the time I finally got out here both Baldy and Gorgonio were already done.
 
 The day came out to 16.25 miles and 4,856 feet of gain, six hours and 17 minutes total with 5 hours 48 minutes of that actually moving, average heart rate 152, max 185, and 2,878 calories by the time I got back to the car. The Garmin put the summit at 10,650.3 feet, close enough to the official 10,649 feet that the sign at the top backs it up almost exactly. That closes out all six: Wilson, Cucamonga and Ontario, Jacinto, Baldy, Gorgonio, and now this one.
 
-{{< rawhtml >}}
-<div id="sanbernardino-map" class="hiking-map"></div>
-<div class="hiking-elevation-chart"><canvas id="sanbernardino-elevation"></canvas></div>
-{{< /rawhtml >}}
+{{< hikemap id="sanbernardino-map" track="sanbernardino-track.json" peak="San Bernardino Peak" >}}
 
 ## Into the burn scar
 

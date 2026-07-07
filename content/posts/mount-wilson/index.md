@@ -8,24 +8,13 @@ summary: "First of the Six-Pack: 16.4 miles from Sierra Madre to the observatory
 draft: false
 ---
 
-{{< rawhtml >}}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="maps.css" />
-<script src="maps.js" defer></script>
-{{< /rawhtml >}}
-
 The alarm went off around 4 in the morning and I was on the 5 heading north out of San Diego while it was still dark. Mount Wilson is about two hours from the city, and I wanted to be at the Sierra Madre trailhead early enough to get decent parking and not spend the first miles of the climb stuck behind a group, so I left in the dark and got there with enough time to settle in before starting. Getting good parking at a Los Angeles-area trailhead on a weekend feels like a small victory worth noting.
 
 ![The Mount Wilson Trail gate at the Sierra Madre trailhead.](IMG_9338.webp)
 
 The hike is 16.4 miles out and back with around 4,500 feet of gain from the Sierra Madre trailhead to the 5,710-foot summit. My Garmin logged closer to 5,200, but the watch started in the marine layer with changing pressure and I walked around the summit complex for a while, so the trail gain figure is the more accurate number. Start time was 6:30 AM and I finished just under six hours later, average heart rate 153 and max of 189, which is about as high as I've seen the watch go. Weather at the bottom was 63 degrees and mist, though by the time I reached the summit the sky was completely clear.
 
-{{< rawhtml >}}
-<div id="wilson-map" class="hiking-map"></div>
-<div class="hiking-elevation-chart"><canvas id="wilson-elevation"></canvas></div>
-{{< /rawhtml >}}
+{{< hikemap id="wilson-map" track="wilson-track.json" peak="Mt Wilson" >}}
 
 The best thing that happened in the first two miles was breaking through the marine layer. There was a band of low clouds sitting over the San Gabriel Valley when I started, and as the trail climbed I went through it and came out into full sunshine, the cloud ceiling visible below me and the ridgeline lit up ahead. From that point on I had a pretty good idea I was going to like this hike.
 

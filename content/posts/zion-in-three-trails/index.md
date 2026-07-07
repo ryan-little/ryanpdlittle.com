@@ -8,13 +8,7 @@ summary: "Three days of hiking Zion National Park with GPS data from my Garmin, 
 draft: false
 ---
 
-{{< rawhtml >}}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="maps.css" />
-<script src="maps.js" defer></script>
-{{< /rawhtml >}}
+{{< hikemap script="hikemap.custom.js" >}}
 
 The last line of my [Hiking San Diego](/posts/hiking-san-diego-with-gps-data/) post mentioned I was heading to Zion the week it went live. That was true, and the Garmin was running the whole time. Three days, three trails, and a stop in Vegas on either side that probably added more steps to the watch than any of the actual hikes did.
 
@@ -41,10 +35,7 @@ What stands out about the Vegas days is when the steps happened. On March 18th I
 
 We drove from Vegas to Springdale on the 19th, and that afternoon we wanted something easy and nearby to get a feel for the park before the bigger days. The Watchman Trail starts right near the visitor center and climbs to an overlook above the town, and it was the best option for an arrival-day hike.
 
-{{< rawhtml >}}
-<div id="watchman-map" class="hiking-map"></div>
-<div class="hiking-elevation-chart"><canvas id="watchman-map-elevation"></canvas></div>
-{{< /rawhtml >}}
+{{< hikemap id="watchman-map" track="watchman-track.json" peak="Watchman Overlook" peakcoords="37.19865,-112.97621,4355" >}}
 
 3.1 miles, 525 feet of elevation gain, about 82 minutes of moving time. My average heart rate was 118, which is basically a walking pace for me, and the max of 164 only hit on a couple of short steep sections near the overlook. You can see on the map how the trail climbs up to a loop at the top, a plateau where you walk around and get different views of the canyon, Springdale below, and the Watchman itself to the south, which is where the trail gets its name.
 
@@ -56,10 +47,7 @@ It was 88 degrees when we started, which is hot for mid-March and made the expos
 
 This was the day. Angels Landing is the hike in Zion, the one everyone talks about, and the one that now requires a permit during peak season. My friend Sam got lucky in the day-before lottery and pulled a permit for March 20th, which turned out to be a perfect weather window with clear skies and 59 degrees at the trailhead when we started around 9:45 in the morning.
 
-{{< rawhtml >}}
-<div id="angels-landing-map" class="hiking-map"></div>
-<div class="hiking-elevation-chart"><canvas id="angels-landing-map-elevation"></canvas></div>
-{{< /rawhtml >}}
+{{< hikemap id="angels-landing-map" track="angels-landing-track.json" peak="Angels Landing" peakcoords="37.26966,-112.94827,5795" >}}
 
 7.6 miles, 2,556 feet of elevation gain, 4 hours and 47 minutes total time. Look at that elevation profile. The first couple miles follow the West Rim Trail up a series of switchbacks, then you hit Walter's Wiggles, which is a set of 21 short tight switchbacks carved into the cliff face that gains about 250 feet in a quarter mile. After that you reach Scout Lookout, where most people stop, and from there the final half mile to the summit is the chain section that gives Angels Landing its reputation.
 
@@ -75,10 +63,7 @@ We started at 59 degrees and the Garmin logged a max of 100 by the time we finis
 
 Day three, and the legs were feeling the 2,500 feet of climbing from the day before. The Narrows is Zion's other iconic hike, and it's completely different from Angels Landing. Instead of climbing a cliff face, you're walking up the Virgin River through a slot canyon with walls a thousand feet tall and barely any elevation change.
 
-{{< rawhtml >}}
-<div id="narrows-map" class="hiking-map"></div>
-<div class="hiking-elevation-chart"><canvas id="narrows-map-elevation"></canvas></div>
-{{< /rawhtml >}}
+{{< hikemap id="narrows-map" track="narrows-track.json" peak="The Narrows" peakcoords="37.28553,-112.94810,4488" >}}
 
 The GPS says 8.3 miles, but I don't trust that number given how much the signal was bouncing off the canyon walls. A better estimate comes from the step count, 12,228 steps at a shorter-than-normal stride for river hiking puts the real distance closer to 5 or 6 miles. Only 486 feet of elevation gain over the whole route, 4 hours and 16 minutes total. That elevation profile is almost flat compared to Angels Landing, and my average heart rate of 116 reflects that. But 116 doesn't mean it was easy. You're wading through a river for most of the hike, sometimes knee-deep, sometimes thigh-deep, over slippery rocks you can't see through the water. Every step is deliberate because one wrong foot placement and you're sitting in a cold river. Some of my friends rented neoprene socks, water shoes, and hiking poles from one of the outfitters in Springdale, but I went in my normal trail runners and hiking socks. The river was cold enough in March that I was jealous of the rental gear for the first stretch, but after a while I got used to the temperature, and on the way back I barely felt it.
 

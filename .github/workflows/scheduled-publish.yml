@@ -32,7 +32,35 @@ jobs:
 
           posts = schedule.get("posts") or []
           published = []
+          skipped = []
+          missing = []
           remaining = []
+
+          PLACEHOLDER_MARKERS = ["<!-- TODO", "RYAN"]
+          MIN_BODY_CHARS = 500
+
+          def guard_failures(post):
+              """Return a list of reasons a post isn't ready to publish, or [] if it's clear."""
+              fm_match = re.match(r"^---\n(.*?)\n---\n(.*)$", post, re.DOTALL)
+              if not fm_match:
+                  return ["missing or malformed frontmatter"]
+              frontmatter, body = fm_match.group(1), fm_match.group(2)
+
+              reasons = []
+
+              if len(body.strip()) <= MIN_BODY_CHARS:
+                  reasons.append(f"body is empty or too short (<= {MIN_BODY_CHARS} chars after frontmatter)")
+
+              found_markers = [m for m in PLACEHOLDER_MARKERS if m in post]
+              if found_markers:
+                  reasons.append(f"contains placeholder marker(s): {', '.join(found_markers)}")
+
+              summary_match = re.search(r'^summary:\s*(.*)$', frontmatter, re.MULTILINE)
+              summary_value = summary_match.group(1).strip().strip('"\'') if summary_match else ""
+              if not summary_value:
+                  reasons.append("empty summary in frontmatter")
+
+              return reasons
 
           for entry in posts:
               path, pub_date = entry["path"], str(entry["date"])
@@ -43,11 +71,20 @@ jobs:
                   continue
 
               if not os.path.isfile(path):
-                  print(f"Warning: {path} not found, skipping")
+                  remaining.append(entry)
+                  missing.append({"path": path, "date": pub_date})
+                  print(f"Warning: {path} not found, keeping in schedule")
                   continue
 
               with open(path) as f:
                   post = f.read()
+
+              reasons = guard_failures(post)
+              if reasons:
+                  remaining.append(entry)
+                  skipped.append({"path": path, "date": pub_date, "reasons": reasons})
+                  print(f"Skipped (not written): {path} - {'; '.join(reasons)}")
+                  continue
 
               # Flip draft flag and set publish date
               post = re.sub(r"^draft: true$", "draft: false", post, flags=re.MULTILINE)
@@ -63,7 +100,7 @@ jobs:
               published.append({"title": title, "url": url})
               print(f"Published: {title}")
 
-          # Rewrite schedule with only remaining posts
+          # Rewrite schedule with only remaining posts (unpublished, skipped, and missing entries)
           with open("publish-schedule.yml", "w") as f:
               f.write("# Scheduled blog post publishing\n")
               f.write("# Add posts with their target publish date. The publish workflow\n")
@@ -71,14 +108,30 @@ jobs:
               f.write("# Once published, the entry is automatically removed from this file.\n\n")
               yaml.dump({"posts": remaining or []}, f, default_flow_style=False, sort_keys=False)
 
+          # Build the email/summary text
+          sections = []
+          if published:
+              lines = [f"- {p['title']}: https://ryanpdlittle.com{p['url']}" for p in published]
+              sections.append("Published:\n" + "\n".join(lines))
+          if skipped:
+              lines = [f"- {s['path']} (scheduled {s['date']}): {'; '.join(s['reasons'])}" for s in skipped]
+              sections.append("SKIPPED - not written (kept in publish-schedule.yml):\n" + "\n".join(lines))
+          if missing:
+              lines = [f"- {m['path']} (scheduled {m['date']})" for m in missing]
+              sections.append("Missing files (kept in publish-schedule.yml):\n" + "\n".join(lines))
+
           # Write outputs for downstream steps
           gh_output = os.environ.get("GITHUB_OUTPUT", "/dev/null")
           with open(gh_output, "a") as out:
               out.write(f"count={len(published)}\n")
+              out.write(f"report={'true' if (published or skipped or missing) else 'false'}\n")
+              if sections:
+                  summary = "\n\n".join(sections)
+                  out.write("summary<<EOF\n")
+                  out.write(summary)
+                  out.write("\nEOF\n")
               if published:
-                  summary = "\\n".join(f"- {p['title']}: https://ryanpdlittle.com{p['url']}" for p in published)
                   titles = ", ".join(p["title"] for p in published)
-                  out.write(f"summary={summary}\n")
                   out.write(f"titles={titles}\n")
           PYTHON
 
@@ -126,7 +179,7 @@ jobs:
           echo "deploy_time=$(date -u '+%Y-%m-%d %H:%M UTC')" >> "$GITHUB_OUTPUT"
 
       - name: Send publish confirmation email
-        if: steps.verify.outputs.deploy_ok == 'true'
+        if: steps.publish.outputs.report == 'true'
         uses: dawidd6/action-send-mail@v16
         with:
           server_address: smtp.gmail.com
@@ -134,12 +187,10 @@ jobs:
           secure: true
           username: ${{ secrets.GMAIL_USER }}
           password: ${{ secrets.GMAIL_APP_PASSWORD }}
-          subject: "Post published: ${{ steps.publish.outputs.titles }}"
+          subject: "${{ steps.publish.outputs.count != '0' && format('Post published: {0}', steps.publish.outputs.titles) || 'Scheduled publish: nothing published' }}"
           to: ${{ secrets.GMAIL_USER }}
           from: "ryanpdlittle.com <${{ secrets.GMAIL_USER }}>"
           body: |
-            Your scheduled post(s) have been published:
-
             ${{ steps.publish.outputs.summary }}
 
-            Deployed at: ${{ steps.verify.outputs.deploy_time }}
+            ${{ steps.verify.outputs.deploy_time && format('Deployed at: {0}', steps.verify.outputs.deploy_time) || 'No deploy was triggered this run.' }}

@@ -8,16 +8,8 @@ summary: "The third Six-Pack peak, solo up Deer Springs and down through Idyllwi
 draft: false
 ---
 
-{{< rawhtml >}}
 <!-- Garmin stats: 19.77 miles, 6,056 ft gain, 7h 53m, avg HR 140, max HR 178, 2,964 cal, summit 10,834 ft, start elev 5,623 ft, May 31 2026 -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="maps.css" />
-<script src="maps.js" defer></script>
-<div id="jacinto-map" class="hiking-map"></div>
-<div class="hiking-elevation-chart"><canvas id="jacinto-elevation"></canvas></div>
-{{< /rawhtml >}}
+{{< hikemap id="jacinto-map" track="san-jacinto-track.json" peak="Mt San Jacinto" >}}
 
 There were two coyotes on the road between the ranger station and the trailhead, both of them out in the early light when I had the road mostly to myself. I'd stopped at the ranger station thinking I could fill out a paper day-hiking permit, the way you do at a lot of these places, and found out there are no physical permits anymore, just a QR code to scan. So I scanned it and got back in the car, and then a few minutes later there were the coyotes, unbothered, doing whatever coyotes do at six in the morning, and that was the welcome back to Idyllwild after years away.
 

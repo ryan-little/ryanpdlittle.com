@@ -1,5 +1,7 @@
 <img src="{{ .Destination | safeURL }}"
   {{- with .Text }} alt="{{ . }}"{{ end }}
   {{- with .Title }} title="{{ . }}"{{ end }}
+  {{- $resource := .Page.Resources.GetMatch (printf "*%s" .Destination) }}
+  {{- with $resource }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}
   loading="lazy"
   decoding="async">

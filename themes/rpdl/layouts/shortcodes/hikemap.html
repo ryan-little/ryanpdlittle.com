@@ -1,0 +1,72 @@
+{{- /*
+  hikemap — interactive Leaflet + Chart.js hiking map.
+
+  Common single-track use:
+    {{< hikemap id="wilson-map" track="wilson-track.json" peak="Mt Wilson" >}}
+
+  Params:
+    id          map element id; the elevation canvas is `<id>-elevation`
+    track       JSON filename in the page bundle (fetched at runtime)
+    peak        label for the summit marker (highest point on the track)
+    peakcoords  "lat,lon,ele" to pin the peak at a fixed location instead
+    peaksplit   "true" to mark the highest point in each half of the track
+    peaknames   "First,Second" labels used with peaksplit
+    baselayer   "satellite" (default) or "dark"
+    noelevation "true" to omit the elevation chart
+    script      extra bundle JS file to load (bespoke posts: overlays, timelines)
+
+  Bespoke posts that build their own maps call the primitives on window.HikeMap;
+  load the assets (and their script) with a bodyless call, e.g.
+    {{< hikemap script="hikemap.custom.js" >}}
+*/ -}}
+
+{{- /* One-time per page: load Leaflet, Chart.js, and the shared assets. */ -}}
+{{- if not (.Page.Scratch.Get "hikemapAssets") -}}
+{{- .Page.Scratch.Set "hikemapAssets" true -}}
+{{- $css := resources.Get "css/hikemap.css" | minify | fingerprint -}}
+{{- $js := resources.Get "js/hikemap.js" | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ "vendor/leaflet/leaflet.css" | relURL }}" />
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
+<script>window.__hikemaps = window.__hikemaps || [];</script>
+<script defer src="{{ "vendor/leaflet/leaflet.js" | relURL }}"></script>
+<script defer src="{{ "vendor/chartjs/chart.umd.min.js" | relURL }}"></script>
+<script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{- end -}}
+
+{{- /* Optional per-post bundle script (deduped), for bespoke compositions. */ -}}
+{{- with .Get "script" -}}
+{{- $key := printf "hikemapScript-%s" . -}}
+{{- if not ($.Page.Scratch.Get $key) -}}
+{{- $.Page.Scratch.Set $key true -}}
+{{- $custom := $.Page.Resources.GetMatch . -}}
+{{- if not $custom -}}{{- errorf "hikemap: script %q not found in %s" . $.Page.File.Path -}}{{- end -}}
+<script defer src="{{ $custom.RelPermalink }}"></script>
+{{- end -}}
+{{- end -}}
+
+{{- /* Track map: emit the divs and queue the init. */ -}}
+{{- with .Get "id" -}}
+{{- $id := . -}}
+{{- $trackName := $.Get "track" -}}
+{{- if not $trackName -}}{{- errorf "hikemap: id %q needs a track param in %s" $id $.Page.File.Path -}}{{- end -}}
+{{- $track := $.Page.Resources.GetMatch $trackName -}}
+{{- if not $track -}}{{- errorf "hikemap: track %q not found in %s" $trackName $.Page.File.Path -}}{{- end -}}
+{{- $spec := dict "id" $id "track" $track.RelPermalink -}}
+{{- with $.Get "peak" -}}{{- $spec = merge $spec (dict "peak" .) -}}{{- end -}}
+{{- with $.Get "baselayer" -}}{{- $spec = merge $spec (dict "defaultLayer" .) -}}{{- end -}}
+{{- if eq ($.Get "noelevation") "true" -}}{{- $spec = merge $spec (dict "elevation" false) -}}{{- end -}}
+{{- if eq ($.Get "peaksplit") "true" -}}
+  {{- $spec = merge $spec (dict "peakSplit" true) -}}
+  {{- with $.Get "peaknames" -}}{{- $spec = merge $spec (dict "peakNames" (split . ",")) -}}{{- end -}}
+{{- end -}}
+{{- with $.Get "peakcoords" -}}
+  {{- $nums := slice -}}
+  {{- range (split . ",") -}}{{- $nums = $nums | append (float (trim . " ")) -}}{{- end -}}
+  {{- $spec = merge $spec (dict "peakCoords" $nums) -}}
+{{- end -}}
+<div id="{{ $id }}" class="hiking-map"></div>
+{{- if ne ($.Get "noelevation") "true" }}
+<div class="hiking-elevation-chart"><canvas id="{{ $id }}-elevation"></canvas></div>
+{{- end }}
+<script>window.__hikemaps.push({{ $spec | jsonify | safeJS }});</script>
+{{- end -}}

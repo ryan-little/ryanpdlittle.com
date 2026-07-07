@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "Ryan Little"
 theme = "rpdl"
 enableRobotsTXT = true
+ignoreFiles = [".*\\.py$"]
 
 [params]
   subtitle = "Maps by day, code by night, San Diego always"

@@ -25,7 +25,7 @@ themes/rpdl/
   layouts/_default/      ← baseof.html, list.html, single.html
   layouts/partials/      ← head.html, header.html, footer.html
   layouts/shortcodes/
-  static/css/style.css   ← all styles (light/dark mode, responsive)
+  assets/css/style.css   ← all styles (light/dark mode, responsive)
   static/images/
 static/
   CNAME

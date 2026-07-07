@@ -9,7 +9,7 @@ content/posts/           ← page bundles (one dir per post, index.md + images)
 themes/rpdl/             ← custom theme (no parent theme)
   layouts/_default/      ← baseof.html, list.html, single.html
   layouts/partials/      ← head.html, header.html, footer.html
-  static/css/style.css   ← full styles: light/dark mode, responsive nav, cards
+  assets/css/style.css   ← full styles: light/dark mode, responsive nav, cards
 static/
   CNAME                  ← ryanpdlittle.com
   fonts/                 ← self-hosted Inter
