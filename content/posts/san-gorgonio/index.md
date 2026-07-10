@@ -5,7 +5,7 @@ tags: ["hiking", "fitness", "garmin"]
 group: "personal"
 project: "Whitney 2026"
 summary: "The fifth Six-Pack peak and the biggest one yet: 18.37 miles and 5,617 feet of gain up Vivian Creek to the highest point in Southern California, a cloud inversion with San Jacinto rising above it, and summit wind brutal enough to force a sheltered break."
-draft: true
+draft: false
 ---
 
 6:50am, standing at a wooden sign that just says VIVIAN CREEK TRAILHEAD, and I'm in a part of the LA area I'd never actually been to before. Forest Falls sits up in a canyon past Yucaipa and Mentone, and the predawn drive in was easy, no traffic at all that early, the kind of drive I've done enough times now hiking around here that it doesn't really register anymore even though I don't love the wakeup itself.
