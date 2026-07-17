@@ -5,7 +5,7 @@ tags: ["hiking", "fitness", "garmin"]
 group: "personal"
 project: "Whitney 2026"
 summary: "The sixth and final Six-Pack peak, delayed by the same broken finger that pushed back Baldy and Gorgonio: 16.25 miles and 4,856 feet of gain through miles of El Dorado Fire burn scar to a summit sign that misspells its own name."
-draft: true
+draft: false
 ---
 
 Three big mosquitoes flew into the car the second I opened the door at the Angelus Oaks trailhead, and I got all three before any of them landed a bite, which is not exactly the calm start to a hike I would have picked for myself. It did mean I finally broke out the bug spray I'd bought before the Wilson hike, all the way back at the start of this project, and never once used until now.
