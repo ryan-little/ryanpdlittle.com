@@ -2,7 +2,7 @@
 
 **Active** — Friday weekly publishing cadence, trip reports through summer.
 
-Last updated: 2026-07-07
+Last updated: 2026-07-26
 
 ## Current Schedule
 
@@ -17,7 +17,8 @@ Friday at 12:07pm PST.
 | Jul 3 | Mt Baldy | **Published 2026-07-06** (backdated to 7/3, its slot after San Bernardino's revert). Full post + 10 photos, Q&A-driven, corrected after Ryan's review. |
 | Jul 10 | San Gorgonio | Written 2026-07-06, full post + 10 photos. Draft, auto-publishes 7/10 (moved up from original 7/17 slot). |
 | Jul 17 | San Bernardino Peak | Hiked 2026-07-05 (closes out the Six-Pack). Written 2026-07-06, full post + 10 photos. Draft, auto-publishes 7/17 (moved up from 7/24). |
-| Jul 24 | White Mountain Peak | Draft stub, title/identity unresolved — see Next Action, real-world hike order now has Mt Langley first |
+| Jul 31 | My Setup | New scaffold 2026-07-26, filler slot while between hikes. Q&A sheet written, awaiting Ryan's answers. |
+| Aug 7 | Mt Langley | Reconciled 2026-07-26: renamed from the blank "White Mountain Peak" stub (7/24 slot, missed). Hiked 2026-07-11 via New Army Pass/Cottonwood Lakes: 23.58mi, 5,545ft gain, 10h32m (8h28m moving), avg HR 147/max 180, summit 14,044ft (official 14,032ft). GPS track pulled from Basecamp DB, Q&A sheet written, awaiting Ryan's answers + photos. White Mountain itself remains deferred, not yet rescheduled. |
 | Aug 14 | San Gorgonio, Again | Draft stub, renamed from "San Gorgonio: The Rehearsal" (dropped invented framing) |
 | Aug 28 | Mount Whitney | Draft stub (summit Aug 23) |
 
@@ -90,7 +91,7 @@ Friday at 12:07pm PST.
 
 All three remaining Six-Pack posts (Baldy, Gorgonio, San Bernardino Peak) are written and scheduled. Two open items:
 
-1. **Reconcile the White Mountain slot (7/24).** Per basecamp/whitney tracking in the knowledge-hub todo, the real-world plan has shifted: Mt Langley is now the 7/10-11 hike (reinstated 7/6), and White Mountain has been deferred to August as a mutually-exclusive alternative. The blog's `white-mountain` stub doesn't reflect this yet, decide whether that slot becomes a Langley post instead once the hike happens.
+1. ~~**Reconcile the White Mountain slot (7/24).**~~ **Done 2026-07-26** — the 7/24 slot was a blank stub (missed, never had Q&A or photos). Renamed `white-mountain` → `mt-langley`, rescheduled to 8/7, GPS track pulled from Basecamp DB, fresh `qa.md` written. Awaiting Ryan's answers + photos to draft. White Mountain itself is still deferred with no new slot; `my-setup` scaffolded for 7/31 as a non-hiking filler while Ryan is between hikes (next hike targeted the weekend of Aug 1-2), `qa.md` written, awaiting answers.
 2. ~~**Minor theme bug: "0 min read" on empty draft stubs / tags page.**~~ **Fixed 2026-07-07** — new `terms.html` template + a reading-time floor in the single/list/index templates. `/tags/` no longer shows "0 min read" across all 31 tags.
 
 **Learning Geospatial Python Pt 1** still pushed to TBD — needs pre-publish review before rescheduling. Do not surface GIS project details in posts unless they've shipped.

@@ -4,8 +4,10 @@
 # Once published, the entry is automatically removed from this file.
 
 posts:
-- path: content/posts/white-mountain/index.md
-  date: 2026-07-24
+- path: content/posts/my-setup/index.md
+  date: 2026-07-31
+- path: content/posts/mt-langley/index.md
+  date: 2026-08-07
 - path: content/posts/san-gorgonio-again/index.md
   date: 2026-08-14
 - path: content/posts/whitney-summit/index.md
