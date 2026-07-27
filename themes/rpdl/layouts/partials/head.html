@@ -4,8 +4,9 @@
 <meta name="description" content="{{ with .Params.summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta name="author" content="{{ .Site.Params.author }}">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)">
+{{/* Single tag, kept in sync with data-theme by the inline script below —
+     media-query variants can't see the site's own toggle. */}}
+<meta name="theme-color" content="#0a0a0a">
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="alternate" type="application/rss+xml" title="Ryan Little's Blog" href="{{ "index.xml" | absURL }}">
 <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}">
@@ -113,11 +114,44 @@
 
 {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+{{ $syntax := resources.Get "css/syntax.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $syntax.RelPermalink }}" integrity="{{ $syntax.Data.Integrity }}">
 <script>
 (function() {
+  var mq = window.matchMedia('(prefers-color-scheme: light)');
   var saved = localStorage.getItem('theme');
-  var system = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', saved || system);
+
+  // Single source of truth for browser chrome. The two media-query
+  // theme-color metas this replaces keyed off the OS preference, so an
+  // OS-dark / site-light visitor got dark chrome above a light page.
+  function paintChrome(theme) {
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'theme-color');
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', theme === 'light' ? '#f5f5f5' : '#0a0a0a');
+  }
+
+  function apply(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    paintChrome(theme);
+  }
+
+  apply(saved || (mq.matches ? 'light' : 'dark'));
+
+  // Follow the OS if the visitor has never chosen explicitly. Once they use
+  // the toggle, localStorage wins and this stops applying.
+  var onChange = function(e) {
+    if (localStorage.getItem('theme')) return;
+    apply(e.matches ? 'light' : 'dark');
+  };
+  if (mq.addEventListener) mq.addEventListener('change', onChange);
+  else if (mq.addListener) mq.addListener(onChange);
+
+  // Let the toggle in header.html repaint chrome without duplicating the map.
+  window.__setThemeColor = paintChrome;
 })();
 </script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2cf33f6825f64b19bcc2e77aeb665ba9"}'></script>

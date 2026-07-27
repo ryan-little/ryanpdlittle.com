@@ -807,12 +807,6 @@ main {
   line-height: 1.5;
 }
 
-[data-theme="light"] .post-content pre {
-  background: #1e1e1e;
-  border-color: #333;
-  color: #e0e0e0;
-}
-
 [data-theme="light"] .post-content :not(pre) > code {
   background: #eee;
   border-color: #ccc;
