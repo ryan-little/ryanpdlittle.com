@@ -238,11 +238,25 @@ main {
   flex: 1 0 auto;
 }
 
-/* === Home Hero === */
+/* === Home Hero ===
+   Two columns: the name and what's currently going on at the left, the mileage
+   meter pinned right. `align-items: end` puts the meter's baseline near the
+   tagline's rather than centering it against a taller text block. Stacks at
+   768px, where the meter goes full width. */
 .home-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.25rem 2.5rem;
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--border);
+}
+
+.home-hero-intro {
+  flex: 1 1 20rem;
+  min-width: 0;
 }
 
 .home-hero-title {
@@ -271,8 +285,14 @@ main {
 }
 
 .home-hero-stat {
-  margin-top: 1.25rem;
-  max-width: 420px;
+  flex: 0 1 22rem;
+  min-width: 0;
+}
+
+/* An absent data/mileage.json leaves this div empty; without this it would
+   still claim a flex basis and push the intro column narrow for nothing. */
+.home-hero-stat:empty {
+  display: none;
 }
 
 /* === Category Row === */
@@ -1265,6 +1285,16 @@ footer {
 @media (max-width: 768px) {
   .hub-stats {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Stack the hero and let the meter run full width rather than squeezing
+     into a column too narrow for its footer row. */
+  .home-hero {
+    align-items: stretch;
+  }
+
+  .home-hero-stat {
+    flex: 1 1 100%;
   }
 }
 

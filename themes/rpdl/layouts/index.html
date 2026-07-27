@@ -2,16 +2,19 @@
 {{ $posts := where site.RegularPages "Section" "posts" }}
 
 <div class="home-hero">
-  <h1 class="home-hero-title">{{ site.Title }}</h1>
-  {{ with site.GetPage "/series/whitney-2026" }}
-  <p class="home-hero-current">
-    Currently: <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-    {{ with .Params.tagline }}<span class="home-hero-tagline">{{ . }}</span>{{ end }}
-  </p>
-  {{ end }}
+  <div class="home-hero-intro">
+    <h1 class="home-hero-title">{{ site.Title }}</h1>
+    {{ with site.GetPage "/series/whitney-2026" }}
+    <p class="home-hero-current">
+      Currently: <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      {{ with .Params.tagline }}<span class="home-hero-tagline">{{ . }}</span>{{ end }}
+    </p>
+    {{ end }}
+  </div>
 
   {{/* Annual mileage progress, from data/mileage.json (scripts/export-mileage.py).
-       Renders empty if that file is missing. */}}
+       Renders empty if that file is missing, and .home-hero collapses to a
+       single column because the flex child has no content to size. */}}
   <div id="whitney-live-stat" class="home-hero-stat">{{ partial "mileage-meter.html" . }}</div>
 </div>
 
