@@ -5,7 +5,7 @@ tags: ["hiking", "fitness", "garmin"]
 group: "personal"
 project: "Whitney 2026"
 summary: "First fourteener, first alpine start, and the first time Whitney was more than a name: 23.6 miles and 5,545 feet of gain via New Army Pass, with the actual goal sitting in the summit panorama."
-draft: true
+draft: false
 ---
 
 A group of what had to be at least 20 or 30 people rolled into the Horseshoe Meadow overflow lot around 11pm and decided that was the right time to be loud about it. I was already asleep in my car, alarm set for 3:30, and I lay there awake listening to an entire crowd of strangers, fairly sure the night's sleep was already over. At some point, still awake, I looked up through the window and the sky was full of stars, more of them than San Diego ever shows me, the Milky Way smeared straight across the middle of it. Small consolation for being up at midnight because of strangers, but a real one. Eventually the group set off on their own hike up Langley, and once the lot went quiet again I actually managed to fall back asleep for a bit before my alarm went off. I doubt I was the only one they woke up.
