@@ -17,8 +17,8 @@
     {{ .Content }}
   </div>
 
-  {{ $newer := .PrevInSection }}
-  {{ $older := .NextInSection }}
+  {{ $newer := .NextInSection }}
+  {{ $older := .PrevInSection }}
   {{ if or $newer $older }}
   <nav class="post-nav" aria-label="Post navigation">
     {{ with $older }}
