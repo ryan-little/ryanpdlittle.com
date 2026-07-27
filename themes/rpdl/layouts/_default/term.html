@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="list-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.tagline }}<p class="list-tagline">{{ . }}</p>{{ end }}
+  <p class="list-count">{{ len .Pages }} post{{ if ne (len .Pages) 1 }}s{{ end }}</p>
+  {{ with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
+</div>
+
+<div class="post-list">
+  {{ range .Pages }}
+  <article class="post-card" data-href="{{ .RelPermalink }}">
+    <a href="{{ .RelPermalink }}">
+      <h2>{{ .Title }}</h2>
+    </a>
+    <div class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <span class="read-time">{{ if lt .ReadingTime 1 }}1{{ else }}{{ .ReadingTime }}{{ end }} min read</span>
+    </div>
+    {{ with .GetTerms "tags" }}
+    <div class="tags">
+      {{ range . }}<a href="{{ .RelPermalink }}" class="tag">{{ .LinkTitle }}</a>{{ end }}
+    </div>
+    {{ end }}
+    {{ with .Params.summary }}<p class="summary">{{ . }}</p>{{ end }}
+  </article>
+  {{ end }}
+</div>
+
+{{ partial "card-links.html" . }}
+{{ end }}

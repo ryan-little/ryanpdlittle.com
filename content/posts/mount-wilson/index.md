@@ -1,10 +1,19 @@
 ---
 title: "Mount Wilson"
 date: 2026-05-29
-tags: ["hiking", "fitness", "garmin"]
-group: "personal"
-project: "Whitney 2026"
+categories: ["trail"]
+series: ["whitney-2026"]
+tags: ["hiking", "garmin"]
 summary: "First of the Six-Pack: 16.4 miles from Sierra Madre to the observatory I didn't know was up there, and a search and rescue operation on the way back down."
+hike:
+  peak: "Mt Wilson"
+  elevation_ft: 5710
+  distance_mi: 16.39
+  gain_ft: 5203
+  moving_time: "5:17:19"
+  hiked: 2026-05-09
+  track: "wilson-track.json"
+  sixpack: true
 draft: false
 ---
 

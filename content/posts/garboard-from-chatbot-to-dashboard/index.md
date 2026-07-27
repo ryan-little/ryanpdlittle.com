@@ -1,9 +1,9 @@
 ---
 title: "Garboard — From Chatbot to Dashboard"
 date: 2026-04-24
-tags: ["python", "ai", "fitness", "garmin", "fastapi"]
-group: "projects"
-project: "Garboard"
+categories: ["build"]
+series: ["fitness-project"]
+tags: ["python", "ai", "garmin"]
 summary: "Part 2 of the fitness project series. How Claude-Fit's AI agents became a rule-based training engine, what the Garmin auth nightmare taught me about building on unofficial APIs, and why the dashboard worked until it didn't."
 draft: false
 ---

@@ -1,10 +1,23 @@
 ---
 title: "San Gorgonio"
 date: 2026-07-10
-tags: ["hiking", "fitness", "garmin"]
-group: "personal"
-project: "Whitney 2026"
+categories: ["trail"]
+series: ["whitney-2026"]
+tags: ["hiking", "garmin"]
 summary: "The fifth Six-Pack peak and the biggest one yet: 18.37 miles and 5,617 feet of gain up Vivian Creek to the highest point in Southern California, a cloud inversion with San Jacinto rising above it, and summit wind brutal enough to force a sheltered break."
+hike:
+  peak: "San Gorgonio"
+  # 11,499 (NGVD29, what the Forest Service and Hundred Peaks publish, and what
+  # the post text uses) vs 11,503 (NAVD88, what Wikipedia uses). Both are real;
+  # they're different vertical datums. Keeping the Forest Service figure so the
+  # data agrees with the prose. Don't "fix" this to 11,503.
+  elevation_ft: 11499
+  distance_mi: 18.37
+  gain_ft: 5617
+  moving_time: "7:08:36"
+  hiked: 2026-06-28
+  track: "gorgonio-track.json"
+  sixpack: true
 draft: false
 ---
 

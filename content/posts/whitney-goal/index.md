@@ -1,9 +1,9 @@
 ---
 title: "The Whitney Goal"
 date: 2026-05-24
-tags: ["hiking", "fitness", "san-diego"]
-group: "personal"
-project: "Whitney 2026"
+categories: ["trail"]
+series: ["whitney-2026"]
+tags: ["hiking", "san-diego"]
 summary: "Cowles to Whitney is two tiers of peaks and most of 2026. Mapping the build from El Cajon to 14,505 feet."
 draft: false
 ---

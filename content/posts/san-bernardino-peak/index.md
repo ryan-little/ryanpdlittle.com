@@ -1,10 +1,19 @@
 ---
 title: "San Bernardino Peak"
 date: 2026-07-17
-tags: ["hiking", "fitness", "garmin"]
-group: "personal"
-project: "Whitney 2026"
+categories: ["trail"]
+series: ["whitney-2026"]
+tags: ["hiking", "garmin"]
 summary: "The sixth and final Six-Pack peak, delayed by the same broken finger that pushed back Baldy and Gorgonio: 16.25 miles and 4,856 feet of gain through miles of El Dorado Fire burn scar to a summit sign that misspells its own name."
+hike:
+  peak: "San Bernardino Peak"
+  elevation_ft: 10649
+  distance_mi: 16.25
+  gain_ft: 4856
+  moving_time: "5:47:35"
+  hiked: 2026-07-05
+  track: "sanbernardino-track.json"
+  sixpack: true
 draft: false
 ---
 

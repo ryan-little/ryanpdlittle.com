@@ -1,9 +1,9 @@
 ---
 title: "Building Primal Chase — Part 4: Visual Identity (V1.9)"
 date: 2026-04-10
-tags: ["primal-chase", "game-dev", "javascript", "dev-log", "css"]
-group: "projects"
-project: "Primal Chase"
+categories: ["build"]
+series: ["primal-chase"]
+tags: ["game-dev", "javascript"]
 summary: "Fireflies, rain at 15 degrees, three tiers of lightning, and a screen that darkens as you die. How V1.9 turned a text game into something you can feel."
 draft: false
 ---

@@ -1,9 +1,9 @@
 ---
 title: "Building Primal Chase — Part 1: The Prototype (V1.1–V1.3)"
 date: 2026-03-20
-tags: ["primal-chase", "game-dev", "javascript", "dev-log"]
-group: "projects"
-project: "Primal Chase"
+categories: ["build"]
+series: ["primal-chase"]
+tags: ["game-dev", "javascript"]
 summary: "How a browser survival game went from design doc to playable prototype in a single afternoon. The encounter system that generates 9,000 combinations, a landscape background that lasted 17 minutes, and the small choices that gave the game its voice."
 draft: false
 ---

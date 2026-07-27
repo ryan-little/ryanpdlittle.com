@@ -1,9 +1,9 @@
 ---
 title: "Building Primal Chase — Part 2: Making It Real (V1.4–V1.6)"
 date: 2026-03-27
-tags: ["primal-chase", "game-dev", "javascript", "dev-log"]
-group: "projects"
-project: "Primal Chase"
+categories: ["build"]
+series: ["primal-chase"]
+tags: ["game-dev", "javascript"]
 summary: "The typewriter reflow bug that haunted three versions, a share card that couldn't use images, and the unsexy cleanup work that made Primal Chase shippable."
 draft: false
 ---

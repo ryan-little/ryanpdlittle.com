@@ -1,9 +1,9 @@
 ---
 title: "San Gorgonio, Again"
 date: 2026-08-14
-tags: ["hiking", "fitness", "garmin"]
-group: "personal"
-project: "Whitney 2026"
+categories: ["trail"]
+series: ["whitney-2026"]
+tags: ["hiking", "garmin"]
 summary: ""
 draft: true
 ---

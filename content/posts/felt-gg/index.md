@@ -1,9 +1,8 @@
 ---
 title: "Felt.gg — Building an AI Agent Poker Platform"
 date: 2026-04-28
+categories: ["build"]
 tags: ["game-dev", "ai", "javascript"]
-group: "projects"
-project: "Felt.gg"
 summary: ""
 draft: true
 ---

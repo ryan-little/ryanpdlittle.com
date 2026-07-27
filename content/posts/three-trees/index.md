@@ -1,9 +1,8 @@
 ---
 title: "Three Trees: Tallest, Largest, Oldest"
 date: 2026-04-28
-tags: ["travel", "trees", "california"]
-group: "personal"
-project: ""
+categories: ["trail"]
+tags: ["travel"]
 summary: "Three separate trips across four years to see the three most remarkable trees in California: the world's tallest coastal redwood, the largest tree by volume, and one of the oldest living organisms on Earth."
 draft: false
 ---

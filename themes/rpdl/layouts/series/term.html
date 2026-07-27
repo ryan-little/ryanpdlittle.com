@@ -1,0 +1,31 @@
+{{ define "main" }}
+{{ $ordered := .Pages.ByDate }}
+<div class="list-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.tagline }}<p class="list-tagline">{{ . }}</p>{{ end }}
+  <p class="list-count">{{ len $ordered }} part{{ if ne (len $ordered) 1 }}s{{ end }}</p>
+  {{ with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
+</div>
+
+{{/* whitney-2026 is the only series with hike data behind it, so it's the only
+     one that gets the stats/table/map hub. Keyed on the term rather than on
+     "does this series have hike front matter" so a future trail series doesn't
+     silently inherit a layout built for this one. */}}
+{{ if eq .Data.Term "whitney-2026" }}{{ partial "whitney-hub.html" . }}{{ end }}
+
+{{/* Series read in publication order, so this list is oldest-first, unlike every
+     other list on the site. */}}
+<ol class="series-list">
+  {{ range $i, $p := $ordered }}
+  <li class="series-item">
+    <span class="series-item-part">Part {{ add $i 1 }}</span>
+    <a class="series-item-link" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
+    <div class="post-meta">
+      <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "January 2, 2006" }}</time>
+      <span class="read-time">{{ if lt $p.ReadingTime 1 }}1{{ else }}{{ $p.ReadingTime }}{{ end }} min read</span>
+    </div>
+    {{ with $p.Params.summary }}<p class="summary">{{ . }}</p>{{ end }}
+  </li>
+  {{ end }}
+</ol>
+{{ end }}

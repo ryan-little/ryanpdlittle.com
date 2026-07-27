@@ -1,9 +1,9 @@
 ---
 title: "Building an RF Viewshed Tool — Part 1"
 date: 2026-04-28
-tags: ["gis", "python", "rf", "rasterio"]
-group: "projects"
-project: "RF Viewshed Tool"
+categories: ["build"]
+series: ["rf-viewshed"]
+tags: ["gis", "python"]
 summary: "A web-based RF propagation and viewshed tool that pre-loads FCC transmitter data. Why the existing tools miss the mark, and what I'm building instead."
 draft: true
 ---

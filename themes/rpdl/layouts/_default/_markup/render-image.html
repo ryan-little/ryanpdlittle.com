@@ -1,7 +1,41 @@
-<img src="{{ .Destination | safeURL }}"
+{{- $destination := .Destination -}}
+{{- $resource := .Page.Resources.GetMatch (printf "*%s" $destination) -}}
+{{- if $resource -}}
+{{- $origWidth := $resource.Width -}}
+{{- $breakpoints := slice 480 960 1600 -}}
+{{- $variants := slice -}}
+{{- range $bp := $breakpoints -}}
+  {{- if lt $bp $origWidth -}}
+    {{- $variants = $variants | append (dict "res" ($resource.Resize (printf "%dx webp q75" $bp)) "w" $bp) -}}
+  {{- end -}}
+{{- end -}}
+{{- /* Largest candidate: reuse the original (already webp) instead of re-encoding it. */ -}}
+{{- if le $origWidth 1600 -}}
+  {{- $largest := $resource -}}
+  {{- if ne $resource.MediaType.SubType "webp" -}}
+    {{- $largest = $resource.Resize (printf "%dx webp q75" $origWidth) -}}
+  {{- end -}}
+  {{- $variants = $variants | append (dict "res" $largest "w" $origWidth) -}}
+{{- else -}}
+  {{- $variants = $variants | append (dict "res" ($resource.Resize "1600x webp q75") "w" 1600) -}}
+{{- end -}}
+{{- $largestVariant := index $variants (sub (len $variants) 1) -}}
+{{- $srcset := slice -}}
+{{- range $v := $variants -}}
+  {{- $srcset = $srcset | append (printf "%s %dw" $v.res.RelPermalink $v.w) -}}
+{{- end -}}
+<img src="{{ $largestVariant.res.RelPermalink }}"
+  srcset="{{ delimit $srcset ", " }}"
+  sizes="(max-width: 768px) 100vw, 720px"
   {{- with .Text }} alt="{{ . }}"{{ end }}
   {{- with .Title }} title="{{ . }}"{{ end }}
-  {{- $resource := .Page.Resources.GetMatch (printf "*%s" .Destination) }}
-  {{- with $resource }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}
+  width="{{ $resource.Width }}" height="{{ $resource.Height }}"
   loading="lazy"
   decoding="async">
+{{- else -}}
+<img src="{{ $destination | safeURL }}"
+  {{- with .Text }} alt="{{ . }}"{{ end }}
+  {{- with .Title }} title="{{ . }}"{{ end }}
+  loading="lazy"
+  decoding="async">
+{{- end -}}

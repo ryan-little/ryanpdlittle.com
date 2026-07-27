@@ -262,6 +262,25 @@
     });
   }
 
+  // Replace an empty map (and its elevation chart, if any) with a visible
+  // message instead of leaving a blank sized box when track data fails to load.
+  function showUnavailable(id, hasElevation) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.textContent = "Map data unavailable.";
+      el.classList.add("hiking-map-unavailable");
+    }
+    if (hasElevation) {
+      var chartEl = document.getElementById(id + "-elevation");
+      if (chartEl && chartEl.parentNode) {
+        var msg = document.createElement("p");
+        msg.className = "hiking-elevation-unavailable";
+        msg.textContent = "Elevation data unavailable.";
+        chartEl.parentNode.replaceChild(msg, chartEl);
+      }
+    }
+  }
+
   function fetchJSON(url) {
     return fetch(url)
       .then(function (r) {
@@ -290,7 +309,10 @@
     if (!document.getElementById(id)) return;
 
     function build(data) {
-      if (!data || !data.points || data.points.length < 2) return;
+      if (!data || !data.points || data.points.length < 2) {
+        showUnavailable(id, opts.elevation !== false);
+        return;
+      }
       var points = data.points;
       var map = createMap(id, opts);
       if (!map) return;
@@ -344,6 +366,7 @@
     addHRLegend: addHRLegend,
     elevationChart: elevationChart,
     fetchJSON: fetchJSON,
+    showUnavailable: showUnavailable,
     trackMap: trackMap,
   };
 

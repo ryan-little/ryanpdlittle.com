@@ -1,10 +1,19 @@
 ---
 title: "Cucamonga Peak and Ontario Peak"
 date: 2026-06-12
-tags: ["hiking", "fitness", "garmin"]
-group: "personal"
-project: "Whitney 2026"
+categories: ["trail"]
+series: ["whitney-2026"]
+tags: ["hiking", "garmin"]
 summary: "Two unplanned peaks on Memorial Day weekend: 17.45 miles, 5,700 feet of gain, blood blisters I didn't know existed until the car, and an SDSU guy at the summit who changed my plans."
+hike:
+  peak: "Cucamonga Peak"
+  elevation_ft: 8859
+  distance_mi: 17.45
+  gain_ft: 5696
+  moving_time: "6:08:56"
+  hiked: 2026-05-24
+  track: "cucamonga-track.json"
+  sixpack: true
 draft: false
 ---
 

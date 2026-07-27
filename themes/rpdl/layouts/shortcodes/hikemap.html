@@ -64,9 +64,12 @@
   {{- range (split . ",") -}}{{- $nums = $nums | append (float (trim . " ")) -}}{{- end -}}
   {{- $spec = merge $spec (dict "peakCoords" $nums) -}}
 {{- end -}}
-<div id="{{ $id }}" class="hiking-map"></div>
+{{- $peak := $.Get "peak" -}}
+{{- $subject := $.Page.Title -}}
+{{- with $peak }}{{ $subject = . }}{{ end }}
+<div id="{{ $id }}" class="hiking-map" role="img" aria-label="Interactive map of the GPS track for {{ $subject }}"></div>
 {{- if ne ($.Get "noelevation") "true" }}
-<div class="hiking-elevation-chart"><canvas id="{{ $id }}-elevation"></canvas></div>
+<div class="hiking-elevation-chart"><canvas id="{{ $id }}-elevation" role="img" aria-label="Elevation profile for {{ $subject }}, colored by heart rate">Elevation profile chart for {{ $subject }}, colored by heart rate. Chart data isn't available as text.</canvas></div>
 {{- end }}
 <script>window.__hikemaps.push({{ $spec | jsonify | safeJS }});</script>
 {{- end -}}

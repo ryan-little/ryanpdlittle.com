@@ -1,0 +1,10 @@
+{{/* Makes the whole .post-card clickable. The title link remains the tab stop,
+     so the card itself is deliberately not focusable (no tabindex). */}}
+<script>
+document.querySelectorAll('.post-card[data-href]').forEach(function(card) {
+  card.addEventListener('click', function(e) {
+    if (e.target.closest('a')) return;
+    window.location.href = this.dataset.href;
+  });
+});
+</script>

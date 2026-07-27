@@ -4,7 +4,7 @@ Hugo static blog at ryanpdlittle.com. Custom `rpdl` theme, GitHub Pages hosting,
 
 ## Writing Style
 
-Always read the style guide before writing or editing blog posts: `~/Desktop/Projects/knowledge-hub/projects/ryanpdlittle-com/writing-style.md`
+Always read the style guide before writing or editing blog posts: `~/knowledge-hub/projects/ryanpdlittle-com/writing-style.md`
 
 It's the hub doc. Load the relevant spoke docs from `writing/` for the specific aspect of the post you're working on (voice, narrative structure, prose craft, anti-AI rules, media/code).
 
@@ -21,18 +21,24 @@ hugo new content posts/<slug>/index.md   # create new post (use archetype)
 
 ```
 content/posts/           ← page bundles (one dir per post)
+content/series/          ← series landing pages (_index.md per series)
+data/mileage.json        ← exported Basecamp mileage totals (build-time input)
 themes/rpdl/
-  layouts/_default/      ← baseof.html, list.html, single.html
-  layouts/partials/      ← head.html, header.html, footer.html
-  layouts/shortcodes/
-  assets/css/style.css   ← all styles (light/dark mode, responsive)
-  static/images/
+  layouts/_default/      ← baseof.html, list.html, single.html, terms.html, 404.html
+  layouts/_default/_markup/  ← render-image.html (srcset), render-table.html
+  layouts/series/        ← term.html (series landing), taxonomy.html
+  layouts/partials/      ← head, header, footer, series-nav, whitney-hub, mileage-meter
+  layouts/shortcodes/    ← hikemap, photogrid, rawhtml
+  assets/css/            ← style.css (all styles), hikemap.css
+  assets/js/             ← hikemap.js, whitney-hub.js
+  static/vendor/         ← self-hosted Leaflet + Chart.js
 static/
   CNAME
   fonts/                 ← self-hosted Inter
   images/                ← global images
 archetypes/posts/        ← post template (index.md)
-hugo.toml                ← site config
+scripts/                 ← optimize-images.sh, export-mileage.py
+hugo.toml                ← site config (taxonomies: categories, series, tags)
 publish-schedule.yml     ← upcoming post dates
 .github/workflows/
   deploy.yml             ← push to main → build + deploy
@@ -55,6 +61,9 @@ See [CONVENTIONS.md](CONVENTIONS.md) for post front matter, page bundle structur
 ## Architecture Reference
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for deploy pipeline details.
+
+These live in the knowledge hub at `~/knowledge-hub/projects/ryanpdlittle-com/`,
+not in this repo:
 
 - `decisions.md` — design decisions and rationale
 - `ideas.md` — post ideas and schedule backlog

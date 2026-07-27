@@ -45,7 +45,12 @@ Commit changes
 Trigger deploy workflow
 ```
 
-`publish-schedule.yml` is the single source of truth for what publishes when. Edit it directly to reschedule or cancel a post.
+`publish-schedule.yml` drives automated publishing: edit it directly to
+reschedule or cancel a post. It is not the whole picture, though — posts are
+also published by hand (flip `draft: false`, push) when a draft needs a look
+before it goes out, and those never appear in the schedule. A post absent from
+`publish-schedule.yml` is therefore either manual or forgotten; check `draft:`
+before assuming which.
 
 ## External Services
 

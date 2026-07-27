@@ -1,9 +1,8 @@
 ---
 title: "Zion in Three Trails"
 date: 2026-04-07
-tags: ["hiking", "garmin", "fitness"]
-group: "personal"
-project: "Hiking"
+categories: ["trail"]
+tags: ["hiking", "garmin", "travel"]
 summary: "Three days of hiking Zion National Park with GPS data from my Garmin, from the Watchman Trail warmup to Angels Landing and The Narrows."
 draft: false
 ---

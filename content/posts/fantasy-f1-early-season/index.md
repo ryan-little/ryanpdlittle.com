@@ -1,9 +1,8 @@
 ---
 title: "Fantasy F1 — Retiring the Model"
 date: 2026-04-21
-tags: ["f1", "sports"]
-group: "personal"
-project: ""
+categories: ["life"]
+tags: ["sports", "python"]
 summary: "I built a Monte Carlo model to win my F1 Fantasy league, got outscored by a coworker who just picked the fast cars, and retired the whole thing for Claude-assisted reasoning on top of the data."
 draft: false
 ---

@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="list-header">
+  <h1>Series</h1>
+  <p class="list-tagline">Multi-part builds and ongoing projects, in reading order.</p>
+</div>
+
+<div class="series-grid">
+  {{/* .Pages, not .Data.Terms — the latter drops series whose posts are all still
+       drafts, and those series still have a landing page worth linking to. */}}
+  {{ range .Pages.ByTitle }}
+  {{ $count := len .Pages }}
+  <article class="series-card" data-href="{{ .RelPermalink }}">
+    <a href="{{ .RelPermalink }}"><h2>{{ .LinkTitle }}</h2></a>
+    {{ with .Params.tagline }}<p class="series-card-tagline">{{ . }}</p>{{ end }}
+    <p class="series-card-count">
+      {{ if eq $count 0 }}Coming soon{{ else }}{{ $count }} part{{ if ne $count 1 }}s{{ end }}{{ end }}
+    </p>
+  </article>
+  {{ end }}
+</div>
+
+<script>
+document.querySelectorAll('.series-card[data-href]').forEach(function(card) {
+  card.addEventListener('click', function(e) {
+    if (e.target.closest('a')) return;
+    window.location.href = this.dataset.href;
+  });
+});
+</script>
+{{ end }}

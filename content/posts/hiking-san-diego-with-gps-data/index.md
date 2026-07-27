@@ -1,9 +1,8 @@
 ---
 title: "Hiking San Diego with GPS Data"
 date: 2026-03-17
-tags: ["hiking", "san-diego", "garmin", "fitness"]
-group: "personal"
-project: "San Diego"
+categories: ["trail"]
+tags: ["hiking", "garmin", "san-diego"]
 summary: "Interactive GPS maps from my Garmin — 19 Cowles overlays, El Cajon's 3,800-foot grind, a Camp Pendleton memorial hike, and the oldest tree on Earth."
 draft: false
 ---

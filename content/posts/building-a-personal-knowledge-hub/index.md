@@ -1,9 +1,8 @@
 ---
 title: "Building a Personal Knowledge Hub with Markdown and Local Search"
 date: 2026-03-06
-tags: ["python", "tooling", "productivity", "ai"]
-group: "projects"
-project: "Knowledge Hub"
+categories: ["build"]
+tags: ["python", "tools", "ai"]
 summary: "I have 11 projects, a career in transition, and notes scattered everywhere. So I built a searchable knowledge base from plain markdown files in a day."
 draft: false
 ---

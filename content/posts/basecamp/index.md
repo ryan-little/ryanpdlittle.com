@@ -1,9 +1,9 @@
 ---
 title: "Basecamp — From Dashboard to System"
 date: 2026-05-01
-tags: ["python", "ai", "fitness", "garmin", "claude"]
-group: "projects"
-project: "Basecamp"
+categories: ["build"]
+series: ["fitness-project"]
+tags: ["python", "ai", "garmin"]
 summary: "I built a rules engine to tell me how to train. Then Claude analyzed the same data and was better at it. So I threw out the dashboard, kept the metrics, and let Claude be the coach."
 draft: false
 ---

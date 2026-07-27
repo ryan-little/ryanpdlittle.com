@@ -1,40 +1,25 @@
 {{ define "main" }}
 <div class="list-header">
   <h1>{{ .Title }}</h1>
+  {{ with .Params.tagline }}<p class="list-tagline">{{ . }}</p>{{ end }}
+  {{ with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
 </div>
 
-<div class="post-list">
-  {{ range .Pages }}
-  <article class="post-card" data-href="{{ .Permalink }}" tabindex="0">
-    <a href="{{ .Permalink }}">
-      <h2>{{ .Title }}</h2>
-    </a>
-    <div class="post-meta">
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-      <span class="read-time">{{ if lt .ReadingTime 1 }}1{{ else }}{{ .ReadingTime }}{{ end }} min read</span>
-    </div>
-    {{ with .Params.tags }}
-    <div class="tags">
-      {{ range . }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
-    </div>
+{{/* Compact year-grouped index. Full cards live on the homepage and term pages. */}}
+{{ range .Pages.GroupByDate "2006" }}
+<section class="archive-year">
+  <h2 class="archive-year-heading">{{ .Key }}</h2>
+  <ul class="archive-list">
+    {{ range .Pages }}
+    <li class="archive-item">
+      <time class="archive-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
+      <a class="archive-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ with .GetTerms "categories" }}
+      <a class="archive-category" href="{{ (index . 0).RelPermalink }}">{{ (index . 0).LinkTitle }}</a>
+      {{ end }}
+    </li>
     {{ end }}
-    {{ with .Params.summary }}<p class="summary">{{ . }}</p>{{ end }}
-  </article>
-  {{ end }}
-</div>
-
-<script>
-document.querySelectorAll('.post-card[data-href]').forEach(function(card) {
-  card.addEventListener('click', function(e) {
-    if (e.target.closest('a')) return;
-    window.location.href = this.dataset.href;
-  });
-  card.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      window.location.href = this.dataset.href;
-    }
-  });
-});
-</script>
+  </ul>
+</section>
+{{ end }}
 {{ end }}

@@ -1,0 +1,65 @@
+{{/*
+  Series navigation.
+
+  Call with: (dict "page" . "mode" "header")  → "Part N of M in <series>" line
+             (dict "page" . "mode" "nav")     → previous/next links within the series
+
+  Part numbers are derived from date order inside the series, never hand-written,
+  so inserting a post mid-series renumbers everything downstream automatically.
+  A page with no series (or a series with no term page) renders nothing.
+
+  Series that number themselves from zero (Primal Chase opens with "Part 0")
+  set `series_start: 0` in their content/series/<slug>/_index.md. That is one
+  value per series, not a number per post, so the auto-renumbering above still
+  holds — it just shifts where counting begins so the badge agrees with the
+  titles the posts already carry.
+*/}}
+{{ $page := .page }}
+{{ $mode := .mode | default "header" }}
+
+{{ with $page.GetTerms "series" }}
+  {{ $term := index . 0 }}
+  {{ $ordered := $term.Pages.ByDate }}
+  {{ $total := len $ordered }}
+  {{/* isset, not `default` — series_start is legitimately 0, which `default` treats as empty */}}
+  {{ $start := 1 }}
+  {{ if isset $term.Params "series_start" }}{{ $start = $term.Params.series_start }}{{ end }}
+
+  {{ $idx := -1 }}
+  {{ range $i, $p := $ordered }}
+    {{ if eq $p.RelPermalink $page.RelPermalink }}{{ $idx = $i }}{{ end }}
+  {{ end }}
+
+  {{ if ge $idx 0 }}
+    {{ if eq $mode "header" }}
+      <p class="series-badge">
+        Part {{ add $idx $start }} of {{ $total }} in <a href="{{ $term.RelPermalink }}">{{ $term.LinkTitle }}</a>
+      </p>
+    {{ else }}
+      {{/* cond evaluates both branches, so build these with if to avoid indexing past the ends */}}
+      {{ $prev := false }}
+      {{ if gt $idx 0 }}{{ $prev = index $ordered (sub $idx 1) }}{{ end }}
+      {{ $next := false }}
+      {{ if lt $idx (sub $total 1) }}{{ $next = index $ordered (add $idx 1) }}{{ end }}
+      {{ if or $prev $next }}
+      <nav class="series-nav" aria-label="{{ $term.LinkTitle }} series navigation">
+        <p class="series-nav-heading">More in <a href="{{ $term.RelPermalink }}">{{ $term.LinkTitle }}</a></p>
+        <div class="series-nav-links">
+          {{ with $prev }}
+          <a class="post-nav-link post-nav-older" href="{{ .RelPermalink }}">
+            <span class="post-nav-label">← Part {{ add (sub $idx 1) $start }}</span>
+            <span class="post-nav-title">{{ .Title }}</span>
+          </a>
+          {{ else }}<span></span>{{ end }}
+          {{ with $next }}
+          <a class="post-nav-link post-nav-newer" href="{{ .RelPermalink }}">
+            <span class="post-nav-label">Part {{ add (add $idx 1) $start }} →</span>
+            <span class="post-nav-title">{{ .Title }}</span>
+          </a>
+          {{ else }}<span></span>{{ end }}
+        </div>
+      </nav>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}

@@ -1,166 +1,151 @@
 {{ define "main" }}
-<div class="home-layout">
-  <div class="home-search">
-    <input type="text" id="search" class="search-input" placeholder="Search posts..." aria-label="Search posts">
-  </div>
+{{ $posts := where site.RegularPages "Section" "posts" }}
 
-  <div class="post-list" id="post-list">
-    {{ range where .Site.RegularPages "Section" "posts" }}
-    <article class="post-card" data-href="{{ .Permalink }}" data-title="{{ .Title | lower }}" data-summary="{{ with .Params.summary }}{{ . | lower }}{{ end }}" data-tags="{{ with .Params.tags }}{{ delimit . " " }}{{ end }}" data-project="{{ with .Params.project }}{{ . | lower }}{{ end }}" tabindex="0">
-      <a href="{{ .Permalink }}">
-        <h2>{{ .Title }}</h2>
-      </a>
-      <div class="post-meta">
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-        <span class="read-time">{{ if lt .ReadingTime 1 }}1{{ else }}{{ .ReadingTime }}{{ end }} min read</span>
-      </div>
-      {{ with .Params.tags }}
-      <div class="tags">
-        {{ range . }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
-      </div>
-      {{ end }}
-      {{ with .Params.summary }}<p class="summary">{{ . }}</p>{{ end }}
-    </article>
-    {{ end }}
-  </div>
+<div class="home-hero">
+  <h1 class="home-hero-title">{{ site.Title }}</h1>
+  {{ with site.GetPage "/series/whitney-2026" }}
+  <p class="home-hero-current">
+    Currently: <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    {{ with .Params.tagline }}<span class="home-hero-tagline">{{ . }}</span>{{ end }}
+  </p>
+  {{ end }}
 
-  <aside class="sidebar">
-    {{/* Build project tree by iterating all posts */}}
-    {{ $projectMap := slice }}
-    {{ $personalMap := slice }}
-    {{ range where .Site.RegularPages "Section" "posts" }}
-      {{ if .Params.project }}
-        {{ if eq .Params.group "personal" }}
-          {{ $personalMap = $personalMap | append .Params.project }}
-        {{ else }}
-          {{ $projectMap = $projectMap | append .Params.project }}
-        {{ end }}
-      {{ end }}
-    {{ end }}
-
-    {{ $projectCounts := dict }}
-    {{ range $projectMap }}
-      {{ if isset $projectCounts . }}
-        {{ $projectCounts = merge $projectCounts (dict . (add (index $projectCounts .) 1)) }}
-      {{ else }}
-        {{ $projectCounts = merge $projectCounts (dict . 1) }}
-      {{ end }}
-    {{ end }}
-
-    {{ $personalCounts := dict }}
-    {{ range $personalMap }}
-      {{ if isset $personalCounts . }}
-        {{ $personalCounts = merge $personalCounts (dict . (add (index $personalCounts .) 1)) }}
-      {{ else }}
-        {{ $personalCounts = merge $personalCounts (dict . 1) }}
-      {{ end }}
-    {{ end }}
-
-    {{ if or (gt (len $projectCounts) 0) (gt (len $personalCounts) 0) }}
-    <div class="sidebar-section">
-      {{ with $projectCounts }}
-      <h3 class="sidebar-heading">Projects</h3>
-      <ul class="project-tree">
-        {{ range $name, $count := . }}
-        <li><a href="#" class="project-link" data-project="{{ $name | lower }}">{{ $name }} <span class="tag-count">{{ $count }}</span></a></li>
-        {{ end }}
-      </ul>
-      {{ end }}
-
-      {{ with $personalCounts }}
-      <h3 class="sidebar-heading sidebar-heading--spaced">Personal</h3>
-      <ul class="project-tree">
-        {{ range $name, $count := . }}
-        <li><a href="#" class="project-link" data-project="{{ $name | lower }}">{{ $name }} <span class="tag-count">{{ $count }}</span></a></li>
-        {{ end }}
-      </ul>
-      {{ end }}
-    </div>
-    {{ end }}
-
-    <div class="sidebar-section">
-      <h3 class="sidebar-heading">Tags</h3>
-      <div class="tag-list">
-        {{ range .Site.Taxonomies.tags.Alphabetical }}
-        <a href="{{ "tags/" | relURL }}{{ .Name | urlize }}/" class="sidebar-tag" data-tag="{{ .Name }}">{{ .Name }} <span class="tag-count">{{ .Count }}</span></a>
-        {{ end }}
-      </div>
-    </div>
-  </aside>
+  {{/* Annual mileage progress, from data/mileage.json (scripts/export-mileage.py).
+       Renders empty if that file is missing. */}}
+  <div id="whitney-live-stat" class="home-hero-stat">{{ partial "mileage-meter.html" . }}</div>
 </div>
 
+<div class="home-search">
+  <input type="search" id="search" class="search-input" placeholder="Search posts..." aria-label="Search posts" autocomplete="off">
+</div>
+
+{{/* Results render here only while a query is active; the sections below hide. */}}
+<div id="search-results" class="post-list" hidden></div>
+<p id="search-empty" class="search-empty" hidden>No posts match that search.</p>
+
+<div id="home-sections">
+  <section class="home-section home-categories">
+    <h2 class="home-section-heading">Browse</h2>
+    <div class="category-row">
+      {{/* Fixed order rather than alphabetical. site.GetPage can't resolve a term
+           page that has no backing content file, so walk the taxonomy instead. */}}
+      {{ $cats := site.Taxonomies.categories.Alphabetical }}
+      {{ range $slug := slice "trail" "build" "life" "meta" }}
+      {{ range $cats }}
+      {{ if eq .Term $slug }}
+      <a class="category-chip" href="{{ .Page.RelPermalink }}">
+        <span class="category-chip-name">{{ .Page.LinkTitle }}</span>
+        <span class="category-chip-count">{{ .Count }}</span>
+      </a>
+      {{ end }}
+      {{ end }}
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="home-section home-latest">
+    <h2 class="home-section-heading">Latest</h2>
+    <div class="post-list">
+      {{ range first 6 $posts }}
+      <article class="post-card" data-href="{{ .RelPermalink }}">
+        <a href="{{ .RelPermalink }}">
+          <h3>{{ .Title }}</h3>
+        </a>
+        <div class="post-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          <span class="read-time">{{ if lt .ReadingTime 1 }}1{{ else }}{{ .ReadingTime }}{{ end }} min read</span>
+        </div>
+        {{ with .GetTerms "tags" }}
+        <div class="tags">
+          {{ range . }}<a href="{{ .RelPermalink }}" class="tag">{{ .LinkTitle }}</a>{{ end }}
+        </div>
+        {{ end }}
+        {{ with .Params.summary }}<p class="summary">{{ . }}</p>{{ end }}
+      </article>
+      {{ end }}
+    </div>
+    <a class="home-section-more" href="{{ "/posts/" | relURL }}">All posts →</a>
+  </section>
+
+  <section class="home-section home-series">
+    <h2 class="home-section-heading">Series</h2>
+    <div class="series-grid">
+      {{/* Only surface series that actually read as a series. */}}
+      {{ range site.Taxonomies.series.ByCount }}
+      {{ if ge .Count 2 }}
+      {{ $term := .Page }}
+      <article class="series-card" data-href="{{ $term.RelPermalink }}">
+        <a href="{{ $term.RelPermalink }}"><h3>{{ $term.LinkTitle }}</h3></a>
+        {{ with $term.Params.tagline }}<p class="series-card-tagline">{{ . }}</p>{{ end }}
+        <p class="series-card-count">{{ .Count }} parts</p>
+      </article>
+      {{ end }}
+      {{ end }}
+    </div>
+    <a class="home-section-more" href="{{ "/series/" | relURL }}">All series →</a>
+  </section>
+</div>
+
+{{/* Search index covers every post, not just the six rendered above. */}}
+{{ $index := slice }}
+{{ range $posts }}
+  {{ $index = $index | append (dict
+    "t" .Title
+    "s" (.Params.summary | default "")
+    "u" .RelPermalink
+    "d" (.Date.Format "January 2, 2006")
+    "k" (delimit (union (union (.Params.tags | default slice) (.Params.categories | default slice)) (.Params.series | default slice)) " ")
+  ) }}
+{{ end }}
+{{/* safeJS is required: inside a <script> element html/template would otherwise
+     re-encode jsonify's output as a JS string literal, double-wrapping the JSON. */}}
+<script id="search-index" type="application/json">{{ $index | jsonify | safeJS }}</script>
+
 <script>
-// Search filter
-document.getElementById('search').addEventListener('input', function() {
-  const q = this.value.toLowerCase();
-  document.querySelectorAll('.post-card').forEach(function(card) {
-    const title = card.dataset.title || '';
-    const summary = card.dataset.summary || '';
-    const tags = card.dataset.tags || '';
-    card.style.display = (title.includes(q) || summary.includes(q) || tags.includes(q)) ? '' : 'none';
-  });
-  document.querySelectorAll('.project-link, .sidebar-tag').forEach(function(l) { l.classList.remove('active'); });
-});
+(function() {
+  var posts = JSON.parse(document.getElementById('search-index').textContent);
+  var input = document.getElementById('search');
+  var results = document.getElementById('search-results');
+  var empty = document.getElementById('search-empty');
+  var sections = document.getElementById('home-sections');
 
-// Project filter
-document.querySelectorAll('.project-link').forEach(function(link) {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const project = this.dataset.project;
-    const isActive = this.classList.contains('active');
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function(c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
 
-    document.querySelectorAll('.project-link, .sidebar-tag').forEach(function(l) { l.classList.remove('active'); });
+  function card(p) {
+    return '<article class="post-card" data-href="' + esc(p.u) + '">' +
+      '<a href="' + esc(p.u) + '"><h3>' + esc(p.t) + '</h3></a>' +
+      '<div class="post-meta"><time>' + esc(p.d) + '</time></div>' +
+      (p.s ? '<p class="summary">' + esc(p.s) + '</p>' : '') +
+      '</article>';
+  }
 
-    if (isActive) {
-      document.querySelectorAll('.post-card').forEach(function(card) { card.style.display = ''; });
-    } else {
-      this.classList.add('active');
-      document.querySelectorAll('.post-card').forEach(function(card) {
-        card.style.display = (card.dataset.project === project) ? '' : 'none';
-      });
+  input.addEventListener('input', function() {
+    var q = this.value.trim().toLowerCase();
+    if (!q) {
+      results.hidden = true;
+      empty.hidden = true;
+      sections.hidden = false;
+      return;
     }
-
-    document.getElementById('search').value = '';
-    document.getElementById('post-list').scrollIntoView({ behavior: 'smooth' });
+    var hits = posts.filter(function(p) {
+      return (p.t + ' ' + p.s + ' ' + p.k).toLowerCase().indexOf(q) !== -1;
+    });
+    results.innerHTML = hits.map(card).join('');
+    results.hidden = hits.length === 0;
+    empty.hidden = hits.length !== 0;
+    sections.hidden = true;
   });
-});
+})();
 
-// Tag filter
-document.querySelectorAll('.sidebar-tag').forEach(function(link) {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const tag = this.dataset.tag;
-    const isActive = this.classList.contains('active');
-
-    document.querySelectorAll('.project-link, .sidebar-tag').forEach(function(l) { l.classList.remove('active'); });
-
-    if (isActive) {
-      document.querySelectorAll('.post-card').forEach(function(card) { card.style.display = ''; });
-    } else {
-      this.classList.add('active');
-      document.querySelectorAll('.post-card').forEach(function(card) {
-        const tags = (card.dataset.tags || '').split(' ');
-        card.style.display = tags.includes(tag) ? '' : 'none';
-      });
-    }
-
-    document.getElementById('search').value = '';
-    document.getElementById('post-list').scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
-// Clickable post cards (mouse + keyboard)
-document.querySelectorAll('.post-card[data-href]').forEach(function(card) {
-  card.addEventListener('click', function(e) {
-    if (e.target.closest('a')) return;
-    window.location.href = this.dataset.href;
-  });
-  card.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      window.location.href = this.dataset.href;
-    }
-  });
+// Clickable cards. Delegated so search-injected cards work too.
+document.addEventListener('click', function(e) {
+  if (e.target.closest('a')) return;
+  var card = e.target.closest('.post-card[data-href], .series-card[data-href]');
+  if (card) window.location.href = card.dataset.href;
 });
 </script>
 {{ end }}

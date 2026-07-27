@@ -1,9 +1,9 @@
 ---
 title: "Building Primal Chase — Part 3: Systems Thinking (V1.7–V1.8)"
 date: 2026-04-03
-tags: ["primal-chase", "game-dev", "javascript", "dev-log", "simulation"]
-group: "projects"
-project: "Primal Chase"
+categories: ["build"]
+series: ["primal-chase"]
+tags: ["game-dev", "javascript"]
 summary: "A difficulty system built on config snapshots, a monologue engine with 387 tagged fragments, and 5 rounds of simulation-driven balance tuning. The versions where the game got deep."
 draft: false
 ---

@@ -4,3 +4,7 @@ resources/
 .DS_Store
 *.profraw
 *.profdata
+
+# Python bytecode from scripts/
+__pycache__/
+*.pyc

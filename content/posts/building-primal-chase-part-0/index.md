@@ -1,9 +1,9 @@
 ---
 title: "Building Primal Chase — Part 0: The Idea"
 date: 2026-03-13
-tags: ["primal-chase", "game-dev", "game-design", "dev-log"]
-group: "projects"
-project: "Primal Chase"
+categories: ["build"]
+series: ["primal-chase"]
+tags: ["game-dev"]
 summary: "Before any code: the persistence hunting concept, hand-calculated balance math, and a month of design iteration that turned a two-sentence idea into a 9,000-combination survival game."
 draft: false
 ---

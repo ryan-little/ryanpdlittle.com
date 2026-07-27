@@ -1,9 +1,9 @@
 ---
 title: "Learning Geospatial Python in Public — Part 1"
 date: 2026-05-05
-tags: ["python", "gis", "wildfire", "geopandas"]
-group: "projects"
-project: "San Diego Wildfire Gap"
+categories: ["build"]
+series: ["geospatial-python"]
+tags: ["gis", "python"]
 summary: "I have a geography degree and I've never written a line of GeoPandas. This is the start of a series documenting the build of a wildfire risk dashboard for San Diego, and I'm learning all of it from scratch."
 draft: true
 ---

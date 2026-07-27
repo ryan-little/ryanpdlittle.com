@@ -1,9 +1,8 @@
 ---
 title: "What's Coming — Summer 2026"
 date: 2026-06-05
-tags: ["meta"]
-group: "personal"
-project: "Meta"
+categories: ["meta"]
+series: ["whats-coming"]
 summary: "A look back at the spring lineup, what shipped and what slipped, and the Whitney build that runs the blog through August."
 draft: false
 ---

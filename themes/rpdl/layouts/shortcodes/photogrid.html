@@ -1,0 +1,57 @@
+{{- /*
+  photogrid — a side-by-side photo row whose images go through Hugo's image
+  processing, same as markdown images do via render-image.html.
+
+  Raw <img> inside {{< rawhtml >}} bypasses the render hook entirely and ships
+  full-size, which is what this replaces.
+
+  Usage — one image per line, `filename | alt text`:
+
+    {{< photogrid >}}
+    IMG_9664.webp | Strawberry Junction at 8,000ft in morning light
+    IMG_9673.webp | Narrow dirt trail through pine and granite, dappled light
+    {{< /photogrid >}}
+
+  Images sit two-up on desktop and stack on mobile (.photo-grid in style.css),
+  so each one occupies roughly half the 720px column — hence the 50vw/360px
+  sizes hint rather than the full-width one render-image.html uses.
+
+  Pass cols="4" for the four-across variant (.photo-grid-4).
+*/ -}}
+{{- $cols := .Get "cols" | default "2" -}}
+{{- $class := cond (eq $cols "4") "photo-grid-4" "photo-grid" -}}
+{{- $sizes := cond (eq $cols "4") "(max-width: 768px) 50vw, 180px" "(max-width: 768px) 100vw, 360px" -}}
+<div class="{{ $class }}">
+{{- range $line := split (trim .Inner "\n") "\n" -}}
+{{- $line = trim $line " " -}}
+{{- if $line -}}
+{{- $parts := split $line "|" -}}
+{{- $name := trim (index $parts 0) " " -}}
+{{- $alt := "" -}}
+{{- if gt (len $parts) 1 -}}{{- $alt = trim (index $parts 1) " " -}}{{- end -}}
+{{- $resource := $.Page.Resources.GetMatch (printf "*%s" $name) -}}
+{{- if not $resource -}}
+  {{- errorf "photogrid: image %q not found in %s" $name $.Page.File.Path -}}
+{{- end -}}
+{{- $origWidth := $resource.Width -}}
+{{- $variants := slice -}}
+{{- range $bp := slice 480 960 -}}
+  {{- if lt $bp $origWidth -}}
+    {{- $variants = $variants | append (dict "res" ($resource.Resize (printf "%dx webp q75" $bp)) "w" $bp) -}}
+  {{- end -}}
+{{- end -}}
+{{- $variants = $variants | append (dict "res" $resource "w" $origWidth) -}}
+{{- $srcset := slice -}}
+{{- range $v := $variants -}}
+  {{- $srcset = $srcset | append (printf "%s %dw" $v.res.RelPermalink $v.w) -}}
+{{- end -}}
+  <img src="{{ $resource.RelPermalink }}"
+    srcset="{{ delimit $srcset ", " }}"
+    sizes="{{ $sizes }}"
+    alt="{{ $alt }}"
+    width="{{ $resource.Width }}" height="{{ $resource.Height }}"
+    loading="lazy"
+    decoding="async">
+{{- end -}}
+{{- end }}
+</div>

@@ -1,9 +1,8 @@
 ---
 title: "Highway 395, March 2022"
 date: 2026-05-08
-tags: ["travel", "road-trip", "california"]
-group: "personal"
-project: ""
+categories: ["trail"]
+tags: ["travel"]
 summary: "A spring break loop with my friend Max, from San Diego up through Death Valley, Alabama Hills, the bristlecone country, Tahoe, and Mount Shasta, and back. The trip where Whitney went from a fact about California to a mountain I wanted to climb."
 draft: false
 ---

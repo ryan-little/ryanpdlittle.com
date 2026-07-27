@@ -26,6 +26,14 @@ jobs:
           hugo-version: '0.164.0'
           extended: true
 
+      - name: Cache processed images
+        uses: actions/cache@v4
+        with:
+          path: resources/_gen
+          key: hugo-resources-0.164.0-${{ hashFiles('content/**/*.webp', 'content/**/*.jpg', 'content/**/*.jpeg', 'content/**/*.png') }}
+          restore-keys: |
+            hugo-resources-0.164.0-
+
       - name: Build
         run: hugo --minify
 

@@ -1,9 +1,8 @@
 ---
 title: "Claude Code as a Development Environment"
 date: 2026-04-14
+categories: ["build"]
 tags: ["ai", "tools"]
-group: "projects"
-project: ""
 summary: "How I use Claude Code with custom skills, CLI tools, a knowledge hub, and subagents to build software. Not a review, a workflow walkthrough."
 draft: false
 ---

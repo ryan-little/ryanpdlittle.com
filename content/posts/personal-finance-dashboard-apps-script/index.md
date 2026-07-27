@@ -1,9 +1,8 @@
 ---
 title: "A Personal Finance Dashboard on Pure Google Apps Script"
 date: 2026-03-31
-tags: ["finance", "google-apps-script", "automation"]
-group: "projects"
-project: "Financial Dashboard"
+categories: ["build"]
+tags: ["tools"]
 summary: "My entire financial dashboard runs on a Google Sheet with no server, no database, and no cron. SimpleFIN feeds the data, Apps Script does the work, and it's better than Mint ever was."
 draft: false
 ---

@@ -1,10 +1,19 @@
 ---
 title: "Mt Langley"
 date: 2026-07-24
-tags: ["hiking", "fitness", "garmin"]
-group: "personal"
-project: "Whitney 2026"
+categories: ["trail"]
+series: ["whitney-2026"]
+tags: ["hiking", "garmin"]
 summary: "First fourteener, first alpine start, and the first time Whitney was more than a name: 23.6 miles and 5,545 feet of gain via New Army Pass, with the actual goal sitting in the summit panorama."
+hike:
+  peak: "Mt Langley"
+  elevation_ft: 14032
+  distance_mi: 23.58
+  gain_ft: 5545
+  moving_time: "8:27:58"
+  hiked: 2026-07-11
+  track: "langley-track.json"
+  sixpack: false
 draft: false
 ---
 

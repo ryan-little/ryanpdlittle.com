@@ -1,10 +1,19 @@
 ---
 title: "Mt Baldy"
 date: 2026-07-03
-tags: ["hiking", "fitness", "garmin"]
-group: "personal"
-project: "Whitney 2026"
+categories: ["trail"]
+series: ["whitney-2026"]
+tags: ["hiking", "garmin"]
 summary: "The fourth Six-Pack peak, delayed three weeks by a broken finger: 13.92 miles up Devil's Backbone to Baldy and over to West Baldy, 4,367 feet of gain, and the most crowded, least scenic day of the four so far."
+hike:
+  peak: "Mt Baldy"
+  elevation_ft: 10064
+  distance_mi: 13.92
+  gain_ft: 4367
+  moving_time: "4:48:54"
+  hiked: 2026-06-21
+  track: "baldy-track.json"
+  sixpack: true
 draft: false
 ---
 

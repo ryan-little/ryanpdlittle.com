@@ -1,0 +1,198 @@
+{{- /*
+  whitney-hub — the data half of the Whitney 2026 series page.
+
+  Everything here is derived from the `hike:` blocks in the series' posts (see
+  CONVENTIONS.md), which in turn come from Basecamp's activities table. Nothing
+  is hardcoded except Whitney itself, which hasn't been hiked yet and so has no
+  post and no numbers to read.
+
+  Sort order is `hike.hiked`, never `.Date`. Publish dates lag the hikes by
+  12-26 days and the Six-Pack wasn't even hiked in list order, so sorting by
+  publish date puts the table in a sequence that never happened.
+*/ -}}
+
+{{- /* ---- Gather: one row per post that carries a hike block ---- */ -}}
+{{- $rows := slice -}}
+{{- range $p := .Pages -}}
+  {{- with $p.Params.hike -}}
+    {{- $trackName := .track -}}
+    {{- $trackUrl := "" -}}
+    {{- with $p.Resources.GetMatch (default "" $trackName) -}}
+      {{- $trackUrl = .RelPermalink -}}
+    {{- end -}}
+    {{- if and $trackName (not $trackUrl) -}}
+      {{- errorf "whitney-hub: track %q not found in %s" $trackName $p.File.Path -}}
+    {{- end -}}
+    {{- $rows = $rows | append (dict
+        "peak" .peak
+        "elevation" (int .elevation_ft)
+        "distance" (float .distance_mi)
+        "gain" (int .gain_ft)
+        "moving" .moving_time
+        "hiked" (time.Format "2006-01-02" .hiked)
+        "hikedLabel" (time.Format "Jan 2, 2006" .hiked)
+        "sixpack" (default false .sixpack)
+        "url" $p.RelPermalink
+        "trackUrl" $trackUrl
+    ) -}}
+  {{- end -}}
+{{- end -}}
+{{- $rows = sort $rows "hiked" -}}
+
+{{- /* ---- Aggregate: summed over the rows above, never written by hand ---- */ -}}
+{{- $peakCount := len $rows -}}
+{{- $totalMiles := 0.0 -}}
+{{- $totalGain := 0 -}}
+{{- $highest := 0 -}}
+{{- range $rows -}}
+  {{- $totalMiles = add $totalMiles .distance -}}
+  {{- $totalGain = add $totalGain .gain -}}
+  {{- if gt .elevation $highest -}}{{- $highest = .elevation -}}{{- end -}}
+{{- end -}}
+
+<div class="hub-stats">
+  <div class="hub-stat">
+    <span class="hub-stat-value">{{ $peakCount }}</span>
+    <span class="hub-stat-label">Peaks summited</span>
+  </div>
+  <div class="hub-stat">
+    <span class="hub-stat-value">{{ lang.FormatNumber 1 $totalMiles }}</span>
+    <span class="hub-stat-label">Trail miles</span>
+  </div>
+  <div class="hub-stat">
+    <span class="hub-stat-value">{{ lang.FormatNumber 0 $totalGain }}</span>
+    <span class="hub-stat-label">Feet climbed</span>
+  </div>
+  <div class="hub-stat">
+    <span class="hub-stat-value">{{ lang.FormatNumber 0 $highest }}</span>
+    <span class="hub-stat-label">Highest point (ft)</span>
+  </div>
+</div>
+
+{{- partial "mileage-meter.html" . -}}
+
+{{- /* ---- Peak table ---- */ -}}
+{{- /*
+  Wrapper copied from _markup/render-table.html so the hub table scrolls the
+  same way a Markdown table does on mobile: the wrapper scrolls, the <table>
+  keeps `display: table` and therefore keeps its table semantics, and
+  tabindex="0" makes the scroll region keyboard-reachable.
+
+  The three tbody groups (Six-Pack, what followed, the target) are the visual
+  separation between tiers. They carry no classes — the group is expressed by
+  the `th[scope=colgroup]` banner row, which reads correctly in a screen reader
+  and gives CSS something to hang off without new hooks.
+*/ -}}
+<div class="table-wrap" role="region" aria-label="Peaks hiked toward Mount Whitney" tabindex="0">
+  <table class="hub-table">
+    <caption>Every peak on the way to Whitney, in the order they were hiked.</caption>
+    <thead>
+      <tr>
+        <th scope="col">Peak</th>
+        <th scope="col">Elevation</th>
+        <th scope="col">Hiked</th>
+        <th scope="col">Miles</th>
+        <th scope="col">Gain</th>
+        <th scope="col">Moving</th>
+      </tr>
+    </thead>
+
+    {{- $sixpack := where $rows "sixpack" true -}}
+    {{- $beyond := where $rows "sixpack" "!=" true -}}
+
+    {{- with $sixpack }}
+    <tbody>
+      <tr><th scope="colgroup" colspan="6">The Six-Pack of Peaks</th></tr>
+      {{- range . }}
+      <tr>
+        <th scope="row"><a href="{{ .url }}">{{ .peak }}</a></th>
+        <td>{{ lang.FormatNumber 0 .elevation }} ft</td>
+        <td><time datetime="{{ .hiked }}">{{ .hikedLabel }}</time></td>
+        <td>{{ lang.FormatNumber 2 .distance }}</td>
+        <td>{{ lang.FormatNumber 0 .gain }} ft</td>
+        <td>{{ .moving }}</td>
+      </tr>
+      {{- end }}
+    </tbody>
+    {{- end }}
+
+    {{- with $beyond }}
+    <tbody>
+      <tr><th scope="colgroup" colspan="6">Past the Six-Pack</th></tr>
+      {{- range . }}
+      <tr>
+        <th scope="row"><a href="{{ .url }}">{{ .peak }}</a></th>
+        <td>{{ lang.FormatNumber 0 .elevation }} ft</td>
+        <td><time datetime="{{ .hiked }}">{{ .hikedLabel }}</time></td>
+        <td>{{ lang.FormatNumber 2 .distance }}</td>
+        <td>{{ lang.FormatNumber 0 .gain }} ft</td>
+        <td>{{ .moving }}</td>
+      </tr>
+      {{- end }}
+    </tbody>
+    {{- end }}
+
+    {{- /* Whitney is the only row without a post behind it, so it's the only
+           row with literal numbers. Distance and gain stay blank rather than
+           guessed — they get filled in from the watch like everything else. */}}
+    <tbody>
+      <tr><th scope="colgroup" colspan="6">The target</th></tr>
+      <tr>
+        <th scope="row">Mount Whitney</th>
+        <td>14,505 ft</td>
+        <td><time datetime="2026-08-23">Aug 23, 2026</time></td>
+        <td aria-label="Not yet hiked">&mdash;</td>
+        <td aria-label="Not yet hiked">&mdash;</td>
+        <td>Pending</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+{{- /* ---- Combined map: every track on one set of tiles ---- */ -}}
+{{- $tracks := slice -}}
+{{- range $r := $rows -}}
+  {{- with $r.trackUrl -}}
+    {{- $tracks = $tracks | append (dict
+        "name" $r.peak
+        "trackUrl" .
+        "postUrl" $r.url
+        "elevation" $r.elevation
+    ) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with $tracks }}
+<div id="whitney-hub-map"
+     class="hub-map"
+     role="img"
+     aria-label="Map of all {{ len . }} GPS tracks hiked toward Mount Whitney, from the San Gabriels to the Sierra Nevada, colored by heart rate"></div>
+{{- /* Text alternative for the map, per the accessibility pattern on the
+       hikemap shortcode. */ -}}
+<p class="hub-map-note">
+  Every track above on one map, colored by heart rate. The same hikes are listed
+  as text in the table above, with distance, gain, and elevation for each.
+</p>
+{{- /* safeJS keeps html/template from re-encoding jsonify's output as a JS
+       string literal, which would double-wrap the JSON. Same pattern as the
+       homepage search index. */ -}}
+<script id="whitney-hub-tracks" type="application/json">{{ . | jsonify | safeJS }}</script>
+{{- end }}
+
+{{- /* Asset loading mirrors the hikemap shortcode: self-hosted Leaflet, the
+       shared HikeMap library, then this page's composition script. All three
+       are deferred, so they execute in document order and window.HikeMap is
+       there by the time whitney-hub.js runs. Chart.js is deliberately left out
+       — the overview map has no elevation chart, and hikemap.js already guards
+       on `typeof Chart`. */ -}}
+{{- if not (.Scratch.Get "hikemapAssets") -}}
+{{- .Scratch.Set "hikemapAssets" true -}}
+{{- $hikemapCSS := resources.Get "css/hikemap.css" | minify | fingerprint -}}
+{{- $hikemapJS := resources.Get "js/hikemap.js" | minify | fingerprint -}}
+{{- $hubJS := resources.Get "js/whitney-hub.js" | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ "vendor/leaflet/leaflet.css" | relURL }}" />
+<link rel="stylesheet" href="{{ $hikemapCSS.RelPermalink }}" integrity="{{ $hikemapCSS.Data.Integrity }}" />
+<script defer src="{{ "vendor/leaflet/leaflet.js" | relURL }}"></script>
+<script defer src="{{ $hikemapJS.RelPermalink }}" integrity="{{ $hikemapJS.Data.Integrity }}"></script>
+<script defer src="{{ $hubJS.RelPermalink }}" integrity="{{ $hubJS.Data.Integrity }}"></script>
+{{- end -}}

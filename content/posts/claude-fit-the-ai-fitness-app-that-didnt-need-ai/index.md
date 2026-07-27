@@ -1,9 +1,9 @@
 ---
 title: "Claude-Fit — The AI Fitness App That Didn't Need AI"
 date: 2026-04-17
-tags: ["python", "ai", "fitness", "garmin", "fastapi", "claude"]
-group: "projects"
-project: "Garboard"
+categories: ["build"]
+series: ["fitness-project"]
+tags: ["python", "ai", "garmin"]
 summary: "I designed a fitness app with four AI agents, a nutrition coach, and a restaurant finder. It lasted about eight hours before I started ripping it apart. Part 1 of 4 on the evolution from Claude-Fit to Garboard to Basecamp."
 draft: false
 ---

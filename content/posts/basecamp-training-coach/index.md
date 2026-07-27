@@ -1,9 +1,9 @@
 ---
 title: "Basecamp — What the Coach Caught"
 date: 2026-05-15
-tags: ["python", "ai", "fitness", "garmin", "claude"]
-group: "projects"
-project: "Basecamp"
+categories: ["build"]
+series: ["fitness-project"]
+tags: ["python", "ai", "garmin"]
 summary: "Three weeks of using Claude as a daily training coach. The catches a rules engine couldn't make, the Monday QA loop that grades its own work, and where the AI is actually worse than if-statements. Part 4 of the fitness project series."
 draft: false
 ---

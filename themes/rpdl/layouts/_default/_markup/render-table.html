@@ -1,0 +1,34 @@
+{{- /*
+  Wrap tables so wide ones scroll inside their own container instead of pushing
+  the 720px content column sideways on mobile.
+
+  The wrapper is what scrolls — the <table> keeps `display: table`, so it keeps
+  its native table semantics. Setting `display: block` on the table itself would
+  also stop the overflow, but several screen readers drop the table role when
+  they see it, which trades a layout bug for an accessibility one.
+
+  tabindex="0" makes the scroll region keyboard-reachable, which is required
+  once a region scrolls; role/aria-label give it an accessible name.
+*/ -}}
+<div class="table-wrap" role="region" aria-label="Table" tabindex="0">
+  <table>
+    <thead>
+      {{- range .THead }}
+      <tr>
+        {{- range . }}
+        <th{{ with .Alignment }} style="text-align: {{ . }};"{{ end }}>{{ .Text }}</th>
+        {{- end }}
+      </tr>
+      {{- end }}
+    </thead>
+    <tbody>
+      {{- range .TBody }}
+      <tr>
+        {{- range . }}
+        <td{{ with .Alignment }} style="text-align: {{ . }};"{{ end }}>{{ .Text }}</td>
+        {{- end }}
+      </tr>
+      {{- end }}
+    </tbody>
+  </table>
+</div>

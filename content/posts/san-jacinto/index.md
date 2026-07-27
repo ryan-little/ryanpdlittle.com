@@ -1,10 +1,19 @@
 ---
 title: "Mt San Jacinto via Deer Springs"
 date: 2026-06-26
-tags: ["hiking", "fitness", "garmin"]
-group: "personal"
-project: "Whitney 2026"
+categories: ["trail"]
+series: ["whitney-2026"]
+tags: ["hiking", "garmin"]
 summary: "The third Six-Pack peak, solo up Deer Springs and down through Idyllwild: 19.77 miles, 6,056 feet of gain, two coyotes at dawn, a summit you have to climb to reach, and two hours completely alone on an overgrown trail. My favorite hike in Southern California so far."
+hike:
+  peak: "Mt San Jacinto"
+  elevation_ft: 10834
+  distance_mi: 19.77
+  gain_ft: 6056
+  moving_time: "7:04:06"
+  hiked: 2026-05-31
+  track: "san-jacinto-track.json"
+  sixpack: true
 draft: false
 ---
 
@@ -27,12 +36,10 @@ The first hour on Deer Springs was about as peaceful as trail gets. I passed exa
 
 The signs come at you in a steady rhythm on this trail, each one a little checkpoint with distances that remind you just how far you still have to go.
 
-{{< rawhtml >}}
-<div class="photo-grid">
-  <img src="IMG_9664.webp" alt="Strawberry Junction at 8,000ft in morning light" loading="lazy">
-  <img src="IMG_9673.webp" alt="Narrow dirt trail through pine and granite, dappled light" loading="lazy">
-</div>
-{{< /rawhtml >}}
+{{< photogrid >}}
+IMG_9664.webp | Strawberry Junction at 8,000ft in morning light
+IMG_9673.webp | Narrow dirt trail through pine and granite, dappled light
+{{< /photogrid >}}
 
 Strawberry Junction sat at 8,000 feet in early morning light, the trail splitting toward Wellman Divide and the peak. The forest up here is the real thing, tall pines and granite boulders and that soft duff underfoot that makes the miles feel easier than they are.
 
@@ -40,12 +47,10 @@ Strawberry Junction sat at 8,000 feet in early morning light, the trail splittin
 
 Somewhere in the middle of the forest the trail opens up just enough to look across at San Gorgonio sitting on the far ridge, which is a good reminder of how high you actually are even when the trees have you boxed in.
 
-{{< rawhtml >}}
-<div class="photo-grid">
-  <img src="IMG_9710.webp" alt="Looking down at feet on the trail, pine needle duff on the ground" loading="lazy">
-  <img src="IMG_9720.webp" alt="Deer Springs Trail junction sign showing distances to San Jacinto Peak" loading="lazy">
-</div>
-{{< /rawhtml >}}
+{{< photogrid >}}
+IMG_9710.webp | Looking down at feet on the trail, pine needle duff on the ground
+IMG_9720.webp | Deer Springs Trail junction sign showing distances to San Jacinto Peak
+{{< /photogrid >}}
 
 The altitude didn't show up until past the Little Round Valley campground, somewhere around 9,100 feet on the final push to the summit. Up to that point I'd felt strong. Then once I was actually rock-hopping toward the top I could feel the oxygen thinning out, and I had to stop a couple of times just to catch my breath, which doesn't happen to me much at the elevations I usually hike.
 
@@ -59,12 +64,10 @@ I'd assumed the summit would be a sign and a flat patch and a view. It is not. T
 
 There were a good number of people up top, including some older folks who'd ridden the tram and beaten me to it, which is its own kind of humbling after 11 miles of climbing. The views earned every bit of the route, though. All of Palm Desert and the Coachella Valley spread out on the desert floor, Joshua Tree off in the distance, and the best look at San Gorgonio I've gotten yet. I stayed about 40 minutes.
 
-{{< rawhtml >}}
-<div class="photo-grid">
-  <img src="IMG_9750.webp" alt="Summit selfie with Coachella Valley desert floor stretching out behind" loading="lazy">
-  <img src="IMG_9759.webp" alt="At the San Jacinto Peak sign, 10,834 feet" loading="lazy">
-</div>
-{{< /rawhtml >}}
+{{< photogrid >}}
+IMG_9750.webp | Summit selfie with Coachella Valley desert floor stretching out behind
+IMG_9759.webp | At the San Jacinto Peak sign, 10,834 feet
+{{< /photogrid >}}
 
 ## The long way down
 
@@ -72,14 +75,12 @@ On my way off the summit I met an older man heading down who told me to take the
 
 The cost: parts of the trail were overgrown enough that I was pushing through brush, and my legs took a beating from it. I also went down the wrong trail at one point and had to backtrack to find the right turnoff, which is a deflating thing to do 14-some miles into a day. The payback was the views. Idyllwild from above, Suicide Rock, the granite cliffs and domes catching the late-morning light, the whole valley dropping away below the ridgeline.
 
-{{< rawhtml >}}
-<div class="photo-grid-4">
-  <img src="IMG_9802.webp" alt="Junction sign on descent: Saddle Junction, Humber Park, Idyllwild" loading="lazy">
-  <img src="IMG_9806.webp" alt="Wide view from the ridgeline, conifer forest falling into the valley" loading="lazy">
-  <img src="IMG_9809.webp" alt="Granite dome seen from above, Suicide Rock area" loading="lazy">
-  <img src="IMG_9822.webp" alt="Entering Mt. San Jacinto State Park Wilderness sign" loading="lazy">
-</div>
-{{< /rawhtml >}}
+{{< photogrid cols="4" >}}
+IMG_9802.webp | Junction sign on descent: Saddle Junction, Humber Park, Idyllwild
+IMG_9806.webp | Wide view from the ridgeline, conifer forest falling into the valley
+IMG_9809.webp | Granite dome seen from above, Suicide Rock area
+IMG_9822.webp | Entering Mt. San Jacinto State Park Wilderness sign
+{{< /photogrid >}}
 
 And I had it entirely to myself. For about two hours I didn't see a single person, didn't hear anyone, just me and the trail and the cliffs. I didn't pass anyone until I was back on the Deer Springs Trail itself near the bottom. After a busy summit and a busy lower trail, two hours of complete solitude on a mountain this pretty was the part I'd go back for.
 
