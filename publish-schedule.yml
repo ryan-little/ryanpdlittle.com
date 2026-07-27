@@ -6,9 +6,7 @@
 posts:
 - path: content/posts/my-setup/index.md
   date: 2026-07-31
-- path: content/posts/mt-langley/index.md
-  date: 2026-08-07
 - path: content/posts/san-gorgonio-again/index.md
-  date: 2026-08-14
+  date: 2026-08-07
 - path: content/posts/whitney-summit/index.md
   date: 2026-08-28
