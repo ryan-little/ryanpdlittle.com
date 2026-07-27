@@ -43,6 +43,7 @@ PUBLIC_FIELDS = (
     "remaining",
     "required_weekly",
     "on_pace",
+    "expected_pct",
     "elevation_ft",
     "updated",
 )
@@ -94,6 +95,14 @@ def collect(today: date | None = None, db_path: Path = DB_PATH) -> dict | None:
     pacing = ytd_pacing(row[0], today, goal=goal)
 
     data = dict(pacing)
+
+    # Where even pacing would put you today. ytd_pacing() computes this
+    # internally to decide on_pace but doesn't return it, and the meter needs
+    # the number itself to draw its target marker. Mirrors the same formula
+    # rather than inventing a second definition of "on pace".
+    day_of_year = today.timetuple().tm_yday
+    data["expected_pct"] = round(day_of_year / 365 * 100, 1)
+
     data["elevation_ft"] = round(row[1])
     data["updated"] = today.isoformat()
 

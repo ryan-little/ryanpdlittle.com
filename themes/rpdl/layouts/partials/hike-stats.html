@@ -1,0 +1,57 @@
+{{- /*
+  hike-stats — compact stat block for individual hike posts, rendered from a
+  post's `hike:` front matter (see CONVENTIONS.md). This is the single-hike
+  counterpart to whitney-hub.html's aggregate .hub-stats block; it reuses the
+  same .hub-stat classes so the two read as one component rather than two.
+
+  Renders nothing when the post has no `hike` block. Within a block, any stat
+  whose source field is absent is skipped outright (no empty cell) so a
+  partial `hike:` entry degrades cleanly instead of rendering blanks.
+
+  Tiles are value-first, label-second, matching whitney-hub. That order is not
+  cosmetic: .hub-stat is not a flex container, its spans are display:block, and
+  .hub-stat-label carries a margin-top that assumes it sits beneath the value.
+  Reversing the spans would render this block upside down relative to the hub
+  while sharing its classes.
+*/ -}}
+{{- with .Params.hike -}}
+{{- $peak := .peak -}}
+{{- $distance := .distance_mi -}}
+{{- $gain := .gain_ft -}}
+{{- $elevation := .elevation_ft -}}
+{{- $moving := .moving_time -}}
+{{- $hiked := .hiked -}}
+
+<div class="hub-stats hike-stats">
+  {{- with $distance }}
+  <div class="hub-stat">
+    <span class="hub-stat-value">{{ lang.FormatNumber 2 . }} mi</span>
+    <span class="hub-stat-label">Distance</span>
+  </div>
+  {{- end }}
+  {{- with $gain }}
+  <div class="hub-stat">
+    <span class="hub-stat-value">{{ lang.FormatNumber 0 (int .) }} ft</span>
+    <span class="hub-stat-label">Elevation gain</span>
+  </div>
+  {{- end }}
+  {{- with $elevation }}
+  <div class="hub-stat">
+    <span class="hub-stat-value">{{ lang.FormatNumber 0 (int .) }} ft</span>
+    <span class="hub-stat-label">{{ with $peak }}{{ . }} summit{{ else }}Summit elevation{{ end }}</span>
+  </div>
+  {{- end }}
+  {{- with $moving }}
+  <div class="hub-stat">
+    <span class="hub-stat-value">{{ . }}</span>
+    <span class="hub-stat-label">Moving time</span>
+  </div>
+  {{- end }}
+  {{- with $hiked }}
+  <div class="hub-stat">
+    <span class="hub-stat-value"><time datetime="{{ time.Format "2006-01-02" . }}">{{ time.Format "Jan 2, 2006" . }}</time></span>
+    <span class="hub-stat-label">Hiked</span>
+  </div>
+  {{- end }}
+</div>
+{{- end -}}

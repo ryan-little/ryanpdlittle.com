@@ -25,7 +25,7 @@ That's the way my first fourteener started, car camping alone in a trailhead par
 
 ![Camp chair set up next to the car at the Horseshoe Meadow trailhead lot, evening light through the pines.](IMG_0289.webp)
 
-The day came out to 23.58 miles and 5,545 feet of gain, ten hours and 32 minutes total with 8 hours 28 minutes of that moving, average heart rate 147, max 180, and 4,562 calories. Garmin put the summit at 14,044 feet, close enough to the official 14,032 that the wooden sign I held up at the top backs it up almost exactly. Both numbers, mileage and gain, are the biggest of any hike in this project so far, bigger than San Gorgonio on both counts, and this was the first one at real altitude instead of the low 10,000s and 11,000s I'd been topping out at all summer.
+The wooden sign I held up at the top reads 14,032 feet, and the Garmin's 14,044 backs it almost exactly. Both numbers, mileage and gain, are the biggest of any hike in this project so far, bigger than [San Gorgonio](/posts/san-gorgonio/) on both counts, and this was the first one at real altitude instead of the low 10,000s and 11,000s I'd been topping out at all summer. Heart rate averaged 147 with a max of 180, and 4,562 calories.
 
 {{< hikemap id="langley-map" track="langley-track.json" peak="Mt Langley" >}}
 

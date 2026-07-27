@@ -21,7 +21,7 @@ The alarm went off around 4 in the morning and I was on the 5 heading north out 
 
 ![The Mount Wilson Trail gate at the Sierra Madre trailhead.](IMG_9338.webp)
 
-The hike is 16.4 miles out and back with around 4,500 feet of gain from the Sierra Madre trailhead to the 5,710-foot summit. My Garmin logged closer to 5,200, but the watch started in the marine layer with changing pressure and I walked around the summit complex for a while, so the trail gain figure is the more accurate number. Start time was 6:30 AM and I finished just under six hours later, average heart rate 153 and max of 189, which is about as high as I've seen the watch go. Weather at the bottom was 63 degrees and mist, though by the time I reached the summit the sky was completely clear.
+The trail figure for the climb out of Sierra Madre is around 4,500 feet of gain. My Garmin logged closer to 5,200, but the watch started in the marine layer with changing pressure and I walked around the summit complex for a while, so the trail number is the more accurate one. I started at 6:30 AM in 63 degrees and mist, and by the time I reached the summit the sky was completely clear. Max heart rate for the day was 189, about as high as I've seen the watch go.
 
 {{< hikemap id="wilson-map" track="wilson-track.json" peak="Mt Wilson" >}}
 
@@ -39,7 +39,7 @@ The views started opening up on the upper ridgeline, looking out over the San Ga
 
 ![Looking out over the San Gabriel Valley from the upper trail.](IMG_9372.webp)
 
-## The Summit
+## The summit
 
 I didn't know there were telescopes up there.
 
@@ -57,7 +57,7 @@ Before leaving I found the survey marker embedded near the summit, a 1971 LA Cou
 
 ![LA County triangulation station marker, set 1971.](IMG_9436.webp)
 
-## The Descent
+## The descent
 
 About halfway down I turned my left ankle on the trail. I've been dealing with a recurring left ankle issue since April, three separate incidents documented in the [Whitney Goal post](/posts/whitney-goal/), and this was a fourth, though milder than any of the others. It caused some pain for a couple of minutes and then mostly resolved. The ankle is sitting around 90 percent and this didn't change the assessment much.
 

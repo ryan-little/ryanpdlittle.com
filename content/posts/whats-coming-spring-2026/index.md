@@ -3,7 +3,7 @@ title: "What's Coming — Spring 2026"
 date: 2026-03-10
 categories: ["meta"]
 series: ["whats-coming"]
-summary: "A roadmap for the blog this spring — a 5-part game dev series, fitness and finance dashboards, GIS tooling, and some personal posts along the way."
+summary: "A roadmap for the blog this spring: a 5-part game dev series, fitness and finance dashboards, GIS tooling, and some personal posts along the way."
 draft: false
 ---
 

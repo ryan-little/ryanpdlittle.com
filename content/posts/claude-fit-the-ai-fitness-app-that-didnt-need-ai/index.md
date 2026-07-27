@@ -8,7 +8,7 @@ summary: "I designed a fitness app with four AI agents, a nutrition coach, and a
 draft: false
 ---
 
-*This is Part 1 of a 4-part series on my fitness project's evolution. Part 1 covers Claude-Fit, the original vision. [Part 2](/posts/garboard-from-chatbot-to-dashboard) covers Garboard, the dashboard that survived. [Part 3](/posts/basecamp) covers Basecamp, where Claude became the interface instead of the backend. Part 4 covers the coach in practice and what it's caught.*
+*This is Part 1 of The Fitness Project, a 4-part series. Part 1 covers Claude-Fit, the original vision. [Part 2](/posts/garboard-from-chatbot-to-dashboard) covers Garboard, the dashboard that survived. [Part 3](/posts/basecamp) covers Basecamp, where Claude became the interface instead of the backend. [Part 4](/posts/basecamp-training-coach/) covers the coach in practice and what it's caught.*
 
 ---
 
@@ -44,7 +44,7 @@ The implementation plan was 21 tasks, TDD-style, and Claude built the whole thin
 
 By commit `f693715`, tagged as Claude-Fit v0.1, the whole system was running. Garmin sync pulled activities, the setup wizard walked you through connecting your accounts, and the frontend had a working chat interface that could route questions to the right agent. I added a macOS Dock launcher so I could start and stop the whole stack with one click.
 
-![Claude-Fit v0.1 dashboard with a Today's Plan card that reads "Chat with Claude-Fit to generate a plan," plus an API Cost Tracker and Goals. Empty because I pulled this screenshot from a fresh checkout of the v0.1 commit — the project's long since been shelved.](v01-dashboard.webp)
+![Claude-Fit v0.1 dashboard with a Today's Plan card that reads "Chat with Claude-Fit to generate a plan," plus an API Cost Tracker and Goals. Empty because I pulled this screenshot from a fresh checkout of the v0.1 commit (the project's long since been shelved).](v01-dashboard.webp)
 
 ## Where It Broke
 
@@ -68,7 +68,7 @@ By commit `57dc44f`, tagged as Claude-Fit v0.2, the app had been rebuilt as a fo
 
 The whole arc from ambitious AI fitness coach to straightforward Garmin dashboard happened in a single day. Design document at 9:54am, v0.1 at 10:42am, the first agent deletion by early afternoon, v0.2 by 5:11pm. Eight hours from vision to reality check.
 
-![Claude-Fit v0.2 dashboard after the teardown. The chat tab is gone, the API cost card is gone, and in their place is a row of Garmin metrics — readiness, sleep, body battery, training status — with weight and distance trends below. Same empty-state disclaimer: the project's shelved, there's no live data to show.](v02-dashboard.webp)
+![Claude-Fit v0.2 dashboard after the teardown. The chat tab is gone, the API cost card is gone, and in their place is a row of Garmin metrics (readiness, sleep, body battery, training status) with weight and distance trends below. Same empty-state disclaimer: the project's shelved, there's no live data to show.](v02-dashboard.webp)
 
 ## What I Learned
 

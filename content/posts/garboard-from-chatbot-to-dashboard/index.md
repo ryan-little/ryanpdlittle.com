@@ -8,7 +8,7 @@ summary: "Part 2 of the fitness project series. How Claude-Fit's AI agents becam
 draft: false
 ---
 
-*This is Part 2 of a 4-part series on my fitness project. [Part 1](/posts/claude-fit-the-ai-fitness-app-that-didnt-need-ai) covers Claude-Fit, the AI agent prototype. [Part 3](/posts/basecamp) covers Basecamp, where Claude became the coach instead of the backend. Part 4 covers the coach in practice and what it's caught.*
+*This is Part 2 of The Fitness Project, a 4-part series. [Part 1](/posts/claude-fit-the-ai-fitness-app-that-didnt-need-ai) covers Claude-Fit, the AI agent prototype. [Part 3](/posts/basecamp) covers Basecamp, where Claude became the coach instead of the backend. [Part 4](/posts/basecamp-training-coach/) covers the coach in practice and what it's caught.*
 
 ---
 
@@ -48,7 +48,7 @@ The Map tab used Leaflet.js with CARTO dark tiles, showing every GPS track I'd r
 
 Achievements tracked 25 definitions, some repeatable weekly or monthly, some one-time unlocks. There was an XP and leveling system tied to mileage, and the pixel art sprites from the cyberpunk era survived the redesign because they'd grown on me.
 
-![The Achievements tab: weekly rings for sessions, mileage, and streak; closest achievements with progress bars; weekly and monthly progress cards; yearly milestone cards for Century, Double Century, and Five Hundred. Empty because the project's shelved — no data flowing.](achievements-tab.webp)
+![The Achievements tab: weekly rings for sessions, mileage, and streak; closest achievements with progress bars; weekly and monthly progress cards; yearly milestone cards for Century, Double Century, and Five Hundred. Empty because the project's shelved, no data flowing.](achievements-tab.webp)
 
 The whole frontend was vanilla HTML, CSS, and ES modules. No build step, no framework. Four-kilobyte JavaScript files loading directly in the browser. FastAPI served the backend, SQLite held the data, and the server ran at localhost:8100 on my laptop.
 

@@ -19,11 +19,11 @@ draft: false
 
 I left San Diego at 4:30 in the morning to beat the LA traffic, which worked, and then I undid the whole advantage by stopping at a Vons in Upland at 5:50 because I needed food for the trail and a bathroom and had not thought carefully enough about when grocery stores open on a holiday weekend. So I sat in the car in the parking lot waiting for the doors to unlock, not even sure they were going to, until I saw someone else walk in a couple minutes after opening and figured it was safe to follow them. Those ten-odd minutes cost me a spot in the Icehouse Canyon lot. By the time I got to the trailhead the lot was full, so I parked on the road and walked in, and when I reached the permit box every day-use permit was already claimed, the box picked clean. I started hiking without one, felt vaguely bad about it for about a minute, and then kept moving because there was nothing else to do and the mountain wasn't going to issue me a permit out of sympathy.
 
-The day came out to 17.45 miles and 5,695 feet of gain, just over seven hours on trail, topping out at 8,884 feet according to the Garmin, which also told me my heart rate averaged 141 and spiked to 182 and that I burned 3,171 calories getting it all done. Two summits out of it: Cucamonga Peak at 8,859 feet and Ontario Peak at 8,693. Cucamonga is the second of the Six-Pack I'm working through toward Whitney. Ontario was never on the firm plan, just a maybe I'd reconsider depending on how I felt up high, and a conversation at the Cucamonga summit ended up making the call for me.
+Two summits out of it: Cucamonga Peak at 8,859 feet and Ontario Peak at 8,693. Cucamonga is the second of the Six-Pack I'm working through toward Whitney. Ontario was never on the firm plan, just a maybe I'd reconsider depending on how I felt up high, and a conversation at the Cucamonga summit ended up making the call for me. The Garmin had my heart rate averaging 141 and spiking to 182, and put 3,171 calories on the day.
 
 {{< hikemap id="cucamonga-map" track="cucamonga-track.json" peaksplit="true" peaknames="Cucamonga Peak,Ontario Peak" >}}
 
-The Icehouse Canyon approach is a different animal from Mt. Wilson's Sierra Madre start. Where Wilson opens through a residential neighborhood before it figures out it's a mountain, Icehouse stays shaded and canyon-walled for the first few miles, hemmed in by oak and pine with the creek running below the trail, and at 7 in the morning it was cold enough that I was genuinely glad to have the sun hoodie on, which is not a sentence I get to write often in Southern California.
+The Icehouse Canyon approach is a different animal from [Mt. Wilson's Sierra Madre start](/posts/mount-wilson/). Where Wilson opens through a residential neighborhood before it figures out it's a mountain, Icehouse stays shaded and canyon-walled for the first few miles, hemmed in by oak and pine with the creek running below the trail, and at 7 in the morning it was cold enough that I was genuinely glad to have the sun hoodie on, which is not a sentence I get to write often in Southern California.
 
 ![Looking up through Icehouse Canyon in the morning.](IMG_9507.webp)
 
@@ -57,11 +57,11 @@ At the Ontario summit I changed my socks, which I had somehow never done on a hi
 
 ![At the Ontario Peak summit, 8,693 feet.](IMG_9599.webp)
 
-!["Have a nice day." — someone left this in the rocks near the Ontario summit.](IMG_9613.webp)
+!["Have a nice day." Someone left this in the rocks near the Ontario summit.](IMG_9613.webp)
 
 ![Looking back at Cucamonga from Ontario, the ridge between them and the cloud sea below.](IMG_9622.webp)
 
-## The body math
+## No sleep and blisters I never felt
 
 I'd slept exactly zero hours the night before, which mostly didn't matter. The drive up was the worst of it. The second I started moving on trail I felt fine, which is either a fitness thing or just what adrenaline does to you at 4:30 in the morning, and I've decided not to interrogate it too hard.
 

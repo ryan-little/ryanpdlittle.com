@@ -21,7 +21,7 @@ Three weeks passed between San Jacinto and this one, longer than the gap between
 
 Three weeks later, splint still on and staying on for another month, I drove up to Manker Flats on a Sunday morning in June, which is one of the more popular trailheads in Southern California and looked it. The lot was most of the way full already, but I found a solid spot close to the trailhead and started walking not long after the sun was up.
 
-The day came out to 13.92 miles and 4,367 feet of gain, five hours and 24 minutes total with 4 hours 49 minutes of that actually moving, average heart rate 146, max 178, and 2,339 calories by the time I got back to the car. The summit read 10,066.9 feet on the Garmin, close enough to the 10,064 feet stamped on the actual summit plaque to call it confirmed. This was the fourth of the Six-Pack, after Wilson, Cucamonga and Ontario, and San Jacinto.
+The summit read 10,066.9 feet on the Garmin, close enough to the 10,064 feet stamped on the actual summit plaque to call it confirmed. This was the fourth of the Six-Pack, after Wilson, Cucamonga and Ontario, and San Jacinto. The watch had my heart rate averaging 146 with a max of 178, and 2,339 calories by the time I got back to the car.
 
 {{< hikemap id="baldy-map" track="baldy-track.json" peak="Mt Baldy" >}}
 
@@ -45,7 +45,7 @@ Devil's Backbone gets talked up online as the scary part of this hike, a narrow 
 
 ![Devil's Backbone: a narrow rocky ridge trail with a sharp peak ahead and steep drop-offs on both sides.](IMG_9932.webp)
 
-The ridge walking kept going past Devil's Backbone itself, more exposed rock and scattered pines with a few more hikers strung out ahead of me and the valley sitting hazy below. Baldy is one of the most hiked peaks in Southern California and it showed. I was around other people close to constantly, a real contrast from the two hours of total solitude I'd had coming down San Jacinto three weeks earlier.
+The ridge walking kept going past Devil's Backbone itself, more exposed rock and scattered pines with a few more hikers strung out ahead of me and the valley sitting hazy below. Baldy is one of the most hiked peaks in Southern California and it showed. I was around other people close to constantly, a real contrast from the two hours of total solitude I'd had coming down [San Jacinto](/posts/san-jacinto/) three weeks earlier.
 
 ![Still ridge-walking past Devil's Backbone, exposed rock and pines, the valley hazy below.](IMG_9942.webp)
 
@@ -63,9 +63,9 @@ The main summit was packed, which made the decision easy when I checked the AllT
 
 Of the 35 minutes of the day that weren't spent moving, most of it went to sitting up at West Baldy once I got there. The rest was photos and waiting out other hikers on the narrower sections of the ridge.
 
-## The body math
+## Back down past the falls
 
-The descent felt like it took forever, which is a pretty standard feeling for me on the way down for some reason, distance and gravity working in my favor and my brain still convinced otherwise. Back at the Notch I stopped to photograph the trail map board mounted on the side of one of the resort buildings, mostly curious what the mountain looks like under snow in ski season.
+Coming down took longer than it had any right to, which is a pretty standard feeling for me on the way down for some reason, distance and gravity working in my favor and my brain still convinced otherwise. Back at the Notch I stopped to photograph the trail map board mounted on the side of one of the resort buildings, mostly curious what the mountain looks like under snow in ski season.
 
 ![A trail map board mounted on the outside of a red wood building at the Notch, on the way back down.](IMG_9973.webp)
 

@@ -1,10 +1,11 @@
 {
-  "ytd": 643.1,
+  "ytd": 646.0,
   "goal": 1000,
-  "pct_complete": 64.3,
-  "remaining": 356.9,
-  "required_weekly": 15.9,
+  "pct_complete": 64.6,
+  "remaining": 354.0,
+  "required_weekly": 15.8,
   "on_pace": true,
-  "elevation_ft": 88412,
+  "expected_pct": 57.0,
+  "elevation_ft": 88691,
   "updated": "2026-07-27"
 }

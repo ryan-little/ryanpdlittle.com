@@ -17,11 +17,11 @@ The list I built to cover that distance splits into two tiers. The first is San 
 The second tier is the Six-Pack of Peaks: six named SoCal summits that build altitude from Wilson to Gorgonio. Each one gets its own post.
 
 - [Mount Wilson](/posts/mount-wilson/): 5,710 ft, 16.4 mi, 4,500 ft gain
-- Cucamonga Peak: 8,859 ft
-- San Jacinto Peak: 10,834 ft
-- San Bernardino Peak: 10,649 ft, 15.6 mi
-- Mount Baldy: 10,064 ft
-- San Gorgonio: 11,503 ft, 17.3 mi, 5,500 ft gain
+- [Cucamonga Peak](/posts/cucamonga-ontario-peak/): 8,859 ft
+- [San Jacinto Peak](/posts/san-jacinto/): 10,834 ft
+- [San Bernardino Peak](/posts/san-bernardino-peak/): 10,649 ft, 15.6 mi
+- [Mount Baldy](/posts/mt-baldy/): 10,064 ft
+- [San Gorgonio](/posts/san-gorgonio/): 11,503 ft, 17.3 mi, 5,500 ft gain
 
 The same principle runs across both tiers: every trail teaches something the next one assumes you already have. The temptation is always to skip ahead. Baldy sounds more interesting than another Cowles lap. Cactus to Clouds has a great name. But skipping steps means showing up to a harder trail without the thing it assumed you already built, and I'm close enough to the hard part of the list that the cost of that is no longer abstract.
 

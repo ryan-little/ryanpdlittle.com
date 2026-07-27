@@ -24,7 +24,7 @@ There were two coyotes on the road between the ranger station and the trailhead,
 
 I came here as a kid, almost every winter, my parents renting a cabin so we could drive up and see snow. It was familiar in the way places from childhood are familiar, which is to say I recognized the shape of it without remembering any of the details, and this was the first time I'd ever driven up myself instead of riding in the back seat. By the time I pulled into the trailhead lot there were about four cars already there, and two more pulled in while I was sitting on the bumper putting on my shoes.
 
-The day came out to 19.77 miles and 6,056 feet of gain, just under eight hours on trail, topping out at 10,834 feet according to the sign at the top. The Garmin had my heart rate averaging 140 and spiking to 178, and said I burned just shy of 3,000 calories getting it done. This is the third of the Six-Pack I'm working through toward Whitney, and the first one I'd call genuinely beautiful start to finish.
+This is the third of the Six-Pack I'm working through toward Whitney, and the first one I'd call genuinely beautiful start to finish. The 10,834 feet on the sign at the top is the highest I'd stood all year to that point. The Garmin had my heart rate averaging 140 and spiking to 178, and said I burned just shy of 3,000 calories getting it done.
 
 I went up Deer Springs and came back down through Saddle Junction and Humber Park into Idyllwild, a big loop instead of an out-and-back. There's an easier way to do San Jacinto, the Palm Springs Aerial Tramway, which lifts you most of the way up and drops you a short walk from the summit. I skipped it. I wanted to push myself, I figured I could handle the harder route, and the tram is expensive for what it actually is.
 
@@ -86,7 +86,7 @@ And I had it entirely to myself. For about two hours I didn't see a single perso
 
 ![Green forest on the descent in the late morning, a fallen log, the light going warm.](IMG_9826.webp)
 
-## The body math
+## Running because walking hurt more
 
 Around mile 16 the body started filing complaints. My feet were hot and tired of carrying me, and I could tell the last few miles to the car were going to be a grind. So I did the thing that makes no logical sense but works anyway, which is that I started running some of the flatter sections because, somehow, running hurt slightly less than walking. When I finally got to the car I sat there a while and swapped into fresh socks and shoes, and then drove down out of the mountains as soon as I could because I was completely beat.
 

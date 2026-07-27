@@ -19,9 +19,9 @@ draft: false
 
 Three big mosquitoes flew into the car the second I opened the door at the Angelus Oaks trailhead, and I got all three before any of them landed a bite, which is not exactly the calm start to a hike I would have picked for myself. It did mean I finally broke out the bug spray I'd bought before the Wilson hike, all the way back at the start of this project, and never once used until now.
 
-This is San Bernardino Peak, the standard 1W07 trail out of Angelus Oaks, and it's the sixth and last of the Six-Pack I've actually hiked, even though it sits fourth on the original list from the Whitney post. The reason it landed out of order is already covered at the start of the Baldy post, the mallet finger from the kickball incident pushed this one back past its planned slot, and by the time I finally got out here both Baldy and Gorgonio were already done.
+This is San Bernardino Peak, the standard 1W07 trail out of Angelus Oaks, and it's the sixth and last of the Six-Pack I've actually hiked, even though it sits fourth on the original list from the [Whitney post](/posts/whitney-goal/). The reason it landed out of order is already covered at the start of the [Baldy post](/posts/mt-baldy/), the mallet finger from the kickball incident pushed this one back past its planned slot, and by the time I finally got out here both Baldy and Gorgonio were already done.
 
-The day came out to 16.25 miles and 4,856 feet of gain, six hours and 17 minutes total with 5 hours 48 minutes of that actually moving, average heart rate 152, max 185, and 2,878 calories by the time I got back to the car. The Garmin put the summit at 10,650.3 feet, close enough to the official 10,649 feet that the sign at the top backs it up almost exactly. That closes out all six: Wilson, Cucamonga and Ontario, Jacinto, Baldy, Gorgonio, and now this one.
+Official elevation up there is 10,649 feet, and the Garmin's 10,650.3 backs up the sign at the top almost exactly. That closes out all six: Wilson, Cucamonga and Ontario, Jacinto, Baldy, Gorgonio, and now this one. Heart rate averaged 152 and maxed at 185, with 2,878 calories on the day.
 
 {{< hikemap id="sanbernardino-map" track="sanbernardino-track.json" peak="San Bernardino Peak" >}}
 
@@ -77,9 +77,9 @@ I didn't stick around long after that. Between the overgrowth slog on the way up
 
 ![A wide panorama from a shaded, tree-covered summit area, more peaks visible in the distance.](IMG_0210.webp)
 
-## The body math
+## My least favorite of the six
 
-The descent felt like it took forever again, same as Baldy and same as Gorgonio, a pattern I've stopped expecting to break at this point. Clouds held for a while and then mostly burned off, and by the time I got back to the car it was 78 degrees at the trailhead, a big jump from the 57 it had been at the start.
+The descent dragged again, same as Baldy and same as Gorgonio, a pattern I've stopped expecting to break at this point. Clouds held for a while and then mostly burned off, and by the time I got back to the car it was 78 degrees at the trailhead, a big jump from the 57 it had been at the start.
 
 Of the six, this is easily my least favorite. The elevation and distance were manageable, the trail itself was what wore on me, tree after tree to climb over and manzanita tearing at my shins for miles on end. I'm not going back to this one until it's seen some real maintenance work.
 

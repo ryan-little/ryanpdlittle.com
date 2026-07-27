@@ -8,7 +8,7 @@ summary: "I built a rules engine to tell me how to train. Then Claude analyzed t
 draft: false
 ---
 
-*This is Part 3 of a 4-part series on my fitness project's evolution from Claude-Fit to Garboard to Basecamp. [Part 1](/posts/claude-fit-the-ai-fitness-app-that-didnt-need-ai) covers Claude-Fit, the AI agent prototype. [Part 2](/posts/garboard-from-chatbot-to-dashboard) covers Garboard, the dashboard that outgrew its AI. Part 4 covers the coach in practice and what it's caught.*
+*This is Part 3 of The Fitness Project, a 4-part series. [Part 1](/posts/claude-fit-the-ai-fitness-app-that-didnt-need-ai) covers Claude-Fit, the AI agent prototype. [Part 2](/posts/garboard-from-chatbot-to-dashboard) covers Garboard, the dashboard that outgrew its AI. [Part 4](/posts/basecamp-training-coach/) covers the coach in practice and what it's caught.*
 
 ---
 

@@ -27,7 +27,7 @@ draft: false
 
 This is the fifth of the Six-Pack, and it's the biggest one by both measures, the highest point and the longest day. It didn't feel like "the big one" walking up to that sign though, just the next hike on the list, one week after Baldy with my legs feeling completely fresh, no lingering soreness from the week before. I was excited for one specific reason, which is that San Gorgonio is the tallest mountain in Southern California, and I hadn't stood on top of the tallest anything yet.
 
-The day came out to 18.37 miles and 5,617 feet of gain, seven hours and 57 minutes total with 7 hours 9 minutes of that actually moving, average heart rate 130, max 177, and 2,839 calories by the time I got back to the car. The Garmin read the summit at 11,557.7 feet, running about 55 to 60 feet hot, the same kind of GPS drift I saw on Wilson, so I'll use the official number, 11,499 feet, which is the highest point in Southern California. After Wilson, Cucamonga and Ontario, San Jacinto, and Baldy, this one closes out five of the six.
+The Garmin read the summit at 11,557.7 feet, running about 55 to 60 feet hot, the same kind of GPS drift I saw on Wilson, so I'll use the official number, 11,499 feet, which is the highest point in Southern California. After Wilson, Cucamonga and Ontario, San Jacinto, and Baldy, this one closes out five of the six. Heart rate averaged 130 with a max of 177, and the day cost 2,839 calories.
 
 {{< hikemap id="gorgonio-map" track="gorgonio-track.json" peak="San Gorgonio" >}}
 
@@ -75,13 +75,13 @@ The wind at the top was brutal, hard gusts that had me freezing and forced me to
 
 ![Wide panorama from the summit rocks, cloud sea and ridgelines stretching out in every direction.](IMG_0077.webp)
 
-Scenery-wise I'd still put this below San Jacinto's Deer Springs route, which remains my favorite of the Six-Pack, but above Baldy, and somewhere around equal to or a little above Cucamonga and Wilson.
+Scenery-wise I'd still put this below [San Jacinto's Deer Springs route](/posts/san-jacinto/), which remains my favorite of the Six-Pack, but above Baldy, and somewhere around equal to or a little above Cucamonga and Wilson.
 
-## The body math
+## Why my heart rate came in low
 
 Average heart rate came in at 130, well below Baldy's 146 despite this being the bigger effort by both distance and gain. I took more breaks than usual on the ascent, the two steep sections around the Mill Creek crossing and the summit push slowed me down more than I'm used to, and the long descent afterward dragged the overall average down even further. Of the 48 minutes of the day that weren't spent moving, most of it was the summit stop sheltering from the wind, with the rest scattered across those extra breaks on the way up.
 
-The descent felt like it took forever, more than any of the other four so far. That's become a pattern for me on these longer days, the ascent almost feeling shorter than the descent even though the numbers say otherwise, which I chalk up to tired legs more than anything else. Whitney is still the whole point of this project, and my honest guess is I'll enjoy the climb up it and start disliking it the moment I turn around to come back down. Something worth trying before then is slowing down and taking more deliberate breaks on the descents themselves, just to manage the fatigue instead of grinding through it the way I did coming off Gorgonio.
+The way down dragged worse than any of the other four so far. That's become a pattern for me on these longer days, the ascent almost feeling shorter than the descent even though the numbers say otherwise, which I chalk up to tired legs more than anything else. Whitney is still the whole point of this project, and my honest guess is I'll enjoy the climb up it and start disliking it the moment I turn around to come back down. Something worth trying before then is slowing down and taking more deliberate breaks on the descents themselves, just to manage the fatigue instead of grinding through it the way I did coming off Gorgonio.
 
 ![Back down in green forest, tall pines and a wildflower-dotted hillside, well into the descent.](IMG_0093.webp)
 
