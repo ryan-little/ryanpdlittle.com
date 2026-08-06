@@ -40,13 +40,13 @@ The 4:28 start was the actual decision. I knew it was going to be hot and I want
 
 ## Starting from a hole
 
-I slept three hours and fifty-four minutes. I'd been drinking the night before. I ate two bananas on the way up and carried one apple.
+I slept three hours and fifty-four minutes. I'd been drinking the night before. I ate two bananas at home before the drive up, and the only other thing I ate all day was an apple on the summit.
 
 None of that was a plan falling apart, it's just how the weekend went, and I've made a sort of peace with it because bad sleep before a big day seems closer to normal than not. People are anxious, or they're in a tent, or it's windy, and very few of them are getting eight clean hours before an alpine start. I'd guess I won't sleep well before Whitney either unless I'm backpacking in far enough to have adjusted to my sleep system, and even then one windy night undoes all of that.
 
 ![Dawn breaking through the pines above Halfway Camp, orange band on the horizon.](IMG_0484.webp)
 
-The fuel is the part I actually regret. Two bananas and an apple is not enough for 18 miles and 5,600 feet, I could feel it, and I'd have moved faster with real food in me. I got it done on considerably less than I should have been running on.
+The fuel is the part I actually regret. Two bananas and an apple is not enough for 18 miles and 5,600 feet, and the way it was spaced made it worse, because the bananas were hours behind me by the time I hit the trailhead and I climbed the entire thing on nothing. I could feel it, and I'd have moved faster with real food in me.
 
 ## Nick
 
