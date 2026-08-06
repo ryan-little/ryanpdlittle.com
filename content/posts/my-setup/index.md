@@ -35,7 +35,7 @@ Browser is Zen. I don't run a task manager, which people find surprising, but my
 
 The gear got more attention this year than the computers did, because I spent the year climbing the Six-Pack of Peaks with Whitney at the end of it, and the hikes kept telling me what was wrong with my kit.
 
-The pack situation started with a mistake. I'd been planning around my Camelbak Octane Race 4 holding 2.5 liters, and it holds 1.5, and finding that out a week before Mt Wilson is what made me look at the whole quiver at once.
+The pack situation started with Mt Wilson. Planning that one meant actually adding up what I'd be carrying instead of grabbing whatever was by the door, and my Camelbak Octane Race 4 holds 1.5 liters, which is plenty for a training run and thin for a fourteen mile day in May. Once I'd put that number next to a whole summer of hot exposed peaks I ended up looking at the entire quiver at once.
 
 | Pack | Water | Cargo | What it's for |
 |---|---|---|---|
