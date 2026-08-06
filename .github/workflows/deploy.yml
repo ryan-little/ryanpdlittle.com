@@ -51,11 +51,8 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
+        # Don't bother adding a `timeout` input to wait out a slow Pages
+        # deployment: the action hard-caps it at 600000 ms (10 min) and warns
+        # that it clamped anything higher. Tried on 2026-08-06. When Pages
+        # hangs in deployment_in_progress the only lever is re-running.
         uses: actions/deploy-pages@v5
-        with:
-          # Default is 600000 (10 min). On 2026-08-06 three deploys in a row
-          # aborted here: Pages accepted the deployment, went to
-          # deployment_in_progress, and never reported back inside the window.
-          # A normal deploy on this repo finishes in ~40s, so this ceiling only
-          # matters when Pages is having a bad day. 30 min gives it room.
-          timeout: 1800000
