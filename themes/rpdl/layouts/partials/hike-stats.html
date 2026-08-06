@@ -20,7 +20,12 @@
 {{- $gain := .gain_ft -}}
 {{- $elevation := .elevation_ft -}}
 {{- $moving := .moving_time -}}
-{{- $hiked := .hiked -}}
+{{- /*
+  `hiked` is deliberately not a tile here. It's still required front matter,
+  because whitney-hub.html sorts and dates the peak table by it, but on the
+  post itself it sat next to the byline date and read as a second publish
+  date. The post prose says when the hike happened.
+*/ -}}
 
 <div class="hub-stats hike-stats">
   {{- with $distance }}
@@ -45,12 +50,6 @@
   <div class="hub-stat">
     <span class="hub-stat-value">{{ . }}</span>
     <span class="hub-stat-label">Moving time</span>
-  </div>
-  {{- end }}
-  {{- with $hiked }}
-  <div class="hub-stat">
-    <span class="hub-stat-value"><time datetime="{{ time.Format "2006-01-02" . }}">{{ time.Format "Jan 2, 2006" . }}</time></span>
-    <span class="hub-stat-label">Hiked</span>
   </div>
   {{- end }}
 </div>

@@ -26,7 +26,7 @@ The Vivian Creek trailhead sign at 4:28 in the morning is a rectangle of brown a
 
 ![The Vivian Creek trailhead sign lit by a headlamp in full darkness at 4:28am.](IMG_0482.webp)
 
-I hiked [San Gorgonio on June 28th](/posts/san-gorgonio/), the fifth of the Six-Pack and the biggest day of the set, 18.37 miles and 5,617 feet to the highest point in Southern California. I was back on August 2nd because that was the first date I could get a permit, and because Whitney is on the 23rd and I wanted a maintenance hike, something long enough to hold the fitness I'd built without costing me a week to recover from.
+I hiked [San Gorgonio on June 28th](/posts/san-gorgonio/), the fifth of the Six-Pack and the biggest day of the set, 18.37 miles and 5,617 feet to the highest point in Southern California. I was back on August 2nd because I'd been holding a permit for that date since May, before I'd started the Six-Pack at all, and because Whitney is on the 23rd and I wanted a maintenance hike, something long enough to hold the fitness I'd built without costing me a week to recover from.
 
 Same trail, same 9.21 miles to the top. 18.31 miles, 5,574 feet of gain, 7 hours and 14 minutes against June's 7 hours and 57. Forty-three minutes faster on a mountain I'd already climbed, off three hours and fifty-four minutes of sleep, with two bananas and an apple as the entire day's food.
 
