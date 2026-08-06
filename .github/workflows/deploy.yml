@@ -52,3 +52,10 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+        with:
+          # Default is 600000 (10 min). On 2026-08-06 three deploys in a row
+          # aborted here: Pages accepted the deployment, went to
+          # deployment_in_progress, and never reported back inside the window.
+          # A normal deploy on this repo finishes in ~40s, so this ceiling only
+          # matters when Pages is having a bad day. 30 min gives it room.
+          timeout: 1800000
