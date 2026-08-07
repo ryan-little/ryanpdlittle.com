@@ -19,7 +19,7 @@ hike:
   # on it from 6/28. A second true here would put a duplicate row inside the
   # Six-Pack group on the Whitney hub.
   sixpack: false
-draft: true
+draft: false
 ---
 
 The Vivian Creek trailhead sign at 4:28 in the morning is a rectangle of brown and tan floating in a headlamp beam with nothing around it, no trees, no ridgeline, no sky. I photographed the same sign five weeks earlier in early light with the forest standing behind it, and this time I had the strange feeling of knowing exactly what was up there and being able to see none of it.
