@@ -16,13 +16,13 @@ draft: false
 
 The first time the encounter generator ran, it put me in a dry riverbed with a vulture circling overhead while the hunters closed from 12 miles out. I hadn't written that combination by hand. The terrain picked itself, the opportunity matched from a compatibility list, and the pressure triggered because the hunter distance had crossed a threshold, three independent systems composing a moment that felt authored.
 
-That was maybe four hours into February 13th. I'd opened the [design doc](/posts/building-primal-chase-part-0) that morning, started a blank `index.html`, and the [CONFIG-driven approach](/posts/building-primal-chase-part-0#the-non-negotiable) made the translation almost mechanical. The stat system reads death thresholds from `CONFIG.death`, actions pull their costs from `CONFIG.actions`, the hunter advances by `CONFIG.hunter.baseSpeed` plus its daily escalation. Wiring, not architecture.
+That was maybe four hours into February 13th. I'd opened the [design doc](/posts/building-primal-chase-part-0) that morning, started a blank `index.html`, and the [CONFIG-driven approach](/posts/building-primal-chase-part-0/#the-non-negotiable) made the translation almost mechanical. The stat system reads death thresholds from `CONFIG.death`, actions pull their costs from `CONFIG.actions`, the hunter advances by `CONFIG.hunter.baseSpeed` plus its daily escalation. Wiring, not architecture.
 
 The game loop was the part that took real thought, specifically how phases sequence and how the UI should breathe between player decisions. Generate the encounter, present the situation, unlock actions, wait for input, resolve, check death, advance the hunter, start the next phase or show the death screen. Getting the timing right so the player has space to read and think without the game feeling sluggish was harder than any of the game logic, and it's the kind of problem that doesn't show up in a design doc because you can only feel it when you're playing.
 
 ### The Encounter System
 
-I covered the [three-layer design in Part 0](/posts/building-primal-chase-part-0#the-encounter-system), but the implementation is where it got interesting. The combinatorial generator needed each terrain to know what belongs alongside it, so you wouldn't get a vulture circling while walking through dense jungle.
+I covered the [three-layer design in Part 0](/posts/building-primal-chase-part-0/#the-encounter-system), but the implementation is where it got interesting. The combinatorial generator needed each terrain to know what belongs alongside it, so you wouldn't get a vulture circling while walking through dense jungle.
 
 ```javascript
 {
