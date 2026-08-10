@@ -8,3 +8,7 @@ resources/
 # Python bytecode from scripts/
 __pycache__/
 *.pyc
+
+# Interview sheets live in the knowledge hub, not in this public repo
+qa.md
+**/qa.md
