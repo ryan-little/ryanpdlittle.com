@@ -2,7 +2,7 @@
 
 **Active** — Friday weekly publishing cadence, trip reports through summer.
 
-Last updated: 2026-08-06
+Last updated: 2026-08-10
 
 ## Current Schedule
 
@@ -11,11 +11,12 @@ Friday at 12:07pm PST.
 | Date | Post | Status |
 |------|------|--------|
 | Jul 31 | My Setup | **Published 2026-08-06**, backdated to its 7/31 slot. Missed its own Friday because the body was still a scaffold when the workflow ran, so the guard correctly skipped it. Written overnight 8/6 and published by hand. |
-| Aug 7 | San Gorgonio, Again | **Written and ready.** 1,560 words, 7 photos, GPS track. Still `draft: true` with its schedule entry intact, so the Friday workflow publishes it. Guard dry-run passes. |
+| Aug 7 | San Gorgonio, Again | **Published on schedule 2026-08-07.** The workflow ran clean, flipped the draft, and pulled the entry. No intervention needed. |
+| Aug 14 | Clouds Rest the Long Way | **Written and ready.** 1,678 words, 8 photos, 1,726-point GPS track. `draft: true` with its schedule entry in place. Guard dry-run passes. |
 | Aug 28 | Mount Whitney | Stub, empty body + empty summary (summit Aug 23). **Will be skipped by the publish guard** until written. |
 
-Nothing is scheduled for Aug 14 or Aug 21. The August-publishes-nothing call
-from 2026-07-27 no longer holds — 7/31 and 8/7 both have real posts now.
+Aug 21 is the only open slot left. The August-publishes-nothing call
+from 2026-07-27 is fully dead — 7/31, 8/7, and 8/14 all have real posts.
 
 Parked drafts, past-dated and deliberately not in the schedule: `felt-gg`
 (4/28), `rf-viewshed-tool` (4/28), `learning-geospatial-python-in-public`
@@ -50,8 +51,11 @@ Parked drafts, past-dated and deliberately not in the schedule: `felt-gg`
 - **San Bernardino Peak** — 2026-07-17
 - **Mt Langley** — 2026-07-24 (published 7/27)
 - **My Setup** — 2026-07-31 (published 8/6)
+- **San Gorgonio, Again** — 2026-08-07
 
 ## Recent Changes
+
+- **2026-08-10:** **Wrote Clouds Rest the Long Way** for the 8/14 slot from a 15-question interview, 1,678 words, 8 photos, 1,726-point track off FIT `23905464982`. **The spine came out of session history rather than the Q&A:** the day was supposed to be Half Dome, the two-days-out cables lottery didn't come through, and the substitute was *larger* than the plan (20.37 mi / +6,716 ft against a declared ~15 / +4,000), so the contingency resolved upward. It's the most vertical of the year, 660 ft over San Jacinto, though Langley is still the longest. **Ryan killed the aerobic-decoupling angle and was right** — see the finding below; that whole section was rebuilt around climb rate instead. **Two framings I invented and had to retract:** that the finger splint came off two days before the cables as a near-miss (it came off at the 8-week mark, coincidence), and repeated dramatizations of solitude (I wrote "entirely to ourselves" and "without meeting more than a handful of people" when Ryan's answers said a good number of hikers, not crowded). Also had the falls on the wrong side of the Mist Trail, and described the Nevada Fall climb as "alongside" the water when it's a staircase built into the canyon wall well back from it. **Privacy fix:** nine `qa.md` interview sheets were committed to this **public** repo, oldest since 6/6, carrying raw answers plus readiness/HRV/sleep-score detail the posts don't publish. All ten moved to `knowledge-hub/projects/ryanpdlittle-com/interviews/` and gitignored. **They remain in git history — a purge needs `git filter-repo` + force push and has not been done.** **Also:** `data/mileage.json` was two weeks stale (646.0 → 703.2 mi, 88,691 → 102,589 ft), and two Primal Chase Part 0 anchor links were missing a trailing slash. Four commits, pushed, deploy green in 42s.
 
 - **2026-08-06:** **Published My Setup**, backdated to its 7/31 slot. Reviewed it against the style guide first (no em dashes, no banned vocabulary, front matter valid, links resolve) and caught two factual errors, both fixed before publish and one of them again after: (1) it claimed the HOKA Speedgoats had been worn on Gorgonio, San Bernardino, and **Langley** — the Langley post says he grabbed the Brooks Ghosts by accident, and the gear log starts the Speedgoats 6/4, so Baldy was the first Speedgoat peak; corrected to "Baldy, Gorgonio, and San Bernardino". (2) The pack paragraph framed the Camelbak Octane Race 4's capacity as a mistake Ryan made ("I'd been planning around 2.5 liters, and it holds 1.5"). He knew the real number; the hub note `projects/basecamp/2026-05-08-hiking-pack-quiver.md` records him *confirming* 1.5L, and the 2.5L figure was a planning assumption elsewhere. Rewritten so Wilson prep is the trigger. **Wrote San Gorgonio, Again** (8/7 slot) from a 12-question interview: 1,560 words, 7 photos processed from EXIF-timestamped originals, GPS track extracted from the 8/2 FIT file. **The finding that shapes the post:** splitting both Gorgonio FIT files at the high point shows the 43-minute improvement did *not* come off the climb — ascent 4:33:52 → 4:28:16 (5:36, ~2%, noise), summit stay 24:02 → 12:19, descent 2:58:57 → 2:33:21. Over half the gain came off the descent, which is the exact thing he complained about in the June post. Two of Ryan's corrections applied post-draft: Aug 2 was the first permit he ever obtained (booked in May, before the Six-Pack started), not the first *available* date; and the two bananas were eaten at home before the drive, so the entire climb was done on nothing. **Theme:** removed the `Hiked` tile from `partials/hike-stats.html` — it rendered directly under the byline date and read as a second publish date. `hiked` stays required front matter because `whitney-hub.html` sorts and dates the peak table by it; left a comment in the partial saying so. **GitHub Pages incident:** eight consecutive deploys failed with `Timeout reached, aborting!` after sitting in `deployment_in_progress`. Normal for this repo is ~40s. Tried raising `actions/deploy-pages@v5`'s `timeout` input to 30 min; **the action hard-caps it at 600000 ms and warns that it clamped** — the change was a no-op that also added a warning to every run, so it was reverted with a comment recording the dead end. Retrying was the only lever and it eventually cleared. Important operational detail: **at least two deployments published their content while being marked `failure`**, because Pages finishes the publish after the action has already given up. Do not trust a red run to mean nothing shipped; check the page.
 
