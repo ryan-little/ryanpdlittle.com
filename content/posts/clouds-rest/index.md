@@ -18,7 +18,7 @@ hike:
   # Not a Six-Pack peak. This was the Half Dome substitute, so it lands in
   # "Past the Six-Pack" on the Whitney hub.
   sixpack: false
-draft: true
+draft: false
 ---
 
 Hardin Flat Road is a Forest Service road just outside the Big Oak Flat entrance, and by Friday night it was hot enough that I gave up on the sleeping bag entirely and slept on top of my pad with nothing over me. Sam did about the same. Neither of us slept, three hours and fifty-four minutes on my watch, and for once none of it was nerves or wind or a bad pad, it was just heat.
