@@ -3,7 +3,7 @@ title: "Moving to Substack"
 date: 2026-08-21
 categories: ["meta"]
 summary: "Housekeeping before the real post. Whitney runs here Friday the 28th, then this site goes quiet and the trail writing moves to Substack."
-draft: true
+draft: false
 ---
 
 This one's short. The post that actually matters is next Friday, the Whitney write-up, and this is the housekeeping that has to happen first.
