@@ -31,26 +31,9 @@ Upload artifact → deploy to GitHub Pages
 Live at ryanpdlittle.com (Cloudflare DNS)
 ```
 
-## Scheduled Publishing
+## Publishing
 
-```
-Cron: Friday 12:07pm PST (20:07 UTC) — off-hour to dodge GH Actions backlog
-    ↓
-.github/workflows/scheduled-publish.yml
-    ↓
-Python script reads publish-schedule.yml
-Compares post dates to today
-For due posts: flip draft: false, set date, remove from schedule
-Commit changes
-Trigger deploy workflow
-```
-
-`publish-schedule.yml` drives automated publishing: edit it directly to
-reschedule or cancel a post. It is not the whole picture, though — posts are
-also published by hand (flip `draft: false`, push) when a draft needs a look
-before it goes out, and those never appear in the schedule. A post absent from
-`publish-schedule.yml` is therefore either manual or forgotten; check `draft:`
-before assuming which.
+Manual: set `draft: false` and push to `main`. The scheduled publishing workflow and `publish-schedule.yml` were removed 2026-09-22; the blog is dormant.
 
 ## External Services
 

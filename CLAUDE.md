@@ -39,20 +39,15 @@ static/
 archetypes/posts/        ← post template (index.md)
 scripts/                 ← optimize-images.sh, export-mileage.py
 hugo.toml                ← site config (taxonomies: categories, series, tags)
-publish-schedule.yml     ← upcoming post dates
 .github/workflows/
   deploy.yml             ← push to main → build + deploy
-  scheduled-publish.yml  ← Friday 12:07pm PST auto-publish
 ```
 
 ## Content Workflow
 
 1. Create post: `hugo new content posts/<slug>/index.md` (creates page bundle from archetype)
 2. Write with `draft: true` — won't appear in production build
-3. Add entry to `publish-schedule.yml` with target date
-4. The scheduled workflow handles the rest: flips `draft: false`, commits, triggers deploy
-
-To publish immediately: set `draft: false` and push to `main`.
+3. To publish: set `draft: false` and push to `main`. Scheduled publishing was removed 2026-09-22.
 
 ## Conventions
 

@@ -85,17 +85,9 @@ hugo new content posts/<slug>/index.md
 
 This creates the bundle directory and populates `index.md` from the archetype. Slug should be lowercase kebab-case: `why-i-follow-san-diego-fc`.
 
-## Scheduling a Post
+## Publishing a Post
 
-1. Write the post with `draft: true`
-2. Add an entry to `publish-schedule.yml`:
-   ```yaml
-   - path: content/posts/<slug>/index.md
-     date: YYYY-MM-DD
-   ```
-3. Push to `main` — the scheduled workflow handles the rest
-
-To publish immediately, set `draft: false` manually and push.
+Set `draft: false` and push to `main`. Scheduled publishing was removed 2026-09-22.
 
 **Day-of-week rule:** Posts publish on Fridays. The site ran a Tuesday+Friday
 cadence from launch through 2026-04-28 and has been Friday-only since
